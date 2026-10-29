@@ -1,0 +1,127 @@
+{
+    "project_name": "SupplyShield",
+    "day_1_data_analysis": {
+        "delhivery": {
+            "original_rows": 144867,
+            "original_columns": 24,
+            "duplicate_rows": 0,
+            "trip_creation_start": "2018-09-12",
+            "trip_creation_end": "2018-10-03",
+            "journey_legs": 26369,
+            "unique_trips": 14817,
+            "unique_hubs": 1657,
+            "directed_lanes": 2783,
+            "lanes_with_at_least_30_trips": 99,
+            "median_delay_ratio": 2.0,
+            "delay_ratio_99th_percentile": 11.954667
+        },
+        "delay_ratio_by_distance": [
+            {
+                "distance": "0-50 km",
+                "number_of_legs": 14830,
+                "median_ratio": 2.071429,
+                "mean_ratio": 2.732065
+            },
+            {
+                "distance": "50-100 km",
+                "number_of_legs": 5910,
+                "median_ratio": 1.916667,
+                "mean_ratio": 2.333373
+            },
+            {
+                "distance": "100-250 km",
+                "number_of_legs": 3445,
+                "median_ratio": 1.995305,
+                "mean_ratio": 2.392963
+            },
+            {
+                "distance": "250-500 km",
+                "number_of_legs": 1119,
+                "median_ratio": 1.968037,
+                "mean_ratio": 2.069095
+            },
+            {
+                "distance": "500+ km",
+                "number_of_legs": 1065,
+                "median_ratio": 1.950904,
+                "mean_ratio": 2.009215
+            }
+        ],
+        "olist": {
+            "original_orders": 99441,
+            "orders_without_usable_delivery_dates": 2965,
+            "usable_orders": 96476,
+            "median_delay_days": -12,
+            "late_orders": 7827,
+            "late_delivery_percentage": 8.11,
+            "late_definition": "Actual delivery timestamp is after the estimated delivery timestamp"
+        }
+    },
+    "day_2_network_analysis": {
+        "network_by_minimum_trips": [
+            {
+                "minimum_trips": 1,
+                "hubs": 1657,
+                "directed_lanes": 2783,
+                "largest_weak_component_percent": 81.7,
+                "largest_strong_component_percent": 54.9
+            },
+            {
+                "minimum_trips": 5,
+                "hubs": 1288,
+                "directed_lanes": 1631,
+                "largest_weak_component_percent": 69.9,
+                "largest_strong_component_percent": 35.5
+            },
+            {
+                "minimum_trips": 10,
+                "hubs": 958,
+                "directed_lanes": 1130,
+                "largest_weak_component_percent": 60.9,
+                "largest_strong_component_percent": 25.6
+            },
+            {
+                "minimum_trips": 30,
+                "hubs": 79,
+                "directed_lanes": 99,
+                "largest_weak_component_percent": 64.6,
+                "largest_strong_component_percent": 24.1
+            }
+        ],
+        "hub_location_results": {
+            "network_threshold": 5,
+            "total_hubs": 1288,
+            "saved_city_and_state_matches": 677,
+            "no_exact_match": 595,
+            "request_errors": 10,
+            "missing_city_or_state": 6,
+            "legs_with_matched_source": 16271,
+            "legs_with_matched_source_percent": 61.71,
+            "legs_with_matched_destination": 15938,
+            "legs_with_matched_destination_percent": 60.44,
+            "legs_with_both_hubs_matched": 10491,
+            "legs_with_both_hubs_matched_percent": 39.79
+        },
+        "single_hub_weather_test": {
+            "hub": "Gurgaon_Bilaspur_HB",
+            "location_used": "Gurugram city approximation",
+            "latitude": 28.4601,
+            "longitude": 77.02635,
+            "weather_start_date": "2018-09-12",
+            "weather_end_date": "2018-10-03",
+            "weather_days_received": 22,
+            "legs_starting_at_hub": 1063,
+            "legs_with_rainfall_data": 1057,
+            "legs_without_rainfall_data": 6,
+            "reason_for_missing_weather": "The six legs started between October 4 and October 6, after the requested weather period."
+        }
+    },
+    "important_notes": [
+        "Delay ratio is actual time divided by OSRM estimated time.",
+        "A ratio above 1 does not automatically mean disruption.",
+        "Hub coordinates are approximate city locations, not verified hub locations.",
+        "The network analysis at each threshold includes only lanes meeting that threshold.",
+        "The dataset covers about three weeks; do not claim seasonal patterns from it.",
+        "Disruption, demand, and capacity used in simulations must be identified as assumed or simulated."
+    ]
+}
