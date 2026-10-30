@@ -1,0 +1,4 @@
+plan,parcels via D,shipping,cost if D=60,cost if D=30,cost if D=0,average cost,CVaR 80%
+expected-cost plan,30.0,620.0,620.0,620.0,1220.0,680.0,920.0
+mixed plan,10.0,740.0,740.0,740.0,940.0,760.0,840.0
+CVaR plan,0.0,810.0,810.0,810.0,810.0,810.0,810.0

@@ -1,5 +1,9 @@
-# Safe-Plan Analysis (Hub D Capacity Uncertainty)
+# Safe-Plan & Risk Analysis (Hub D Capacity Uncertainty)
 
-A baseline planning model that assumes Hub D can consistently handle 60 parcels will route up to 60 units through it to minimize daily operating costs. However, on the 20% of days when Hub D's capacity drops to 30, this aggressive baseline will suddenly overflow the hub, forcing 30 parcels into high-cost emergency rerouting or incurring heavy unmet demand penalties. 
+## Decision Rule: Express Van Utilization
+The optimizer routes flow through the express van only when the express van cost per parcel is strictly less than the penalty for an undelivered parcel (20).
 
-In contrast, a safe plan accounts for this downside risk by proactively diverting a portion of the expected volume to secondary, slightly higher-cost routes instead of maxing out Hub D's capacity. While this slightly increases the nominal cost on standard days, it drastically reduces severe cost spikes on low-capacity days. This risk-averse approach forms the core idea behind Conditional Value at Risk (CVaR), which optimizes for the worst-case tail outcomes rather than just average expected conditions.
+## Safe-Plan Paragraph (CVaR Context)
+A baseline planning model that assumes Hub D can consistently handle 60 parcels will route up to 60 units through it to minimize daily operating costs. However, on days when Hub D's capacity drops to 30 or 0, this aggressive baseline causes severe capacity overflows and massive penalty spikes.
+
+Conditional Value at Risk (CVaR) is not the single absolute worst-case scenario; rather, it represents the expected average cost across the worst slice of outcomes (e.g., the worst 20% of days). A CVaR-optimized plan proactively diverts volume to slightly higher-cost secondary paths, effectively removing catastrophic cost spikes on bad days while accepting a small increase in standard operating costs.
