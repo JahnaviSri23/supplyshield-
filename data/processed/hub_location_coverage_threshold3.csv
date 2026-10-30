@@ -1,0 +1,1435 @@
+hub,name,match,latitude,longitude
+IND000000ACB,Gurgaon_Bilaspur_HB (Haryana),city+state,28.4601,77.02635
+IND562132AAA,Bangalore_Nelmngla_H (Karnataka),city+state,12.97194,77.59369
+IND501359AAE,Hyderabad_Shamshbd_H (Telangana),city+state,17.38405,78.45636
+IND712311AAA,Kolkata_Dankuni_HB (West Bengal),city+state,22.56263,88.36304
+IND421302AAG,Bhiwandi_Mankoli_HB (Maharashtra),city+state,19.30023,73.05881
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),no_exact_match,,
+IND131028AAB,Sonipat_Kundli_H (Haryana),no_exact_match,,
+IND411033AAA,Pune_Tathawde_H (Maharashtra),city+state,18.51957,73.85535
+IND600056AAB,MAA_Poonamallee_HB (Tamil Nadu),city+state,13.08784,80.27847
+IND302014AAA,Jaipur_Hub (Rajasthan),city+state,26.91962,75.78781
+IND382430AAB,Ahmedabad_East_H_1 (Gujarat),city+state,23.02579,72.58727
+IND209304AAA,Kanpur_Central_H_6 (Uttar Pradesh),city+state,26.46523,80.34975
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),no_exact_match,,
+IND462022AAA,Bhopal_Trnsport_H (Madhya Pradesh),city+state,23.25469,77.40289
+IND683511AAA,Aluva_Peedika_H (Kerala),city+state,10.10764,76.35158
+IND751002AAB,Bhubaneshwar_Hub (Orissa),no_exact_match,,
+IND854326AAB,Purnia_Central_H_2 (Bihar),city+state,25.77895,87.47422
+IND530012AAA,Visakhapatnam_Gajuwaka_IP (Andhra Pradesh),city+state,17.68009,83.20161
+IND110037AAM,Delhi_Airport_H (Delhi),no_exact_match,,
+IND713205AAB,Durgapur_Central_I_1 (West Bengal),city+state,23.51583,87.30801
+IND573201AAB,Hassan_Pandrnga_I (Karnataka),city+state,13.00715,76.0962
+IND580028AAA,Hubli_Adargchi_IP (Karnataka),city+state,17.58662,76.51148
+IND313001AAB,Udaipur_Mangri_I (Rajasthan),city+state,24.58584,73.71346
+IND521225AAB,Vijayawada_Rynapadu_H (Andhra Pradesh),city+state,16.50745,80.6466
+IND244901AAB,Rampur_RoshnBgh_I (Uttar Pradesh),city+state,26.74957,79.87144
+IND305001AAC,Ajmer_FoySGRRD_I (Rajasthan),city+state,26.4521,74.63867
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),no_exact_match,,
+IND781018AAB,Guwahati_Hub (Assam),city+state,26.1844,91.7458
+IND515004AAA,Anantapur_KamaStrt_I (Andhra Pradesh),city+state,14.67784,77.60813
+IND306401AAB,Pali_Nayagaon_I (Rajasthan),city+state,26.95151,72.71777
+IND395023AAA,Surat_HUB (Gujarat),city+state,21.19594,72.83023
+IND575004AAB,Mangalore_Kuntikna_H (Karnataka),no_exact_match,,
+IND518002AAA,Kurnool_AbbasNgr_I (Andhra Pradesh),city+state,15.82887,78.03602
+IND560099AAB,Bengaluru_Bomsndra_HB (Karnataka),city+state,12.97194,77.59369
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,
+IND826004AAA,Dhanbad_Kalynpur_I (Jharkhand),city+state,23.79759,86.42992
+IND474003AAA,Gwalior_HrihrNgr_I (Madhya Pradesh),city+state,26.22983,78.17337
+IND821115AAB,Sasaram_Central_I_2 (Bihar),no_exact_match,,
+IND000000ACA,Ludhiana_MilrGanj_HB (Punjab),city+state,30.91204,75.85379
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),no_exact_match,,
+IND332001AAB,Sikar_FatehpRd_I (Rajasthan),no_exact_match,,
+IND532001AAB,Srikakulam_Kuslpram_I (Andhra Pradesh),city+state,18.2989,83.89751
+IND605010AAB,Pondicherry_Vasanthm_I (Pondicherry),no_exact_match,,
+IND263153AAB,Rudrapur_UdhamNgr_H (Uttarakhand),city+state,28.98,79.4
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),no_exact_match,,
+IND244221AAA,Amroha_SamitiRd_D (Uttar Pradesh),city+state,28.90314,78.46984
+IND742101AAC,Baharampur_Chuanpur_I (West Bengal),city+state,24.10473,88.25155
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,
+IND282002AAD,,missing_city_or_state,,
+IND431136AAC,Aurangabad_Central_H_1 (Maharashtra),city+state,19.87757,75.34226
+IND303702AAB,Chomu_ShsmlDPP_D (Rajasthan),city+state,27.39913,76.70749
+IND560300AAA,Bengaluru_KGAirprt_HB (Karnataka),city+state,12.97194,77.59369
+IND403726AAA,Goa_Hub (Goa),no_exact_match,,
+IND834002AAB,Ranchi_Hub (Jharkhand),city+state,23.34316,85.3094
+IND523002AAA,Ongole_SubhVRTL_I (Andhra Pradesh),city+state,15.50357,80.04454
+IND342005AAD,Jodhpur_Basni_I (Rajasthan),city+state,26.26841,73.00594
+IND506002AAA,Warangal_HunterRd_I (Telangana),city+state,18.0,79.58333
+IND244235AAA,Gajraula_JawaharN_D (Uttar Pradesh),city+state,28.8457,78.2396
+IND605601AAA,Villupuram_Thirumtr_IP (Tamil Nadu),city+state,11.93975,79.49244
+IND422011AAD,Nashik_TgrniaRD_I (Maharashtra),city+state,19.99727,73.79096
+IND341303AAA,Didwana_KatlaDPP_D (Rajasthan),city+state,28.97256,73.93865
+IND341306AAA,Sujangarh_LdnunDPP_D (Rajasthan),no_exact_match,,
+IND842003AAB,Jabalpur_Adhartal_IP (Madhya Pradesh),city+state,23.16697,79.95006
+IND273014AAB,Gorakhpur_Matriprm_IP (Uttar Pradesh),city+state,26.76628,83.36889
+IND691001AAB,Kollam_Central_H_1 (Kerala),city+state,8.88113,76.58469
+IND334001AAC,Bikaner_ITICollg_L (Rajasthan),not_previously_looked_up,,
+IND334803AAA,Nokha_DeVDPP_D (Rajasthan),not_previously_looked_up,,
+IND341001AAC,Nagaur_KisanCo_D (Rajasthan),city+state,27.20812,73.71107
+IND382715AAA,Kadi_KaranNGR_D (Gujarat),city+state,23.29908,72.33362
+IND413002AAA,Solapur_Central_I_2 (Maharashtra),city+state,17.67152,75.91044
+IND125001AAA,Hisar_ModelTwn_P (Haryana),city+state,29.15394,75.72294
+IND121004AAB,FBD_Balabhgarh_DPC (Haryana),no_exact_match,,
+IND515134AAA,Puttaprthi_Gokulam_D (Andhra Pradesh),no_exact_match,,
+IND583101AAA,Bellary_Dc (Karnataka),no_exact_match,,
+IND723130AAA,Hura_Central_D_1 (West Bengal),city+state,23.30337,86.65717
+IND151001AAA,Bhatinda_DPC (Punjab),no_exact_match,,
+IND585330AAE,Humnabad_EBroad_D (Karnataka),no_exact_match,,
+IND585401AAA,Bidar (Karnataka),no_exact_match,,
+IND502286AAB,Narayankhed_Datatrya_D (Telangana),no_exact_match,,
+IND502220AAC,Zahirabad_Mohim_D (Telangana),no_exact_match,,
+IND205001AAB,Mainpuri_Agraroad_I (Uttar Pradesh),city+state,27.22857,79.02882
+IND249407AAA,Haridwar (Uttarakhand),no_exact_match,,
+IND610001AAA,Thiruvarur_Bypasrd_D (Tamil Nadu),city+state,10.77269,79.6368
+IND506143AAA,Ghanpur_Palakrty_D (Telangana),city+state,17.85,79.36667
+IND506167AAB,Jangaon_Hanmkond_D (Telangana),city+state,17.72602,79.15236
+IND244001AAA,Moradabad_DC (Uttar Pradesh),no_exact_match,,
+IND400072AAB,Mumbai Hub (Maharashtra),no_exact_match,,
+IND507002AAA,Khammam_NSTRoad_I (Telangana),city+state,17.24767,80.14368
+IND390022AAA,Vadodara_Karelibaug_DPC (Gujarat),city+state,22.29941,73.20812
+IND632006AAA,Vellore_GndhiNgr_IP (Tamil Nadu),city+state,12.9184,79.13255
+IND312001AAA,Chittaurgarh_DC (Rajasthan),no_exact_match,,
+IND500039AAC,Hyderabad_Uppal_I (Telangana),city+state,17.38405,78.45636
+IND700053AAA,CCU_New Alipore_DPC (West Bengal),no_exact_match,,
+IND577002AAA,Davangere_Central_I_1 (Karnataka),city+state,14.46693,75.92694
+IND570020AAA,Mysore_Yadvgiri_IP (Karnataka),no_exact_match,,
+IND335513AAA,Hanumangarh_DC (Rajasthan),no_exact_match,,
+IND732103AAB,Malda_Central_I_3 (West Bengal),city+state,25.00447,88.14573
+IND607001AAA,Cuddalore_KtsiGrsm_D (Tamil Nadu),city+state,11.75617,79.76693
+IND515671AAA,Dharmavram_SaiNgr_D (Andhra Pradesh),no_exact_match,,
+IND608001AAA,Chidambaram_ARBNorth_DC (Tamil Nadu),city+state,11.39933,79.69144
+IND722143AAB,Mejia_Central_D_1 (West Bengal),city+state,23.56728,87.10803
+IND609110AAA,Sirkazhi_Pngktgudi_D (Tamil Nadu),no_exact_match,,
+IND723133AAA,Rghunthpur_barkarRd_D (West Bengal),no_exact_match,,
+IND609602AAA,Karaikal_Thalthru_DC (Pondicherry),no_exact_match,,
+IND611001AAA,Nagapttinm_Sttyapar_D (Tamil Nadu),no_exact_match,,
+IND515591AAA,Kadiri_GVManu_D (Andhra Pradesh),city+state,14.11168,78.15982
+IND516269AAA,Rayachoti_Madnpali_D (Andhra Pradesh),city+state,14.05723,78.75056
+IND723101AAA,Purulia_GariDPP_D (West Bengal),no_exact_match,,
+IND516390AAA,Pulivendula_RTCStand_D (Andhra Pradesh),no_exact_match,,
+IND723202AAA,Jhalda_GMukrDPP_D (West Bengal),no_exact_match,,
+IND342902AAA,Gotan_DKLogDPP_D (Rajasthan),city+state,26.65551,73.7371
+IND424006AAA,Dhule_MIDCAvdn_I (Maharashtra),city+state,20.9013,74.77737
+IND695012AAA,Trivandrum_Mnanthla_H (Kerala),no_exact_match,,
+IND388320AAA,Anand_Vaghasi_IP (Gujarat),city+state,22.55251,72.9552
+IND485001AAC,Satna_Central_I_2 (Madhya Pradesh),city+state,24.57726,80.82719
+IND431603AAA,Nanded_Aswningr_I (Maharashtra),city+state,19.16023,77.31497
+IND144001AAB,Jalandhar_DPC (Punjab),city+state,31.32556,75.57917
+IND600116AAB,Chennai_Porur_DPC (Tamil Nadu),city+state,13.08784,80.27847
+IND600044AAD,Chennai_Chrompet_DPC (Tamil Nadu),city+state,13.08784,80.27847
+IND174001AAA,BilaspurHP_Indsarea_D (Himachal Pradesh),no_exact_match,,
+IND247667AAA,Roorkee_Dc (Uttarakhand),city+state,29.86632,77.89118
+IND788026AAC,Silchar_Sirikona_H (Assam),city+state,24.82733,92.79787
+IND175018AAA,SundarNgr_Bhogpur_D (Himachal Pradesh),no_exact_match,,
+IND563101AAB,Kolar_Ambedkar_D (Karnataka),no_exact_match,,
+IND305624AAA,Bijainagar_Central_DPP_1 (Rajasthan),city+state,29.24262,73.52311
+IND175001AAA,Mandi_PlaceCol_D (Himachal Pradesh),city+state,31.71194,76.93273
+IND563131AAA,Mulbagal_Sunku_D (Karnataka),no_exact_match,,
+IND305404AAA,Kekri_LxmntDPP_D (Rajasthan),city+state,25.97132,75.14992
+IND175101AAA,Kullu_AkhraBzr_D (Himachal Pradesh),city+state,31.95835,77.10823
+IND563125AAB,Chintamani_Central_D_2 (Karnataka),city+state,13.40051,78.05172
+IND305601AAC,Nasirabad_Central_DPP_2 (Rajasthan),no_exact_match,,
+IND577535AAC,Molakalmuru_KnsgraRD_D (Karnataka),no_exact_match,,
+IND577522AAA,Challakere_Shivangr_D (Karnataka),city+state,14.318,76.65165
+IND125005AAA,Hisar_IndstlAr_I (Haryana),city+state,29.15394,75.72294
+IND202001AAB,Aligarh_KhirByps_I (Uttar Pradesh),city+state,27.88145,78.07464
+IND508213AAB,Suryapet_Krishna_D (Telangana),no_exact_match,,
+IND508001AAA,Nalgonda_HydRoad_DC (Telangana),city+state,17.05439,79.26707
+IND571301AAA,Nanjangud_RPRoad_D (Karnataka),no_exact_match,,
+IND673632AAA,Kozhikode_Central_H_4 (Kerala),city+state,11.24802,75.7804
+IND503111AAC,Kamareddy_Devenply_I (Telangana),no_exact_match,,
+IND205135AAA,Shikohabad_Katrmira_D (Uttar Pradesh),city+state,27.108,78.58661
+IND283203AAA,Firozabad_Sudmpuri_D (Uttar Pradesh),city+state,27.15092,78.39781
+IND581314AAA,Ankola_Kakrmath_D (Karnataka),city+state,14.66049,74.3047
+IND591237AAB,Nipani_AkkolRD_D (Karnataka),no_exact_match,,
+IND000000AFT,Mumbai_Sanpada_I (Maharashtra),city+state,19.07283,72.88261
+IND246725AAB,Chandpur_NorprRD_D (Uttar Pradesh),city+state,27.19377,79.35497
+IND573116AAA,Channaraya_patna_D (Karnataka),no_exact_match,,
+IND583201AAA,Hospet (Karnataka),no_exact_match,,
+IND591201AAA,Chikodi_IndraNgr_D (Karnataka),city+state,16.42898,74.58591
+IND246701AAA,Bijnor_NaginaRd_D (Uttar Pradesh),city+state,29.373,78.13636
+IND305901AAA,Beawar_DC (Rajasthan),no_exact_match,,
+IND422103AAC,Sinnar_Central_D_1 (Maharashtra),city+state,19.84505,73.99866
+IND571432AAB,Nagamangala_MandyaRD_D (Karnataka),no_exact_match,,
+IND312605AAB,Pratapgarh_Nimachrd_D (Rajasthan),no_exact_match,,
+IND591304AAA,Athani_VikrmMah_D (Karnataka),city+state,16.72613,75.06421
+IND246763AAA,Najibabad_KotdwrRD_D (Uttar Pradesh),no_exact_match,,
+IND342602AAC,Bilara_Central_DPP_2 (Rajasthan),no_exact_match,,
+IND413709AAA,Shrirampur_DavkharRd_D (Maharashtra),city+state,19.62201,74.65699
+IND422605AAA,Sangamner_JawanChk_D (Maharashtra),city+state,19.56784,74.21154
+IND571426AAA,Krishnarajpet_MuruPost_D (Karnataka),no_exact_match,,
+IND577598AAC,Hiriyur_TahurDPP_D (Karnataka),city+state,12.82435,75.77066
+IND311302AAA,Badnaur_BhmrdDPP_D (Rajasthan),not_previously_looked_up,,
+IND571104AAA,Koppa_BMRd_D (Karnataka),city+state,13.53044,75.36329
+IND577501AAA,Chitradurga_DC (Karnataka),city+state,14.22262,76.40038
+IND577598AAB,Madikeri_MuthpTmp_D (Karnataka),city+state,12.42602,75.7382
+IND416404AAA,Jath_Shivprsad_D (Maharashtra),city+state,17.04763,75.21816
+IND573134AAB,Sakleshpur_RgvdrDPP_D (Karnataka),city+state,12.94119,75.78467
+IND573142AAA,Ramanathapura_Central_D_2 (Karnataka),no_exact_match,,
+IND311001AAA,Bhilwara_DC (Rajasthan),city+state,25.34707,74.64081
+IND423701AAB,Vaijiapur_YeolaRD_D (Maharashtra),no_exact_match,,
+IND313324AAA,Rajsamand_kankroli_D (Rajasthan),no_exact_match,,
+IND571111AAB,Gundlupet_Swamylyt_D (Karnataka),no_exact_match,,
+IND425405AAA,Shirpur_KrantiNgr_D (Maharashtra),city+state,21.34821,74.88035
+IND695609AAA,Pangodu_Central_D_1 (Kerala),not_previously_looked_up,,
+IND335803AAA,Pilibanga_BsstdDPP_D (Rajasthan),no_exact_match,,
+IND201007AAA,GZB_Mohan_Nagar_DPC (Uttar Pradesh),no_exact_match,,
+IND686028AAB,Kottayam_Central_H_1 (Kerala),city+state,9.58692,76.52132
+IND301001AAB,Alwar_Central_I_1 (Rajasthan),city+state,27.56246,76.625
+IND756100AAC,Bhadrak_Central_I_2 (Orissa),city+state,21.05447,86.5156
+IND572101AAA,Tumkur_Veersagr_I (Karnataka),no_exact_match,,
+IND502313AAA,Narsapur_Xroad_D (Telangana),no_exact_match,,
+IND249201AAA,Rishikesh_DC (Uttarakhand),city+state,30.10778,78.29255
+IND110085AAB,Delhi_Rohini_DPC (Delhi),no_exact_match,,
+IND742226AAA,Sagardighi_UtBzrDPP_D (West Bengal),no_exact_match,,
+IND209101AAA,Akbarpur_NehruNGR_D (Uttar Pradesh),city+state,26.42953,82.53431
+IND305802AAA,Kishangarh_Central_D_2 (Rajasthan),city+state,26.59006,74.85397
+IND344022AAB,Balotra_BsnoiHPL_D (Rajasthan),city+state,25.83242,72.24
+IND532127AAA,Rajam_SamathBv_D (Andhra Pradesh),no_exact_match,,
+IND607106AAA,Panruti_GandhiRd_D (Tamil Nadu),city+state,11.77662,79.55269
+IND731237AAB,Morgram_Kntgorya_D (West Bengal),no_exact_match,,
+IND721306AAA,Kharagpur_DC (West Bengal),city+state,22.33971,87.32501
+IND209111AAA,Pukhrayan_Arulimod_D (Uttar Pradesh),no_exact_match,,
+IND341512AAA,Parbatsar_AjmhwDPP_D (Rajasthan),no_exact_match,,
+IND344001AAA,Barmer_Nehru3PL_D (Rajasthan),no_exact_match,,
+IND413304AAA,Pandharpur_RajCmplx_D (Maharashtra),city+state,17.67924,75.33098
+IND535591AAA,Salur_ward9_D (Andhra Pradesh),no_exact_match,,
+IND573103AAA,Arsikere_HsnRdDPP_D (Karnataka),city+state,13.31446,76.25704
+IND607801AAA,Neyveli_NJVNgr_D (Tamil Nadu),city+state,11.60877,79.4994
+IND731224AAA,Rampurhat_SrifoDPP_D (West Bengal),no_exact_match,,
+IND248001AAA,Dehradun (Uttarakhand),no_exact_match,,
+IND431708AAA,Loha_SivjiCWK_D (Maharashtra),city+state,18.94484,77.11553
+IND285001AAD,Orai_Ajnari_D (Uttar Pradesh),city+state,25.99023,79.45334
+IND341505AAA,Makrana_Mwalibad_D (Rajasthan),no_exact_match,,
+IND535558AAA,Bobbili_ColegRd_D (Andhra Pradesh),city+state,18.57366,83.35925
+IND577116AAA,,missing_city_or_state,,
+IND606003AAA,Virudhchlm_SelamRd_D (Tamil Nadu),no_exact_match,,
+IND742147AAA,Khargram_BoiDPP_D (West Bengal),no_exact_match,,
+IND814133AAB,Godda_Central_D_2 (Jharkhand),city+state,24.827,87.2125
+IND431514AAA,Gangakher_Busstand_D (Maharashtra),no_exact_match,,
+IND341503AAB,Degana_BhukrdPP_D (Rajasthan),no_exact_match,,
+IND535501AAB,Parvathipuram_Central_D_2 (Andhra Pradesh),no_exact_match,,
+IND563131AAB,Bangarapet_KolarRd_D (Karnataka),city+state,12.99116,78.17804
+IND577101AAA,Chikmagalur_DC (Karnataka),no_exact_match,,
+IND606105AAA,Pennadam_EastmnRD_D (Tamil Nadu),no_exact_match,,
+IND742137AAA,Kandi_DohalDPP_D (West Bengal),no_exact_match,,
+IND285205AAB,Konch_Central_D_2 (Uttar Pradesh),city+state,25.99451,79.15127
+IND816109AAA,Sahebganj_BaraLoha_D (Jharkhand),no_exact_match,,
+IND431515AAA,Parli_JirgeNgr_D (Maharashtra),city+state,18.85057,76.53163
+IND341510AAB,Merta_Central_DPP_1 (Rajasthan),city+state,26.64859,74.03414
+IND342301AAA,Phalodi_PalikDPP_D (Rajasthan),city+state,27.13102,72.36826
+IND532440AAA,Palakonda_VadaiDPP_D (Andhra Pradesh),no_exact_match,,
+IND577132AAD,Mudigere_HesglDPP_D (Karnataka),city+state,13.59503,77.45105
+IND606201AAC,Chinnasalem_VkotRoad_D (Tamil Nadu),no_exact_match,,
+IND210431AAA,Rath_Mughlpra_D (Uttar Pradesh),no_exact_match,,
+IND742401AAA,Ghanashyampur_NditaDPP_D (West Bengal),no_exact_match,,
+IND431517AAB,Ambajogai_BnsllNgr_D (Maharashtra),city+state,18.73312,76.38616
+IND328001AAA,Dholpur_GtRoad_D (Rajasthan),no_exact_match,,
+IND635802AAB,Ambur_Central_D_2 (Tamil Nadu),city+state,12.79163,78.71644
+IND508207AAB,Miryalguda_Ragvendr_D (Telangana),no_exact_match,,
+IND571313AAB,Chamarjngr_BrDbleRd_D (Karnataka),no_exact_match,,
+IND480886AAA,Lakhnadon_Central_DPP_1 (Madhya Pradesh),no_exact_match,,
+IND274301AAB,Kaptanganj_Subshngr_D (Uttar Pradesh),no_exact_match,,
+IND335804AAD,Suratgarh_Central_DPP_2 (Rajasthan),city+state,29.3215,73.89979
+IND425406AAA,Shindkheda_KakaCplx_D (Maharashtra),no_exact_match,,
+IND695614AAA,Kilimanoor_Krvnkuzy_D (Kerala),no_exact_match,,
+IND421302AAR,Mumbai_East_I_21 (Maharashtra),city+state,19.07283,72.88261
+IND670643AAA,Kuthuparamba_IdstrlAr_D (Kerala),no_exact_match,,
+IND689101AAA,Tiruvalla_TKRoad_D (Kerala),city+state,9.3816,76.57489
+IND733128AAA,Itahar_NatunDPP_D (West Bengal),city+state,25.45246,88.17334
+IND221706AAA,Ratanpura_MubarDPP_D (Uttar Pradesh),city+state,25.92317,83.7399
+IND561203AAB,Doddablpur_ChikaDPP_D (Karnataka),no_exact_match,,
+IND502110AAA,Medak_Dwaraka_D (Telangana),city+state,18.04531,78.26078
+IND124001AAB,Rohtak (Haryana),not_previously_looked_up,,
+IND136118AAA,Kurukshetra_DC (Haryana),city+state,29.9657,76.837
+IND209721AAB,Chhibramau_Bhainpura_D (Uttar Pradesh),no_exact_match,,
+IND364004AAB,Bhavnagar_ChtrGIDC_IP (Gujarat),city+state,21.76287,72.15331
+IND523226AAA,Chimkurthy_MSRClgRd_D (Andhra Pradesh),no_exact_match,,
+IND854311AAA,Araria_Wardn13_D (Bihar),city+state,25.3605,86.69298
+IND691551AAA,Adoor_Town_D (Kerala),no_exact_match,,
+IND560300AAB,Bangalore_East_I_20 (Karnataka),city+state,12.97194,77.59369
+IND581334AAA,Honnavar_Prbhtngr_D (Karnataka),not_previously_looked_up,,
+IND673592AAA,SultnBthry_Kollgpra_D (Kerala),no_exact_match,,
+IND742223AAA,Jangipur_Central_D_1 (West Bengal),city+state,24.47001,88.07659
+IND147001AAB,Patiala (Punjab),no_exact_match,,
+IND848114AAA,DalsinghSarai_Wardno13_D (Bihar),no_exact_match,,
+IND124103AAA,Jhajjar_DC (Haryana),city+state,28.6063,76.6565
+IND207302AAA,Jalesar_ChngiDPP_D (Uttar Pradesh),city+state,27.47315,78.3031
+IND263002AAA,Nainital_Sookhtal_D (Uttarakhand),city+state,29.39743,79.44686
+IND333042AAA,Nawalgarh_NavldiDPP_D (Rajasthan),city+state,27.85161,75.27384
+IND384170AAA,Unjha_DC (Gujarat),city+state,23.80366,72.39101
+IND411014AAA,PNQ Vadgaon Sheri DPC (Maharashtra),no_exact_match,,
+IND415409AAB,Islampur_Shantanu_D (Maharashtra),no_exact_match,,
+IND431122AAA,Beed_JalnaRd_D (Maharashtra),city+state,18.98921,75.75634
+IND465669AAB,Narsinghgarh_Central_D_1 (Madhya Pradesh),city+state,23.70758,77.09319
+IND506132AAA,Khanpur_Nrsampt_D (Telangana),no_exact_match,,
+IND509358AAA,Kadthal_GndhiDPP_D (Telangana),no_exact_match,,
+IND515401AAB,Gooty_StatonRd_D (Andhra Pradesh),city+state,15.11836,77.63776
+IND518501AAA,Nandyal_SrnvsNgr_D (Andhra Pradesh),no_exact_match,,
+IND521201AAA,Nuzvid_Ward17_D (Andhra Pradesh),no_exact_match,,
+IND532421AAA,Narasnpeta_HudcoDPP_D (Andhra Pradesh),no_exact_match,,
+IND574211AAA,Bantwal_Trmltmpl_D (Karnataka),no_exact_match,,
+IND591123AAC,Ramdurg_GndhiNGR_D (Karnataka),no_exact_match,,
+IND680012AAA,Arimbur_Veluthur_D (Kerala),no_exact_match,,
+IND713130AAA,Katwa_BSarani_D (West Bengal),no_exact_match,,
+IND713148AAA,Panagarh_Central_D_1 (West Bengal),no_exact_match,,
+IND742303AAB,Domkal_Central_D_2 (West Bengal),city+state,24.12065,88.54393
+IND416510AAA,Sawantwadi_LaxmiNgr_D (Maharashtra),no_exact_match,,
+IND401104AAA,Mumbai_MiraRd_IP (Maharashtra),city+state,19.07283,72.88261
+IND444005AAB,Akola_Gaurkshn_I (Maharashtra),city+state,20.70957,76.9981
+IND509124AAA,JoguGadwal_ColctrOf_D (Telangana),no_exact_match,,
+IND848210AAA,Rusera_Wardno4_D (Bihar),city+state,25.75355,86.02597
+IND122001AAJ,Mahbubabad_Yellanda_D (Telangana),no_exact_match,,
+IND127021AAA,Bhiwani_DC (Haryana),no_exact_match,,
+IND263645AAA,Ranikhet_Subhash_D (Uttarakhand),no_exact_match,,
+IND327001AAB,Banswara_KhandDPP_D (Rajasthan),no_exact_match,,
+IND333031AAA,Pilani (Rajasthan),no_exact_match,,
+IND384265AAB,Patan_Central_D_2 (Gujarat),no_exact_match,,
+IND415124AAA,Karad_Mundhe_D (Maharashtra),city+state,17.28937,74.18183
+IND431127AAA,Georai_Bazarrd_D (Maharashtra),no_exact_match,,
+IND465683AAA,Pachore_Shop3DPP_D (Madhya Pradesh),no_exact_match,,
+IND515801AAA,Guntakal_Verpatem_D (Andhra Pradesh),city+state,15.17112,77.36244
+IND518124AAA,Bngnpalle_Enkndla_D (Andhra Pradesh),no_exact_match,,
+IND521105AAA,HanumanJNC_VijywdRD_D (Andhra Pradesh),not_previously_looked_up,,
+IND532201AAA,Tekkali_AmvdiDPP_D (Andhra Pradesh),city+state,18.6057,84.23546
+IND574202AAA,Puttur_Darbe_DC (Karnataka),no_exact_match,,
+IND587103AAB,Bagalkot_Sector4_D (Karnataka),city+state,16.18673,75.69614
+IND679303AAA,Sankaramangalam_Central_D_1 (Kerala),city+state,8.70638,76.79609
+IND713128AAB,Guskhara_Itachnda_D (West Bengal),city+state,23.49276,87.73484
+IND741123AAB,Chapra_NagarDPP_D (West Bengal),city+state,22.88538,88.61764
+IND741165AAB,Nazirpur_Central_D_1 (West Bengal),no_exact_match,,
+IND843301AAA,Sitamari_Durma_D (Bihar),no_exact_match,,
+IND852201AAA,Saharsa_Gangjala_D (Bihar),city+state,25.87498,86.59611
+IND184121AAA,Samba_Wardno13_D (Jammu & Kashmir),no_exact_match,,
+IND127201AAA,Loharu_BstndDPP_D (Haryana),no_exact_match,,
+IND263601AAA,Almora_SuzkiSrv_D (Uttarakhand),city+state,29.59713,79.65911
+IND331023AAA,Rajgarh_SadulDPP_D (Rajasthan),no_exact_match,,
+IND385320AAA,Bhabhar_TirupDPP_D (Gujarat),no_exact_match,,
+IND414502AAA,Shevgaon_VidyaNgr_D (Maharashtra),city+state,19.35333,75.21999
+IND415605AAA,Chiplun_LxmiNiws_D (Maharashtra),no_exact_match,,
+IND465001AAA,Shajapur_MhpraRD_D (Madhya Pradesh),no_exact_match,,
+IND507123AAA,Yellandu_Sudimala_D (Telangana),city+state,17.59064,80.32146
+IND508248AAB,Devarakonda_DindiRD_D (Telangana),no_exact_match,,
+IND515865AAB,Rayadurgam_RailGate_D (Andhra Pradesh),no_exact_match,,
+IND518206AAA,Betamcherla_CmtNgRod_D (Andhra Pradesh),city+state,15.45144,78.14797
+IND532222AAA,Palasa_Central_DPP_1 (Andhra Pradesh),no_exact_match,,
+IND574239AAA,Sullia_Srirampt_D (Karnataka),city+state,12.82589,75.02888
+IND582209AAA,Rona_GadagRD_D (Karnataka),no_exact_match,,
+IND679531AAA,Shoranur_KdrShrRd_D (Kerala),no_exact_match,,
+IND741126AAB,Nakashipara_MaxDPP_D (West Bengal),no_exact_match,,
+IND742121AAB,Nowda_ArhamDPP_D (West Bengal),no_exact_match,,
+IND843320AAA,Pupri_SngihiRD_D (Bihar),city+state,26.47079,85.70311
+IND852113AAA,Madhepura_Krishnpr_D (Bihar),city+state,25.92127,86.79271
+IND563130AAA,Malur_NharuExt_D (Karnataka),city+state,13.15464,75.74374
+IND385340AAB,Radhanpur_Santalpr_D (Gujarat),no_exact_match,,
+IND415709AAA,Khed_Mahad_D (Maharashtra),city+state,17.71888,73.39693
+IND582101AAB,Gadag_Cdosclrd_D (Karnataka),city+state,15.42977,75.62971
+IND124141AAA,ChrkhiDdri_PuranDPP_D (Haryana),no_exact_match,,
+IND262501AAA,Pithorgarh_Kumud_D (Uttarakhand),no_exact_match,,
+IND331304AAA,Taranagar_RajRdDPP_D (Rajasthan),not_previously_looked_up,,
+IND431107AAB,Paithan_SantaNGR_D (Maharashtra),city+state,19.47506,75.38558
+IND506314AAA,Rayaparthi_Perkadrd_D (Telangana),no_exact_match,,
+IND508377AAB,Haliya_PeroorRD_D (Telangana),no_exact_match,,
+IND515761AAA,Kalyandurg_Shankrpa_D (Andhra Pradesh),city+state,14.54519,77.10552
+IND518222AAA,Dhone_RmNyrDPP_D (Andhra Pradesh),city+state,15.3952,77.8715
+IND521333AAA,Kaikaluru_Atapaka_D (Andhra Pradesh),no_exact_match,,
+IND574221AAA,Kadaba_AnugrDPP_D (Karnataka),city+state,13.24103,76.86302
+IND680587AAA,Pazhayannur_AlathurRD_D (Kerala),no_exact_match,,
+IND761200AAA,Paralakhemundi_Ward14_D (Orissa),city+state,18.77619,84.09504
+IND847223AAA,Benipatti_WardNo1_D (Bihar),no_exact_match,,
+IND852139AAB,Triveninganj_Central_D_1 (Bihar),no_exact_match,,
+IND721102AAA,Midnapore_Talkui_D (West Bengal),no_exact_match,,
+IND731301AAA,Nanoor_Central_DPP_1 (West Bengal),no_exact_match,,
+IND741156AAA,Plassey_BtaiRoad_D (West Bengal),no_exact_match,,
+IND742121AAA,Nowda_AmtlaDPP_D (West Bengal),no_exact_match,,
+IND583119AAA,Sandur_WrdN1DPP_D (Karnataka),no_exact_match,,
+IND471001AAA,Chhatarpur_Busstand_D (Madhya Pradesh),city+state,24.9177,79.58871
+IND472001AAA,Tikamgarh_MndiRoad_D (Madhya Pradesh),no_exact_match,,
+IND400072AAD,Mumbai_Chndivli_PC (Maharashtra),city+state,19.07283,72.88261
+IND571440AAA,Kollegala_NarsipuraRd_D (Karnataka),no_exact_match,,
+IND480001AAA,Chhindwara_NagpurRd_D (Madhya Pradesh),no_exact_match,,
+IND201301AAF,Noida_Sec 02_DPC (Uttar Pradesh),city+state,28.58,77.33
+IND487001AAB,Narsinghpur_KndliDPP_D (Madhya Pradesh),city+state,24.67658,81.97341
+IND335703AAA,Srivijaynagar_BhwanDPP_D (Rajasthan),no_exact_match,,
+IND277201AAA,Bariya_BgnprDPP_D (Uttar Pradesh),city+state,29.66457,78.42501
+IND425409AAA,Shahada_Nandrbar_D (Maharashtra),no_exact_match,,
+IND274304AAB,Padrauna_BawliDPPP_D (Uttar Pradesh),city+state,26.90403,83.98087
+IND691574AAA,Kalluvathukal_Pariplly_D (Kerala),no_exact_match,,
+IND732202AAA,Manikchak_Enayetpr_D (West Bengal),city+state,25.07749,87.89991
+IND733134AAA,Raiganj_SubrtDPP_D (West Bengal),no_exact_match,,
+IND673506AAA,Kallachi_ZamQuatr_D (Kerala),no_exact_match,,
+IND689645AAA,Pthnmthitt_Klskhrpt_D (Kerala),no_exact_match,,
+IND503122AAA,Yellareddy_JKRoad_D (Telangana),no_exact_match,,
+IND562101AAA,Chikblapur_ShntiSgr_D (Karnataka),no_exact_match,,
+IND758001AAA,Kendujhar_Sirjudin_D (Orissa),not_previously_looked_up,,
+IND126102AAA,Jind_DC (Haryana),no_exact_match,,
+IND136128AAA,Pehowa_WdN14DPP_D (Haryana),city+state,29.97897,76.58249
+IND209625AAA,Farrukhbad_Pnchlght_D (Uttar Pradesh),no_exact_match,,
+IND365560AAA,Amreli_MrktYrd_DC (Gujarat),city+state,21.59983,71.21169
+IND523316AAB,Markapur_VidyaNgr_D (Andhra Pradesh),no_exact_match,,
+IND246174AAA,SrinagarUK_Srikot_D (Uttarakhand),no_exact_match,,
+IND125047AAB,Hisar_AgrohDPP_D (Haryana),city+state,29.15394,75.72294
+IND389001AAA,Godhra_DC (Gujarat),city+state,22.77547,73.61488
+IND712410AAC,Tarkeshwar_Naraynpr_D (West Bengal),no_exact_match,,
+IND764001AAC,Jeypore_Kelasahi_D (Orissa),city+state,18.8563,82.5716
+IND854105AAB,Katihar_Central_D_2 (Bihar),city+state,25.53852,87.57044
+IND122001AAA,GGN_DPC (Haryana),no_exact_match,,
+IND221313AAA,Varanasi_Central_H_4 (Uttar Pradesh),city+state,25.31668,83.01041
+IND581320AAA,Bhatkal_KmkshBul_D (Karnataka),not_previously_looked_up,,
+IND742225AAA,Ragunthgnj_GopalDPP_D (West Bengal),no_exact_match,,
+IND207001AAA,Etah_CivlLine_D (Uttar Pradesh),city+state,27.55879,78.65692
+IND140301AAA,Chandigarh_Kharar_DC (Chandigarh),city+state,30.73629,76.7884
+IND151302AAA,TalwandiSabo_Wardno3_D (Punjab),no_exact_match,,
+IND211011AAA,Allahabad_Central_D_5 (Uttar Pradesh),no_exact_match,,
+IND212601AAA,Fatehpur_Kotwali_D (Uttar Pradesh),city+state,25.92774,80.81266
+IND244301AAA,Sambhal_Khwssrai_D (Uttar Pradesh),city+state,28.58498,78.56959
+IND244715AAA,Ramnagar_BhwniGnj_D (Uttarakhand),city+state,29.3925,79.1283
+IND246761AAA,Dhampur_NaginaRD_D (Uttar Pradesh),no_exact_match,,
+IND250611AAA,Baraut_SrnprHwy_D (Uttar Pradesh),city+state,29.10199,77.26334
+IND312601AAA,Nimbahera_MsjidDPP_D (Rajasthan),no_exact_match,,
+IND370201AAA,Gandhidham_Sector1A_IP (Gujarat),no_exact_match,,
+IND380005AAA,Amd_Chandkheda_Dc (Gujarat),no_exact_match,,
+IND383001AAA,Himmatnagar_DC (Gujarat),no_exact_match,,
+IND384355AAB,Vadnagar_BsstdDPP_D (Gujarat),city+state,23.78593,72.63893
+IND473226AAA,Guna_Raghogrh_D (Madhya Pradesh),city+state,24.64691,77.3113
+IND508116AAA,Bhuvanagiri_HBColny_D (Telangana),no_exact_match,,
+IND509001AAA,Mahabubnagar_DC (Telangana),no_exact_match,,
+IND515201AAA,Hindupur_Parigi_D (Andhra Pradesh),city+state,13.82807,77.49143
+IND518401AAA,Nandikotkr_UmarDPP_D (Andhra Pradesh),no_exact_match,,
+IND521301AAA,Gudivada_GvrCompx_D (Andhra Pradesh),no_exact_match,,
+IND523230AAA,Kanigiri_Tiglgndi_D (Andhra Pradesh),city+state,15.40555,79.50694
+IND530043AAA,Visakhapatnam_VislkNgr_DC (Andhra Pradesh),city+state,17.68009,83.20161
+IND533308AAB,Mandapeta_Mainrd_D (Andhra Pradesh),city+state,16.86254,81.92921
+IND581115AAC,Ranebennur_SriRmNGR_D (Karnataka),city+state,14.62239,75.62951
+IND581303AAA,Karwar_Central_D_1 (Karnataka),city+state,14.81361,74.12972
+IND581402AAA,Sirsi_Vidygiri_D (Karnataka),city+state,14.62072,74.83554
+IND632301AAA,Arani_KrthiKyn_D (Tamil Nadu),city+state,13.33465,80.08484
+IND68004AAA,Thrissur_Poothole_D (Kerala),city+state,10.51667,76.21667
+IND723131AAA,Manbazar_Central_DPP_1 (West Bengal),no_exact_match,,
+IND788151AAA,Hailakandi_kalibari_D (Assam),no_exact_match,,
+IND802101AAA,Buxar_Sarswati_D (Bihar),city+state,25.57548,83.98043
+IND815351AAA,Jamtara_D (Jharkhand),no_exact_match,,
+IND821109AAA,Mohania_Bhabua_D (Bihar),city+state,25.16923,83.61925
+IND829122AAA,Ramgarh_HotelPrk_D (Jharkhand),no_exact_match,,
+IND843105AAB,Dholi_WardNo4_D (Bihar),city+state,24.53553,84.68188
+IND846004AAA,Darbhanga (Bihar),no_exact_match,,
+IND207247AAB,Aliganj_KaimgnjRD_D (Uttar Pradesh),city+state,27.67496,81.60261
+IND507303AAA,Sathupally_VidyaNGR_D (Telangana),no_exact_match,,
+IND173025AAA,PaontSahib_Gurudwar_D (Himachal Pradesh),no_exact_match,,
+IND175015AAA,JognderNgr_Dhelu_D (Himachal Pradesh),no_exact_match,,
+IND177033AAA,Nadaun_Ward6_D (Himachal Pradesh),no_exact_match,,
+IND262122AAB,Puranpur_MdothdRD_D (Uttar Pradesh),city+state,28.79516,77.38832
+IND303002AAA,Achrol_BgwriDPP_D (Rajasthan),no_exact_match,,
+IND505122AAA,Jammikunta_ConduDPP_D (Telangana),city+state,18.29211,79.47204
+IND560043AAC,HBR Layout PC (Karnataka),no_exact_match,,
+IND574216AAA,Dhrmsthala_Beltngdi_D (Karnataka),no_exact_match,,
+IND110043AAA,Delhi_Nangli_IP (Delhi),no_exact_match,,
+IND184104AAA,Kathua_BOB_D (Jammu & Kashmir),no_exact_match,,
+IND251001AAA,Muzaffrngr_MhmodNgr_D (Uttar Pradesh),no_exact_match,,
+IND396191AAC,Vapi_IndEstat_I (Gujarat),city+state,20.37175,72.90493
+IND533262AAA,Draksharamam_Anaipeta_D (Andhra Pradesh),no_exact_match,,
+IND151505AAA,Mansa_GreenVly_D (Punjab),no_exact_match,,
+IND210001AAA,Banda_GayatriN_D (Uttar Pradesh),city+state,28.24239,80.09786
+IND212501AAA,Soraon_BypassRD_D (Uttar Pradesh),city+state,25.60842,81.84527
+IND244412AAA,Chandausi_Ganesh_D (Uttar Pradesh),no_exact_match,,
+IND244501AAA,Kanth_Dayanand_D (Uttar Pradesh),no_exact_match,,
+IND244713AAA,Kashipur_Vaishali_D (Uttarakhand),city+state,29.21399,78.95693
+IND247776AAA,Shamli_KarnalRd_D (Uttar Pradesh),city+state,29.4497,77.30959
+IND363330AAB,Halvad_CrossRD_D (Gujarat),city+state,23.01516,71.18029
+IND382421AAA,Gandhinagar_DC (Gujarat),city+state,23.21667,72.68333
+IND383315AAC,Modasa_Central_D_1 (Gujarat),no_exact_match,,
+IND385001AAA,Palanpur_DC (Gujarat),no_exact_match,,
+IND458664AAA,Neemuch_KarjuDPP_D (Madhya Pradesh),no_exact_match,,
+IND500010AAA,Hyderabad_Alwal_I (Telangana),city+state,17.38405,78.45636
+IND501141AAA,Tandur_SnthiNGR_D (Telangana),city+state,17.24849,77.57698
+IND508277AAB,Mothkur_Mainroad_D (Telangana),no_exact_match,,
+IND509203AAA,Bijnapally_nagar_D (Telangana),no_exact_match,,
+IND518422AAB,Atmakur_IndraNgr_D (Andhra Pradesh),no_exact_match,,
+IND521001AAA,Machilipatnam_DC (Andhra Pradesh),city+state,16.18747,81.13888
+IND523105AAA,Kandukur_LICOffce_D (Andhra Pradesh),no_exact_match,,
+IND531163AAA,Bheemunipatnam_SaiTempl_D (Andhra Pradesh),no_exact_match,,
+IND533003AAA,Kakinada_DC (Andhra Pradesh),no_exact_match,,
+IND560048AAB,Bengaluru_Hoodi_IP (Karnataka),city+state,12.97194,77.59369
+IND577401AAA,Sagara_Vardhard_D (Karnataka),no_exact_match,,
+IND581110AAE,Haveri_GuttalRD_D (Karnataka),no_exact_match,,
+IND581400AAB,Mallapur_ShtDRDPP_D (Karnataka),city+state,13.10318,77.3847
+IND590016AAA,Belgaum_Dc (Karnataka),no_exact_match,,
+IND606803AAA,Polur_StationRD_D (Tamil Nadu),no_exact_match,,
+IND722140AAA,Khatra_KoralDPP_D (West Bengal),no_exact_match,,
+IND788713AAA,Karimganj_Alngjuri_D (Assam),no_exact_match,,
+IND802119AAA,Dumraon_Nishangr_D (Bihar),city+state,25.55265,84.15149
+IND802213AAB,Dinara_Wardno7_D (Bihar),no_exact_match,,
+IND814101AAB,Dumka_Dudhani_D (Jharkhand),city+state,24.26778,87.24855
+IND825301AAA,Hazaribag_BodomBzr_DC (Jharkhand),no_exact_match,,
+IND827013AAA,Bokaro_KSClny_DC (Jharkhand),city+state,23.66934,86.15161
+IND845401AAA,Motihari_RajaBzr_D (Bihar),no_exact_match,,
+IND845438AAA,Bettiah_BypassRd_D (Bihar),city+state,26.80229,84.50311
+IND847103AAA,Benipur_Javahar_D (Bihar),city+state,26.05509,86.14557
+IND848101AAA,Samastipur_Haripur_D (Bihar),no_exact_match,,
+IND141115AAA,Machhiwara_MnBzrDPP_D (Punjab),no_exact_match,,
+IND247554AAA,Deoband_Ramvlg_D (Uttar Pradesh),city+state,29.69505,77.67964
+IND312403AAA,BariSadri_BhmprDPP_D (Rajasthan),no_exact_match,,
+IND363310AAB,Dhrangadhra_NvygRDPP_D (Gujarat),no_exact_match,,
+IND383255AAB,Khedbrahma_Patelfli_D (Gujarat),city+state,24.0299,73.04632
+IND385535AAA,Deesa_HawaiPlr_DC (Gujarat),city+state,24.25612,72.17928
+IND581325AAA,Dandeli_RKComplx_D (Karnataka),city+state,15.26667,74.61667
+IND591302AAB,Khanapur_StatinRD_D (Karnataka),no_exact_match,,
+IND816107AAA,Pakur_Hatpada_D (Jharkhand),city+state,24.63925,87.84239
+IND151506AAA,Jhunir_BhaRDDPP_D (Punjab),no_exact_match,,
+IND212402AAA,Phulpur_Shekhpur_D (Uttar Pradesh),city+state,25.54895,82.0895
+IND244601AAB,Thakurdwara_Fathuluh_D (Uttar Pradesh),city+state,29.19203,78.86145
+IND251309AAB,Budhana_Busstand_D (Uttar Pradesh),no_exact_match,,
+IND263401AAA,Kashipur_BajprDPP_D (Uttarakhand),city+state,29.21399,78.95693
+IND501101AAB,Vikarabad_Central_DPP_2 (Telangana),no_exact_match,,
+IND508223AAA,Thirumalagiri_Xroad_D (Telangana),no_exact_match,,
+IND509216AAC,Shadnagar_Central_D_1 (Telangana),city+state,17.06473,78.21279
+IND509301AAA,Jadcherla_Badeplly_D (Telangana),city+state,16.77381,78.13666
+IND518102AAA,Srisailam_Sishumdr_D (Andhra Pradesh),no_exact_match,,
+IND524201AAA,Kavali_Kacheri_D (Andhra Pradesh),no_exact_match,,
+IND535001AAA,Vizianagaram_NcsRd_DC (Andhra Pradesh),city+state,18.11692,83.41148
+IND577201AAA,Shimoga_DC (Karnataka),no_exact_match,,
+IND606801AAB,Chetpet_Blmrgnst_D (Tamil Nadu),no_exact_match,,
+IND788806AAA,Badarpur_Konapara_D (Assam),city+state,24.86852,92.59606
+IND802158AAB,Jagdishpur_Wardno13_D (Bihar),city+state,24.94069,83.62734
+IND802212AAA,Bikramgang_Dehrird_D (Bihar),no_exact_match,,
+IND825409AAA,JhumriTlya_RadhaCpx_D (Jharkhand),no_exact_match,,
+IND829121AAA,Peterbar_GagiDPP_D (Jharkhand),no_exact_match,,
+IND844505AAB,HazratJandaha_HajiprRD_D (Bihar),no_exact_match,,
+IND845305AAA,Raxaul_KairiyaT_D (Bihar),city+state,26.97982,84.85065
+IND845455AAB,Narktiganj_Central_DPP_2 (Bihar),no_exact_match,,
+IND847404AAB,Jhanjharpur_Nagar_D (Bihar),no_exact_match,,
+IND210427AAA,Mahoba_Mlkpura_D (Uttar Pradesh),city+state,25.2905,79.87533
+IND722151AAA,Simlapal_Central_D_1 (West Bengal),no_exact_match,,
+IND416602AAC,Kankavali_NrdawDPP_D (Maharashtra),no_exact_match,,
+IND586101AAA,Bijapur_KirtiNgr_D (Karnataka),city+state,16.82442,75.71537
+IND586101AAB,Bijapur_Central_D_2 (Karnataka),city+state,16.82442,75.71537
+IND110044AAB,Del_Okhla_PC (Delhi),no_exact_match,,
+IND508252AAB,Choutuppal_Nagaram_D (Telangana),no_exact_match,,
+IND486771AAA,Churhat_Central_DPP_1 (Madhya Pradesh),city+state,24.42743,81.66948
+IND486661AAA,Sidhi_Padra_D (Madhya Pradesh),city+state,24.4038,81.87954
+IND480661AAA,Seoni_Kidwai_D (Madhya Pradesh),city+state,22.08503,79.55037
+IND571430AAA,Malavalli_SulthnRd_D (Karnataka),city+state,12.38556,77.06045
+IND277211AAA,Sahatwar_PnchmDPP_D (Uttar Pradesh),no_exact_match,,
+IND691305AAA,Punalur_PostofJN_D (Kerala),no_exact_match,,
+IND335701AAA,Anupgarh_PrmNrDPP_D (Rajasthan),no_exact_match,,
+IND425412AAA,Nandurbar_DhuleRd_D (Maharashtra),city+state,21.36671,74.24051
+IND733129AAB,Kaliyaganj_Central_DPP_1 (West Bengal),no_exact_match,,
+IND487551AAA,Gadarwara_MPward_D (Madhya Pradesh),no_exact_match,,
+IND483501AAA,Katni_Bargawan_DC (Madhya Pradesh),city+state,23.8395,80.40539
+IND673104AAA,Vadakara_Mandodi_D (Kerala),no_exact_match,,
+IND503187AAA,Banswada_Menagrdn_D (Telangana),no_exact_match,,
+IND321001AAA,Bharatpur_DC (Rajasthan),city+state,27.21731,77.49009
+IND335001AAA,Ganga Nagar_DC (Rajasthan),no_exact_match,,
+IND690548AAA,Haripad_Kumrpurm_D (Kerala),no_exact_match,,
+IND695101AAB,Attingal_Central_D_2 (Kerala),city+state,8.69609,76.81507
+IND732204AAB,Paranpur_Nijgan_D (West Bengal),no_exact_match,,
+IND245304AAA,Pilkhuwa_HapurRD_D (Uttar Pradesh),city+state,28.71271,77.656
+IND321606AAA,Kherli_GodamDPP_D (Rajasthan),city+state,27.27359,76.98613
+IND272001AAA,Basti_GndhiNgr_D (Uttar Pradesh),city+state,26.78817,82.71617
+IND561207AAB,Bagepalli_TBCross_D (Karnataka),no_exact_match,,
+IND126116AAA,,missing_city_or_state,,
+IND136027AAA,Kaithal_DC (Haryana),city+state,29.80153,76.39959
+IND241124AAB,Shahabad_KDRoad_D (Uttar Pradesh),no_exact_match,,
+IND365560AAB,Amreli_Rajula_DC (Gujarat),city+state,21.59983,71.21169
+IND522647AAA,Vinukonda_Kothapet_D (Andhra Pradesh),city+state,16.0531,79.73964
+IND125051AAA,Ratia_SchdvDPP_D (Haryana),city+state,29.69029,75.57688
+IND246444AAB,Karnaprayag_Umalodge_D (Uttarakhand),no_exact_match,,
+IND321001AAB,Bharatpur_NraynDPP_D (Rajasthan),city+state,27.21731,77.49009
+IND389151AAA,Dahod_DC (Gujarat),no_exact_match,,
+IND712406AAA,Khanakul_Ramnagar_D (West Bengal),no_exact_match,,
+IND764059AAA,Nabarangpr_PhdofDPP_D (Orissa),no_exact_match,,
+IND854334AAA,Raniganj_Central_DPP_1 (Bihar),no_exact_match,,
+IND110024AAA,Delhi_Lajpat_IP (Delhi),no_exact_match,,
+IND122001AAD,Gurgaon_Kadipur (Haryana),city+state,28.4601,77.02635
+IND147201AAA,Nabha_Sahni_D (Punjab),no_exact_match,,
+IND148101AAA,Barnala_DC (Punjab),no_exact_match,,
+IND173212AAA,Solan_MohanPrk_D (Himachal Pradesh),city+state,30.90908,77.10869
+IND174307AAA,Bangana_Bhaleti_D (Himachal Pradesh),city+state,31.61378,76.35758
+IND209206AAB,Ghatampur_StatinRD_D (Uttar Pradesh),city+state,26.58213,82.24777
+IND232101AAB,MughalSarai_Central_D_2 (Uttar Pradesh),no_exact_match,,
+IND333001AAA,Jhunjhunu_DC (Rajasthan),not_previously_looked_up,,
+IND390020AAA,Vadodara (Gujarat),no_exact_match,,
+IND413531AAA,Latur_Srnwsngr_D (Maharashtra),not_previously_looked_up,,
+IND415003AAA,Satara_DC (Maharashtra),city+state,17.68589,73.99333
+IND476111AAA,Ambah_MrenTirh_D (Madhya Pradesh),no_exact_match,,
+IND576201AAA,Kundapura_DC (Karnataka),not_previously_looked_up,,
+IND600016AAC,Chennai_Perungudi_DPC (Tamil Nadu),city+state,13.08784,80.27847
+IND600056AAA,Chennai_Poonamallee (Tamil Nadu),city+state,13.08784,80.27847
+IND680104AAA,Guruvayoor_ManhrBld_D (Kerala),no_exact_match,,
+IND784001AAA,Tezpur_Mhbhirab_D (Assam),not_previously_looked_up,,
+IND784125AAA,Mangaldoi_LNBRoad_D (Assam),not_previously_looked_up,,
+IND742148AAA,Lalgola_KrsprDPP_D (West Bengal),no_exact_match,,
+IND124507AAA,Bahadurgarh_DC (Haryana),city+state,28.69287,76.93555
+IND204215AAA,SikandraRao_JydevNGR_D (Uttar Pradesh),no_exact_match,,
+IND400102AAC,Mumbai_Jogshwri_I (Maharashtra),city+state,19.07283,72.88261
+IND500050AAA,Patancheru_Ameenpur_I (Telangana),city+state,17.53334,78.2645
+IND851127AAA,Manjhaul_Purbari_D (Bihar),city+state,25.55934,86.12668
+IND457001AAA,Ratlam_Khjurwli_DC (Madhya Pradesh),city+state,23.38206,75.02484
+IND507117AAB,Manuguru_AskNagar_D (Telangana),city+state,17.93023,80.82671
+IND000000ABA,Cochin_Chtrpuza_D (Kerala),no_exact_match,,
+IND123401AAB,Rewari_YuktiDPP_D (Haryana),no_exact_match,,
+IND124112AAA,Meham_GModDPP_D (Haryana),no_exact_match,,
+IND135001AAA,YamunaNagar_DC (Haryana),city+state,30.12796,77.28371
+IND140001AAA,RoopNagar_ChotiHvl_DC (Punjab),no_exact_match,,
+IND142001AAB,Moga_DPC (Punjab),city+state,30.81383,75.16878
+IND176048AAA,Jahu_Sulgwan_D (Himachal Pradesh),no_exact_match,,
+IND176110AAB,Sujanpur_SainkSCL_D (Himachal Pradesh),no_exact_match,,
+IND201204AAA,Modinagar_SikriKla_DC (Uttar Pradesh),no_exact_match,,
+IND206122AAA,Auraiya_AryaNagr_D (Uttar Pradesh),city+state,26.46517,79.50918
+IND262001AAA,Pilibhit_ViksClny_D (Uttar Pradesh),no_exact_match,,
+IND283122AAB,Kirauli_AchneraRD_D (Uttar Pradesh),city+state,27.10885,78.90186
+IND303106AAA,Paota_SmClyDPP_D (Rajasthan),no_exact_match,,
+IND342601AAA,Piparcity_BsstdDPP_D (Rajasthan),no_exact_match,,
+IND387001AAA,Nadiad_DC (Gujarat),no_exact_match,,
+IND400011AAA,LowerParel_CP (Maharashtra),no_exact_match,,
+IND410505AAB,Rajgurunagar_Chakan_D (Maharashtra),no_exact_match,,
+IND413501AAA,Osmanabad_Kakdepot_D (Maharashtra),no_exact_match,,
+IND415301AAB,Atapadi_Vidyangr_D (Maharashtra),no_exact_match,,
+IND415612AAA,Ratnagiri_MjgaonRd_D (Maharashtra),city+state,16.99154,73.31022
+IND421401AAC,Murbad_SnkunDPP_D (Maharashtra),no_exact_match,,
+IND423109AAA,Shirdi_SaiBansi_D (Maharashtra),city+state,19.76616,74.47738
+IND431203AAA,Jalna_BhgyaNgr_D (Maharashtra),no_exact_match,,
+IND458001AAB,Mandsaur_YashDPP_D (Madhya Pradesh),city+state,24.07184,75.06986
+IND466001AAA,Sehore_Mangalam_D (Madhya Pradesh),city+state,23.2,77.08333
+IND473331AAA,Ashokngr_Bypassrd_D (Madhya Pradesh),no_exact_match,,
+IND505467AAA,Husnabad_Greenmkt_D (Telangana),no_exact_match,,
+IND515301AAA,Madakasira_RTCStand_D (Andhra Pradesh),no_exact_match,,
+IND531001AAA,Anakapalle_Kothuru_D (Andhra Pradesh),city+state,17.69134,83.00395
+IND574104AAA,Karkala_MarketRd_D (Karnataka),no_exact_match,,
+IND583227AAA,Gangavathi_PhrmPlza_D (Karnataka),no_exact_match,,
+IND602024AAA,Chennai_Vepmpttu_DC (Tamil Nadu),city+state,13.08784,80.27847
+IND603001AAA,Chennai_Chnglptu_DC (Tamil Nadu),city+state,13.08784,80.27847
+IND604303AAA,Marakkanam_MJRDPP_D (Tamil Nadu),not_previously_looked_up,,
+IND614715AAA,Thirthurpondi_Madaprum_D (Tamil Nadu),no_exact_match,,
+IND631501AAA,Kanchipuram_DC (Tamil Nadu),city+state,12.83515,79.70006
+IND632402AAA,Ranipet_MBTRd_DC (Tamil Nadu),city+state,12.92471,79.33331
+IND670645AAB,Mananthavady_Central_D_1 (Kerala),city+state,11.8032,76.00451
+IND678683AAA,Vadakkencherry_Robinson_D (Kerala),no_exact_match,,
+IND680307AAA,Chalakudy_SurbhiTh_D (Kerala),no_exact_match,,
+IND700144AAA,Baruipur_Bnsibtla_D (West Bengal),city+state,22.36544,88.4325
+IND713303AAA,Asansol_DC (West Bengal),city+state,23.68333,86.98333
+IND743235AAA,Bongaon_SukntDPP_D (West Bengal),no_exact_match,,
+IND743513AAA,Fatepur_NH117_D (West Bengal),no_exact_match,,
+IND847212AAA,Madhubani_Bardivan_D (Bihar),city+state,26.35367,86.07169
+IND591307AAC,Gokak_Bsavangr_D (Karnataka),city+state,16.16901,74.82393
+IND132103AAB,Panipat_PC (Haryana),city+state,29.38747,76.96825
+IND140401AAA,Rajpura_DC (Punjab),city+state,30.47856,76.59284
+IND140501AAA,Lalru_OnkarDPP_D (Punjab),no_exact_match,,
+IND141109AAA,Raikot_DC (Punjab),no_exact_match,,
+IND144040AAA,Nakodar_ChowkDPP_D (Punjab),city+state,31.12586,75.47508
+IND144514AAA,Nawanshahr_DC (Punjab),city+state,31.1245,76.11613
+IND174103AAA,Baddi_ByePass_D (Himachal Pradesh),city+state,30.95783,76.79136
+IND181152AAB,Jammu_Central_I_1 (Jammu & Kashmir),no_exact_match,,
+IND243503AAB,Faridpur_ShjnprRD_D (Uttar Pradesh),city+state,25.66713,83.40341
+IND248122AAB,Mussoorie_BrlwgDPP_D (Uttarakhand),city+state,30.45498,78.07068
+IND388620AAB,Khambhat_MotvdDPP_D (Gujarat),no_exact_match,,
+IND501401AAC,Medchal_MROoffce_D (Telangana),city+state,17.62972,78.48139
+IND521185AAA,Nandigama_Chndrlpd_D (Andhra Pradesh),no_exact_match,,
+IND531036AAA,Chodavaram_BaljiDPP_D (Andhra Pradesh),not_previously_looked_up,,
+IND562114AAA,Hoskote_DC (Karnataka),city+state,13.0707,77.79814
+IND562117AAA,Kanakapura_VaniThtr_D (Karnataka),city+state,12.54654,77.42005
+IND600032AAB,Chennai_Hub (Tamil Nadu),city+state,13.08784,80.27847
+IND635001AAA,Krishnagiri_BnglorRd_D (Tamil Nadu),not_previously_looked_up,,
+IND781124AAA,Chhaygaon_GwhRDDPP_D (Assam),city+state,26.04993,91.39686
+IND784176AAA,Bishwanath_ChrliDPP_D (Assam),no_exact_match,,
+IND811399AAA,Noida_Sector02_C (Uttar Pradesh),city+state,28.58,77.33
+IND824101AAA,AurngbadBR_Mahindra_D (Bihar),no_exact_match,,
+IND852111AAA,Simrahi_Bazar_D (Bihar),no_exact_match,,
+IND410206AAA,Jasai_JNPT_D (Maharashtra),city+state,18.93188,73.01889
+IND721253AAC,ChandroknaRD_Central_DPP_3 (West Bengal),no_exact_match,,
+IND722122AAA,Bishnupur_StnRdDPP_D (West Bengal),city+state,23.0738,87.31991
+IND500080AAB,Hyderabad_Chikdply_I (Telangana),city+state,17.38405,78.45636
+IND600008AAC,Chennai_Egmore_DPC (Tamil Nadu),city+state,13.08784,80.27847
+IND636705AAB,Dharmapuri_Central_D_2 (Tamil Nadu),city+state,12.1277,78.15794
+IND585211AAA,Chittapur_GlbrgaRD_D (Karnataka),no_exact_match,,
+IND585307AAB,Chincholi_Mainroad_D (Karnataka),city+state,17.46508,77.41874
+IND585314AAA,Aland_RazaviRd_D (Karnataka),city+state,17.56425,76.56854
+IND586128AAA,Sindagi_KalyanNg_D (Karnataka),no_exact_match,,
+IND415408AAC,Shirala_Central_DPP_3 (Maharashtra),no_exact_match,,
+IND458990AAA,Sitamau_Central_DPP_1 (Madhya Pradesh),no_exact_match,,
+IND000000ABD,Pallakad_ChndrNgr_D (Kerala),no_exact_match,,
+IND140118AAA,AnandprShb_PnjPiara_D (Punjab),no_exact_match,,
+IND147105AAA,Patran_MheshNGR_D (Punjab),city+state,29.9577,76.0486
+IND152026AAA,Muktsar_DPC (Punjab),city+state,30.47426,74.5166
+IND206001AAA,Etawah_MhraChng_D (Uttar Pradesh),no_exact_match,,
+IND250002AAA,Meerut (Uttar Pradesh),no_exact_match,,
+IND345021AAA,Pokhran_SttinDPP_D (Rajasthan),no_exact_match,,
+IND388220AAA,Umreth_Dakor_DC (Gujarat),city+state,22.69881,73.11561
+IND410501AAF,Talegaon_Central_DPP_4 (Maharashtra),city+state,21.11095,78.19988
+IND413307AAB,Sangola_Central_DPP_2 (Maharashtra),not_previously_looked_up,,
+IND413401AAA,Barshi_Kurduwdi_D (Maharashtra),city+state,18.23454,75.69275
+IND421601AAB,Asangaon_Shahapur_D (Maharashtra),city+state,19.43866,73.30594
+IND423601AAA,Kopargaon_NkshtrPz_D (Maharashtra),city+state,19.88239,74.47605
+IND431112AAB,Sillod_ZebaTWR_D (Maharashtra),city+state,20.30303,75.65284
+IND466116AAA,Ashta_ShantiNg_D (Madhya Pradesh),city+state,23.01754,76.72208
+IND531116AAA,Narsiptnm_Wardno8_D (Andhra Pradesh),no_exact_match,,
+IND561202AAB,Pavagada_PnukndRD_D (Karnataka),no_exact_match,,
+IND583231AAA,Koppal_Banikatt_D (Karnataka),city+state,15.34522,76.15478
+IND603102AAA,Kalpakkam_Sadras_D (Tamil Nadu),no_exact_match,,
+IND603301AAA,Malemruvathur_Achipkam_D (Tamil Nadu),no_exact_match,,
+IND614809AAA,Pushpavanam_Thmpulam_D (Tamil Nadu),no_exact_match,,
+IND631003AAA,Arakkonam_HousngBd_D (Tamil Nadu),city+state,13.08449,79.67053
+IND631102AAA,Sholinghur_ArkonmRD_D (Tamil Nadu),city+state,13.1181,79.42025
+IND683565AAA,Kunnathund_Pringla_D (Kerala),no_exact_match,,
+IND843126AAA,Saraiya_Wardno4_D (Bihar),city+state,24.80118,84.0816
+IND847226AAA,Jaynagar_Wardno6_D (Bihar),no_exact_match,,
+IND125033AAA,Hansi_DelRdDPP_D (Haryana),not_previously_looked_up,,
+IND713364AAB,Rupnarayanpur_Salanpur_D (West Bengal),no_exact_match,,
+IND743270AAA,Helencha_ColnyDPP_D (West Bengal),city+state,23.18921,88.8635
+IND743347AAA,Kakdwip_KlngrDPP_D (West Bengal),city+state,21.87914,88.1913
+IND743395AAA,Jaynagar_MjlprDPP_D (West Bengal),not_previously_looked_up,,
+IND509103AAB,Wanaparthy_VallaDPP_D (Telangana),no_exact_match,,
+IND509103AAC,,missing_city_or_state,,
+IND140901AAA,Chandigarh_Mullanpr_DC (Chandigarh),city+state,30.73629,76.7884
+IND508206AAA,Kodad_VidyaNgr_D (Telangana),no_exact_match,,
+IND814112AAA,Deoghar_Barmasia_D (Jharkhand),city+state,24.48983,86.69902
+IND815301AAA,Giridih_Shivalya_D (Jharkhand),city+state,24.18622,86.30875
+IND815353AAA,Madhupur_Sitarmrd_D (Jharkhand),city+state,24.27419,86.63929
+IND342902A1B,,missing_city_or_state,,
+IND641062AAD,Coimbatore_Karayam_H (Tamil Nadu),city+state,11.00555,76.96612
+IND403702AAA,Canacona_CharRsta_D (Goa),no_exact_match,,
+IND302014AAB,Jaipur_Central_I_7 (Rajasthan),city+state,26.91962,75.78781
+IND786001AAB,Dibrugarh_Bokule_H (Assam),city+state,27.47989,94.90837
+IND641607AAA,Tirupur_Koliplm_I (Tamil Nadu),city+state,11.11541,77.35456
+IND625008AAA,Madurai_Kappalur_H (Tamil Nadu),city+state,9.919,78.11953
+IND362001AAA,Junagadh_DPC (Gujarat),no_exact_match,,
+IND303503AAA,Lalsot_NWclyDPP_D (Rajasthan),no_exact_match,,
+IND322201AAA,Gangapur_Ward6DPP_D (Rajasthan),no_exact_match,,
+IND322241AAA,Karauli_HnsChowk_D (Rajasthan),city+state,26.49831,77.02755
+IND322230AAA,Hindaun_MndwrRod_D (Rajasthan),city+state,26.73411,77.03519
+IND785682AAA,Sivasagar_Babupaty_D (Assam),no_exact_match,,
+IND303303AAA,Dausa_IndraCln_D (Rajasthan),city+state,26.89,76.33584
+IND626123AAA,Sivakasi_Msstreet_DC (Tamil Nadu),city+state,9.44999,77.79797
+IND395023AAD,Surat_Central_I_4 (Gujarat),city+state,21.19594,72.83023
+IND643231AAA,Coonoor_Fairybnk_D (Tamil Nadu),city+state,11.34979,76.79375
+IND786184AAA,Chabua_CollgeRD_D (Assam),no_exact_match,,
+IND505001AAB,Karimnagar_KamnHbRD_I (Telangana),no_exact_match,,
+IND786181AAC,Margherita_CivilHPL_D (Assam),city+state,27.28482,95.66796
+IND641664AAA,Tirpur_Palladam_DC (Tamil Nadu),no_exact_match,,
+IND643217AAA,Kotagiri_CroslySRT_D (Tamil Nadu),city+state,11.42072,76.86035
+IND627005AAA,Tirunelveli_VdkkuSrt_I (Tamil Nadu),city+state,8.72742,77.6838
+IND623526AAA,Rameswram_Kdthdstrt_D (Tamil Nadu),no_exact_match,,
+IND623704AAA,Muthukulathur_VaiklSRT_D (Tamil Nadu),no_exact_match,,
+IND638657AAA,Dharapuram_Techrcly_D (Tamil Nadu),city+state,10.73828,77.53223
+IND643001AAA,Ooty_Davisdle_D (Tamil Nadu),no_exact_match,,
+IND785001AAA,Jorhat_RicMilRd_D (Assam),city+state,26.75751,94.20306
+IND623503AAA,Ramnthpurm_TnhbBlkC_D (Tamil Nadu),no_exact_match,,
+IND626607AAB,Narikkudi_MukkuRD_D (Tamil Nadu),city+state,11.05681,79.44328
+IND627756AAA,Sankaran_Kovil_D (Tamil Nadu),no_exact_match,,
+IND638701AAA,Kangayam_Thvlrsrt_D (Tamil Nadu),city+state,11.00599,77.5609
+IND643212AAA,Gudalur_kalmpuza_D (Tamil Nadu),city+state,11.52073,76.48141
+IND786125AAA,Tinusukia_Chrwpaty_D (Assam),no_exact_match,,
+IND623701AAA,Paramakudi_VagaiNgr_D (Tamil Nadu),no_exact_match,,
+IND362150AAA,Talala_SsnRdDPP_D (Gujarat),city+state,21.05473,70.52903
+IND362220AAA,Junagadh_keshod_DC (Gujarat),no_exact_match,,
+IND362225AAA,Mangrol_JilRDDPP_D (Gujarat),no_exact_match,,
+IND362265AAA,Veraval_DC (Gujarat),no_exact_match,,
+IND362560AAA,Una_Mamlatdr_DC (Gujarat),city+state,20.82318,71.03795
+IND362720AAA,Kodinar_NCplxDPP_D (Gujarat),no_exact_match,,
+IND630561AAA,Sivaganga_Wardno3_D (Tamil Nadu),city+state,9.84701,78.48358
+IND638401AAA,Sathyamangalam_Mlydpthr_D (Tamil Nadu),city+state,11.50526,77.23826
+IND505302AAB,Vemulawada_Central_DPP_2 (Telangana),no_exact_match,,
+IND303603AAB,Renwal_ChomuRD_D (Rajasthan),no_exact_match,,
+IND638452AAA,Gobicheti_Ward25_D (Tamil Nadu),no_exact_match,,
+IND303338AAB,Phulera_NarenaRD_D (Rajasthan),city+state,26.87401,75.24171
+IND786190AAA,DoomDooma_Pthrgoan_D (Assam),no_exact_match,,
+IND277303AAC,Sikandarpur_Central_D_3 (Uttar Pradesh),city+state,26.04327,84.05298
+IND481661AAA,Mandla_Mharajpr_D (Madhya Pradesh),city+state,23.72659,78.42738
+IND638501AAB,Anthiyour_TherSRT_D (Tamil Nadu),no_exact_match,,
+IND691506AAA,Kottarakkara_Amankovl_D (Kerala),no_exact_match,,
+IND303008AAB,Dudu_NrainaRD_D (Rajasthan),no_exact_match,,
+IND396321AAA,Bilimora_DC (Gujarat),city+state,20.76957,72.96134
+IND517501AAB,Tirupati_Balajicly_I (Andhra Pradesh),city+state,13.63551,79.41989
+IND786171AAA,Digboi_JyotiNgr_D (Assam),city+state,27.39321,95.61839
+IND614620AAA,Manamelkudi_TmpleSrt_D (Tamil Nadu),city+state,10.04433,79.22988
+IND626117AAA,Rajpalayam_AshkTalk_D (Tamil Nadu),no_exact_match,,
+IND571124AAA,Tirumakudalu_Narasipr_D (Karnataka),no_exact_match,,
+IND335051AAA,RaisingNgr_BisnolDPP_D (Rajasthan),no_exact_match,,
+IND505325AAA,Metpally_GunjRDPP_D (Telangana),no_exact_match,,
+IND628613AAA,Peikulam_SriVnktpm_D (Tamil Nadu),no_exact_match,,
+IND360510AAB,Bhanvad_Mainroad_D (Gujarat),no_exact_match,,
+IND360530AAB,Jamjodhpur_Court_D (Gujarat),city+state,21.90219,70.0357
+IND360575AAA,Porbandar_DC (Gujarat),city+state,21.64219,69.60929
+IND396001AAA,Valsad_DC (Gujarat),no_exact_match,,
+IND396445AAA,Navsari_DC (Gujarat),city+state,20.94237,72.92467
+IND627657AAA,Thisayanvilai_UdnkdiRD_D (Tamil Nadu),no_exact_match,,
+IND642126AAA,Udumalpet_Artclgrd_D (Tamil Nadu),no_exact_match,,
+IND571114AAA,HDKote_BegurRD_D (Karnataka),no_exact_match,,
+IND628204AAA,Tirchchndr_Shnmgprm_D (Tamil Nadu),no_exact_match,,
+IND303901AAA,Chaksu_TonkRoad_D (Rajasthan),city+state,26.6051,75.94814
+IND628801AAA,Eral_Busstand_D (Tamil Nadu),city+state,8.62584,78.02282
+IND641001AAA,Coimbatore_Ukkadam_D (Tamil Nadu),not_previously_looked_up,,
+IND685514AAA,Kattappana_Palikval_D (Kerala),no_exact_match,,
+IND733129AAA,Kaliyaganj_FatprDPP_D (West Bengal),no_exact_match,,
+IND792103AAB,Namsai_HelipadRD_D (Arunachal Pradesh),city+state,27.66904,95.86395
+IND423106AAA,Manmad_Malegaon_D (Maharashtra),no_exact_match,,
+IND642001AAA,Pollachi_Venkatsa_DC (Tamil Nadu),city+state,10.65825,77.0085
+IND623315AAB,Oriyur_Vllyaprm_D (Tamil Nadu),no_exact_match,,
+IND203390AAA,Anupshahar_DcntCLY_D (Uttar Pradesh),no_exact_match,,
+IND274001AAA,Deoria_CCRoad_D (Uttar Pradesh),city+state,26.50167,83.77936
+IND484446AAA,Dola_ChainDPP_D (Madhya Pradesh),not_previously_looked_up,,
+IND625516AAA,Cumbum_LFRoad_D (Tamil Nadu),city+state,9.73647,77.2847
+IND676306AAA,Tirurangadi_Kooriyad_D (Kerala),no_exact_match,,
+IND712310AAE,Kolkata_North_I_4 (West Bengal),city+state,22.56263,88.36304
+IND203135AAA,Jewar_SJRoad_D (Uttar Pradesh),city+state,28.122,77.55734
+IND503185AAA,Bodhan_SuryaDPP_D (Telangana),city+state,18.66208,77.88581
+IND505327AAA,Jagtial_Aravind_D (Telangana),no_exact_match,,
+IND624001AAA,Dindigul_Central_D_1 (Tamil Nadu),city+state,10.36896,77.98036
+IND403726AAB,Goa_ZuariNgr_IP (Goa),no_exact_match,,
+IND486886AAA,Singrauli_Waidhan_D (Madhya Pradesh),city+state,24.19973,82.67535
+IND516101AAA,Koduru_MGRoad_D (Andhra Pradesh),city+state,16.00885,81.03366
+IND516115AAA,Rajampet_RSRoad_D (Andhra Pradesh),no_exact_match,,
+IND517583AAA,Puttur_Artmclny_D (Andhra Pradesh),no_exact_match,,
+IND517644AAA,Sriklahsti_SDKNgr_D (Andhra Pradesh),no_exact_match,,
+IND524101AAB,Gudur_Bngisheb_D (Andhra Pradesh),city+state,16.21661,81.08261
+IND524132AAA,Venktagiri_TirupthiRd_D (Andhra Pradesh),no_exact_match,,
+IND571213AAA,Gonikoppal_Thomas_D (Karnataka),city+state,12.18302,75.92943
+IND621704AAA,Ariyalur_Kmrajngr_D (Tamil Nadu),no_exact_match,,
+IND624601AAA,Palani_RjndraRd_D (Tamil Nadu),city+state,10.45034,77.5209
+IND673305AAA,Koyilandy_Pshrikvu_D (Kerala),city+state,11.4381,75.69306
+IND783370AAC,Kokrajhar_PigonDPP_D (Assam),city+state,26.40107,90.27286
+IND000000AAS,Bongaigaon_Chpaguri_D (Assam),city+state,26.47703,90.55815
+IND231225AAB,Anpara_Parasi_D (Uttar Pradesh),city+state,24.19409,82.79175
+IND423105AAA,Malegaon_Rawlgaon_D (Maharashtra),city+state,20.54966,74.53462
+IND486889AAA,Singrauli_Ward8DPP_D (Madhya Pradesh),city+state,24.19973,82.67535
+IND505184AAC,Manthani_Chaitnya_D (Telangana),city+state,18.65087,79.66501
+IND621212AAA,Perambalur_goplpurm_D (Tamil Nadu),city+state,11.23333,78.88333
+IND621802AAA,Jayamkondan_Chithbrm_D (Tamil Nadu),no_exact_match,,
+IND624101AAA,Kodaikanal_Athithnr_DC (Tamil Nadu),no_exact_match,,
+IND624619AAA,Oddnchtram_Palani_D (Tamil Nadu),no_exact_match,,
+IND627117AAA,Vallior_Radhaprm_D (Tamil Nadu),no_exact_match,,
+IND711303AAA,Bagnan_Harop_D (West Bengal),no_exact_match,,
+IND783301AAA,Dhubri_Tetultol_D (Assam),city+state,26.01856,89.98564
+IND625531AAA,Theni_Rathnam_D (Tamil Nadu),city+state,10.01115,77.47772
+IND627401AAA,Ambasamdrm_Solaiprm_D (Tamil Nadu),no_exact_match,,
+IND676509AAA,Malappuram_Munduprm_D (Kerala),city+state,11.04199,76.08154
+IND203131AAA,Khurja_Pnjbiyon_D (Uttar Pradesh),city+state,28.25382,77.85535
+IND614616AAA,Aranthangi_HsptlRod_D (Tamil Nadu),no_exact_match,,
+IND626138AAA,Maharajapuram_Krsnakcl_D (Tamil Nadu),no_exact_match,,
+IND627811AAA,Tenkasi_RailwyRd_D (Tamil Nadu),no_exact_match,,
+IND630002AAA,Karaikudi_Sbrmnprm_D (Tamil Nadu),city+state,10.06615,78.76784
+IND688009AAA,Alappuzha_Pazhvedu_D (Kerala),city+state,9.49004,76.3264
+IND803101AAA,BiharSarif_Soghra_D (Bihar),no_exact_match,,
+IND805110AAD,Nawada_Central_DPP_2 (Bihar),city+state,26.23323,84.12186
+IND000000AET,Barpeta_ShivBari_D (Assam),city+state,26.32293,91.00632
+IND231217AAA,Renukoot_Govind_D (Uttar Pradesh),city+state,24.21641,83.0358
+IND505209AAA,Ramagundam_Pdmavati_D (Telangana),city+state,18.755,79.474
+IND608301AAA,Lalpet_PriyrNGR_D (Tamil Nadu),no_exact_match,,
+IND621010AAA,Thuraiyur_Mthrapuri_D (Tamil Nadu),city+state,11.14805,78.59911
+IND624202AAA,Batlagundu_RTOofice_D (Tamil Nadu),no_exact_match,,
+IND625106AAA,Melur_MduraiRD_D (Tamil Nadu),city+state,10.03241,78.3393
+IND721134AAB,Kolaghat_Central_DPP_2 (West Bengal),city+state,22.43252,87.85938
+IND783348AAA,Bilasipara_Wardno5_D (Assam),no_exact_match,,
+IND262701AAA,Lakhimpur_Maheva_D (Uttar Pradesh),city+state,26.58265,82.48757
+IND614804AAA,Peravurani_SH71_D (Tamil Nadu),city+state,10.29035,79.20156
+IND622407AAA,Ponnamaravathi_Puduvalvu_D (Tamil Nadu),no_exact_match,,
+IND736135AAA,Dinhata_WrdN4DPP_D (West Bengal),no_exact_match,,
+IND803116AAA,Rajgir_PnditNGR_D (Bihar),no_exact_match,,
+IND804420AAA,Jehanabad_Madarpur_D (Bihar),no_exact_match,,
+IND145001AAA,Pathankot_DC (Punjab),city+state,32.27484,75.65287
+IND176201AAA,Jassur_AadiDPP_D (Himachal Pradesh),no_exact_match,,
+IND176303AAA,Dalhousie_Banikhet_D (Himachal Pradesh),city+state,32.55219,75.94663
+IND176310AAA,Chamba_Bangotu_D (Himachal Pradesh),city+state,32.55531,76.12647
+IND201301AAL,Dadri_ICDCant_D (Uttar Pradesh),city+state,28.55257,77.55403
+IND261001AAA,Sitapur_Chowk_D (Uttar Pradesh),no_exact_match,,
+IND262802AAA,Gola_BkgnRoad_D (Uttar Pradesh),city+state,27.25877,77.92007
+IND425201AAA,Bhusawal_Samarth_D (Maharashtra),city+state,21.04365,75.78506
+IND425508AAB,Raver_Truptingr_D (Maharashtra),no_exact_match,,
+IND450331AAA,Burhanpur_StRoad_D (Madhya Pradesh),no_exact_match,,
+IND452001AAC,Jalgaon_DC (Maharashtra),city+state,21.00292,75.56602
+IND623407AAA,Thiruvadanai_RamnadRD_D (Tamil Nadu),city+state,9.78341,78.91874
+IND736146AAA,Mathabhang_Pshimpra_D (West Bengal),no_exact_match,,
+IND560058AAB,Bengaluru_Peenya_IP (Karnataka),city+state,12.97194,77.59369
+IND223101AAB,Shahganj_KcharaRD_D (Uttar Pradesh),city+state,27.88002,80.00911
+IND276305AAA,Saraimeer_MsmcyDPP_D (Uttar Pradesh),no_exact_match,,
+IND361305AAC,Khambhalia_JdswarRD_D (Gujarat),no_exact_match,,
+IND361315AAA,Bhatiya_Kalyanpr_D (Gujarat),no_exact_match,,
+IND363001AAA,Surendranagar_DC (Gujarat),city+state,22.72706,71.64856
+IND363421AAB,Limbdi_Busstand_D (Gujarat),city+state,22.56507,71.81076
+IND370001AAA,Bhuj_DC (Gujarat),city+state,23.25397,69.66928
+IND460001AAA,Betul_PatelWrd_D (Madhya Pradesh),no_exact_match,,
+IND480334AAA,Pandhurna_Mataward_D (Madhya Pradesh),no_exact_match,,
+IND507159AAA,Kusumnchi_SKRoad_D (Telangana),no_exact_match,,
+IND609001AAA,Mylduthuri_Thiruviz_D (Tamil Nadu),no_exact_match,,
+IND614018AAA,Mannargudi_Vadasari_D (Tamil Nadu),city+state,10.66626,79.45064
+IND636016AAA,Salem (Tamil Nadu),no_exact_match,,
+IND637211AAA,Tirchngode_Mhdhvpur_D (Tamil Nadu),no_exact_match,,
+IND673121AAA,Kalpetta_Ward19_D (Kerala),no_exact_match,,
+IND695121AAA,Neyatinkra_Arlumodu_D (Kerala),no_exact_match,,
+IND695572AAB,Kallikkad_Mutyvila_D (Kerala),no_exact_match,,
+IND712124AAA,Hooghly_DC (West Bengal),no_exact_match,,
+IND756019AAA,Balasore_Ganeshwr_D (Orissa),city+state,21.49266,86.93348
+IND757025AAA,Betnoti_MhliaDPP_D (Orissa),city+state,21.74003,86.84473
+IND757037AAA,Karanjia_Sarubali_D (Orissa),city+state,21.70335,85.61123
+IND000000ACN,Hyderabad_Mhdiptnm_C (Telangana),city+state,17.38405,78.45636
+IND000000AFF,Darjeeling_Hillcard_DC (West Bengal),not_previously_looked_up,,
+IND132001AAA,Karnal (Haryana),no_exact_match,,
+IND142026AAA,Jagraon_DC (Punjab),city+state,30.78783,75.47391
+IND224141AAB,Gosainganj_Pakrela_D (Uttar Pradesh),no_exact_match,,
+IND233001AAA,Ghazipur_Kaithwal_D (Uttar Pradesh),not_previously_looked_up,,
+IND246424AAA,Chamoli_CGRoad_D (Uttarakhand),city+state,30.40271,79.33303
+IND271001AAA,Gonda_KotwaliN_D (Uttar Pradesh),city+state,27.83126,77.87907
+IND271201AAA,Balrampur_PBRDDPP_D (Uttar Pradesh),no_exact_match,,
+IND271210AAA,Tulsipur_Central_DPP_1 (Uttar Pradesh),city+state,27.66944,81.5491
+IND275303AAA,Dohrighat_AzmrdDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND402107AAA,Pen_BljiMrkt_D (Maharashtra),city+state,18.73734,73.09603
+IND402109AAA,Roha_DataSagr_D (Maharashtra),city+state,18.43687,73.11964
+IND402301AAA,Mahad_Govndsgr_D (Maharashtra),no_exact_match,,
+IND441912AAA,Bhandara_KaremDPP_D (Maharashtra),no_exact_match,,
+IND442101AAB,Deoli_Central_DPP_2 (Maharashtra),city+state,20.6492,78.48023
+IND442605AAA,Gadchiroli_Central_DPP_1 (Maharashtra),no_exact_match,,
+IND473001AAA,Guna_HnumnDPP_D (Madhya Pradesh),city+state,24.64691,77.3113
+IND495334AAB,Mungeli_Panderia_D (Chhattisgarh),city+state,22.06566,81.68543
+IND571401AAA,Mandya_Dc (Karnataka),city+state,12.5223,76.89746
+IND585222AAA,Sedam_DBRCmplx_D (Karnataka),city+state,17.17859,77.28998
+IND586211AAA,Indi_SindgiRD_D (Karnataka),city+state,17.17735,75.9526
+IND600119AAA,Chennai_Sholinganallur_Dc (Tamil Nadu),city+state,13.08784,80.27847
+IND638001AAA,Erode (Tamil Nadu),no_exact_match,,
+IND686513AAA,Mundakayam_Central_D_1 (Kerala),no_exact_match,,
+IND721602AAB,Haldia_Central_D_2 (West Bengal),not_previously_looked_up,,
+IND770001AAA,Sundargarh_DiyoDPP_D (Orissa),no_exact_match,,
+IND787057AAA,Dhemaji_WardNo3_D (Assam),no_exact_match,,
+IND802301AAA,Arrah_Katira_D (Bihar),city+state,25.55629,84.66335
+IND812002AAA,Bhagalpur_Pbroad_DC (Bihar),city+state,25.24446,86.97183
+IND504201AAA,Chinnur_AsnsdhRD_D (Telangana),no_exact_match,,
+IND845418AAB,Dhaka_PchpkrRD_D (Bihar),no_exact_match,,
+IND000000AAL,Pune_PC (Maharashtra),city+state,18.51957,73.85535
+IND000000ABG,Hyderabad_Bownplly_C (Telangana),city+state,17.38405,78.45636
+IND000000ACK,Hyderabad_Chikdply_C (Telangana),city+state,17.38405,78.45636
+IND000000ACS,BLR_HSR_Layout_PC (Karnataka),no_exact_match,,
+IND000000ACT,Delhi_Gateway_HB (Delhi),no_exact_match,,
+IND000000ADM,Cochin_Kdvantra_D (Kerala),no_exact_match,,
+IND000000ADV,Chennai_Mdhavram_C (Tamil Nadu),city+state,13.08784,80.27847
+IND000000AEL,Delhi_PunjabiB_L (Delhi),no_exact_match,,
+IND000000AEM,Gurgaon_Bilaspur_RP (Haryana),city+state,28.4601,77.02635
+IND000000AFG,Tirur_PmthuKlm_D (Kerala),not_previously_looked_up,,
+IND000000AFJ,Trivandrum_Pettah_D (Kerala),no_exact_match,,
+IND000000AFR,Cochin_PanditRd_D (Kerala),no_exact_match,,
+IND110014AAA,Delhi_Bhogal (Delhi),no_exact_match,,
+IND110020AAB,OK_RPC (Delhi),no_exact_match,,
+IND110030AAD,Delhi_Kishangarh_DPC (Delhi),no_exact_match,,
+IND110035AAC,Delhi_North_R_8 (Delhi),no_exact_match,,
+IND110037AAB,Del_B_RPC (Delhi),no_exact_match,,
+IND110037AAK,Delhi_Kapshera_L (Delhi),no_exact_match,,
+IND110039AAA,Delhi_Barwala (Delhi),not_previously_looked_up,,
+IND110043AAC,Delhi_Nangli_L (Delhi),no_exact_match,,
+IND110052AAA,Delhi_Wazirpur_L (Delhi),no_exact_match,,
+IND110064AAA,Delhi_Mayapuri_PC (Delhi),no_exact_match,,
+IND110064AAB,KN_RPC (Delhi),no_exact_match,,
+IND110078AAA,Janakpuri (Delhi),no_exact_match,,
+IND110083AAA,Delhi_Mangol_DC (Delhi),not_previously_looked_up,,
+IND110087AAA,Delhi_Paschim_DC (Delhi),not_previously_looked_up,,
+IND110092AAC,Delhi_Patparganj_DPC (Delhi),no_exact_match,,
+IND110095AAB,Delhi_Jhilmil_L (Delhi),no_exact_match,,
+IND121001AAA,Faridabad (Haryana),no_exact_match,,
+IND121002AAB,Faridabad_Mthurard_L (Haryana),city+state,28.41124,77.31316
+IND121004AAA,Faridabad_Blbgarh_DC (Haryana),city+state,28.41124,77.31316
+IND121004AAC,Faridabad_MohnVRTL_D (Haryana),city+state,28.41124,77.31316
+IND121102AAA,Palwal (Haryana),no_exact_match,,
+IND122004AAA,Gurgaon_Begumpur_CP (Haryana),city+state,28.4601,77.02635
+IND122050AAA,Gurgaon_Manesar (Haryana),city+state,28.4601,77.02635
+IND122413AAE,Gurgaon_Bilaspur_P (Haryana),city+state,28.4601,77.02635
+IND123001AAA,Narnaul_DC (Haryana),city+state,28.04444,76.10833
+IND123106AAB,Dharuhera_Central_DPP_2 (Haryana),no_exact_match,,
+IND125104AAA,Sirsa_AnprnDPP_D (Haryana),city+state,29.53489,75.02898
+IND125111AAA,Fatehabad_BhunaDPP_D (Haryana),not_previously_looked_up,,
+IND125121AAA,Barwala_Central_DPP_1 (Haryana),not_previously_looked_up,,
+IND126112AAA,Safidon_HatRDDPP_D (Haryana),city+state,29.40596,76.67042
+IND131021AAA,Sonipat_AmzonDev_V (Haryana),no_exact_match,,
+IND131028AAA,Sonipat_Kundli_P (Haryana),no_exact_match,,
+IND131028AAE,Sonipat_Central_D_2 (Haryana),not_previously_looked_up,,
+IND131301AAA,Gohana_DvlalDPP_D (Haryana),no_exact_match,,
+IND132039AAA,Assandh_MhrjaDPP_D (Haryana),no_exact_match,,
+IND132103AAA,Panipat (Haryana),no_exact_match,,
+IND133004AAA,Ambala (Haryana),no_exact_match,,
+IND134102AAA,Kalka_Pinjore_DC (Haryana),no_exact_match,,
+IND134109AAA,Chandigarh_Panchkula (Chandigarh),city+state,30.73629,76.7884
+IND134203AAA,Naraingarh_Ward2DPP_D (Haryana),city+state,30.47798,77.12804
+IND140406AAA,SirhindFatehgarh_DC (Punjab),no_exact_match,,
+IND140603AAA,Zirakpur_DC (Punjab),no_exact_match,,
+IND141003AAB,Ludhiana_GillChwk_DC (Punjab),city+state,30.91204,75.85379
+IND142401AAA,Khanna_DC (Punjab),city+state,30.70547,76.22196
+IND143001AAA,Amritsar_DPC (Punjab),city+state,31.62234,74.87534
+IND144001AAA,Jalandhar_DC (Punjab),city+state,31.32556,75.57917
+IND144001AAC,Jalandhar_Sodal Road (Punjab),city+state,31.32556,75.57917
+IND144401AAB,Phagwara_Lovely_D (Punjab),no_exact_match,,
+IND144527AAA,Garhshnker_Jagrata_D (Punjab),not_previously_looked_up,,
+IND144601AAA,Kapurthala_DC (Punjab),not_previously_looked_up,,
+IND147001AAD,Patiala_GainMrkt_L (Punjab),no_exact_match,,
+IND147101AAA,Samana_PODPP_D (Punjab),no_exact_match,,
+IND147301AAA,Mandi_Gobindgarh_DC (Punjab),not_previously_looked_up,,
+IND148023AAA,Malerkotla_DC (Punjab),no_exact_match,,
+IND148028AAA,Sunam_DC (Punjab),no_exact_match,,
+IND148102AAA,Bhadaur_BChwkDPP_D (Punjab),city+state,30.47651,75.33049
+IND151103AAA,RampuraPhul_DC (Punjab),no_exact_match,,
+IND160002AAD,Chandigarh_Mehmdpur_P (Punjab),not_previously_looked_up,,
+IND160055AAA,Chandigarh_Mohali (Chandigarh),city+state,30.73629,76.7884
+IND160102AAC,Chandigarh_Raiprvlg_L (Chandigarh),city+state,30.73629,76.7884
+IND160102AAD,Chandigarh_Raiprkln_C (Chandigarh),city+state,30.73629,76.7884
+IND173220AAA,Parwanoo_Central_D_1 (Himachal Pradesh),city+state,30.83716,76.96143
+IND174021AAA,Ghumarwin_Gndhichk_D (Himachal Pradesh),no_exact_match,,
+IND174101AAB,Nalagarh_Central_DPP_2 (Himachal Pradesh),no_exact_match,,
+IND176041AAA,Bhota_BpassDPP_D (Himachal Pradesh),city+state,31.6082,76.56376
+IND176061AAA,Palampur_Cnsrvila_D (Himachal Pradesh),not_previously_looked_up,,
+IND176215AAA,Dharamshala_GrudwrRd_D (Himachal Pradesh),not_previously_looked_up,,
+IND177001AAA,Hamirpur_GutmgrCl_D (Himachal Pradesh),no_exact_match,,
+IND177101AAA,DehraGopipur_Central_D_1 (Himachal Pradesh),not_previously_looked_up,,
+IND177203AAA,Amb_Adrshngr_D (Himachal Pradesh),not_previously_looked_up,,
+IND181152AAA,Jammu_TrnptNgr_L (Jammu & Kashmir),no_exact_match,,
+IND181201AAB,Akhnoor_ThthiCwk_D (Jammu & Kashmir),no_exact_match,,
+IND201001AAA,Ghaziabad_Patel Nagar (Uttar Pradesh),city+state,28.66535,77.43915
+IND201001AAC,Ghaziabad_Central_L_8 (Uttar Pradesh),city+state,28.66535,77.43915
+IND201005AAA,Ghaziabad_RjndrNgr_DC (Uttar Pradesh),not_previously_looked_up,,
+IND201007AAB,Ghaziabad_MohanNgr_C (Uttar Pradesh),city+state,28.66535,77.43915
+IND201301AAD,NOI_RPC (Delhi),not_previously_looked_up,,
+IND201301AAM,Noida_Sector63_L (Uttar Pradesh),city+state,28.58,77.33
+IND201304AAA,Noida_Sec-83_DC (Uttar Pradesh),city+state,28.58,77.33
+IND201306AAA,Noida_Surajpur_DC (Uttar Pradesh),city+state,28.58,77.33
+IND201307AAA,Noida_Chukhndi_D (Uttar Pradesh),city+state,28.58,77.33
+IND202001AAC,Aligarh_Central_D_2 (Uttar Pradesh),not_previously_looked_up,,
+IND203001AAA,Bulndshahr_Ymunpurm_D (Uttar Pradesh),no_exact_match,,
+IND203205AAA,Sikandrabd_GTRoad_D (Uttar Pradesh),no_exact_match,,
+IND203396AAB,Pahasu_Kanongyn_D (Uttar Pradesh),no_exact_match,,
+IND204101AAA,Hathras (Uttar Pradesh),not_previously_looked_up,,
+IND208006AAA,Kanpur_GovndNgr_DC (Uttar Pradesh),city+state,26.46523,80.34975
+IND208012AAA,Kanpur_Central_D_7 (Uttar Pradesh),city+state,26.46523,80.34975
+IND208017AAA,Kanpur_Central_D_5 (Uttar Pradesh),city+state,26.46523,80.34975
+IND208019AAA,Kanpur_Rawatpur_D (Uttar Pradesh),city+state,26.46523,80.34975
+IND209801AAA,Unnao_VikasRam_D (Uttar Pradesh),no_exact_match,,
+IND210301AAA,Hamirpur_KanpurRd_D (Uttar Pradesh),city+state,27.32229,79.21613
+IND210501AAB,Bewar_BndhuTRH_D (Uttar Pradesh),city+state,27.21869,79.29761
+IND211008AAA,Allahabad_Central_D_3 (Uttar Pradesh),no_exact_match,,
+IND211013AAA,Allahabad_Phaphamu_DC (Uttar Pradesh),no_exact_match,,
+IND221010AAB,Varanasi_MahmurGj_IP (Uttar Pradesh),not_previously_looked_up,,
+IND221303AAA,Gopiganj_Wardno13_D (Uttar Pradesh),not_previously_looked_up,,
+IND222125AAB,Badlapur_Bhaluahi_D (Uttar Pradesh),no_exact_match,,
+IND224001AAA,Faizabad_TrnspNgr_D (Uttar Pradesh),city+state,26.77549,82.15018
+IND224122AAA,Akbarpur_Auliyapr_D (Uttar Pradesh),city+state,26.42953,82.53431
+IND226004AAA,Lucknow_Hub (Uttar Pradesh),city+state,26.83928,80.92313
+IND226016AAA,Lucknow_Indira Nagar (Uttar Pradesh),city+state,26.83928,80.92313
+IND231001AAA,Mirzapur_JangiRd_D (Uttar Pradesh),not_previously_looked_up,,
+IND231205AAA,Chopan_PreetDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND231208AAA,Duddhi_MChwkDPP_D (Uttar Pradesh),no_exact_match,,
+IND231216AAA,Robertsganj_ArtoDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND232104AAB,Chandauli_ShubsNGR_D (Uttar Pradesh),city+state,25.25803,83.26825
+IND242001AAA,Shahjhnpur_NavdaCln_D (Uttar Pradesh),not_previously_looked_up,,
+IND242221AAA,Jalalabad_farukngr_D (Uttar Pradesh),no_exact_match,,
+IND242307AAB,Tilhar_SingCLNY_D (Uttar Pradesh),city+state,27.96282,79.73827
+IND243001AAA,Bareilly_Central_D_2 (Uttar Pradesh),city+state,28.36678,79.43167
+IND243002AAA,Bareilly (Uttar Pradesh),no_exact_match,,
+IND243201AAA,Baheri_HoliCDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND243301AAB,Aonla_KdidmCLY_D (Uttar Pradesh),city+state,28.27402,79.16521
+IND244921AAB,Bilaspur_GrmNgriya_D (Uttar Pradesh),no_exact_match,,
+IND245101AAA,Hapur_Swargash_D (Uttar Pradesh),no_exact_match,,
+IND246001AAA,Pauri_Khndyusn_D (Uttarakhand),not_previously_looked_up,,
+IND246149AAA,Kotdwara_Nzbadrd_D (Uttarakhand),no_exact_match,,
+IND247667AAB,Roorkee_IOTCEncl_L (Uttarakhand),city+state,29.86632,77.89118
+IND248001AAD,Dehradun_Nirjanpur_L (Uttarakhand),city+state,30.32443,78.03392
+IND248197AAA,Dehradun_Selakui_D (Uttarakhand),city+state,30.32443,78.03392
+IND261201AAB,Biswan_PatelNGR_D (Uttar Pradesh),no_exact_match,,
+IND262723AAB,Dhaurahara_TahsilRD_D (Uttar Pradesh),no_exact_match,,
+IND263139AAA,Haldwani_PiliKoti_D (Uttarakhand),city+state,29.22254,79.5286
+IND272153AAC,Bansi_GangDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND272155AAA,Harraiya_MahuGDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND272207AAB,Naugarh_Central_D_1 (Uttar Pradesh),not_previously_looked_up,,
+IND273155AAA,Anandnagar_LohiaDPP_D (Uttar Pradesh),city+state,27.10062,83.27156
+IND273304AAA,Nichlaul_Wardno13_D (Uttar Pradesh),city+state,27.31247,83.7253
+IND274304AAA,Kushinagar_KasyaDPP_D (Uttar Pradesh),city+state,26.74134,83.88689
+IND274402AAA,Kushinagar_JiswlDPP_D (Uttar Pradesh),not_previously_looked_up,,
+IND274509AAB,Salempur_Banjaria_D (Uttar Pradesh),city+state,27.97216,79.26207
+IND275101AAA,Mau_BaliaMod_D (Uttar Pradesh),not_previously_looked_up,,
+IND275503AAA,Ghosi_Jamalpur_D (Uttar Pradesh),not_previously_looked_up,,
+IND276128AAA,Azamgarh_ChtwrDPP_D (Uttar Pradesh),city+state,26.06832,83.18358
+IND276140AAA,Jiyanpur_Central_DPP_1 (Uttar Pradesh),not_previously_looked_up,,
+IND281004AAA,Mathura_DC (Uttar Pradesh),city+state,27.5035,77.67215
+IND281121AAB,Vrindavan_MathuraRD_D (Uttar Pradesh),no_exact_match,,
+IND281401AAA,Chhata_GvrdnDPP_D (Uttar Pradesh),no_exact_match,,
+IND282001AAA,Agra_Idgah_P (Uttar Pradesh),city+state,27.18333,78.01667
+IND282001AAF,Agra_Central_D_3 (Uttar Pradesh),city+state,27.18333,78.01667
+IND282005AAA,Agra (Uttar Pradesh),not_previously_looked_up,,
+IND284001AAA,Jhansi_LVMColge_D (Uttar Pradesh),city+state,25.49117,78.55842
+IND284403AAA,Lalitpur_RjghatRd_D (Uttar Pradesh),city+state,24.69007,78.41915
+IND301019AAA,Bhiwadi DC (Rajasthan),no_exact_match,,
+IND301705AAA,Neemrana_Rcocmplx_D (Rajasthan),city+state,27.99193,76.38543
+IND302004AAA,Jaipur_NgrNigam_DC (Rajasthan),city+state,26.91962,75.78781
+IND302006AAA,Jaipur (Rajasthan),no_exact_match,,
+IND302006AAC,Jaipur_Central_D_10 (Rajasthan),city+state,26.91962,75.78781
+IND302020AAA,Jaipur_VarunCly_DC (Rajasthan),city+state,26.91962,75.78781
+IND302022AAD,Jaipur_RIICO_L (Rajasthan),city+state,26.91962,75.78781
+IND302023AAA,Ambabadi_DC (Rajasthan),no_exact_match,,
+IND302026AAA,Jaipur_Bhankrot_DC (Rajasthan),city+state,26.91962,75.78781
+IND303108AAB,Kotputli_LXngrDPP_D (Rajasthan),city+state,27.70207,76.19911
+IND303301AAB,Bassi_DmodrNGR_D (Rajasthan),city+state,28.01778,73.84778
+IND304001AAA,Tonk_DC (Rajasthan),not_previously_looked_up,,
+IND306001AAA,MarwarJn_SndbrDPP_D (Rajasthan),not_previously_looked_up,,
+IND306116AAA,Falna_SbhRDDPP_D (Rajasthan),not_previously_looked_up,,
+IND311301AAA,Asind_BsStdDPP_D (Rajasthan),no_exact_match,,
+IND321022AAA,Kaman_BsstdDPP_D (Rajasthan),no_exact_match,,
+IND321401AAB,Bayana_LalBagh_D (Rajasthan),no_exact_match,,
+IND321408AAB,Weir_BsstdDPP_D (Rajasthan),not_previously_looked_up,,
+IND322001AAC,SawaiMadhopur_Central_DPP_1 (Rajasthan),not_previously_looked_up,,
+IND331507AAA,Sujangarh_JngidDPP_D (Rajasthan),not_previously_looked_up,,
+IND332404AAA,Reengus_Shop2DPP_D (Rajasthan),city+state,27.3636,75.56838
+IND332709AAA,Khandela_PlsrdDPP_D (Rajasthan),city+state,27.60499,75.502
+IND332713AAA,NeemKaThana_War5DPP_D (Rajasthan),no_exact_match,,
+IND333028AAA,Sultana_Central_DPP_1 (Rajasthan),not_previously_looked_up,,
+IND334001AAB,Bikaner_DC (Rajasthan),city+state,28.01762,73.31495
+IND335523AAB,Nohar_Central_DPP_2 (Rajasthan),not_previously_looked_up,,
+IND335524AAA,Rawatsar_ShivmDPP_D (Rajasthan),city+state,25.73129,71.62096
+IND341030AAA,Tarnau_BsstdDPP_D (Rajasthan),not_previously_looked_up,,
+IND343001AAA,Jalore_RoopNgr_D (Rajasthan),no_exact_match,,
+IND345001AAA,Jaisalmer_Gopa3PL_D (Rajasthan),city+state,26.91763,70.90387
+IND360370AAA,Jetpur_DC (Gujarat),city+state,21.75482,70.62347
+IND360490AAA,Upleta_AdrshSt_DC (Gujarat),city+state,21.74015,70.28256
+IND361001AAA,Jamnagar_Dc (Gujarat),city+state,22.47292,70.06673
+IND361335AAA,Dwarka_StnRoad_DC (Gujarat),no_exact_match,,
+IND363520AAC,Chotila_Central_D_2 (Gujarat),city+state,22.42347,71.19641
+IND363621AAB,Wankaner_JivanDPP_D (Gujarat),no_exact_match,,
+IND363641AAA,Morbi_DC (Gujarat),no_exact_match,,
+IND364290AAA,Bhavnagar_Mahuva_DC (Gujarat),city+state,21.76287,72.15331
+IND364710AAA,Botad_DC (Gujarat),city+state,22.16917,71.66671
+IND370110AAA,Anjar_DC (Gujarat),no_exact_match,,
+IND370615AAB,Nakhatrana_ClgRDDPP_D (Gujarat),city+state,23.34306,69.2669
+IND380006AAA,Ahmedabad_Paldi_D (Gujarat),city+state,23.02579,72.58727
+IND380006AAB,Ahmedabad_Mithakal_D (Gujarat),city+state,23.02579,72.58727
+IND380015AAB,AMD_Satellite (Gujarat),no_exact_match,,
+IND380021AAA,AMD_Rakhial (Gujarat),no_exact_match,,
+IND380054AAA,AMD_Memnagar (Gujarat),no_exact_match,,
+IND382345AAA,Amdavad_East (Gujarat),no_exact_match,,
+IND382721AAA,Gandhinagar_Kalol_DC (Gujarat),city+state,23.21667,72.68333
+IND388121AAA,Anand_VUNagar_DC (Gujarat),city+state,22.55251,72.9552
+IND391110AAD,Dabhoi_Central_DPP_3 (Gujarat),city+state,22.18333,73.43333
+IND395001AAA,Surat_Central_D_9 (Gujarat),city+state,21.19594,72.83023
+IND395004AAB,Surat_Central_D_3 (Gujarat),city+state,21.19594,72.83023
+IND395006AAA,Surat_Varachha_DC (Gujarat),city+state,21.19594,72.83023
+IND395009AAA,Surat_Central_D_12 (Gujarat),city+state,21.19594,72.83023
+IND396232AAA,Silvassa_Samrvrni_D (Dadra and Nagar Haveli),no_exact_match,,
+IND396580AAB,Vansda_CikhliRD_D (Gujarat),no_exact_match,,
+IND400015AAA,Mumbai_CottonGreen_DPC (Maharashtra),city+state,19.07283,72.88261
+IND400015AAB,Mumbai_CotnGren_M (Maharashtra),city+state,19.07283,72.88261
+IND400016AAB,Mumbai_MhimWest_C (Maharashtra),city+state,19.07283,72.88261
+IND400037AAA,Mumbai Antop Hill (Maharashtra),no_exact_match,,
+IND400052AAA,Mumbai_Khar West _Dc (Maharashtra),city+state,19.07283,72.88261
+IND400064AAB,Mumbai_MaladWest_CP (Maharashtra),city+state,19.07283,72.88261
+IND400072AAA,Mumbai_Tejpal_M (Maharashtra),city+state,19.07283,72.88261
+IND400072AAC,BOM_Sakinaka_RP (Maharashtra),no_exact_match,,
+IND400072AAJ,Mumbai_Tejpal_I (Maharashtra),city+state,19.07283,72.88261
+IND400102AAB,Mumbai_Jogeshwri_L (Maharashtra),city+state,19.07283,72.88261
+IND400612AAA,Mumbai_Mumbra_DC (Maharashtra),city+state,19.07283,72.88261
+IND400701AAA,Mumbai_Ghansoli_DC (Maharashtra),city+state,19.07283,72.88261
+IND400701AAB,Mumbai_Pawane_L (Maharashtra),city+state,19.07283,72.88261
+IND400705AAA,Mumbai_Sanpada_CP (Maharashtra),city+state,19.07283,72.88261
+IND401104AAB,Mumbai_MiraRoad_M (Maharashtra),city+state,19.07283,72.88261
+IND401208AAA,Nalasopara (Maharashtra),no_exact_match,,
+IND401209AAA,Mumbai_Virar_DC (Maharashtra),city+state,19.07283,72.88261
+IND401209AAB,Mumbai_Vasai_CP (Maharashtra),city+state,19.07283,72.88261
+IND401501AAA,Boisar_OstwlEmp_D (Maharashtra),city+state,19.80362,72.75598
+IND401602AAA,Dahanu_KetyDPP_D (Maharashtra),no_exact_match,,
+IND403002AAA,Central Goa (Goa),not_previously_looked_up,,
+IND403401AAA,Goa_Ponda_Dc (Goa),no_exact_match,,
+IND403507AAA,Panaji Goa (Goa),no_exact_match,,
+IND403601AAA,Goa_Margao_Dc (Goa),no_exact_match,,
+IND410206AAB,Mumbai_Panvel_D (Maharashtra),city+state,19.07283,72.88261
+IND410209AAA,Mumbai_Khandeshwar_Dc (Maharashtra),city+state,19.07283,72.88261
+IND410210AAA,Mumbai_Kharghar_D (Maharashtra),city+state,19.07283,72.88261
+IND410401AAA,Lonavala_NngrgnRd_D (Maharashtra),no_exact_match,,
+IND410503AAA,Ambegaon_Manchar_D (Maharashtra),not_previously_looked_up,,
+IND411017AAA,PNQ Rahatani DPC (Maharashtra),no_exact_match,,
+IND411021AAA,PNQ Pashan DPC (Maharashtra),no_exact_match,,
+IND411036AAA,Pune_Mundhawa_L (Maharashtra),city+state,18.51957,73.85535
+IND411043AAA,Pune Balaji Nagar (Maharashtra),no_exact_match,,
+IND411048AAA,Pune_East_D_8 (Maharashtra),city+state,18.51957,73.85535
+IND412105AAC,Pune_North_D_3 (Maharashtra),city+state,18.51957,73.85535
+IND412803AAB,Wai_Central_DPP_3 (Maharashtra),city+state,17.95276,73.89058
+IND413517AAA,Udgir_NlgaonRd_D (Maharashtra),not_previously_looked_up,,
+IND414001AAA,AhmedNagar_DC (Maharashtra),not_previously_looked_up,,
+IND416606AAA,Malvan_BllvMarg_D (Maharashtra),no_exact_match,,
+IND421004AAA,Mumbai_Ulhasngr_DC (Maharashtra),city+state,19.07283,72.88261
+IND421301AAA,Mumbai_Kalyan West _Dc (Maharashtra),city+state,19.07283,72.88261
+IND421302AAF,Mumbai_Kalyan (Maharashtra),city+state,19.07283,72.88261
+IND421302AAH,Bhiwandi_Mankoli_GW (Maharashtra),city+state,19.30023,73.05881
+IND421302AAN,GreaterThane_Anjur_C (Maharashtra),no_exact_match,,
+IND421502AAA,Mumbai_Ambernath_Dc (Maharashtra),city+state,19.07283,72.88261
+IND421802AAA,Khandala_Satara_D (Maharashtra),city+state,20.01987,74.79839
+IND423301AAB,Satana_ThrbadRD_D (Maharashtra),no_exact_match,,
+IND424101AAA,Chalisgaon_BhadgDPP_D (Maharashtra),city+state,20.45781,75.01596
+IND424304AAC,Sakri_DhuleRoad_D (Maharashtra),city+state,20.99104,74.31475
+IND431001AAA,Aurangabad (Maharashtra),no_exact_match,,
+IND431001AAB,Aurangabad_Pratpngr_D (Maharashtra),city+state,19.87757,75.34226
+IND441107AAB,Savner_Wagodha_D (Maharashtra),no_exact_match,,
+IND441206AAB,Brahmapuri_DhnliRth_D (Maharashtra),city+state,17.56011,75.55462
+IND441603AAA,Chamorshi_Central_DPP_1 (Maharashtra),not_previously_looked_up,,
+IND441614AAA,Gondia_RamNgr_D (Maharashtra),no_exact_match,,
+IND441904AAB,Bhandara_RjnaiDPP_D (Maharashtra),no_exact_match,,
+IND442001AAA,Wardha_RamaNgr_D (Maharashtra),city+state,20.73933,78.59784
+IND443301AAA,Mehkar_SagarDPP_D (Maharashtra),city+state,20.1505,76.56841
+IND444203AAA,Shegaon_SChwkDPP_D (Maharashtra),city+state,20.7932,76.69921
+IND444602AAA,Amravati_DC (Maharashtra),city+state,20.93333,77.75
+IND445001AAB,Yavatmal_JajuDPP_D (Maharashtra),city+state,20.39324,78.13201
+IND451666AAA,Sendhwa_VishnuVhr_D (Madhya Pradesh),city+state,21.68562,75.09622
+IND454001AAA,Dhar_Trimurti_D (Madhya Pradesh),no_exact_match,,
+IND457226AAA,Jaora_RtlamNka_D (Madhya Pradesh),city+state,23.63783,75.12711
+IND457661AAA,Jhabua_Ward11_D (Madhya Pradesh),city+state,22.78059,74.56099
+IND461001AAA,Hoshangabad_MnRDDPP_D (Madhya Pradesh),no_exact_match,,
+IND461111AAA,Itarsi_DivrsnRd_D (Madhya Pradesh),no_exact_match,,
+IND462001AAA,Bhopal_Old City (Madhya Pradesh),city+state,23.25469,77.40289
+IND462011AAA,Bhopal MP Nagar (Madhya Pradesh),no_exact_match,,
+IND462042AAA,Bhopal_Kolar Mandakni (Madhya Pradesh),city+state,23.25469,77.40289
+IND464668AAA,Bareli_SourvDPP_D (Madhya Pradesh),city+state,23.41999,78.46233
+IND465333AAA,Shujalpur_AstrdDPP_D (Madhya Pradesh),not_previously_looked_up,,
+IND470113AAA,Bina_Srvdycwk_D (Madhya Pradesh),city+state,23.36015,79.07709
+IND470117AAA,Khurai_Talaiya_D (Madhya Pradesh),city+state,24.04372,78.33014
+IND470227AAB,Rehli_Ward7DPP_D (Madhya Pradesh),city+state,23.63722,79.06275
+IND473443AAA,Mungaoli_AshkngRd_D (Madhya Pradesh),city+state,24.40837,78.09588
+IND476001AAA,Morena_Prjapati_D (Madhya Pradesh),not_previously_looked_up,,
+IND477001AAA,Bhind_BhrolDPP_D (Madhya Pradesh),city+state,26.56671,78.78728
+IND477001AAB,Bhind_EtwahDPP_D (Madhya Pradesh),city+state,26.56671,78.78728
+IND480106AAA,Sausar_Central_DPP_1 (Madhya Pradesh),city+state,21.65576,78.79669
+IND481001AAA,Balaghat_Kosmi_D (Madhya Pradesh),no_exact_match,,
+IND482002AAA,Jabalpur (Madhya Pradesh),not_previously_looked_up,,
+IND483225AAA,Sihora_KtnRdDPP_D (Madhya Pradesh),not_previously_looked_up,,
+IND483770AAA,Barhi_Central_DPP_1 (Madhya Pradesh),not_previously_looked_up,,
+IND484001AAA,Shahdol_Sohagpur_D (Madhya Pradesh),not_previously_looked_up,,
+IND484224AAA,Anuppur_JthriDPP_DC (Madhya Pradesh),not_previously_looked_up,,
+IND485771AAA,Maihar_MngalDPP_D (Madhya Pradesh),not_previously_looked_up,,
+IND487001AAA,Narsingpur_JrjolDPP_D (Madhya Pradesh),not_previously_looked_up,,
+IND488001AAA,Panna_Mohnprwa_D (Madhya Pradesh),not_previously_looked_up,,
+IND491995AAB,Kawardha_TrnsptNGR_D (Chhattisgarh),city+state,22.00853,81.23148
+IND492001AAB,Raipur_Katora_IP (Chhattisgarh),city+state,21.23333,81.63333
+IND492007AAA,Raipur_Central_D_5 (Chhattisgarh),city+state,21.23333,81.63333
+IND493118AAC,Bhatpara_TrengaRD_D (Chhattisgarh),no_exact_match,,
+IND493445AAB,Mahasamund_RajpurRD_D (Chhattisgarh),no_exact_match,,
+IND494334AAB,Kanker_KrisnKunj_D (Chhattisgarh),no_exact_match,,
+IND495677AAA,Korba_Tilknagr_DC (Chhattisgarh),city+state,22.3458,82.69633
+IND496001AAA,Raigarh_MithmdRd_D (Chhattisgarh),city+state,21.89764,83.3966
+IND500008AAC,Hyderabad_Tolichwk_I (Telangana),city+state,17.38405,78.45636
+IND500008AAD,Hyderabad_Tolichwk_L (Telangana),city+state,17.38405,78.45636
+IND500008AAF,Hyderabad_South_D_4 (Telangana),city+state,17.38405,78.45636
+IND500010AAB,Hyderabad_Alwal_L (Telangana),city+state,17.38405,78.45636
+IND500018AAA,Hyderabad_PndrgNgr_DC (Telangana),not_previously_looked_up,,
+IND500032AAA,Hyd_Chandanagar_Dc (Telangana),not_previously_looked_up,,
+IND500035AAD,Hyderabad_South_D_12 (Telangana),city+state,17.38405,78.45636
+IND500039AAD,Hyderabad_Uppal_L (Telangana),city+state,17.38405,78.45636
+IND500055AAC,Hyderabad_North_D_2 (Telangana),city+state,17.38405,78.45636
+IND501218AAC,Shamshabad_Lngrguda_D (Telangana),city+state,17.25186,78.41835
+IND501359AAF,Hyderabad_Shamshbd_P (Telangana),city+state,17.38405,78.45636
+IND501359AAG,Hyderabad_South_R_11 (Telangana),city+state,17.38405,78.45636
+IND502295AAA,Sangareddy_Pothredy_D (Telangana),not_previously_looked_up,,
+IND504208AAB,Mancherial_Hitech_D (Telangana),city+state,18.87074,79.42863
+IND504215AAA,Luxettipet_ShivaDPP_D (Telangana),no_exact_match,,
+IND504251AAA,Bellmpalli_BasthDPP_D (Telangana),not_previously_looked_up,,
+IND504293AAA,Asifabad_PaikjNGR_D (Telangana),no_exact_match,,
+IND504296AAA,Kaghaznagar_Central_DPP_1 (Telangana),not_previously_looked_up,,
+IND505001AAA,Karimnagar_DC (Telangana),no_exact_match,,
+IND505326AAB,,not_previously_looked_up,,
+IND505425AAA,DhrmpuriTS_HanumDPP_D (Telangana),no_exact_match,,
+IND506001AAC,Warangal_Central_D_2 (Telangana),city+state,18.0,79.58333
+IND507111AAA,Bhadrachalam_ITDARd_D (Telangana),no_exact_match,,
+IND507167AAA,Tallada_PtrlBunk_D (Telangana),city+state,17.21316,80.42482
+IND509324AAA,Kalwakurthy_VidyaNGR_D (Telangana),no_exact_match,,
+IND520011AAA,Vijayawada (Andhra Pradesh),no_exact_match,,
+IND521165AAA,Vuyyuru_BhogdDPP_D (Andhra Pradesh),not_previously_looked_up,,
+IND523201AAA,Addanki_Oilmilrd_D (Andhra Pradesh),city+state,15.81061,79.97338
+IND524003AAA,Nellore_DC (Andhra Pradesh),city+state,14.44992,79.98697
+IND530012AAC,Vizag_Gajuwaka_L (Andhra Pradesh),not_previously_looked_up,,
+IND530026AAA,Vizag_Gajuwaka (Andhra Pradesh),not_previously_looked_up,,
+IND531162AAA,Vishakhapatnam (Andhra Pradesh),no_exact_match,,
+IND533201AAA,Amalapuram_Vijdurg_D (Andhra Pradesh),no_exact_match,,
+IND533242AAA,Razole_Shanthi_D (Andhra Pradesh),not_previously_looked_up,,
+IND533401AAA,Tuni_Eaglvari_D (Andhra Pradesh),city+state,17.35905,82.54607
+IND534001AAA,Eluru_Agraharm_DC (Andhra Pradesh),city+state,16.71311,81.10437
+IND534260AAC,Palakollu_CroadDPP_D (Andhra Pradesh),city+state,16.5167,81.73
+IND560002AAA,Bengaluru_KHRoad_I (Karnataka),city+state,12.97194,77.59369
+IND560027AAA,Blr_Domlur (Karnataka),not_previously_looked_up,,
+IND560058AAD,Bengaluru_Peenya_L (Karnataka),city+state,12.97194,77.59369
+IND560060AAB,Bengaluru_Kengeri_IP (Karnataka),city+state,12.97194,77.59369
+IND560064AAA,Bengaluru_NwYlhnka_DC (Karnataka),city+state,12.97194,77.59369
+IND560064AAD,Bengaluru_Bagaluru_D (Karnataka),city+state,12.97194,77.59369
+IND560067AAC,Bengaluru_Kadugodi_D (Karnataka),city+state,12.97194,77.59369
+IND560078AAC,BLR_JPNagar_Pc (Karnataka),no_exact_match,,
+IND560083AAB,Bengaluru_Bnnrghta_L (Karnataka),city+state,12.97194,77.59369
+IND560085AAA,Bengaluru_Banshkri_DC (Karnataka),city+state,12.97194,77.59369
+IND560099AAA,Bengaluru_Bomsndra_PC (Karnataka),not_previously_looked_up,,
+IND562108AAA,Gauribidanur_Gurukrpa_D (Karnataka),city+state,13.61072,77.51738
+IND562159AAA,Ramanagara_BMRd_DC (Karnataka),no_exact_match,,
+IND562160AAB,Chanapatna_Central_D_2 (Karnataka),no_exact_match,,
+IND563116AAA,Bethamangala_FshryOFC_D (Karnataka),city+state,13.00846,78.32824
+IND571105AAA,Hunsur_RatnaDPP_D (Karnataka),city+state,11.87347,76.42128
+IND571438AAB,Srirangapatna_Bburynkpl_D (Karnataka),no_exact_match,,
+IND571602AAA,Krishnarajngr_JublieRD_D (Karnataka),no_exact_match,,
+IND572201AAB,Tiptur_YTRd_D (Karnataka),no_exact_match,,
+IND574117AAA,Uchila_Busstand_D (Karnataka),no_exact_match,,
+IND574227AAA,Moodbidri_MrdiVlge_D (Karnataka),no_exact_match,,
+IND576101AAA,Udupi (Karnataka),not_previously_looked_up,,
+IND580002AAA,Dharwad_Dc (Karnataka),city+state,15.46005,75.00778
+IND581119AAB,Ukkadagatri_Tuminkte_D (Karnataka),no_exact_match,,
+IND581343AAC,Kumta_Central_DPP_2 (Karnataka),city+state,14.42853,74.4189
+IND584101AAA,Raichur_LSRoad_DC (Karnataka),no_exact_match,,
+IND591102AAA,Bailhongal_NamoNagr_D (Karnataka),no_exact_match,,
+IND591115AAB,Kittur_ColageRD_D (Karnataka),not_previously_looked_up,,
+IND600004AAA,Chennai_Mylapore (Tamil Nadu),not_previously_looked_up,,
+IND600008AAA,Chennai_Egmore_C (Tamil Nadu),city+state,13.08784,80.27847
+IND600016AAA,Airport (Tamil Nadu),no_exact_match,,
+IND600016AAB,Chennai_Alandur_C (Tamil Nadu),city+state,13.08784,80.27847
+IND600044AAC,Chennai_Chrompet_PC (Tamil Nadu),city+state,13.08784,80.27847
+IND600044AAE,Chennai_Chrompet_L (Tamil Nadu),city+state,13.08784,80.27847
+IND600048AAA,Chennai_Vandalur_Dc (Tamil Nadu),city+state,13.08784,80.27847
+IND600076AAB,Chennai_Madhavaram_DPC (Tamil Nadu),city+state,13.08784,80.27847
+IND600110AAA,Chennai_Madhavaram_L (Tamil Nadu),city+state,13.08784,80.27847
+IND602001AAA,Chennai_Thiruvlr_DC (Tamil Nadu),city+state,13.08784,80.27847
+IND602001AAB,Kumbakonam_Mettu_DC (Tamil Nadu),city+state,10.96209,79.39124
+IND602105AAB,Chennai_Sriperumbudur_Dc (Tamil Nadu),city+state,13.08784,80.27847
+IND603203AAA,Chennai_Potheri (Tamil Nadu),city+state,13.08784,80.27847
+IND613104AAA,Thirukkatupli_Poondi_D (Tamil Nadu),no_exact_match,,
+IND614602AAA,Pattukotai_anthniyr_D (Tamil Nadu),no_exact_match,,
+IND620020AAA,Tiruchi (Tamil Nadu),no_exact_match,,
+IND621112AAA,Tiruchi_Samyaprm_D (Tamil Nadu),no_exact_match,,
+IND621211AAA,Musiri_ThryrRD_D (Tamil Nadu),city+state,10.95299,78.44427
+IND621306AAA,Manapparai_BypassRd_D (Tamil Nadu),city+state,10.60772,78.42582
+IND622001AAA,Pudukkotti_Mrthndpr_D (Tamil Nadu),no_exact_match,,
+IND625218AAA,Vadipatti_lalaNGR_D (Tamil Nadu),city+state,10.08481,77.96113
+IND625532AAA,Usilampatti_MrutiNGR_D (Tamil Nadu),city+state,9.96936,77.78621
+IND629001AAA,Nagarcoil_AsrplmRd_DC (Tamil Nadu),no_exact_match,,
+IND629179AAA,Marthandam_Nallur_D (Tamil Nadu),city+state,8.30812,77.22144
+IND635601AAB,Tiruppattur_KoilStrt_D (Tamil Nadu),city+state,10.10847,78.60443
+IND636005AAA,Salem_Kadtmpty_H (Tamil Nadu),not_previously_looked_up,,
+IND636102AAA,Attur_KaaduRd_D (Tamil Nadu),city+state,11.59414,78.60143
+IND636352AAA,Thoppur_HghsclRD_D (Tamil Nadu),no_exact_match,,
+IND636402AAA,Mettur_RTOroad_D (Tamil Nadu),city+state,11.78796,77.8008
+IND637001AAA,Namakkal_Rkcomplx_DC (Tamil Nadu),city+state,11.22126,78.16524
+IND637301AAA,Sankari_Trchngrd_D (Tamil Nadu),no_exact_match,,
+IND637408AAA,Rasipurm_Knrpati_D (Tamil Nadu),no_exact_match,,
+IND638052AAA,Perundurai_Viveka_DC (Tamil Nadu),not_previously_looked_up,,
+IND639001AAA,Karur (Tamil Nadu),no_exact_match,,
+IND639104AAB,Kulithalai_AnnaNGR_D (Tamil Nadu),no_exact_match,,
+IND641006AAD,Coimbatore_ElngoNgr_C (Tamil Nadu),city+state,11.00555,76.96612
+IND641008AAA,Cjb_Kovaipudur_Dc (Tamil Nadu),not_previously_looked_up,,
+IND641011AAA,Cjb_West_Dc (Tamil Nadu),no_exact_match,,
+IND641654AAA,Avinashi_Valluvar_D (Tamil Nadu),city+state,11.19297,77.26865
+IND671323AAD,Manjeshwar_Central_D_1 (Kerala),not_previously_looked_up,,
+IND673573AAA,Thamarassery_Chungam_D (Kerala),no_exact_match,,
+IND673639AAA,Areacode_Puthalam_D (Kerala),not_previously_looked_up,,
+IND679322AAA,Printhlmna_EmsPnmbi_D (Kerala),not_previously_looked_up,,
+IND679329AAA,Nilambur_StteHW28_D (Kerala),not_previously_looked_up,,
+IND679576AAA,Edappal_PonaniRD_D (Kerala),no_exact_match,,
+IND680712AAA,Irinjlkuda_Greens_D (Kerala),no_exact_match,,
+IND683572AAA,Angamaly_CivilStn_D (Kerala),no_exact_match,,
+IND686507AAA,Parakkdavu_KeRoad_D (Kerala),no_exact_match,,
+IND686540AAA,Karukachal_MnimlaRd_D (Kerala),city+state,9.5,76.63333
+IND688524AAA,Cherthala_Mulapali_D (Kerala),city+state,9.68444,76.33558
+IND689650AAA,Kozhenchery_Cherukole_D (Kerala),no_exact_match,,
+IND695012AAB,Trivandrum_Mnanthla_D (Kerala),not_previously_looked_up,,
+IND695541AAA,Nedumangad_Arsprmbu_D (Kerala),no_exact_match,,
+IND695582AAA,Kazhakkoottam_Rdiosttn_D (Kerala),no_exact_match,,
+IND700026AAC,CCU_Lake Avenue_DPC (West Bengal),no_exact_match,,
+IND700028AAB,CCU_DumDum_DPC (West Bengal),no_exact_match,,
+IND700065AAA,CCU_Beliaghata_DPC (West Bengal),no_exact_match,,
+IND700065AAB,CCU_Beleghta_CP (West Bengal),no_exact_match,,
+IND700088AAA,Kolkata_TrtllaRD_L (West Bengal),city+state,22.56263,88.36304
+IND700136AAG,Kolkata_Narynpur_C (West Bengal),city+state,22.56263,88.36304
+IND712103AAA,Hoogly_Bandel_D (West Bengal),no_exact_match,,
+IND712310AAA,Kolkata_Dankuni_P (West Bengal),city+state,22.56263,88.36304
+IND712602AAA,Arambag_BalibDPP_D (West Bengal),not_previously_looked_up,,
+IND712612AAA,Kamarpukur_ChatiDPP_D (West Bengal),not_previously_looked_up,,
+IND713103AAA,Bardhaman_Bankura_D (West Bengal),city+state,23.25572,87.85691
+IND713145AAB,Manteswar_MemariRD_D (West Bengal),not_previously_looked_up,,
+IND721139AAC,Panskura_Central_D_3 (West Bengal),no_exact_match,,
+IND721212AAA,Ghatal_KrshDPP_D (West Bengal),no_exact_match,,
+IND721501AAC,AmaDubi_Bulabeda_D (West Bengal),no_exact_match,,
+IND721507AAA,Jhargram_UBamdDPP_D (West Bengal),no_exact_match,,
+IND721636AAB,Tamluk_Central_DPP_2 (West Bengal),not_previously_looked_up,,
+IND722101AAA,Bankura_KeranDPP_D (West Bengal),no_exact_match,,
+IND722101AAC,Bankura_BhowmDPP_D (West Bengal),no_exact_match,,
+IND722154AAA,MirzapurWB_VidyaDPP_D (West Bengal),not_previously_looked_up,,
+IND722202AAA,Barjora_Central_DPP_1 (West Bengal),not_previously_looked_up,,
+IND731204AAB,Bolpur_WebelDPP_D (West Bengal),city+state,23.66278,87.69695
+IND732138AAA,Bamangola_Central_D_1 (West Bengal),not_previously_looked_up,,
+IND732139AAA,Samsi_RatuaDPP_D (West Bengal),no_exact_match,,
+IND733102AAA,Balurghat_AkhirDPP_D (West Bengal),no_exact_match,,
+IND733124AAA,Gangarmpur_KhdimDPP_D (West Bengal),not_previously_looked_up,,
+IND733140AAA,Gangarampr_FulbaDPP_D (West Bengal),no_exact_match,,
+IND734203AAA,Kurseong_ABPath_D (West Bengal),not_previously_looked_up,,
+IND734214AAB,Mirik_WardNo3_D (West Bengal),not_previously_looked_up,,
+IND735224AAA,Mainaguri_MilpaDPP_D (West Bengal),no_exact_match,,
+IND736101AAA,CoochBehar_Psthrjhr_D (West Bengal),no_exact_match,,
+IND736165AAA,Pundibari_StatonRD_D (West Bengal),no_exact_match,,
+IND741201AAC,Ranaghat_ArickDPP_D (West Bengal),not_previously_looked_up,,
+IND742149AAA,Murshidabad_Sirjudol_D (West Bengal),no_exact_match,,
+IND751014AAA,Bhubaneswar_BjbNgr_DC (Orissa),city+state,20.27241,85.83385
+IND751015AAA,Bhubaneshwar_Nayapalli (Orissa),no_exact_match,,
+IND752056AAA,Khurdha_MdhsnDPP_D (Orissa),no_exact_match,,
+IND754103AAA,Jagatsghpr_Markndpr_D (Orissa),no_exact_match,,
+IND756032AAA,Jaleswar_NaturDPP_D (Orissa),no_exact_match,,
+IND757001AAA,Baripada_KalikDPP_D (Orissa),no_exact_match,,
+IND757041AAA,Udala_NagplDPP_D (Orissa),not_previously_looked_up,,
+IND758034AAA,Joda_Central_D_1 (Orissa),city+state,22.017,85.422
+IND758035AAA,Barbil_PunjbiPd_D (Orissa),not_previously_looked_up,,
+IND760003AAB,Berhampur_Khajuria_I (Orissa),city+state,21.55109,86.64548
+IND764071AAB,Pappadahandi_Central_DPP_2 (Orissa),not_previously_looked_up,,
+IND767001AAA,Balangir_Rjndpara_D (Orissa),not_previously_looked_up,,
+IND767017AAA,Sonepur_BrezeDPP_D (Orissa),not_previously_looked_up,,
+IND768216AAA,Brajrajnagar_LamtiDPP_D (Orissa),no_exact_match,,
+IND770017AAB,Rajgangpur_Central_D_2 (Orissa),city+state,22.2,84.583
+IND781001AAA,Guwahati_UzanBazr_DC (Assam),city+state,26.1844,91.7458
+IND781003AAA,Guwahati_Chandmari (Assam),city+state,26.1844,91.7458
+IND781005AAA,Guwahati_North (Assam),city+state,26.1844,91.7458
+IND781014AAA,Guwahati_Jalukbari (Assam),city+state,26.1844,91.7458
+IND781022AAA,Guwahati_Sixmile (Assam),city+state,26.1844,91.7458
+IND781102AAA,Hajo_Sardala_D (Assam),not_previously_looked_up,,
+IND781335AAA,Nalbari_Bhgtpura_D (Assam),not_previously_looked_up,,
+IND781354AAA,Rangia_HosptlRd_D (Assam),city+state,26.44931,91.61356
+IND783129AAA,Lakhipur_WrdN4DPP_D (Assam),city+state,26.03001,90.30611
+IND784110AAA,Dhekiajuli_Wardno5_D (Assam),not_previously_looked_up,,
+IND784168AAB,Gohpur_Central_D_1 (Assam),city+state,26.88184,93.6156
+IND785112AAC,Teok_Wardno3_D (Assam),not_previously_looked_up,,
+IND785621AAA,Golaghat_BaruaRd_D (Assam),not_previously_looked_up,,
+IND785634AAA,Mariani_Mainroad_D (Assam),not_previously_looked_up,,
+IND785675AAA,Moranhat_TiloiDPP_D (Assam),not_previously_looked_up,,
+IND785690AAB,Sonari_Central_DPP_1 (Assam),city+state,27.07344,95.02753
+IND786602AAA,Duliajan_StatonRd_D (Assam),city+state,27.36035,95.31806
+IND787001AAA,LakhimpurN_SashPhkn_D (Assam),no_exact_match,,
+IND787059AAB,Silapathar_Hejunagr_D (Assam),city+state,27.59441,94.72402
+IND788121AAA,Kabuganj_Jantaclg_D (Assam),not_previously_looked_up,,
+IND791102AAA,Pasighat_MissonRd_D (Arunachal Pradesh),not_previously_looked_up,,
+IND791111AAC,Itanagar_WageDPP_D (Arunachal Pradesh),not_previously_looked_up,,
+IND791125AAB,Likabali_ZoomCDPP_D (Arunachal Pradesh),not_previously_looked_up,,
+IND792001AAA,Tezu_Farmnala_D (Arunachal Pradesh),city+state,27.91256,96.12882
+IND792120AAB,Changlang_Central_D_1 (Arunachal Pradesh),city+state,27.13177,95.73486
+IND792121AAB,Jairampur_Mdiclcly_D (Arunachal Pradesh),no_exact_match,,
+IND792130AAB,Khonsa_Central_D_1 (Arunachal Pradesh),city+state,27.01667,95.56667
+IND793001AAA,Shillong (Meghalaya),no_exact_match,,
+IND794101AAA,Tura_Sracmplx_D (Meghalaya),city+state,25.51421,90.20239
+IND796009AAA,Aizawl_HunthrVg_I (Mizoram),not_previously_looked_up,,
+IND796081AAA,Kolasib_Diakkawn_D (Mizoram),not_previously_looked_up,,
+IND796321AAB,Champhai_AwmpiVng_D (Mizoram),not_previously_looked_up,,
+IND798601AAA,Mokokchung_Central_D_1 (Nagaland),no_exact_match,,
+IND801103AAA,Bihta_ShivNgar_D (Bihar),city+state,25.00116,84.56517
+IND803108AAB,Chandi_SH78_D (Bihar),city+state,25.32647,85.40518
+IND803213AAA,Barh_Malahi_D (Bihar),not_previously_looked_up,,
+IND804401AAA,Arwal_Rozapar_D (Bihar),city+state,25.24281,84.66571
+IND804452AAA,Masaurhi_Blockrd_D (Bihar),city+state,25.31439,84.82184
+IND811105AAA,Sheikhpura_Bgwtichk_D (Bihar),not_previously_looked_up,,
+IND813102AAA,Banka_Wardno6_D (Bihar),no_exact_match,,
+IND813203AAA,Kahalgaon_NdiaTola_D (Bihar),city+state,25.48407,87.54586
+IND821307AAA,DehriSone_Dilliyan_D (Bihar),no_exact_match,,
+IND825102AAA,Phusro_RhmgjDPP_D (Jharkhand),not_previously_looked_up,,
+IND828111AAA,Dhanbad_Jharia_DC (Jharkhand),city+state,23.79759,86.42992
+IND828401AAB,Gomoh_KhsmiDPP_D (Jharkhand),city+state,23.87355,86.1516
+IND832109AAB,Jamshedpur_Central_I_3 (Jharkhand),city+state,22.80278,86.18545
+IND841101AAA,Sonepur_Sabalpur_D (Bihar),not_previously_looked_up,,
+IND841207AAB,Dighwara_SadarHPL_D (Bihar),not_previously_looked_up,,
+IND841226AAB,Siwan_HnmntNgr_D (Bihar),not_previously_looked_up,,
+IND841424AAA,Chhapra_Prbhunth_D (Bihar),city+state,26.40049,85.37209
+IND841428AAA,Gopalganj_GopalDPP_D (Bihar),no_exact_match,,
+IND843109AAB,Kanti_Central_DPP_2 (Bihar),no_exact_match,,
+IND843329AAB,Sheohar_Ward9DPP_D (Bihar),city+state,26.51393,85.29341
+IND845412AAB,Chakia_Wardno10_D (Bihar),city+state,25.04907,83.63002
+IND851112AAB,Barauni_Wardno10_D (Bihar),not_previously_looked_up,,
+IND851204AAA,Khagaria_GodamDPP_D (Bihar),city+state,25.5022,86.46708
+IND852118A1B,,missing_city_or_state,,
+IND852118AAA,Forbesganj_JhumanCk_D (Bihar),city+state,26.30253,87.26556
+IND852131AAA,Supaul_SadrHsptl_D (Bihar),city+state,26.11527,86.59509
+IND853204AAA,Naugchia_Vijayght_D (Bihar),no_exact_match,,
+IND854335AAA,Narpatganj_Central_DPP_1 (Bihar),city+state,26.33407,87.10437

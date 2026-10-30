@@ -1,0 +1,73 @@
+hub,name,match,latitude_x,longitude_x,city,state,search_city,search_state,coordinate_method,matched_name,matched_state,error,betweenness,pincode_guess,pincode,place_name,postal_state,district,latitude_y,longitude_y
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),no_exact_match,,,Chandigarh,Punjab,Chandigarh,Punjab,,,,,0.03843896885205213,160002,160002,Hallomajra,Chandigarh,Chandigarh,30.7465,76.7417
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),no_exact_match,,,Chandigarh,Punjab,Chandigarh,Punjab,,,,,0.03843896885205213,160002,160002,Ind Area Chandigarh,Chandigarh,Chandigarh,30.7465,76.7417
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),no_exact_match,,,Chandigarh,Punjab,Chandigarh,Punjab,,,,,0.03843896885205213,160002,160002,Ram Darbar,Chandigarh,Chandigarh,30.7465,76.7417
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Amgola,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,S.S.K.Bhawan,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Sikandarpur (Muzaffarpur),Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Saraiyaganj,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Raj Narayan Singh Inter College,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Purani Bazar,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Kalyani,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Muz. Collectorate,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Pakki Sarai,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Muzaffarpur Court,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Motijheel (Muzaffarpur),Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Imlichatti,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Bihar University,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Malighat Maniari,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,B.M.P-VI,Bihar,Muzaffarpur,26.1511,85.3308
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),ambiguous_city_state,,,Muzaffrpur,Bihar,Muzaffarpur,Bihar,,,,,0.02298694577535896,842001,842001,Muzaffarpur H.O,Bihar,Muzaffarpur,26.1511,85.3308
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),ambiguous_city_state,,,Kolhapur,Maharashtra,Kolhapur,Maharashtra,,,,,0.010456171761394434,416012,416012,Babujamal,Maharashtra,Kolhapur,16.4704,74.1612
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),ambiguous_city_state,,,Kolhapur,Maharashtra,Kolhapur,Maharashtra,,,,,0.010456171761394434,416012,416012,Mangalwar Peth (Kolhapur),Maharashtra,Kolhapur,16.4704,74.1612
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),ambiguous_city_state,,,Kolhapur,Maharashtra,Kolhapur,Maharashtra,,,,,0.010456171761394434,416012,416012,Shivaji Peth,Maharashtra,Kolhapur,16.4704,74.1612
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),ambiguous_city_state,,,Kolhapur,Maharashtra,Kolhapur,Maharashtra,,,,,0.010456171761394434,416012,416012,Kolhapur City H.O,Maharashtra,Kolhapur,16.4704,74.1612
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),ambiguous_city_state,,,Kolhapur,Maharashtra,Kolhapur,Maharashtra,,,,,0.010456171761394434,416012,416012,Rankala,Maharashtra,Kolhapur,16.4704,74.1612
+IND575004AAB,Mangalore_Kuntikna_H (Karnataka),no_exact_match,,,Mangalore,Karnataka,Mangalore,Karnataka,,,,,0.008994881231311426,575004,575004,Bijai,Karnataka,Dakshina Kannada,12.8382,75.2667
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,,Mehsana,Gujarat,Mehsana,Gujarat,,,,,0.008281450408760774,384205,384205,Aloda,Gujarat,Mahesana,23.5978,72.4824
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,,Mehsana,Gujarat,Mehsana,Gujarat,,,,,0.008281450408760774,384205,384205,Nugar,Gujarat,Mahesana,23.5978,72.4824
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,,Mehsana,Gujarat,Mehsana,Gujarat,,,,,0.008281450408760774,384205,384205,Palodar,Gujarat,Mahesana,23.5978,72.4824
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,,Mehsana,Gujarat,Mehsana,Gujarat,,,,,0.008281450408760774,384205,384205,Chhathiarda,Gujarat,Mahesana,23.5978,72.4824
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),no_exact_match,,,Mehsana,Gujarat,Mehsana,Gujarat,,,,,0.008281450408760774,384205,384205,Panchot,Gujarat,Mahesana,23.5978,72.4824
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Prayag,Uttar Pradesh,Allahabad,25.4448,81.8432
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,University (Allahabad),Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,K G Marg,Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Indian Press,Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Distt.Board,Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Allahabad Kty. H.O,Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Subhash Ngr,Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Rajapur (Allahabad),Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Katra (Allahabad),Uttar Pradesh,Allahabad,25.4932,81.8796
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,George Town,Uttar Pradesh,Allahabad,25.4481,81.8576
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),ambiguous_city_state,,,Allahabad,Uttar Pradesh,Allahabad,Uttar Pradesh,,,,,0.007112866315539148,211002,211002,Kamlanagar,Uttar Pradesh,Allahabad,25.5868,81.938
+IND605010AAB,Pondicherry_Vasanthm_I (Pondicherry),no_exact_match,,,Pondicherry,Pondicherry,Pondicherry,Puducherry,,,,,0.007095322934656754,605010,605010,Ozhugarai,Pondicherry,Pondicherry,11.8768,79.8107
+IND605010AAB,Pondicherry_Vasanthm_I (Pondicherry),no_exact_match,,,Pondicherry,Pondicherry,Pondicherry,Puducherry,,,,,0.007095322934656754,605010,605010,Reddiyarpalayam,Pondicherry,Pondicherry,11.8768,79.8107
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Asta,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Sultanpur,Karnataka,Kalaburagi,17.3849,76.8215
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,GB Shivajinagar,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Kalhangarga,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Chinchansoor,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Kumsi,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Ganjankhed,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,GB Darga,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,GB Mominpura,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,GB N Gunj,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Kapanoor,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Karhari,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Keriambalga,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Syed Chincholi,Karnataka,Kalaburagi,17.2602,76.8695
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),no_exact_match,,,Gulbarga,Karnataka,Gulbarga,Karnataka,,,,,0.006319515646746483,585104,585104,Kamalnagar,Karnataka,Kalaburagi,17.2602,76.8695
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),no_exact_match,,,Rajamundry,Andhra Pradesh,Rajamundry,Andhra Pradesh,,,,,0.006303202158968281,533106,533106,APHB Colony,Andhra Pradesh,East Godavari,17.4131,82.239
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),no_exact_match,,,Rajamundry,Andhra Pradesh,Rajamundry,Andhra Pradesh,,,,,0.006303202158968281,533106,533106,Spinning Mills Centre,Andhra Pradesh,East Godavari,17.4131,82.239
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),no_exact_match,,,Rajamundry,Andhra Pradesh,Rajamundry,Andhra Pradesh,,,,,0.006303202158968281,533106,533106,Prakasamnagar,Andhra Pradesh,East Godavari,17.4131,82.239
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Chunakhali Nimtala,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Cossimbazar Raj,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Sundipur,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Gazdharpara,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Banjetia,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Boaliadanga,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Muktinagar,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Nograjole,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Nowdapanur,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Bishnupur Kalibari,West Bengal,Murshidabad,24.1107,88.0112
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),no_exact_match,,,Berhampore,West Bengal,Berhampore,West Bengal,,,,,0.006084872927444475,742102,742102,Hatinagar,West Bengal,Murshidabad,24.1107,88.0112

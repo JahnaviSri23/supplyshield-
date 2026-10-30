@@ -1,0 +1,4 @@
+hub,matched_name,matched_state,latitude,longitude,candidate_id,review_evidence
+IND842001AAA,Muzaffarpur,Bihar,26.12259,85.39055,1262330,City and state match; candidate district and inferred 842001 postal records both indicate Muzaffarpur.
+IND416012AAA,Kolhāpur,Maharashtra,16.69563,74.23167,1266285,City and state match; candidate district and inferred 416012 postal records both indicate Kolhapur.
+IND384205AAA,Mahesāna,Gujarat,23.59864,72.38472,1264389,"Alternative city spelling; state and district agree with inferred 384205 postal records, including Panchot."

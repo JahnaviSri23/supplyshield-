@@ -1,0 +1,3316 @@
+{
+  "chandigarh|punjab": {
+    "match": "no_exact_match"
+  },
+  "sonipat|haryana": {
+    "match": "city+state",
+    "matched_name": "Sonīpat",
+    "matched_state": "Haryana",
+    "latitude": 28.99478,
+    "longitude": 77.01937,
+    "coordinate_method": "city_approximation"
+  },
+  "muzaffrpur|bihar": {
+    "match": "no_exact_match"
+  },
+  "bhubaneshwar|odisha": {
+    "match": "no_exact_match"
+  },
+  "delhi|delhi": {
+    "match": "no_exact_match"
+  },
+  "kolhapur|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "mangalore|karnataka": {
+    "match": "no_exact_match"
+  },
+  "mehsana|gujarat": {
+    "match": "no_exact_match"
+  },
+  "sasaram|bihar": {
+    "match": "city+state",
+    "matched_name": "Sasarām",
+    "matched_state": "Bihar",
+    "latitude": 24.94942,
+    "longitude": 84.01645,
+    "coordinate_method": "city_approximation"
+  },
+  "allahabad|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "sikar|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Sīkar",
+    "matched_state": "Rajasthan",
+    "latitude": 27.61206,
+    "longitude": 75.13996,
+    "coordinate_method": "city_approximation"
+  },
+  "pondicherry|puducherry": {
+    "match": "no_exact_match"
+  },
+  "gulbarga|karnataka": {
+    "match": "no_exact_match"
+  },
+  "rajamundry|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "berhampore|west bengal": {
+    "match": "no_exact_match"
+  },
+  "goa|goa": {
+    "match": "no_exact_match"
+  },
+  "sujangarh|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Sūjāngarh",
+    "matched_state": "Rajasthan",
+    "latitude": 27.7,
+    "longitude": 74.46667,
+    "coordinate_method": "city_approximation"
+  },
+  "bikaner|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Bikaner",
+    "matched_state": "Rajasthan",
+    "latitude": 28.01762,
+    "longitude": 73.31495,
+    "coordinate_method": "city_approximation"
+  },
+  "nokha|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "fbd|haryana": {
+    "match": "no_exact_match"
+  },
+  "puttaprthi|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "bellary|karnataka": {
+    "match": "no_exact_match"
+  },
+  "bhatinda|punjab": {
+    "match": "no_exact_match"
+  },
+  "humnabad|karnataka": {
+    "match": "no_exact_match"
+  },
+  "bidar|karnataka": {
+    "match": "city+state",
+    "matched_name": "Bidar",
+    "matched_state": "Karnataka",
+    "latitude": 17.90802,
+    "longitude": 77.51524,
+    "coordinate_method": "city_approximation"
+  },
+  "narayankhed|telangana": {
+    "match": "no_exact_match"
+  },
+  "zahirabad|telangana": {
+    "match": "city+state",
+    "matched_name": "Zahirābād",
+    "matched_state": "Telangana",
+    "latitude": 17.68138,
+    "longitude": 77.60743,
+    "coordinate_method": "city_approximation"
+  },
+  "haridwar|uttarakhand": {
+    "match": "city+state",
+    "matched_name": "Haridwar",
+    "matched_state": "Uttarakhand",
+    "latitude": 29.94791,
+    "longitude": 78.16025,
+    "coordinate_method": "city_approximation"
+  },
+  "moradabad|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "mumbai hub|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "chittaurgarh|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "ccu|west bengal": {
+    "match": "no_exact_match"
+  },
+  "mysore|karnataka": {
+    "match": "no_exact_match"
+  },
+  "hanumangarh|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Hanumāngarh",
+    "matched_state": "Rajasthan",
+    "latitude": 29.58182,
+    "longitude": 74.32938,
+    "coordinate_method": "city_approximation"
+  },
+  "dharmavram|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "sirkazhi|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Sīrkāzhi",
+    "matched_state": "Tamil Nadu",
+    "latitude": 11.23725,
+    "longitude": 79.73585,
+    "coordinate_method": "city_approximation"
+  },
+  "rghunthpur|west bengal": {
+    "match": "no_exact_match"
+  },
+  "karaikal|puducherry": {
+    "match": "city+state",
+    "matched_name": "Kāraikāl",
+    "matched_state": "Puducherry",
+    "latitude": 10.91667,
+    "longitude": 79.83333,
+    "coordinate_method": "city_approximation"
+  },
+  "nagapttinm|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "purulia|west bengal": {
+    "match": "no_exact_match"
+  },
+  "pulivendula|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "jhalda|west bengal": {
+    "match": "no_exact_match"
+  },
+  "trivandrum|kerala": {
+    "match": "no_exact_match"
+  },
+  "bilaspurhp|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "sundarngr|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "kolar|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "mulbagal|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "nasirabad|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Nasīrābād",
+    "matched_state": "Rajasthan",
+    "latitude": 26.30473,
+    "longitude": 74.73364,
+    "coordinate_method": "city_approximation"
+  },
+  "molakalmuru|karnataka": {
+    "match": "no_exact_match"
+  },
+  "suryapet|telangana": {
+    "match": "no_exact_match"
+  },
+  "nanjangud|karnataka": {
+    "match": "city+state",
+    "matched_name": "Nanjangūd",
+    "matched_state": "Karnataka",
+    "latitude": 12.11764,
+    "longitude": 76.68397,
+    "coordinate_method": "city_approximation"
+  },
+  "kamareddy|telangana": {
+    "match": "no_exact_match"
+  },
+  "nipani|karnataka": {
+    "match": "city+state",
+    "matched_name": "Nipāni",
+    "matched_state": "Karnataka",
+    "latitude": 17.38622,
+    "longitude": 76.98375,
+    "coordinate_method": "city_approximation"
+  },
+  "channaraya|karnataka": {
+    "match": "no_exact_match"
+  },
+  "hospet|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "beawar|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "nagamangala|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "pratapgarh|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "najibabad|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Najībābād",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 29.61194,
+    "longitude": 78.34274,
+    "coordinate_method": "city_approximation"
+  },
+  "bilara|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Bilāra",
+    "matched_state": "Rajasthan",
+    "latitude": 26.18067,
+    "longitude": 73.7055,
+    "coordinate_method": "city_approximation"
+  },
+  "krishnarajpet|karnataka": {
+    "match": "city+state",
+    "matched_name": "Krishnarājpet",
+    "matched_state": "Karnataka",
+    "latitude": 12.66621,
+    "longitude": 76.4877,
+    "coordinate_method": "city_approximation"
+  },
+  "badnaur|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "ramanathapura|karnataka": {
+    "match": "no_exact_match"
+  },
+  "vaijiapur|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "rajsamand|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Rājsamand",
+    "matched_state": "Rajasthan",
+    "latitude": 25.07145,
+    "longitude": 73.8798,
+    "coordinate_method": "city_approximation"
+  },
+  "gundlupet|karnataka": {
+    "match": "city+state",
+    "matched_name": "Gundlupēt",
+    "matched_state": "Karnataka",
+    "latitude": 11.81004,
+    "longitude": 76.69027,
+    "coordinate_method": "city_approximation"
+  },
+  "pangodu|kerala": {
+    "match": "no_exact_match"
+  },
+  "pilibanga|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "gzb|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "tumkur|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "narsapur|telangana": {
+    "match": "ambiguous_city_state"
+  },
+  "sagardighi|west bengal": {
+    "match": "city+state",
+    "matched_name": "Sāgardīghi",
+    "matched_state": "West Bengal",
+    "latitude": 24.29406,
+    "longitude": 88.09544,
+    "coordinate_method": "city_approximation"
+  },
+  "rajam|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "morgram|west bengal": {
+    "match": "no_exact_match"
+  },
+  "pukhrayan|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Pukhrāyān",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 26.22375,
+    "longitude": 79.83739,
+    "coordinate_method": "city_approximation"
+  },
+  "parbatsar|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "barmer|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Bārmer",
+    "matched_state": "Rajasthan",
+    "latitude": 25.74572,
+    "longitude": 71.39211,
+    "coordinate_method": "city_approximation"
+  },
+  "salur|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "rampurhat|west bengal": {
+    "match": "no_exact_match"
+  },
+  "dehradun|uttarakhand": {
+    "match": "city+state",
+    "matched_name": "Dehradun",
+    "matched_state": "Uttarakhand",
+    "latitude": 30.32443,
+    "longitude": 78.03392,
+    "coordinate_method": "city_approximation"
+  },
+  "makrana|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Makrāna",
+    "matched_state": "Rajasthan",
+    "latitude": 27.04361,
+    "longitude": 74.72445,
+    "coordinate_method": "city_approximation"
+  },
+  "virudhchlm|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "khargram|west bengal": {
+    "match": "city+state",
+    "matched_name": "Khargrām",
+    "matched_state": "West Bengal",
+    "latitude": 24.02734,
+    "longitude": 87.9897,
+    "coordinate_method": "city_approximation"
+  },
+  "gangakher|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Gangākher",
+    "matched_state": "Maharashtra",
+    "latitude": 18.96962,
+    "longitude": 76.74946,
+    "coordinate_method": "city_approximation"
+  },
+  "degana|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "parvathipuram|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Pārvathipuram",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 15.60046,
+    "longitude": 79.63292,
+    "coordinate_method": "city_approximation"
+  },
+  "chikmagalur|karnataka": {
+    "match": "no_exact_match"
+  },
+  "pennadam|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Pennādam",
+    "matched_state": "Tamil Nadu",
+    "latitude": 11.40389,
+    "longitude": 79.24156,
+    "coordinate_method": "city_approximation"
+  },
+  "kandi|west bengal": {
+    "match": "city+state",
+    "matched_name": "Kāndi",
+    "matched_state": "West Bengal",
+    "latitude": 23.95946,
+    "longitude": 88.04018,
+    "coordinate_method": "city_approximation"
+  },
+  "sahebganj|jharkhand": {
+    "match": "no_exact_match"
+  },
+  "palakonda|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "chinnasalem|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "rath|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "ghanashyampur|west bengal": {
+    "match": "no_exact_match"
+  },
+  "dholpur|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "miryalguda|telangana": {
+    "match": "no_exact_match"
+  },
+  "chamarjngr|karnataka": {
+    "match": "no_exact_match"
+  },
+  "lakhnadon|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Lakhnādon",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 22.60049,
+    "longitude": 79.60094,
+    "coordinate_method": "city_approximation"
+  },
+  "kaptanganj|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "shindkheda|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Shindkhedā",
+    "matched_state": "Maharashtra",
+    "latitude": 21.24951,
+    "longitude": 76.02468,
+    "coordinate_method": "city_approximation"
+  },
+  "kilimanoor|kerala": {
+    "match": "no_exact_match"
+  },
+  "kuthuparamba|kerala": {
+    "match": "no_exact_match"
+  },
+  "doddablpur|karnataka": {
+    "match": "no_exact_match"
+  },
+  "rohtak|haryana": {
+    "match": "city+state",
+    "matched_name": "Rohtak",
+    "matched_state": "Haryana",
+    "latitude": 28.89447,
+    "longitude": 76.58917,
+    "coordinate_method": "city_approximation"
+  },
+  "chhibramau|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "chimkurthy|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "adoor|kerala": {
+    "match": "no_exact_match"
+  },
+  "honnavar|karnataka": {
+    "match": "no_exact_match"
+  },
+  "sultnbthry|kerala": {
+    "match": "no_exact_match"
+  },
+  "patiala|punjab": {
+    "match": "city+state",
+    "matched_name": "Patiāla",
+    "matched_state": "Punjab",
+    "latitude": 30.33625,
+    "longitude": 76.3922,
+    "coordinate_method": "city_approximation"
+  },
+  "dalsinghsarai|bihar": {
+    "match": "no_exact_match"
+  },
+  "pnq vadgaon sheri dpc|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "islampur|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "khanpur|telangana": {
+    "match": "no_exact_match"
+  },
+  "kadthal|telangana": {
+    "match": "no_exact_match"
+  },
+  "nandyal|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Nandyāl",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 15.47799,
+    "longitude": 78.4836,
+    "coordinate_method": "city_approximation"
+  },
+  "nuzvid|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Nūzvīd",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 16.78854,
+    "longitude": 80.84593,
+    "coordinate_method": "city_approximation"
+  },
+  "narasnpeta|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "bantwal|karnataka": {
+    "match": "no_exact_match"
+  },
+  "ramdurg|karnataka": {
+    "match": "city+state",
+    "matched_name": "Rāmdurg",
+    "matched_state": "Karnataka",
+    "latitude": 15.94579,
+    "longitude": 75.29785,
+    "coordinate_method": "city_approximation"
+  },
+  "arimbur|kerala": {
+    "match": "no_exact_match"
+  },
+  "katwa|west bengal": {
+    "match": "no_exact_match"
+  },
+  "panagarh|west bengal": {
+    "match": "city+state",
+    "matched_name": "Pānāgarh",
+    "matched_state": "West Bengal",
+    "latitude": 23.45606,
+    "longitude": 87.44718,
+    "coordinate_method": "city_approximation"
+  },
+  "sawantwadi|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Sāwantwādi",
+    "matched_state": "Maharashtra",
+    "latitude": 18.43763,
+    "longitude": 76.84579,
+    "coordinate_method": "city_approximation"
+  },
+  "jogugadwal|telangana": {
+    "match": "no_exact_match"
+  },
+  "mahbubabad|telangana": {
+    "match": "ambiguous_city_state"
+  },
+  "bhiwani|haryana": {
+    "match": "city+state",
+    "matched_name": "Bhiwāni",
+    "matched_state": "Haryana",
+    "latitude": 28.79304,
+    "longitude": 76.13968,
+    "coordinate_method": "city_approximation"
+  },
+  "ranikhet|uttarakhand": {
+    "match": "ambiguous_city_state"
+  },
+  "banswara|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Bānswāra",
+    "matched_state": "Rajasthan",
+    "latitude": 23.54109,
+    "longitude": 74.4425,
+    "coordinate_method": "city_approximation"
+  },
+  "pilani|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "patan|gujarat": {
+    "match": "city+state",
+    "matched_name": "Pātan",
+    "matched_state": "Gujarat",
+    "latitude": 23.8507,
+    "longitude": 72.12963,
+    "coordinate_method": "city_approximation"
+  },
+  "georai|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "pachore|madhya pradesh": {
+    "match": "no_exact_match"
+  },
+  "bngnpalle|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "hanumanjnc|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "puttur|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "nazirpur|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "sitamari|bihar": {
+    "match": "no_exact_match"
+  },
+  "samba|jammu & kashmir": {
+    "match": "no_exact_match"
+  },
+  "loharu|haryana": {
+    "match": "city+state",
+    "matched_name": "Lohāru",
+    "matched_state": "Haryana",
+    "latitude": 28.42993,
+    "longitude": 75.80779,
+    "coordinate_method": "city_approximation"
+  },
+  "rajgarh|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "bhabhar|gujarat": {
+    "match": "city+state",
+    "matched_name": "Bhābhar",
+    "matched_state": "Gujarat",
+    "latitude": 24.07165,
+    "longitude": 71.59745,
+    "coordinate_method": "city_approximation"
+  },
+  "chiplun|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Chiplūn",
+    "matched_state": "Maharashtra",
+    "latitude": 17.53339,
+    "longitude": 73.50935,
+    "coordinate_method": "city_approximation"
+  },
+  "shajapur|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Shājāpur",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 23.42637,
+    "longitude": 76.27775,
+    "coordinate_method": "city_approximation"
+  },
+  "devarakonda|telangana": {
+    "match": "no_exact_match"
+  },
+  "rayadurgam|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "palasa|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Palāsa",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 18.77257,
+    "longitude": 84.41012,
+    "coordinate_method": "city_approximation"
+  },
+  "rona|karnataka": {
+    "match": "no_exact_match"
+  },
+  "shoranur|kerala": {
+    "match": "city+state",
+    "matched_name": "Shōranūr",
+    "matched_state": "Kerala",
+    "latitude": 10.76181,
+    "longitude": 76.27078,
+    "coordinate_method": "city_approximation"
+  },
+  "nakashipara|west bengal": {
+    "match": "no_exact_match"
+  },
+  "nowda|west bengal": {
+    "match": "no_exact_match"
+  },
+  "radhanpur|gujarat": {
+    "match": "city+state",
+    "matched_name": "Rādhanpur",
+    "matched_state": "Gujarat",
+    "latitude": 23.83238,
+    "longitude": 71.6047,
+    "coordinate_method": "city_approximation"
+  },
+  "chrkhiddri|haryana": {
+    "match": "no_exact_match"
+  },
+  "pithorgarh|uttarakhand": {
+    "match": "no_exact_match"
+  },
+  "taranagar|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Tārānagar",
+    "matched_state": "Rajasthan",
+    "latitude": 28.6686,
+    "longitude": 75.03207,
+    "coordinate_method": "city_approximation"
+  },
+  "rayaparthi|telangana": {
+    "match": "no_exact_match"
+  },
+  "haliya|telangana": {
+    "match": "no_exact_match"
+  },
+  "kaikaluru|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "pazhayannur|kerala": {
+    "match": "city+state",
+    "matched_name": "Pazhayannūr",
+    "matched_state": "Kerala",
+    "latitude": 10.67943,
+    "longitude": 76.42567,
+    "coordinate_method": "city_approximation"
+  },
+  "benipatti|bihar": {
+    "match": "no_exact_match"
+  },
+  "triveninganj|bihar": {
+    "match": "no_exact_match"
+  },
+  "midnapore|west bengal": {
+    "match": "no_exact_match"
+  },
+  "nanoor|west bengal": {
+    "match": "no_exact_match"
+  },
+  "plassey|west bengal": {
+    "match": "no_exact_match"
+  },
+  "sandur|karnataka": {
+    "match": "city+state",
+    "matched_name": "Sandūr",
+    "matched_state": "Karnataka",
+    "latitude": 15.08613,
+    "longitude": 76.54692,
+    "coordinate_method": "city_approximation"
+  },
+  "tikamgarh|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Tīkamgarh",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 24.74327,
+    "longitude": 78.83061,
+    "coordinate_method": "city_approximation"
+  },
+  "kollegala|karnataka": {
+    "match": "no_exact_match"
+  },
+  "chhindwara|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "srivijaynagar|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "shahada|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "kalluvathukal|kerala": {
+    "match": "no_exact_match"
+  },
+  "raiganj|west bengal": {
+    "match": "city+state",
+    "matched_name": "Rāiganj",
+    "matched_state": "West Bengal",
+    "latitude": 25.61281,
+    "longitude": 88.12449,
+    "coordinate_method": "city_approximation"
+  },
+  "kallachi|kerala": {
+    "match": "no_exact_match"
+  },
+  "pthnmthitt|kerala": {
+    "match": "no_exact_match"
+  },
+  "yellareddy|telangana": {
+    "match": "no_exact_match"
+  },
+  "chikblapur|karnataka": {
+    "match": "no_exact_match"
+  },
+  "kendujhar|odisha": {
+    "match": "no_exact_match"
+  },
+  "jind|haryana": {
+    "match": "city+state",
+    "matched_name": "Jīnd",
+    "matched_state": "Haryana",
+    "latitude": 29.31577,
+    "longitude": 76.31502,
+    "coordinate_method": "city_approximation"
+  },
+  "farrukhbad|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "markapur|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Mārkāpur",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 15.73534,
+    "longitude": 79.26848,
+    "coordinate_method": "city_approximation"
+  },
+  "srinagaruk|uttarakhand": {
+    "match": "no_exact_match"
+  },
+  "tarkeshwar|west bengal": {
+    "match": "no_exact_match"
+  },
+  "ggn|haryana": {
+    "match": "no_exact_match"
+  },
+  "bhatkal|karnataka": {
+    "match": "city+state",
+    "matched_name": "Bhatkal",
+    "matched_state": "Karnataka",
+    "latitude": 13.98534,
+    "longitude": 74.55531,
+    "coordinate_method": "city_approximation"
+  },
+  "ragunthgnj|west bengal": {
+    "match": "no_exact_match"
+  },
+  "talwandisabo|punjab": {
+    "match": "no_exact_match"
+  },
+  "dhampur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "nimbahera|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Nīmbāhera",
+    "matched_state": "Rajasthan",
+    "latitude": 24.62166,
+    "longitude": 74.67999,
+    "coordinate_method": "city_approximation"
+  },
+  "gandhidham|gujarat": {
+    "match": "city+state",
+    "matched_name": "Gāndhīdhām",
+    "matched_state": "Gujarat",
+    "latitude": 23.08333,
+    "longitude": 70.13333,
+    "coordinate_method": "city_approximation"
+  },
+  "amd|gujarat": {
+    "match": "no_exact_match"
+  },
+  "himmatnagar|gujarat": {
+    "match": "no_exact_match"
+  },
+  "bhuvanagiri|telangana": {
+    "match": "no_exact_match"
+  },
+  "mahabubnagar|telangana": {
+    "match": "no_exact_match"
+  },
+  "nandikotkr|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "gudivada|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "manbazar|west bengal": {
+    "match": "city+state",
+    "matched_name": "Mānbāzār",
+    "matched_state": "West Bengal",
+    "latitude": 23.0591,
+    "longitude": 86.66269,
+    "coordinate_method": "city_approximation"
+  },
+  "hailakandi|assam": {
+    "match": "city+state",
+    "matched_name": "Hailākāndi",
+    "matched_state": "Assam",
+    "latitude": 24.68394,
+    "longitude": 92.56097,
+    "coordinate_method": "city_approximation"
+  },
+  "jamtara|jharkhand": {
+    "match": "city+state",
+    "matched_name": "Jāmtāra",
+    "matched_state": "Jharkhand",
+    "latitude": 23.963,
+    "longitude": 86.80285,
+    "coordinate_method": "city_approximation"
+  },
+  "ramgarh|jharkhand": {
+    "match": "ambiguous_city_state"
+  },
+  "darbhanga|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "sathupally|telangana": {
+    "match": "no_exact_match"
+  },
+  "paontsahib|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "jognderngr|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "nadaun|himachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Nādaun",
+    "matched_state": "Himachal Pradesh",
+    "latitude": 31.78303,
+    "longitude": 76.3431,
+    "coordinate_method": "city_approximation"
+  },
+  "achrol|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "hbr layout pc|karnataka": {
+    "match": "no_exact_match"
+  },
+  "dhrmsthala|karnataka": {
+    "match": "no_exact_match"
+  },
+  "kathua|jammu & kashmir": {
+    "match": "no_exact_match"
+  },
+  "muzaffrngr|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "draksharamam|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "mansa|punjab": {
+    "match": "city+state",
+    "matched_name": "Mānsa",
+    "matched_state": "Punjab",
+    "latitude": 29.98844,
+    "longitude": 75.40167,
+    "coordinate_method": "city_approximation"
+  },
+  "chandausi|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "kanth|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Kānth",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 29.05939,
+    "longitude": 78.62951,
+    "coordinate_method": "city_approximation"
+  },
+  "modasa|gujarat": {
+    "match": "city+state",
+    "matched_name": "Modāsa",
+    "matched_state": "Gujarat",
+    "latitude": 23.46253,
+    "longitude": 73.29857,
+    "coordinate_method": "city_approximation"
+  },
+  "palanpur|gujarat": {
+    "match": "city+state",
+    "matched_name": "Pālanpur",
+    "matched_state": "Gujarat",
+    "latitude": 24.17128,
+    "longitude": 72.43827,
+    "coordinate_method": "city_approximation"
+  },
+  "neemuch|madhya pradesh": {
+    "match": "no_exact_match"
+  },
+  "mothkur|telangana": {
+    "match": "no_exact_match"
+  },
+  "bijnapally|telangana": {
+    "match": "no_exact_match"
+  },
+  "atmakur|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "kandukur|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bheemunipatnam|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "kakinada|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Kākināda",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 16.96036,
+    "longitude": 82.23809,
+    "coordinate_method": "city_approximation"
+  },
+  "sagara|karnataka": {
+    "match": "no_exact_match"
+  },
+  "haveri|karnataka": {
+    "match": "city+state",
+    "matched_name": "Hāveri",
+    "matched_state": "Karnataka",
+    "latitude": 14.79354,
+    "longitude": 75.40448,
+    "coordinate_method": "city_approximation"
+  },
+  "belgaum|karnataka": {
+    "match": "no_exact_match"
+  },
+  "polur|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "khatra|west bengal": {
+    "match": "city+state",
+    "matched_name": "Khātra",
+    "matched_state": "West Bengal",
+    "latitude": 22.97617,
+    "longitude": 86.85462,
+    "coordinate_method": "city_approximation"
+  },
+  "karimganj|assam": {
+    "match": "city+state",
+    "matched_name": "Karīmganj",
+    "matched_state": "Assam",
+    "latitude": 24.86919,
+    "longitude": 92.35543,
+    "coordinate_method": "city_approximation"
+  },
+  "dinara|bihar": {
+    "match": "city+state",
+    "matched_name": "Dināra",
+    "matched_state": "Bihar",
+    "latitude": 25.24895,
+    "longitude": 84.06064,
+    "coordinate_method": "city_approximation"
+  },
+  "hazaribag|jharkhand": {
+    "match": "no_exact_match"
+  },
+  "motihari|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "samastipur|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "machhiwara|punjab": {
+    "match": "ambiguous_city_state"
+  },
+  "barisadri|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "dhrangadhra|gujarat": {
+    "match": "city+state",
+    "matched_name": "Dhrāngadhra",
+    "matched_state": "Gujarat",
+    "latitude": 22.99167,
+    "longitude": 71.46793,
+    "coordinate_method": "city_approximation"
+  },
+  "khanapur|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "jhunir|punjab": {
+    "match": "city+state",
+    "matched_name": "Jhunīr",
+    "matched_state": "Punjab",
+    "latitude": 29.80409,
+    "longitude": 75.34978,
+    "coordinate_method": "city_approximation"
+  },
+  "budhana|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "vikarabad|telangana": {
+    "match": "city+state",
+    "matched_name": "Vikārābād",
+    "matched_state": "Telangana",
+    "latitude": 17.3381,
+    "longitude": 77.90441,
+    "coordinate_method": "city_approximation"
+  },
+  "thirumalagiri|telangana": {
+    "match": "no_exact_match"
+  },
+  "srisailam|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "kavali|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "shimoga|karnataka": {
+    "match": "no_exact_match"
+  },
+  "chetpet|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "bikramgang|bihar": {
+    "match": "no_exact_match"
+  },
+  "jhumritlya|jharkhand": {
+    "match": "no_exact_match"
+  },
+  "peterbar|jharkhand": {
+    "match": "no_exact_match"
+  },
+  "hazratjandaha|bihar": {
+    "match": "no_exact_match"
+  },
+  "narktiganj|bihar": {
+    "match": "no_exact_match"
+  },
+  "jhanjharpur|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "simlapal|west bengal": {
+    "match": "city+state",
+    "matched_name": "Simlāpāl",
+    "matched_state": "West Bengal",
+    "latitude": 22.91315,
+    "longitude": 87.07183,
+    "coordinate_method": "city_approximation"
+  },
+  "kankavali|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "del|delhi": {
+    "match": "no_exact_match"
+  },
+  "choutuppal|telangana": {
+    "match": "no_exact_match"
+  },
+  "sahatwar|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Sahatwār",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 25.83434,
+    "longitude": 84.30442,
+    "coordinate_method": "city_approximation"
+  },
+  "punalur|kerala": {
+    "match": "city+state",
+    "matched_name": "Punalūr",
+    "matched_state": "Kerala",
+    "latitude": 9.01956,
+    "longitude": 76.92261,
+    "coordinate_method": "city_approximation"
+  },
+  "anupgarh|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Anūpgarh",
+    "matched_state": "Rajasthan",
+    "latitude": 29.19111,
+    "longitude": 73.20861,
+    "coordinate_method": "city_approximation"
+  },
+  "kaliyaganj|west bengal": {
+    "match": "city+state",
+    "matched_name": "Kāliyāganj",
+    "matched_state": "West Bengal",
+    "latitude": 25.63442,
+    "longitude": 88.32665,
+    "coordinate_method": "city_approximation"
+  },
+  "gadarwara|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "vadakara|kerala": {
+    "match": "no_exact_match"
+  },
+  "banswada|telangana": {
+    "match": "ambiguous_city_state"
+  },
+  "ganga nagar|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "haripad|kerala": {
+    "match": "city+state",
+    "matched_name": "Haripād",
+    "matched_state": "Kerala",
+    "latitude": 9.28358,
+    "longitude": 76.45519,
+    "coordinate_method": "city_approximation"
+  },
+  "paranpur|west bengal": {
+    "match": "city+state",
+    "matched_name": "Parānpur",
+    "matched_state": "West Bengal",
+    "latitude": 24.52192,
+    "longitude": 87.80166,
+    "coordinate_method": "city_approximation"
+  },
+  "bagepalli|karnataka": {
+    "match": "city+state",
+    "matched_name": "Bāgepalli",
+    "matched_state": "Karnataka",
+    "latitude": 13.78338,
+    "longitude": 77.79667,
+    "coordinate_method": "city_approximation"
+  },
+  "shahabad|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "karnaprayag|uttarakhand": {
+    "match": "city+state",
+    "matched_name": "Karnaprayāg",
+    "matched_state": "Uttarakhand",
+    "latitude": 30.25942,
+    "longitude": 79.22028,
+    "coordinate_method": "city_approximation"
+  },
+  "dahod|gujarat": {
+    "match": "no_exact_match"
+  },
+  "khanakul|west bengal": {
+    "match": "city+state",
+    "matched_name": "Khānākul",
+    "matched_state": "West Bengal",
+    "latitude": 22.70891,
+    "longitude": 87.85016,
+    "coordinate_method": "city_approximation"
+  },
+  "nabarangpr|odisha": {
+    "match": "no_exact_match"
+  },
+  "raniganj|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "nabha|punjab": {
+    "match": "ambiguous_city_state"
+  },
+  "barnala|punjab": {
+    "match": "ambiguous_city_state"
+  },
+  "mughalsarai|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "jhunjhunu|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "vadodara|gujarat": {
+    "match": "city+state",
+    "matched_name": "Vadodara",
+    "matched_state": "Gujarat",
+    "latitude": 22.29941,
+    "longitude": 73.20812,
+    "coordinate_method": "city_approximation"
+  },
+  "latur|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Latur",
+    "matched_state": "Maharashtra",
+    "latitude": 18.39721,
+    "longitude": 76.56784,
+    "coordinate_method": "city_approximation"
+  },
+  "ambah|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "kundapura|karnataka": {
+    "match": "city+state",
+    "matched_name": "Kundapura",
+    "matched_state": "Karnataka",
+    "latitude": 13.63126,
+    "longitude": 74.6902,
+    "coordinate_method": "city_approximation"
+  },
+  "guruvayoor|kerala": {
+    "match": "no_exact_match"
+  },
+  "tezpur|assam": {
+    "match": "city+state",
+    "matched_name": "Tezpur",
+    "matched_state": "Assam",
+    "latitude": 26.63333,
+    "longitude": 92.8,
+    "coordinate_method": "city_approximation"
+  },
+  "mangaldoi|assam": {
+    "match": "no_exact_match"
+  },
+  "lalgola|west bengal": {
+    "match": "city+state",
+    "matched_name": "Lālgola",
+    "matched_state": "West Bengal",
+    "latitude": 24.42244,
+    "longitude": 88.25238,
+    "coordinate_method": "city_approximation"
+  },
+  "sikandrarao|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "cochin|kerala": {
+    "match": "no_exact_match"
+  },
+  "rewari|haryana": {
+    "match": "ambiguous_city_state"
+  },
+  "meham|haryana": {
+    "match": "no_exact_match"
+  },
+  "roopnagar|punjab": {
+    "match": "no_exact_match"
+  },
+  "jahu|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "sujanpur|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "modinagar|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Modīnagar",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.83059,
+    "longitude": 77.57295,
+    "coordinate_method": "city_approximation"
+  },
+  "pilibhit|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "paota|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "piparcity|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "nadiad|gujarat": {
+    "match": "city+state",
+    "matched_name": "Nadiād",
+    "matched_state": "Gujarat",
+    "latitude": 22.69385,
+    "longitude": 72.86157,
+    "coordinate_method": "city_approximation"
+  },
+  "lowerparel|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "rajgurunagar|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Rājgurunagar",
+    "matched_state": "Maharashtra",
+    "latitude": 18.86667,
+    "longitude": 73.9,
+    "coordinate_method": "city_approximation"
+  },
+  "osmanabad|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "atapadi|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "murbad|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Murbād",
+    "matched_state": "Maharashtra",
+    "latitude": 19.25395,
+    "longitude": 73.38993,
+    "coordinate_method": "city_approximation"
+  },
+  "jalna|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Jālna",
+    "matched_state": "Maharashtra",
+    "latitude": 19.84102,
+    "longitude": 75.88636,
+    "coordinate_method": "city_approximation"
+  },
+  "ashokngr|madhya pradesh": {
+    "match": "no_exact_match"
+  },
+  "husnabad|telangana": {
+    "match": "city+state",
+    "matched_name": "Husnābād",
+    "matched_state": "Telangana",
+    "latitude": 17.05254,
+    "longitude": 77.6514,
+    "coordinate_method": "city_approximation"
+  },
+  "madakasira|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Madakasīra",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 13.94095,
+    "longitude": 77.27063,
+    "coordinate_method": "city_approximation"
+  },
+  "karkala|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "gangavathi|karnataka": {
+    "match": "no_exact_match"
+  },
+  "marakkanam|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Marakkanam",
+    "matched_state": "Tamil Nadu",
+    "latitude": 12.19214,
+    "longitude": 79.94193,
+    "coordinate_method": "city_approximation"
+  },
+  "thirthurpondi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "vadakkencherry|kerala": {
+    "match": "no_exact_match"
+  },
+  "chalakudy|kerala": {
+    "match": "no_exact_match"
+  },
+  "bongaon|west bengal": {
+    "match": "no_exact_match"
+  },
+  "fatepur|west bengal": {
+    "match": "no_exact_match"
+  },
+  "lalru|punjab": {
+    "match": "city+state",
+    "matched_name": "Lālru",
+    "matched_state": "Punjab",
+    "latitude": 30.4917,
+    "longitude": 76.79869,
+    "coordinate_method": "city_approximation"
+  },
+  "raikot|punjab": {
+    "match": "city+state",
+    "matched_name": "Rāikot",
+    "matched_state": "Punjab",
+    "latitude": 30.65,
+    "longitude": 75.6,
+    "coordinate_method": "city_approximation"
+  },
+  "jammu|jammu & kashmir": {
+    "match": "no_exact_match"
+  },
+  "khambhat|gujarat": {
+    "match": "city+state",
+    "matched_name": "Khambhāt",
+    "matched_state": "Gujarat",
+    "latitude": 22.31744,
+    "longitude": 72.61916,
+    "coordinate_method": "city_approximation"
+  },
+  "nandigama|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "chodavaram|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "krishnagiri|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Krishnagiri",
+    "matched_state": "Tamil Nadu",
+    "latitude": 12.51921,
+    "longitude": 78.21382,
+    "coordinate_method": "city_approximation"
+  },
+  "bishwanath|assam": {
+    "match": "no_exact_match"
+  },
+  "aurngbadbr|bihar": {
+    "match": "no_exact_match"
+  },
+  "simrahi|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "chandroknard|west bengal": {
+    "match": "no_exact_match"
+  },
+  "chittapur|karnataka": {
+    "match": "no_exact_match"
+  },
+  "sindagi|karnataka": {
+    "match": "no_exact_match"
+  },
+  "shirala|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "sitamau|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Sītāmau",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 24.01473,
+    "longitude": 75.35324,
+    "coordinate_method": "city_approximation"
+  },
+  "pallakad|kerala": {
+    "match": "no_exact_match"
+  },
+  "anandprshb|punjab": {
+    "match": "no_exact_match"
+  },
+  "etawah|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Etāwah",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 26.77615,
+    "longitude": 79.02133,
+    "coordinate_method": "city_approximation"
+  },
+  "meerut|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Meerut",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.98002,
+    "longitude": 77.70636,
+    "coordinate_method": "city_approximation"
+  },
+  "pokhran|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "sangola|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Sāngola",
+    "matched_state": "Maharashtra",
+    "latitude": 17.43948,
+    "longitude": 75.19379,
+    "coordinate_method": "city_approximation"
+  },
+  "narsiptnm|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "pavagada|karnataka": {
+    "match": "no_exact_match"
+  },
+  "kalpakkam|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "malemruvathur|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "pushpavanam|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "kunnathund|kerala": {
+    "match": "no_exact_match"
+  },
+  "jaynagar|bihar": {
+    "match": "no_exact_match"
+  },
+  "hansi|haryana": {
+    "match": "city+state",
+    "matched_name": "Hānsi",
+    "matched_state": "Haryana",
+    "latitude": 29.10239,
+    "longitude": 75.96253,
+    "coordinate_method": "city_approximation"
+  },
+  "rupnarayanpur|west bengal": {
+    "match": "city+state",
+    "matched_name": "Rupnārāyanpur",
+    "matched_state": "West Bengal",
+    "latitude": 23.81489,
+    "longitude": 86.88646,
+    "coordinate_method": "city_approximation"
+  },
+  "jaynagar|west bengal": {
+    "match": "no_exact_match"
+  },
+  "wanaparthy|telangana": {
+    "match": "no_exact_match"
+  },
+  "kodad|telangana": {
+    "match": "no_exact_match"
+  },
+  "canacona|goa": {
+    "match": "no_exact_match"
+  },
+  "junagadh|gujarat": {
+    "match": "city+state",
+    "matched_name": "Jūnāgadh",
+    "matched_state": "Gujarat",
+    "latitude": 21.51966,
+    "longitude": 70.45981,
+    "coordinate_method": "city_approximation"
+  },
+  "lalsot|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Lālsot",
+    "matched_state": "Rajasthan",
+    "latitude": 26.55951,
+    "longitude": 76.32915,
+    "coordinate_method": "city_approximation"
+  },
+  "gangapur|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "sivasagar|assam": {
+    "match": "no_exact_match"
+  },
+  "chabua|assam": {
+    "match": "city+state",
+    "matched_name": "Chābua",
+    "matched_state": "Assam",
+    "latitude": 27.48253,
+    "longitude": 95.17451,
+    "coordinate_method": "city_approximation"
+  },
+  "karimnagar|telangana": {
+    "match": "ambiguous_city_state"
+  },
+  "tirpur|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "rameswram|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "muthukulathur|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "ooty|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "ramnthpurm|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "sankaran|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "tinusukia|assam": {
+    "match": "no_exact_match"
+  },
+  "paramakudi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "mangrol|gujarat": {
+    "match": "city+state",
+    "matched_name": "Māngrol",
+    "matched_state": "Gujarat",
+    "latitude": 21.12268,
+    "longitude": 70.11484,
+    "coordinate_method": "city_approximation"
+  },
+  "veraval|gujarat": {
+    "match": "city+state",
+    "matched_name": "Verāval",
+    "matched_state": "Gujarat",
+    "latitude": 20.9077,
+    "longitude": 70.36786,
+    "coordinate_method": "city_approximation"
+  },
+  "kodinar|gujarat": {
+    "match": "city+state",
+    "matched_name": "Kodīnar",
+    "matched_state": "Gujarat",
+    "latitude": 20.79393,
+    "longitude": 70.70216,
+    "coordinate_method": "city_approximation"
+  },
+  "vemulawada|telangana": {
+    "match": "no_exact_match"
+  },
+  "renwal|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "samsi|west bengal": {
+    "match": "no_exact_match"
+  },
+  "balurghat|west bengal": {
+    "match": "city+state",
+    "matched_name": "Bālurghāt",
+    "matched_state": "West Bengal",
+    "latitude": 25.22099,
+    "longitude": 88.77732,
+    "coordinate_method": "city_approximation"
+  },
+  "gangarmpur|west bengal": {
+    "match": "no_exact_match"
+  },
+  "gangarampr|west bengal": {
+    "match": "no_exact_match"
+  },
+  "kurseong|west bengal": {
+    "match": "city+state",
+    "matched_name": "Kurseong",
+    "matched_state": "West Bengal",
+    "latitude": 26.88251,
+    "longitude": 88.27729,
+    "coordinate_method": "city_approximation"
+  },
+  "mirik|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "mainaguri|west bengal": {
+    "match": "city+state",
+    "matched_name": "Maināguri",
+    "matched_state": "West Bengal",
+    "latitude": 26.56263,
+    "longitude": 88.8204,
+    "coordinate_method": "city_approximation"
+  },
+  "coochbehar|west bengal": {
+    "match": "no_exact_match"
+  },
+  "pundibari|west bengal": {
+    "match": "city+state",
+    "matched_name": "Pundibāri",
+    "matched_state": "West Bengal",
+    "latitude": 26.29664,
+    "longitude": 89.76449,
+    "coordinate_method": "city_approximation"
+  },
+  "ranaghat|west bengal": {
+    "match": "city+state",
+    "matched_name": "Rānāghāt",
+    "matched_state": "West Bengal",
+    "latitude": 23.17623,
+    "longitude": 88.56667,
+    "coordinate_method": "city_approximation"
+  },
+  "murshidabad|west bengal": {
+    "match": "city+state",
+    "matched_name": "Murshidābād",
+    "matched_state": "West Bengal",
+    "latitude": 24.1839,
+    "longitude": 88.27171,
+    "coordinate_method": "city_approximation"
+  },
+  "gobicheti|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "doomdooma|assam": {
+    "match": "no_exact_match"
+  },
+  "anthiyour|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "kottarakkara|kerala": {
+    "match": "no_exact_match"
+  },
+  "dudu|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "rajpalayam|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "tirumakudalu|karnataka": {
+    "match": "no_exact_match"
+  },
+  "raisingngr|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "metpally|telangana": {
+    "match": "no_exact_match"
+  },
+  "peikulam|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "bhanvad|gujarat": {
+    "match": "city+state",
+    "matched_name": "Bhānvad",
+    "matched_state": "Gujarat",
+    "latitude": 21.93053,
+    "longitude": 69.78081,
+    "coordinate_method": "city_approximation"
+  },
+  "valsad|gujarat": {
+    "match": "city+state",
+    "matched_name": "Valsād",
+    "matched_state": "Gujarat",
+    "latitude": 20.61013,
+    "longitude": 72.93428,
+    "coordinate_method": "city_approximation"
+  },
+  "thisayanvilai|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "udumalpet|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "hdkote|karnataka": {
+    "match": "no_exact_match"
+  },
+  "tirchchndr|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "coimbatore|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Coimbatore",
+    "matched_state": "Tamil Nadu",
+    "latitude": 11.00555,
+    "longitude": 76.96612,
+    "coordinate_method": "city_approximation"
+  },
+  "kattappana|kerala": {
+    "match": "no_exact_match"
+  },
+  "manmad|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Manmād",
+    "matched_state": "Maharashtra",
+    "latitude": 20.25334,
+    "longitude": 74.43755,
+    "coordinate_method": "city_approximation"
+  },
+  "oriyur|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Oriyūr",
+    "matched_state": "Tamil Nadu",
+    "latitude": 10.99953,
+    "longitude": 79.21376,
+    "coordinate_method": "city_approximation"
+  },
+  "anupshahar|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "dola|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "tirurangadi|kerala": {
+    "match": "city+state",
+    "matched_name": "Tirūrangādi",
+    "matched_state": "Kerala",
+    "latitude": 11.04316,
+    "longitude": 75.92337,
+    "coordinate_method": "city_approximation"
+  },
+  "jagtial|telangana": {
+    "match": "city+state",
+    "matched_name": "Jagtiāl",
+    "matched_state": "Telangana",
+    "latitude": 18.79473,
+    "longitude": 78.91661,
+    "coordinate_method": "city_approximation"
+  },
+  "rajampet|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "puttur|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Puttūr",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 13.44189,
+    "longitude": 79.55314,
+    "coordinate_method": "city_approximation"
+  },
+  "sriklahsti|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "venktagiri|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "ariyalur|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "oddnchtram|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "vallior|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "bagnan|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "ambasamdrm|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "aranthangi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "maharajapuram|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "tenkasi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "biharsarif|bihar": {
+    "match": "no_exact_match"
+  },
+  "lalpet|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "batlagundu|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "bilasipara|assam": {
+    "match": "city+state",
+    "matched_name": "Bilāsipāra",
+    "matched_state": "Assam",
+    "latitude": 26.23285,
+    "longitude": 90.2341,
+    "coordinate_method": "city_approximation"
+  },
+  "ponnamaravathi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "dinhata|west bengal": {
+    "match": "city+state",
+    "matched_name": "Dīnhāta",
+    "matched_state": "West Bengal",
+    "latitude": 26.13526,
+    "longitude": 89.46129,
+    "coordinate_method": "city_approximation"
+  },
+  "rajgir|bihar": {
+    "match": "city+state",
+    "matched_name": "Rājgīr",
+    "matched_state": "Bihar",
+    "latitude": 25.02828,
+    "longitude": 85.42079,
+    "coordinate_method": "city_approximation"
+  },
+  "jehanabad|bihar": {
+    "match": "no_exact_match"
+  },
+  "jassur|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "sitapur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "raver|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "burhanpur|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "mathabhang|west bengal": {
+    "match": "no_exact_match"
+  },
+  "saraimeer|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "khambhalia|gujarat": {
+    "match": "no_exact_match"
+  },
+  "bhatiya|gujarat": {
+    "match": "city+state",
+    "matched_name": "Bhātiya",
+    "matched_state": "Gujarat",
+    "latitude": 22.09214,
+    "longitude": 69.27513,
+    "coordinate_method": "city_approximation"
+  },
+  "betul|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Betūl",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 21.90056,
+    "longitude": 77.90229,
+    "coordinate_method": "city_approximation"
+  },
+  "pandhurna|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "kusumnchi|telangana": {
+    "match": "no_exact_match"
+  },
+  "mylduthuri|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "salem|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Salem",
+    "matched_state": "Tamil Nadu",
+    "latitude": 11.65376,
+    "longitude": 78.15538,
+    "coordinate_method": "city_approximation"
+  },
+  "tirchngode|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "kalpetta|kerala": {
+    "match": "no_exact_match"
+  },
+  "neyatinkra|kerala": {
+    "match": "no_exact_match"
+  },
+  "kallikkad|kerala": {
+    "match": "city+state",
+    "matched_name": "Kallikkād",
+    "matched_state": "Kerala",
+    "latitude": 10.78564,
+    "longitude": 76.61244,
+    "coordinate_method": "city_approximation"
+  },
+  "hooghly|west bengal": {
+    "match": "no_exact_match"
+  },
+  "darjeeling|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "karnal|haryana": {
+    "match": "city+state",
+    "matched_name": "Karnāl",
+    "matched_state": "Haryana",
+    "latitude": 29.69197,
+    "longitude": 76.98448,
+    "coordinate_method": "city_approximation"
+  },
+  "gosainganj|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "ghazipur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "balrampur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "dohrighat|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Dohrighāt",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 26.27217,
+    "longitude": 83.50916,
+    "coordinate_method": "city_approximation"
+  },
+  "mahad|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Mahād",
+    "matched_state": "Maharashtra",
+    "latitude": 18.08333,
+    "longitude": 73.41667,
+    "coordinate_method": "city_approximation"
+  },
+  "bhandara|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Bhandāra",
+    "matched_state": "Maharashtra",
+    "latitude": 21.16817,
+    "longitude": 79.64885,
+    "coordinate_method": "city_approximation"
+  },
+  "gadchiroli|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "erode|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Erode",
+    "matched_state": "Tamil Nadu",
+    "latitude": 11.3428,
+    "longitude": 77.72741,
+    "coordinate_method": "city_approximation"
+  },
+  "mundakayam|kerala": {
+    "match": "city+state",
+    "matched_name": "Mundakāyam",
+    "matched_state": "Kerala",
+    "latitude": 9.53751,
+    "longitude": 76.88518,
+    "coordinate_method": "city_approximation"
+  },
+  "haldia|west bengal": {
+    "match": "city+state",
+    "matched_name": "Haldia",
+    "matched_state": "West Bengal",
+    "latitude": 22.06046,
+    "longitude": 88.10975,
+    "coordinate_method": "city_approximation"
+  },
+  "sundargarh|odisha": {
+    "match": "no_exact_match"
+  },
+  "dhemaji|assam": {
+    "match": "city+state",
+    "matched_name": "Dhemāji",
+    "matched_state": "Assam",
+    "latitude": 27.48333,
+    "longitude": 94.58333,
+    "coordinate_method": "city_approximation"
+  },
+  "chinnur|telangana": {
+    "match": "ambiguous_city_state"
+  },
+  "dhaka|bihar": {
+    "match": "city+state",
+    "matched_name": "Dhāka",
+    "matched_state": "Bihar",
+    "latitude": 26.67479,
+    "longitude": 85.16698,
+    "coordinate_method": "city_approximation"
+  },
+  "blr|karnataka": {
+    "match": "no_exact_match"
+  },
+  "tirur|kerala": {
+    "match": "ambiguous_city_state"
+  },
+  "ok|delhi": {
+    "match": "no_exact_match"
+  },
+  "kn|delhi": {
+    "match": "no_exact_match"
+  },
+  "janakpuri|delhi": {
+    "match": "no_exact_match"
+  },
+  "faridabad|haryana": {
+    "match": "city+state",
+    "matched_name": "Faridabad",
+    "matched_state": "Haryana",
+    "latitude": 28.41124,
+    "longitude": 77.31316,
+    "coordinate_method": "city_approximation"
+  },
+  "palwal|haryana": {
+    "match": "ambiguous_city_state"
+  },
+  "dharuhera|haryana": {
+    "match": "city+state",
+    "matched_name": "Dhāruhera",
+    "matched_state": "Haryana",
+    "latitude": 28.20553,
+    "longitude": 76.79691,
+    "coordinate_method": "city_approximation"
+  },
+  "fatehabad|haryana": {
+    "match": "city+state",
+    "matched_name": "Fatehābād",
+    "matched_state": "Haryana",
+    "latitude": 29.51525,
+    "longitude": 75.45554,
+    "coordinate_method": "city_approximation"
+  },
+  "barwala|haryana": {
+    "match": "ambiguous_city_state"
+  },
+  "gohana|haryana": {
+    "match": "ambiguous_city_state"
+  },
+  "assandh|haryana": {
+    "match": "no_exact_match"
+  },
+  "panipat|haryana": {
+    "match": "city+state",
+    "matched_name": "Panipat",
+    "matched_state": "Haryana",
+    "latitude": 29.38747,
+    "longitude": 76.96825,
+    "coordinate_method": "city_approximation"
+  },
+  "ambala|haryana": {
+    "match": "city+state",
+    "matched_name": "Ambāla",
+    "matched_state": "Haryana",
+    "latitude": 30.36099,
+    "longitude": 76.79782,
+    "coordinate_method": "city_approximation"
+  },
+  "kalka|haryana": {
+    "match": "ambiguous_city_state"
+  },
+  "sirhindfatehgarh|punjab": {
+    "match": "no_exact_match"
+  },
+  "zirakpur|punjab": {
+    "match": "no_exact_match"
+  },
+  "phagwara|punjab": {
+    "match": "city+state",
+    "matched_name": "Phagwāra",
+    "matched_state": "Punjab",
+    "latitude": 31.22452,
+    "longitude": 75.77387,
+    "coordinate_method": "city_approximation"
+  },
+  "garhshnker|punjab": {
+    "match": "no_exact_match"
+  },
+  "kapurthala|punjab": {
+    "match": "no_exact_match"
+  },
+  "samana|punjab": {
+    "match": "city+state",
+    "matched_name": "Samāna",
+    "matched_state": "Punjab",
+    "latitude": 30.15395,
+    "longitude": 76.19851,
+    "coordinate_method": "city_approximation"
+  },
+  "mandi|punjab": {
+    "match": "ambiguous_city_state"
+  },
+  "malerkotla|punjab": {
+    "match": "no_exact_match"
+  },
+  "sunam|punjab": {
+    "match": "city+state",
+    "matched_name": "Sunām",
+    "matched_state": "Punjab",
+    "latitude": 30.12883,
+    "longitude": 75.79943,
+    "coordinate_method": "city_approximation"
+  },
+  "rampuraphul|punjab": {
+    "match": "no_exact_match"
+  },
+  "ghumarwin|himachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Ghumārwīn",
+    "matched_state": "Himachal Pradesh",
+    "latitude": 31.44166,
+    "longitude": 76.71509,
+    "coordinate_method": "city_approximation"
+  },
+  "nalagarh|himachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Nālāgarh",
+    "matched_state": "Himachal Pradesh",
+    "latitude": 31.04168,
+    "longitude": 76.72285,
+    "coordinate_method": "city_approximation"
+  },
+  "palampur|himachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Pālampur",
+    "matched_state": "Himachal Pradesh",
+    "latitude": 32.11453,
+    "longitude": 76.55681,
+    "coordinate_method": "city_approximation"
+  },
+  "dharamshala|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "hamirpur|himachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Hamīrpur",
+    "matched_state": "Himachal Pradesh",
+    "latitude": 31.68411,
+    "longitude": 76.52506,
+    "coordinate_method": "city_approximation"
+  },
+  "dehragopipur|himachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "amb|himachal pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "akhnoor|jammu & kashmir": {
+    "match": "no_exact_match"
+  },
+  "ghaziabad|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Ghaziabad",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.66535,
+    "longitude": 77.43915,
+    "coordinate_method": "city_approximation"
+  },
+  "noi|delhi": {
+    "match": "no_exact_match"
+  },
+  "aligarh|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bulndshahr|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "sikandrabd|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "pahasu|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Pahāsu",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.1722,
+    "longitude": 78.06376,
+    "coordinate_method": "city_approximation"
+  },
+  "hathras|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Hāthras",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 27.59551,
+    "longitude": 78.05201,
+    "coordinate_method": "city_approximation"
+  },
+  "unnao|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Unnāo",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 26.54706,
+    "longitude": 80.48781,
+    "coordinate_method": "city_approximation"
+  },
+  "varanasi|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Varanasi",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 25.31668,
+    "longitude": 83.01041,
+    "coordinate_method": "city_approximation"
+  },
+  "gopiganj|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "badlapur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "mirzapur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "chopan|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Chopan",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 24.51954,
+    "longitude": 83.02287,
+    "coordinate_method": "city_approximation"
+  },
+  "duddhi|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "robertsganj|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "shahjhnpur|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "jalalabad|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bareilly|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Bareilly",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.36678,
+    "longitude": 79.43167,
+    "coordinate_method": "city_approximation"
+  },
+  "baheri|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bilaspur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "hapur|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Hāpur",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 28.72985,
+    "longitude": 77.78068,
+    "coordinate_method": "city_approximation"
+  },
+  "pauri|uttarakhand": {
+    "match": "city+state",
+    "matched_name": "Pauri",
+    "matched_state": "Uttarakhand",
+    "latitude": 30.15286,
+    "longitude": 78.7771,
+    "coordinate_method": "city_approximation"
+  },
+  "kotdwara|uttarakhand": {
+    "match": "city+state",
+    "matched_name": "Kotdwāra",
+    "matched_state": "Uttarakhand",
+    "latitude": 29.74612,
+    "longitude": 78.52219,
+    "coordinate_method": "city_approximation"
+  },
+  "biswan|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "dhaurahara|uttar pradesh": {
+    "match": "no_exact_match"
+  },
+  "bansi|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "harraiya|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "naugarh|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "kushinagar|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Kushinagar",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 26.74134,
+    "longitude": 83.88689,
+    "coordinate_method": "city_approximation"
+  },
+  "mau|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "ghosi|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "jiyanpur|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "vrindavan|uttar pradesh": {
+    "match": "city+state",
+    "matched_name": "Vrindāvan",
+    "matched_state": "Uttar Pradesh",
+    "latitude": 27.58105,
+    "longitude": 77.69662,
+    "coordinate_method": "city_approximation"
+  },
+  "chhata|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "agra|uttar pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bhiwadi dc|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "jaipur|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Jaipur",
+    "matched_state": "Rajasthan",
+    "latitude": 26.91962,
+    "longitude": 75.78781,
+    "coordinate_method": "city_approximation"
+  },
+  "ambabadi|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "tonk|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Tonk",
+    "matched_state": "Rajasthan",
+    "latitude": 26.16638,
+    "longitude": 75.78824,
+    "coordinate_method": "city_approximation"
+  },
+  "marwarjn|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "falna|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Fālna",
+    "matched_state": "Rajasthan",
+    "latitude": 25.26743,
+    "longitude": 73.23933,
+    "coordinate_method": "city_approximation"
+  },
+  "asind|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Āsind",
+    "matched_state": "Rajasthan",
+    "latitude": 25.7342,
+    "longitude": 74.33278,
+    "coordinate_method": "city_approximation"
+  },
+  "kaman|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "bayana|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "weir|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "sawaimadhopur|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "neemkathana|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "sultana|rajasthan": {
+    "match": "ambiguous_city_state"
+  },
+  "nohar|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Nohar",
+    "matched_state": "Rajasthan",
+    "latitude": 29.18292,
+    "longitude": 74.77064,
+    "coordinate_method": "city_approximation"
+  },
+  "tarnau|rajasthan": {
+    "match": "city+state",
+    "matched_name": "Tarnāu",
+    "matched_state": "Rajasthan",
+    "latitude": 27.14057,
+    "longitude": 74.12707,
+    "coordinate_method": "city_approximation"
+  },
+  "jalore|rajasthan": {
+    "match": "no_exact_match"
+  },
+  "dwarka|gujarat": {
+    "match": "city+state",
+    "matched_name": "Dwārka",
+    "matched_state": "Gujarat",
+    "latitude": 22.23944,
+    "longitude": 68.96778,
+    "coordinate_method": "city_approximation"
+  },
+  "wankaner|gujarat": {
+    "match": "ambiguous_city_state"
+  },
+  "morbi|gujarat": {
+    "match": "no_exact_match"
+  },
+  "anjar|gujarat": {
+    "match": "city+state",
+    "matched_name": "Anjār",
+    "matched_state": "Gujarat",
+    "latitude": 23.11316,
+    "longitude": 70.02671,
+    "coordinate_method": "city_approximation"
+  },
+  "amdavad|gujarat": {
+    "match": "no_exact_match"
+  },
+  "silvassa|dadra and nagar haveli": {
+    "match": "no_exact_match"
+  },
+  "vansda|gujarat": {
+    "match": "no_exact_match"
+  },
+  "mumbai antop hill|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "bom|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "nalasopara|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "dahanu|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Dāhānu",
+    "matched_state": "Maharashtra",
+    "latitude": 19.96778,
+    "longitude": 72.71263,
+    "coordinate_method": "city_approximation"
+  },
+  "central goa|goa": {
+    "match": "no_exact_match"
+  },
+  "panaji goa|goa": {
+    "match": "no_exact_match"
+  },
+  "lonavala|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "ambegaon|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "pnq rahatani dpc|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "pnq pashan dpc|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "pune balaji nagar|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "udgir|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Udgīr",
+    "matched_state": "Maharashtra",
+    "latitude": 18.39258,
+    "longitude": 77.11756,
+    "coordinate_method": "city_approximation"
+  },
+  "ahmednagar|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "malvan|maharashtra": {
+    "match": "ambiguous_city_state"
+  },
+  "greaterthane|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "satana|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Satānā",
+    "matched_state": "Maharashtra",
+    "latitude": 20.59483,
+    "longitude": 74.20301,
+    "coordinate_method": "city_approximation"
+  },
+  "aurangabad|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Aurangabad",
+    "matched_state": "Maharashtra",
+    "latitude": 19.87757,
+    "longitude": 75.34226,
+    "coordinate_method": "city_approximation"
+  },
+  "savner|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Sāvner",
+    "matched_state": "Maharashtra",
+    "latitude": 20.7458,
+    "longitude": 77.80004,
+    "coordinate_method": "city_approximation"
+  },
+  "chamorshi|maharashtra": {
+    "match": "no_exact_match"
+  },
+  "gondia|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Gondiā",
+    "matched_state": "Maharashtra",
+    "latitude": 21.46026,
+    "longitude": 80.19205,
+    "coordinate_method": "city_approximation"
+  },
+  "dhar|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "hoshangabad|madhya pradesh": {
+    "match": "no_exact_match"
+  },
+  "itarsi|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "bhopal mp nagar|madhya pradesh": {
+    "match": "no_exact_match"
+  },
+  "shujalpur|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Shujālpur",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 23.40673,
+    "longitude": 76.7098,
+    "coordinate_method": "city_approximation"
+  },
+  "morena|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Morena",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 26.49892,
+    "longitude": 77.99534,
+    "coordinate_method": "city_approximation"
+  },
+  "balaghat|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Bālāghāt",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 21.8156,
+    "longitude": 80.18845,
+    "coordinate_method": "city_approximation"
+  },
+  "jabalpur|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "sihora|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "barhi|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "shahdol|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Shahdol",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 23.29356,
+    "longitude": 81.3619,
+    "coordinate_method": "city_approximation"
+  },
+  "anuppur|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "maihar|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Maihar",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 24.26594,
+    "longitude": 80.76063,
+    "coordinate_method": "city_approximation"
+  },
+  "narsingpur|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Narsingpur",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 22.62147,
+    "longitude": 74.6757,
+    "coordinate_method": "city_approximation"
+  },
+  "panna|madhya pradesh": {
+    "match": "city+state",
+    "matched_name": "Panna",
+    "matched_state": "Madhya Pradesh",
+    "latitude": 24.72094,
+    "longitude": 80.18772,
+    "coordinate_method": "city_approximation"
+  },
+  "bhatpara|chhattisgarh": {
+    "match": "no_exact_match"
+  },
+  "mahasamund|chhattisgarh": {
+    "match": "city+state",
+    "matched_name": "Mahāsamund",
+    "matched_state": "Chhattisgarh",
+    "latitude": 21.10743,
+    "longitude": 82.0948,
+    "coordinate_method": "city_approximation"
+  },
+  "kanker|chhattisgarh": {
+    "match": "city+state",
+    "matched_name": "Kānker",
+    "matched_state": "Chhattisgarh",
+    "latitude": 20.27193,
+    "longitude": 81.49177,
+    "coordinate_method": "city_approximation"
+  },
+  "hyderabad|telangana": {
+    "match": "city+state",
+    "matched_name": "Hyderabad",
+    "matched_state": "Telangana",
+    "latitude": 17.38405,
+    "longitude": 78.45636,
+    "coordinate_method": "city_approximation"
+  },
+  "hyd|telangana": {
+    "match": "no_exact_match"
+  },
+  "sangareddy|telangana": {
+    "match": "no_exact_match"
+  },
+  "luxettipet|telangana": {
+    "match": "no_exact_match"
+  },
+  "bellmpalli|telangana": {
+    "match": "no_exact_match"
+  },
+  "asifabad|telangana": {
+    "match": "city+state",
+    "matched_name": "Asifābād",
+    "matched_state": "Telangana",
+    "latitude": 19.35851,
+    "longitude": 79.28415,
+    "coordinate_method": "city_approximation"
+  },
+  "kaghaznagar|telangana": {
+    "match": "no_exact_match"
+  },
+  "dhrmpurits|telangana": {
+    "match": "no_exact_match"
+  },
+  "bhadrachalam|telangana": {
+    "match": "city+state",
+    "matched_name": "Bhadrāchalam",
+    "matched_state": "Telangana",
+    "latitude": 17.66846,
+    "longitude": 80.88887,
+    "coordinate_method": "city_approximation"
+  },
+  "kalwakurthy|telangana": {
+    "match": "no_exact_match"
+  },
+  "vijayawada|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Vijayawada",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 16.50745,
+    "longitude": 80.6466,
+    "coordinate_method": "city_approximation"
+  },
+  "vuyyuru|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Vuyyūru",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 16.36307,
+    "longitude": 80.84406,
+    "coordinate_method": "city_approximation"
+  },
+  "vizag|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "vishakhapatnam|andhra pradesh": {
+    "match": "no_exact_match"
+  },
+  "amalapuram|andhra pradesh": {
+    "match": "ambiguous_city_state"
+  },
+  "razole|andhra pradesh": {
+    "match": "city+state",
+    "matched_name": "Rāzole",
+    "matched_state": "Andhra Pradesh",
+    "latitude": 16.47608,
+    "longitude": 81.83912,
+    "coordinate_method": "city_approximation"
+  },
+  "bengaluru|karnataka": {
+    "match": "city+state",
+    "matched_name": "Bengaluru",
+    "matched_state": "Karnataka",
+    "latitude": 12.97194,
+    "longitude": 77.59369,
+    "coordinate_method": "city_approximation"
+  },
+  "ramanagara|karnataka": {
+    "match": "no_exact_match"
+  },
+  "chanapatna|karnataka": {
+    "match": "no_exact_match"
+  },
+  "srirangapatna|karnataka": {
+    "match": "no_exact_match"
+  },
+  "krishnarajngr|karnataka": {
+    "match": "no_exact_match"
+  },
+  "tiptur|karnataka": {
+    "match": "city+state",
+    "matched_name": "Tiptūr",
+    "matched_state": "Karnataka",
+    "latitude": 13.2563,
+    "longitude": 76.47768,
+    "coordinate_method": "city_approximation"
+  },
+  "uchila|karnataka": {
+    "match": "no_exact_match"
+  },
+  "moodbidri|karnataka": {
+    "match": "no_exact_match"
+  },
+  "udupi|karnataka": {
+    "match": "city+state",
+    "matched_name": "Udupi",
+    "matched_state": "Karnataka",
+    "latitude": 13.33467,
+    "longitude": 74.74617,
+    "coordinate_method": "city_approximation"
+  },
+  "ukkadagatri|karnataka": {
+    "match": "no_exact_match"
+  },
+  "raichur|karnataka": {
+    "match": "city+state",
+    "matched_name": "Rāichūr",
+    "matched_state": "Karnataka",
+    "latitude": 16.20546,
+    "longitude": 77.35567,
+    "coordinate_method": "city_approximation"
+  },
+  "bailhongal|karnataka": {
+    "match": "no_exact_match"
+  },
+  "kittur|karnataka": {
+    "match": "ambiguous_city_state"
+  },
+  "chennai|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Chennai",
+    "matched_state": "Tamil Nadu",
+    "latitude": 13.08784,
+    "longitude": 80.27847,
+    "coordinate_method": "city_approximation"
+  },
+  "airport|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "thirukkatupli|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "pattukotai|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "tiruchi|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "pudukkotti|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "nagarcoil|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "thoppur|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "sankari|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "rasipurm|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "perundurai|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "karur|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "kulithalai|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "cjb|tamil nadu": {
+    "match": "no_exact_match"
+  },
+  "manjeshwar|kerala": {
+    "match": "no_exact_match"
+  },
+  "thamarassery|kerala": {
+    "match": "no_exact_match"
+  },
+  "areacode|kerala": {
+    "match": "no_exact_match"
+  },
+  "printhlmna|kerala": {
+    "match": "no_exact_match"
+  },
+  "nilambur|kerala": {
+    "match": "city+state",
+    "matched_name": "Nilambūr",
+    "matched_state": "Kerala",
+    "latitude": 11.27271,
+    "longitude": 76.22571,
+    "coordinate_method": "city_approximation"
+  },
+  "edappal|kerala": {
+    "match": "city+state",
+    "matched_name": "Edappāl",
+    "matched_state": "Kerala",
+    "latitude": 10.78339,
+    "longitude": 76.00789,
+    "coordinate_method": "city_approximation"
+  },
+  "irinjlkuda|kerala": {
+    "match": "no_exact_match"
+  },
+  "angamaly|kerala": {
+    "match": "no_exact_match"
+  },
+  "parakkdavu|kerala": {
+    "match": "no_exact_match"
+  },
+  "kozhenchery|kerala": {
+    "match": "no_exact_match"
+  },
+  "nedumangad|kerala": {
+    "match": "city+state",
+    "matched_name": "Nedumangād",
+    "matched_state": "Kerala",
+    "latitude": 8.60267,
+    "longitude": 77.00139,
+    "coordinate_method": "city_approximation"
+  },
+  "kazhakkoottam|kerala": {
+    "match": "no_exact_match"
+  },
+  "hoogly|west bengal": {
+    "match": "no_exact_match"
+  },
+  "arambag|west bengal": {
+    "match": "no_exact_match"
+  },
+  "kamarpukur|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "manteswar|west bengal": {
+    "match": "city+state",
+    "matched_name": "Manteswar",
+    "matched_state": "West Bengal",
+    "latitude": 23.42412,
+    "longitude": 88.10764,
+    "coordinate_method": "city_approximation"
+  },
+  "panskura|west bengal": {
+    "match": "city+state",
+    "matched_name": "Pānskura",
+    "matched_state": "West Bengal",
+    "latitude": 22.40418,
+    "longitude": 87.71746,
+    "coordinate_method": "city_approximation"
+  },
+  "ghatal|west bengal": {
+    "match": "city+state",
+    "matched_name": "Ghātāl",
+    "matched_state": "West Bengal",
+    "latitude": 22.66244,
+    "longitude": 87.73399,
+    "coordinate_method": "city_approximation"
+  },
+  "amadubi|west bengal": {
+    "match": "no_exact_match"
+  },
+  "jhargram|west bengal": {
+    "match": "city+state",
+    "matched_name": "Jhārgrām",
+    "matched_state": "West Bengal",
+    "latitude": 22.45384,
+    "longitude": 86.99497,
+    "coordinate_method": "city_approximation"
+  },
+  "tamluk|west bengal": {
+    "match": "city+state",
+    "matched_name": "Tamlūk",
+    "matched_state": "West Bengal",
+    "latitude": 22.30083,
+    "longitude": 87.92593,
+    "coordinate_method": "city_approximation"
+  },
+  "bankura|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "mirzapurwb|west bengal": {
+    "match": "no_exact_match"
+  },
+  "barjora|west bengal": {
+    "match": "city+state",
+    "matched_name": "Barjora",
+    "matched_state": "West Bengal",
+    "latitude": 23.42754,
+    "longitude": 87.29037,
+    "coordinate_method": "city_approximation"
+  },
+  "bamangola|west bengal": {
+    "match": "ambiguous_city_state"
+  },
+  "khurdha|odisha": {
+    "match": "no_exact_match"
+  },
+  "jagatsghpr|odisha": {
+    "match": "no_exact_match"
+  },
+  "jaleswar|odisha": {
+    "match": "no_exact_match"
+  },
+  "baripada|odisha": {
+    "match": "ambiguous_city_state"
+  },
+  "udala|odisha": {
+    "match": "city+state",
+    "matched_name": "Udala",
+    "matched_state": "Odisha",
+    "latitude": 21.57811,
+    "longitude": 86.56676,
+    "coordinate_method": "city_approximation"
+  },
+  "barbil|odisha": {
+    "match": "ambiguous_city_state"
+  },
+  "pappadahandi|odisha": {
+    "match": "no_exact_match"
+  },
+  "balangir|odisha": {
+    "match": "ambiguous_city_state"
+  },
+  "sonepur|odisha": {
+    "match": "ambiguous_city_state"
+  },
+  "brajrajnagar|odisha": {
+    "match": "no_exact_match"
+  },
+  "hajo|assam": {
+    "match": "city+state",
+    "matched_name": "Hājo",
+    "matched_state": "Assam",
+    "latitude": 26.2452,
+    "longitude": 91.52525,
+    "coordinate_method": "city_approximation"
+  },
+  "nalbari|assam": {
+    "match": "ambiguous_city_state"
+  },
+  "dhekiajuli|assam": {
+    "match": "city+state",
+    "matched_name": "Dhekiajuli",
+    "matched_state": "Assam",
+    "latitude": 26.70367,
+    "longitude": 92.47808,
+    "coordinate_method": "city_approximation"
+  },
+  "teok|assam": {
+    "match": "city+state",
+    "matched_name": "Teok",
+    "matched_state": "Assam",
+    "latitude": 26.83197,
+    "longitude": 94.41651,
+    "coordinate_method": "city_approximation"
+  },
+  "golaghat|assam": {
+    "match": "city+state",
+    "matched_name": "Golāghāt",
+    "matched_state": "Assam",
+    "latitude": 26.51167,
+    "longitude": 93.95951,
+    "coordinate_method": "city_approximation"
+  },
+  "mariani|assam": {
+    "match": "city+state",
+    "matched_name": "Mariāni",
+    "matched_state": "Assam",
+    "latitude": 26.65725,
+    "longitude": 94.31529,
+    "coordinate_method": "city_approximation"
+  },
+  "moranhat|assam": {
+    "match": "city+state",
+    "matched_name": "Moranhat",
+    "matched_state": "Assam",
+    "latitude": 27.18735,
+    "longitude": 94.91557,
+    "coordinate_method": "city_approximation"
+  },
+  "lakhimpurn|assam": {
+    "match": "no_exact_match"
+  },
+  "kabuganj|assam": {
+    "match": "no_exact_match"
+  },
+  "pasighat|arunachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Pasighat",
+    "matched_state": "Arunachal Pradesh",
+    "latitude": 28.06631,
+    "longitude": 95.32678,
+    "coordinate_method": "city_approximation"
+  },
+  "itanagar|arunachal pradesh": {
+    "match": "city+state",
+    "matched_name": "Itanagar",
+    "matched_state": "Arunachal Pradesh",
+    "latitude": 27.08694,
+    "longitude": 93.60987,
+    "coordinate_method": "city_approximation"
+  },
+  "likabali|arunachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "jairampur|arunachal pradesh": {
+    "match": "no_exact_match"
+  },
+  "shillong|meghalaya": {
+    "match": "city+state",
+    "matched_name": "Shillong",
+    "matched_state": "Meghalaya",
+    "latitude": 25.56892,
+    "longitude": 91.88313,
+    "coordinate_method": "city_approximation"
+  },
+  "aizawl|mizoram": {
+    "match": "city+state",
+    "matched_name": "Aizawl",
+    "matched_state": "Mizoram",
+    "latitude": 23.72894,
+    "longitude": 92.71791,
+    "coordinate_method": "city_approximation"
+  },
+  "kolasib|mizoram": {
+    "match": "city+state",
+    "matched_name": "Kolasib",
+    "matched_state": "Mizoram",
+    "latitude": 24.22388,
+    "longitude": 92.67869,
+    "coordinate_method": "city_approximation"
+  },
+  "champhai|mizoram": {
+    "match": "no_exact_match"
+  },
+  "mokokchung|nagaland": {
+    "match": "city+state",
+    "matched_name": "Mokokchūng",
+    "matched_state": "Nagaland",
+    "latitude": 26.3248,
+    "longitude": 94.51834,
+    "coordinate_method": "city_approximation"
+  },
+  "barh|bihar": {
+    "match": "city+state",
+    "matched_name": "Bārh",
+    "matched_state": "Bihar",
+    "latitude": 25.48339,
+    "longitude": 85.70928,
+    "coordinate_method": "city_approximation"
+  },
+  "sheikhpura|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "banka|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "dehrisone|bihar": {
+    "match": "no_exact_match"
+  },
+  "phusro|jharkhand": {
+    "match": "city+state",
+    "matched_name": "Phusro",
+    "matched_state": "Jharkhand",
+    "latitude": 23.75644,
+    "longitude": 86.0051,
+    "coordinate_method": "city_approximation"
+  },
+  "sonepur|bihar": {
+    "match": "city+state",
+    "matched_name": "Sonepur",
+    "matched_state": "Bihar",
+    "latitude": 25.69608,
+    "longitude": 85.16669,
+    "coordinate_method": "city_approximation"
+  },
+  "dighwara|bihar": {
+    "match": "city+state",
+    "matched_name": "Dighwāra",
+    "matched_state": "Bihar",
+    "latitude": 25.74434,
+    "longitude": 85.01003,
+    "coordinate_method": "city_approximation"
+  },
+  "siwan|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "gopalganj|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "kanti|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "barauni|bihar": {
+    "match": "city+state",
+    "matched_name": "Barauni",
+    "matched_state": "Bihar",
+    "latitude": 25.4709,
+    "longitude": 85.976,
+    "coordinate_method": "city_approximation"
+  },
+  "naugchia|bihar": {
+    "match": "no_exact_match"
+  },
+  "jayamkondan|tamil nadu": {
+    "match": "ambiguous_city_state"
+  },
+  "kodaikanal|tamil nadu": {
+    "match": "city+state",
+    "matched_name": "Kodaikānāl",
+    "matched_state": "Tamil Nadu",
+    "latitude": 10.23925,
+    "longitude": 77.48932,
+    "coordinate_method": "city_approximation"
+  },
+  "delhi|national capital territory of delhi": {
+    "match": "city+state",
+    "matched_name": "Delhi",
+    "matched_state": "National Capital Territory of Delhi",
+    "latitude": 28.65195,
+    "longitude": 77.23149,
+    "coordinate_method": "city_approximation"
+  },
+  "del|national capital territory of delhi": {
+    "match": "no_exact_match"
+  },
+  "ok|national capital territory of delhi": {
+    "match": "no_exact_match"
+  },
+  "kn|national capital territory of delhi": {
+    "match": "no_exact_match"
+  },
+  "janakpuri|national capital territory of delhi": {
+    "match": "city+state",
+    "matched_name": "Janakpuri",
+    "matched_state": "National Capital Territory of Delhi",
+    "latitude": 28.6216,
+    "longitude": 77.09458,
+    "coordinate_method": "city_approximation"
+  },
+  "noi|national capital territory of delhi": {
+    "match": "no_exact_match"
+  },
+  "kolkata|west bengal": {
+    "match": "city+state",
+    "matched_name": "Kolkata",
+    "matched_state": "West Bengal",
+    "latitude": 22.56263,
+    "longitude": 88.36304,
+    "coordinate_method": "city_approximation"
+  },
+  "ahmedabad|gujarat": {
+    "match": "city+state",
+    "matched_name": "Ahmedabad",
+    "matched_state": "Gujarat",
+    "latitude": 23.02579,
+    "longitude": 72.58727,
+    "coordinate_method": "city_approximation"
+  },
+  "muzaffarpur|bihar": {
+    "match": "ambiguous_city_state"
+  },
+  "bhubaneswar|odisha": {
+    "match": "city+state",
+    "matched_name": "Bhubaneswar",
+    "matched_state": "Odisha",
+    "latitude": 20.27241,
+    "longitude": 85.83385,
+    "coordinate_method": "city_approximation"
+  },
+  "mumbai|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Mumbai",
+    "matched_state": "Maharashtra",
+    "latitude": 19.07283,
+    "longitude": 72.88261,
+    "coordinate_method": "city_approximation"
+  },
+  "thiruvananthapuram|kerala": {
+    "match": "city+state",
+    "matched_name": "Thiruvananthapuram",
+    "matched_state": "Kerala",
+    "latitude": 8.4855,
+    "longitude": 76.94924,
+    "coordinate_method": "city_approximation"
+  },
+  "pune|maharashtra": {
+    "match": "city+state",
+    "matched_name": "Pune",
+    "matched_state": "Maharashtra",
+    "latitude": 18.51957,
+    "longitude": 73.85535,
+    "coordinate_method": "city_approximation"
+  },
+  "kochi|kerala": {
+    "match": "city+state",
+    "matched_name": "Kochi",
+    "matched_state": "Kerala",
+    "latitude": 9.93988,
+    "longitude": 76.26022,
+    "coordinate_method": "city_approximation"
+  },
+  "bhopal|madhya pradesh": {
+    "match": "ambiguous_city_state"
+  }
+}

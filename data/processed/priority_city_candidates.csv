@@ -1,0 +1,82 @@
+hub,original_name,expected_state,candidate_id,candidate_name,candidate_state,candidate_district,feature_code,latitude,longitude,status
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,1274746.0,Chandigarh,Chandigarh,Chandigarh District,PPLA,30.73629,76.7884,candidate_only
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,13494735.0,Chandigarh,Tripura,Sepahijala,PPL,23.50211,91.33715,candidate_only
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,9915976.0,Chandīgarh,Haryana,Nuh,PPL,30.72778,76.77778,candidate_only
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,10553678.0,Chandigarhi,Uttar Pradesh,Unao District,PPL,26.43376,80.78706,candidate_only
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,7668602.0,Chandigarh International Airport,Chandigarh,Chandigarh District,AIRP,30.6735,76.7885,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,1262330.0,Muzaffarpur,Bihar,Muzaffarpur district,PPL,26.12259,85.39055,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,1441149.0,Muzaffarpur,Uttar Pradesh,Sahāranpur District,PPL,30.12132,77.75765,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10452016.0,Muzaffarpur,Uttar Pradesh,Agra,PPL,27.01436,78.12756,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10458617.0,Muzaffarpur,Uttar Pradesh,Firozabad,PPL,27.00026,78.68115,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10462936.0,Muzaffarpur,Uttar Pradesh,Mathura district,PPL,27.43715,77.78668,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10471999.0,Muzaffarpur,Uttar Pradesh,Shāhjahānpur District,PPL,27.81952,79.64051,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10486635.0,Muzaffarpur,Uttar Pradesh,Kanpur Dehat district,PPL,26.4103,79.62192,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10499803.0,Muzaffarpur,Uttar Pradesh,Mirzapur,PPL,25.22761,83.02994,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10500556.0,Muzaffarpur,Uttar Pradesh,Chandauli,PPL,25.01451,83.18132,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10511633.0,Muzaffarpur,Uttar Pradesh,Chandauli,PPL,24.99749,83.17725,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10556106.0,Muzaffarpur,Uttar Pradesh,Bijnor district,PPL,29.11769,78.13315,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10559049.0,Muzaffarpur,Uttar Pradesh,Sītāpur District,PPL,27.27378,81.05729,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10567593.0,Muzaffarpur,Uttar Pradesh,Barabanki,PPL,26.99307,81.23771,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10569965.0,Muzaffarpur,Uttar Pradesh,Barabanki,PPL,26.67556,81.35062,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10575448.0,Muzaffarpur,Uttar Pradesh,Rae Bareli,PPL,26.32604,81.35831,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10580514.0,Muzaffarpur,Uttar Pradesh,Sītāpur District,PPL,27.23034,80.85284,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10585774.0,Muzaffarpur,Uttar Pradesh,Shāhjahānpur District,PPL,28.04049,79.96926,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10586099.0,Muzaffarpur,Uttar Pradesh,Sambhal,PPL,28.53123,78.57568,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10587965.0,Muzaffarpur,Uttar Pradesh,Rae Bareli,PPL,26.1694,81.18164,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10589606.0,Muzaffarpur,Uttar Pradesh,Ayodhya,PPL,26.77692,81.78991,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10617407.0,Muzaffarpur,Uttar Pradesh,Azamgarh District,PPL,25.91495,83.02637,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10622833.0,Muzaffarpur,Uttar Pradesh,Jaunpur district,PPL,26.1257,82.64662,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10666151.0,Muzaffarpur,Uttar Pradesh,Kushi Nagar,PPL,26.85668,83.6682,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10667407.0,Muzaffarpur,Uttar Pradesh,Prayagraj,PPL,25.57193,81.71896,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10701007.0,Muzaffarpur,Punjab,Kapurthala district,PPL,31.54071,75.38675,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10711707.0,Muzaffarpur,Uttar Pradesh,Sītāpur District,PPL,27.41305,80.81396,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10712364.0,Muzaffarpur,Uttar Pradesh,Sītāpur District,PPL,27.3382,80.97082,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10713276.0,Muzaffarpur,Punjab,Jalandhar District,PPL,31.13661,75.51386,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10729289.0,Muzaffarpur,Punjab,Shahid Bhagat Singh Nagar,PPL,31.04518,76.22652,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10805896.0,Muzaffarpur,Bihar,Bhojpur,PPL,25.30688,84.64543,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10810142.0,Muzaffarpur,Bihar,Aurangabad,PPL,25.06274,84.60261,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10831267.0,Muzaffarpur,Uttar Pradesh,Bareilly district,PPL,28.50144,79.7724,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10833190.0,Muzaffarpur,Bihar,Patna district,PPL,25.33863,84.97763,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11012180.0,Muzaffarpur,Bihar,Patna district,PPL,25.3095,85.10461,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11028818.0,Muzaffarpur,Bihar,Nalanda,PPL,25.27758,85.47833,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11029192.0,Muzaffarpur,Bihar,Nalanda,PPL,25.02244,85.37826,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11029254.0,Muzaffarpur,Bihar,Nalanda,PPL,25.09164,85.36554,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11029576.0,Muzaffarpur,Bihar,Nalanda,PPL,25.1327,85.44484,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11061541.0,Muzaffarpur,Uttar Pradesh,Kheri,PPL,27.81449,80.18959,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10581115.0,Muzaffarpur,Uttar Pradesh,Kanpur Nagar,PPLX,26.42584,80.3989,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10202212.0,Muzaffarpur Pois,Uttar Pradesh,Baghpat District,PPL,29.04717,77.34604,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10585099.0,Muzaffarpur Patti,Uttar Pradesh,Amroha district,PPL,28.85276,78.61928,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10202245.0,Muzaffarpur Kanwār,Uttar Pradesh,Baghpat District,PPL,29.17894,77.42744,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10202274.0,Muzaffarpur Kamāla,Uttar Pradesh,Baghpat District,PPL,29.04498,77.40254,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10662057.0,Muzaffarpur Chakia,Uttar Pradesh,Azamgarh District,PPL,26.08578,83.1413,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10750603.0,Muzaffarpur Khūntī,Uttar Pradesh,Meerut,PPL,28.97947,78.02294,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10909611.0,Muzaffarpur Ismail,Bihar,Madhepura,PPL,25.61176,86.85599,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,11020603.0,Muzaffarpur Malāhi,Bihar,Vaishali,PPL,25.82269,85.2699,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10479270.0,Muzaffarpur Hiraudi,Uttar Pradesh,Etah district,PPL,27.44179,78.83461,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,10556811.0,Muzaffarpur Devīdās,Uttar Pradesh,Bijnor district,PPL,29.37986,78.36449,candidate_only
+IND842001AAA,Muzaffrpur_Bbganj_I (Bihar),Bihar,7668594.0,Muzaffarpur Airport,Bihar,Muzaffarpur district,AIRP,26.1191,85.3137,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,1266285.0,Kolhāpur,Maharashtra,Kolhapur,PPL,16.69563,74.23167,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,1266286.0,Kolhāpur,Telangana,Nagarkurnool,PPL,16.10683,78.32006,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,10453330.0,Kolhāpur,Maharashtra,Wardha district,PPL,20.56475,78.36567,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,10453378.0,Kolhāpur,Maharashtra,Wardha district,PPL,20.56122,78.47222,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,10692004.0,Kolhāpur,Maharashtra,Jalna District,PPL,20.26017,75.90786,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,10699743.0,Kolhāpur,Maharashtra,Nashik,PPL,20.46256,74.00328,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,10849120.0,Kolhāpur,Karnataka,Haveri,PPL,14.61185,75.47178,candidate_only
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,6301041.0,Kolhapur Airport,Maharashtra,Kolhapur,AIRP,16.66466,74.28935,candidate_only
+IND575004AAB,Mangalore_Kuntikna_H (Karnataka),Karnataka,10846334.0,Mangalore Tota,Karnataka,Dakshina Kannada District,PPL,12.84654,74.84056,candidate_only
+IND575004AAB,Mangalore_Kuntikna_H (Karnataka),Karnataka,6301126.0,Bajpe Airport,Karnataka,Dakshina Kannada District,AIRP,12.96127,74.89007,candidate_only
+IND384205AAA,Mehsana_Panchot_IP (Gujarat),Gujarat,1264389.0,Mahesāna,Gujarat,Mehsāna District,PPL,23.59864,72.38472,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10017209.0,Allahabād,Punjab,Sri Muktsar Sahib,PPL,30.20417,74.37162,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10475052.0,Allāhābād,Haryana,Nuh,PPL,27.89228,77.12312,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10569615.0,Allahābād,Uttar Pradesh,Bijnor district,PPL,29.22096,78.37997,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10656576.0,Allahābād,Uttar Pradesh,Maharajganj,PPL,27.03291,83.47331,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10698885.0,Allāhābād,Punjab,Moga district,PPL,31.04285,75.11317,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,11064289.0,Allāhābād,Uttar Pradesh,Kheri,PPL,27.93213,80.31698,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,11268765.0,Allahābād,Andhra Pradesh,Nandyal,PPL,15.29049,77.99868,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10585633.0,Allāhabād Simra,Uttar Pradesh,Pilibhit District,PPL,28.19167,79.90149,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,10832613.0,Allāhābād Dewal,Uttar Pradesh,Pilibhit District,PPL,28.41224,79.926,candidate_only
+IND211002AAB,Allahabad_Central_H_1 (Uttar Pradesh),Uttar Pradesh,6301091.0,Allahabad Airport,Uttar Pradesh,Prayagraj,AIRP,25.44006,81.73387,candidate_only
+IND605010AAB,Pondicherry_Vasanthm_I (Pondicherry),Puducherry,7730221.0,Pondicherry Airport,Tamil Nadu,,AIRP,11.9687,79.8101,candidate_only
+IND585104AAA,Gulbarga_Nehrugnj_I (Karnataka),,,,,,,,,no_results
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),,,,,,,,,no_results
+IND742102AAB,Berhampore_Central_I_2 (West Bengal),,,,,,,,,no_results
