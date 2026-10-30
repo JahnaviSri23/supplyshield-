@@ -1,0 +1,5 @@
+# Safe-Plan Analysis (Hub D Capacity Uncertainty)
+
+A baseline planning model that assumes Hub D can consistently handle 60 parcels will route up to 60 units through it to minimize daily operating costs. However, on the 20% of days when Hub D's capacity drops to 30, this aggressive baseline will suddenly overflow the hub, forcing 30 parcels into high-cost emergency rerouting or incurring heavy unmet demand penalties. 
+
+In contrast, a safe plan accounts for this downside risk by proactively diverting a portion of the expected volume to secondary, slightly higher-cost routes instead of maxing out Hub D's capacity. While this slightly increases the nominal cost on standard days, it drastically reduces severe cost spikes on low-capacity days. This risk-averse approach forms the core idea behind Conditional Value at Risk (CVaR), which optimizes for the worst-case tail outcomes rather than just average expected conditions.

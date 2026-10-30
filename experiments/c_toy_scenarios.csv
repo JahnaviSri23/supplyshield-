@@ -1,0 +1,126 @@
+scenario_type,penalty,failed_hubs,van_cost,plan,total_cost,unmet
+single_hub,8,A (100% down),12,Do Nothing,800.0,100.0
+single_hub,8,A (100% down),12,Greedy,740.0,10.0
+single_hub,8,A (100% down),12,Optimizer,620.0,40.0
+single_hub,8,A (50% down),12,Do Nothing,710.0,70.0
+single_hub,8,A (50% down),12,Greedy,570.0,0.0
+single_hub,8,A (50% down),12,Optimizer,530.0,10.0
+single_hub,8,B (100% down),12,Do Nothing,650.0,50.0
+single_hub,8,B (100% down),12,Greedy,750.0,10.0
+single_hub,8,B (100% down),12,Optimizer,630.0,40.0
+single_hub,8,B (50% down),12,Do Nothing,650.0,50.0
+single_hub,8,B (50% down),12,Greedy,580.0,0.0
+single_hub,8,B (50% down),12,Optimizer,540.0,10.0
+single_hub,8,C (100% down),12,Do Nothing,800.0,100.0
+single_hub,8,C (100% down),12,Greedy,740.0,10.0
+single_hub,8,C (100% down),12,Optimizer,580.0,0.0
+single_hub,8,C (50% down),12,Do Nothing,725.0,75.0
+single_hub,8,C (50% down),12,Greedy,605.0,0.0
+single_hub,8,C (50% down),12,Optimizer,530.0,0.0
+single_hub,8,D (100% down),12,Do Nothing,650.0,50.0
+single_hub,8,D (100% down),12,Greedy,610.0,0.0
+single_hub,8,D (100% down),12,Optimizer,570.0,10.0
+single_hub,8,D (50% down),12,Do Nothing,650.0,50.0
+single_hub,8,D (50% down),12,Greedy,520.0,0.0
+single_hub,8,D (50% down),12,Optimizer,520.0,0.0
+single_hub,8,E (100% down),12,Do Nothing,650.0,50.0
+single_hub,8,E (100% down),12,Greedy,500.0,0.0
+single_hub,8,E (100% down),12,Optimizer,500.0,0.0
+single_hub,8,E (50% down),12,Do Nothing,650.0,50.0
+single_hub,8,E (50% down),12,Greedy,500.0,0.0
+single_hub,8,E (50% down),12,Optimizer,500.0,0.0
+single_hub,8,F (100% down),12,Do Nothing,650.0,50.0
+single_hub,8,F (100% down),12,Greedy,500.0,0.0
+single_hub,8,F (100% down),12,Optimizer,500.0,0.0
+single_hub,8,F (50% down),12,Do Nothing,650.0,50.0
+single_hub,8,F (50% down),12,Greedy,500.0,0.0
+single_hub,8,F (50% down),12,Optimizer,500.0,0.0
+single_hub,20,A (100% down),12,Do Nothing,2000.0,100.0
+single_hub,20,A (100% down),12,Greedy,860.0,10.0
+single_hub,20,A (100% down),12,Optimizer,860.0,10.0
+single_hub,20,A (50% down),12,Do Nothing,1550.0,70.0
+single_hub,20,A (50% down),12,Greedy,570.0,0.0
+single_hub,20,A (50% down),12,Optimizer,570.0,0.0
+single_hub,20,B (100% down),12,Do Nothing,1250.0,50.0
+single_hub,20,B (100% down),12,Greedy,870.0,10.0
+single_hub,20,B (100% down),12,Optimizer,870.0,10.0
+single_hub,20,B (50% down),12,Do Nothing,1250.0,50.0
+single_hub,20,B (50% down),12,Greedy,580.0,0.0
+single_hub,20,B (50% down),12,Optimizer,580.0,0.0
+single_hub,20,C (100% down),12,Do Nothing,2000.0,100.0
+single_hub,20,C (100% down),12,Greedy,860.0,10.0
+single_hub,20,C (100% down),12,Optimizer,580.0,0.0
+single_hub,20,C (50% down),12,Do Nothing,1625.0,75.0
+single_hub,20,C (50% down),12,Greedy,605.0,0.0
+single_hub,20,C (50% down),12,Optimizer,530.0,0.0
+single_hub,20,D (100% down),12,Do Nothing,1250.0,50.0
+single_hub,20,D (100% down),12,Greedy,610.0,0.0
+single_hub,20,D (100% down),12,Optimizer,610.0,0.0
+single_hub,20,D (50% down),12,Do Nothing,1250.0,50.0
+single_hub,20,D (50% down),12,Greedy,520.0,0.0
+single_hub,20,D (50% down),12,Optimizer,520.0,0.0
+single_hub,20,E (100% down),12,Do Nothing,1250.0,50.0
+single_hub,20,E (100% down),12,Greedy,500.0,0.0
+single_hub,20,E (100% down),12,Optimizer,500.0,0.0
+single_hub,20,E (50% down),12,Do Nothing,1250.0,50.0
+single_hub,20,E (50% down),12,Greedy,500.0,0.0
+single_hub,20,E (50% down),12,Optimizer,500.0,0.0
+single_hub,20,F (100% down),12,Do Nothing,1250.0,50.0
+single_hub,20,F (100% down),12,Greedy,500.0,0.0
+single_hub,20,F (100% down),12,Optimizer,500.0,0.0
+single_hub,20,F (50% down),12,Do Nothing,1250.0,50.0
+single_hub,20,F (50% down),12,Greedy,500.0,0.0
+single_hub,20,F (50% down),12,Optimizer,500.0,0.0
+single_hub,40,A (100% down),12,Do Nothing,4000.0,100.0
+single_hub,40,A (100% down),12,Greedy,1060.0,10.0
+single_hub,40,A (100% down),12,Optimizer,1060.0,10.0
+single_hub,40,A (50% down),12,Do Nothing,2950.0,70.0
+single_hub,40,A (50% down),12,Greedy,570.0,0.0
+single_hub,40,A (50% down),12,Optimizer,570.0,0.0
+single_hub,40,B (100% down),12,Do Nothing,2250.0,50.0
+single_hub,40,B (100% down),12,Greedy,1070.0,10.0
+single_hub,40,B (100% down),12,Optimizer,1070.0,10.0
+single_hub,40,B (50% down),12,Do Nothing,2250.0,50.0
+single_hub,40,B (50% down),12,Greedy,580.0,0.0
+single_hub,40,B (50% down),12,Optimizer,580.0,0.0
+single_hub,40,C (100% down),12,Do Nothing,4000.0,100.0
+single_hub,40,C (100% down),12,Greedy,1060.0,10.0
+single_hub,40,C (100% down),12,Optimizer,580.0,0.0
+single_hub,40,C (50% down),12,Do Nothing,3125.0,75.0
+single_hub,40,C (50% down),12,Greedy,605.0,0.0
+single_hub,40,C (50% down),12,Optimizer,530.0,0.0
+single_hub,40,D (100% down),12,Do Nothing,2250.0,50.0
+single_hub,40,D (100% down),12,Greedy,610.0,0.0
+single_hub,40,D (100% down),12,Optimizer,610.0,0.0
+single_hub,40,D (50% down),12,Do Nothing,2250.0,50.0
+single_hub,40,D (50% down),12,Greedy,520.0,0.0
+single_hub,40,D (50% down),12,Optimizer,520.0,0.0
+single_hub,40,E (100% down),12,Do Nothing,2250.0,50.0
+single_hub,40,E (100% down),12,Greedy,500.0,0.0
+single_hub,40,E (100% down),12,Optimizer,500.0,0.0
+single_hub,40,E (50% down),12,Do Nothing,2250.0,50.0
+single_hub,40,E (50% down),12,Greedy,500.0,0.0
+single_hub,40,E (50% down),12,Optimizer,500.0,0.0
+single_hub,40,F (100% down),12,Do Nothing,2250.0,50.0
+single_hub,40,F (100% down),12,Greedy,500.0,0.0
+single_hub,40,F (100% down),12,Optimizer,500.0,0.0
+single_hub,40,F (50% down),12,Do Nothing,2250.0,50.0
+single_hub,40,F (50% down),12,Greedy,500.0,0.0
+single_hub,40,F (50% down),12,Optimizer,500.0,0.0
+double_hub,20,A+E (100% down),12,Do Nothing,2000.0,100.0
+double_hub,20,A+E (100% down),12,Greedy,860.0,10.0
+double_hub,20,A+E (100% down),12,Optimizer,860.0,10.0
+double_hub,20,B+D (100% down),12,Do Nothing,1250.0,50.0
+double_hub,20,B+D (100% down),12,Greedy,1010.0,20.0
+double_hub,20,B+D (100% down),12,Optimizer,1010.0,20.0
+double_hub,20,C+F (100% down),12,Do Nothing,2000.0,100.0
+double_hub,20,C+F (100% down),12,Greedy,860.0,10.0
+double_hub,20,C+F (100% down),12,Optimizer,860.0,10.0
+double_hub,20,A+C (100% down),12,Do Nothing,2000.0,100.0
+double_hub,20,A+C (100% down),12,Greedy,860.0,10.0
+double_hub,20,A+C (100% down),12,Optimizer,860.0,10.0
+van_cost_sensitivity,20,C (Express flow: 0.0),12,Optimizer,580.0,0.0
+van_cost_sensitivity,20,C (Express flow: 0.0),18,Optimizer,580.0,0.0
+van_cost_sensitivity,20,C (Express flow: 0.0),25,Optimizer,580.0,0.0
+van_cost_sensitivity,20,C (Express flow: 0.0),30,Optimizer,580.0,0.0
+van_cost_sensitivity,20,C (Express flow: 0.0),35,Optimizer,580.0,0.0
