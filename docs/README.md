@@ -59,3 +59,10 @@ Journey activity and weather can extend beyond trip creation dates.
 The frozen core and weather join are complete.
 Capacity estimation and the rain-delay association test remain pending.
 See assumptions.md for selection rules and limitations.
+
+- src/estimate_capacities.py: estimates training-only dispatch capacities and exports optimizer edge statistics.
+- data/processed/hub_daily_departures.csv: daily outgoing core-leg counts, including zero days.
+
+After rebuilding the core, run:
+
+    python -m src.estimate_capacities

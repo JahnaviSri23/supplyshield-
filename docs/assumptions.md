@@ -65,3 +65,33 @@ Any future estimate based on observed throughput is a simulator proxy,
 not a measured physical warehouse capacity.
 Its units, observation window, zero-day handling and excluded traffic
 must be documented when implemented.
+
+## Dispatch-capacity estimate
+
+- Capacity and simulator demand use outgoing journey legs per hub per day.
+- A journey leg is not an individual parcel.
+- Observations cover 12–25 September 2018, including zero-departure days.
+- Only frozen-core lanes and training trips are used.
+- Departures outside this calendar window are excluded from capacity counts.
+- legs_per_day_p95 uses the linearly interpolated 95th percentile.
+- capacity_est is ceil(legs_per_day_p95), with no extra headroom.
+- Zero estimates remain zero and require review before simulation.
+- Estimates exclude external traffic and are not physical warehouse capacities.
+- The short observation period and missing pre-dataset trips limit accuracy.
+- Edge statistics use training-trip legs only.
+- median_actual_time is in minutes.
+- median_ratio and p90_ratio are dimensionless actual-time/OSRM-time ratios.
+- distance_km is the median OSRM distance in kilometres.
+- trips counts distinct training trips on each directed lane.
+- C must confirm that the optimizer models outgoing-leg dispatch capacity.
+
+### Destination-only core hubs
+
+IND201007AAA, IND110095AAB and IND560064AAA have incoming lanes
+but no outgoing lanes in the frozen core. Their estimated dispatch
+capacity is zero because no outgoing departures were observed.
+
+This does not imply zero physical warehouse capacity.
+They may receive legs, but cannot forward them within the frozen graph.
+Dispatch capacity must not be applied as a receiving-capacity constraint.
+Receiving and storage capacities remain unestimated.
