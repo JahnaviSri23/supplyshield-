@@ -1,0 +1,26 @@
+policy,seed,mean_cost,cvar80,worst_day
+1 do nothing,0,1250.0,1250.0,1250.0
+2 greedy,0,686.4,1188.0,1500.0
+3 deterministic LP,0,750.8,1388.0,1700.0
+4 expected-cost LP,0,677.6,908.0,1220.0
+5 CVaR LP,0,810.0,810.0,810.0
+1 do nothing,1,1250.0,1250.0,1250.0
+2 greedy,1,690.0,1224.0,1500.0
+3 deterministic LP,1,752.6,1424.0,1700.0
+4 expected-cost LP,1,684.8,944.0,1220.0
+5 CVaR LP,1,810.0,810.0,810.0
+1 do nothing,2,1250.0,1250.0,1250.0
+2 greedy,2,682.0,1224.0,1500.0
+3 deterministic LP,2,740.6,1424.0,1700.0
+4 expected-cost LP,2,684.8,944.0,1220.0
+5 CVaR LP,2,810.0,810.0,810.0
+1 do nothing,3,1250.0,1250.0,1250.0
+2 greedy,3,667.8,1161.0,1500.0
+3 deterministic LP,3,725.6,1361.0,1700.0
+4 expected-cost LP,3,672.2,881.0,1220.0
+5 CVaR LP,3,810.0,810.0,810.0
+1 do nothing,4,1250.0,1250.0,1250.0
+2 greedy,4,696.2,1233.0,1500.0
+3 deterministic LP,4,761.0,1433.0,1700.0
+4 expected-cost LP,4,686.6,953.0,1220.0
+5 CVaR LP,4,810.0,810.0,810.0
