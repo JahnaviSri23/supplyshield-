@@ -1,0 +1,24 @@
+{
+    "method": "chronological_trip_level_split",
+    "split_ratio": {
+        "train": 0.6,
+        "calibration": 0.2,
+        "test": 0.2
+    },
+    "total_trips": 14817,
+    "total_legs": 26369,
+    "partitions": {
+        "train": {
+            "trips": 8890,
+            "legs": 15621
+        },
+        "calibration": {
+            "trips": 2963,
+            "legs": 5441
+        },
+        "test": {
+            "trips": 2964,
+            "legs": 5307
+        }
+    }
+}
