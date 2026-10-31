@@ -66,3 +66,8 @@ See assumptions.md for selection rules and limitations.
 After rebuilding the core, run:
 
     python -m src.estimate_capacities
+
+- src/rain_checks.py: checks core export fields and runs training-only descriptive rain comparisons.
+- data/processed/rain_threshold_sensitivity.csv: results at 1, 5 and 10 mm thresholds.
+- data/processed/rain_lane_sensitivity.csv: individual lane comparisons and observation-day counts.
+- docs/rain_analysis.md: rain-comparison methods, results and limitations.
