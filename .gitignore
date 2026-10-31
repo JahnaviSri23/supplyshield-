@@ -1,6 +1,8 @@
 data/raw/
-data/processed/
 ss_env/
 .venv/
 __pycache__/
 .ipynb_checkpoints/
+data/processed/weather_cache_era5/
+data/processed/core_nodes_before_location_review.csv
+data/processed/core_location_candidates.csv

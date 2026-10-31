@@ -1,0 +1,2 @@
+rain_threshold_mm,dry_definition,minimum_legs_per_condition,eligible_training_legs,comparable_lanes,represented_legs,median_within_lane_difference,lanes_with_positive_difference_pct
+1.0,exactly_0_mm,3,5118,113,2179,-0.005760368663594306,47.78761061946903

@@ -1,0 +1,6 @@
+hub,name,search_city,search_state,match,latitude,longitude,coordinate_method,review_evidence,located,city,state,matched_name,matched_state,error
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Chandigarh,Punjab,no_exact_match,,,,,False,Chandigarh,Punjab,,,
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),Rajamundry,Andhra Pradesh,no_exact_match,,,,,False,Rajamundry,Andhra Pradesh,,,
+IND403726AAA,Goa_Hub (Goa),Goa,Goa,no_exact_match,,,,,False,Goa,Goa,,,
+IND121102AAA,Palwal (Haryana),Palwal,Haryana,ambiguous_city_state,,,,,False,Palwal,Haryana,,,
+IND462011AAA,Bhopal MP Nagar (Madhya Pradesh),Bhopal,Madhya Pradesh,ambiguous_city_state,,,,,False,Bhopal MP Nagar,Madhya Pradesh,,,
