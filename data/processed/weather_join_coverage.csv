@@ -1,0 +1,3 @@
+split,journey_legs,source_weather_available,destination_weather_available,both_weather_available,both_weather_pct
+later,2422,2368,2319,2265,93.52
+training,5395,5156,5125,4886,90.57
