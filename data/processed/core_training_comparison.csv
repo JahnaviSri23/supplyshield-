@@ -1,0 +1,4 @@
+hubs,directed_lanes,training_legs,training_legs_kept_pct,weakly_connected,largest_strong_group_pct,located_hubs,both_ends_located_pct
+50,165,3828,21.66,True,92.0,49,92.87
+100,292,5395,30.53,True,93.0,95,90.57
+150,387,6418,36.31,True,81.33,137,89.26
