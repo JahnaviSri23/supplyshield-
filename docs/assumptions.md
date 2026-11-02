@@ -95,3 +95,17 @@ This does not imply zero physical warehouse capacity.
 They may receive legs, but cannot forward them within the frozen graph.
 Dispatch capacity must not be applied as a receiving-capacity constraint.
 Receiving and storage capacities remain unestimated.
+
+### Rain comparison finding
+
+Training-only within-lane comparisons showed near-zero median differences
+at rainfall thresholds of 1 and 5 mm. At 10 mm, the median travel-time-ratio
+difference was +0.0594 across 54 lanes, with 62.96% showing an increase.
+Requiring at least two dates per condition retained 44 lanes and a positive
+median difference of +0.0468.
+
+These descriptive results suggest a possible association under heavier
+rainfall, but do not establish causation or statistical significance.
+The lane sample changes with the rainfall threshold. Weather-based
+capacity reductions or delay penalties have not been calibrated from
+these results.

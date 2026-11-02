@@ -1,6 +1,6 @@
-hub,name,search_city,search_state,match,latitude,longitude,coordinate_method,review_evidence,located,city,state,matched_name,matched_state,error
-IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Chandigarh,Punjab,no_exact_match,,,,,False,Chandigarh,Punjab,,,
-IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),Rajamundry,Andhra Pradesh,no_exact_match,,,,,False,Rajamundry,Andhra Pradesh,,,
-IND403726AAA,Goa_Hub (Goa),Goa,Goa,no_exact_match,,,,,False,Goa,Goa,,,
-IND121102AAA,Palwal (Haryana),Palwal,Haryana,ambiguous_city_state,,,,,False,Palwal,Haryana,,,
-IND462011AAA,Bhopal MP Nagar (Madhya Pradesh),Bhopal,Madhya Pradesh,ambiguous_city_state,,,,,False,Bhopal MP Nagar,Madhya Pradesh,,,
+hub,name,search_city,search_state,match,latitude,longitude,coordinate_method,review_evidence,located,state,lat,lon,legs_per_day_p95,capacity_est,city,matched_name,matched_state,error,observed_days,active_days,capacity_unit,capacity_method
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Chandigarh,Punjab,no_exact_match,,,,,False,Punjab,,,15.35,16,Chandigarh,,,,14,14,outgoing_legs_per_day,ceil_training_daily_outgoing_p95
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),Rajamundry,Andhra Pradesh,no_exact_match,,,,,False,Andhra Pradesh,,,2.0,2,Rajamundry,,,,14,11,outgoing_legs_per_day,ceil_training_daily_outgoing_p95
+IND403726AAA,Goa_Hub (Goa),Goa,Goa,no_exact_match,,,,,False,Goa,,,1.3499999999999996,2,Goa,,,,14,13,outgoing_legs_per_day,ceil_training_daily_outgoing_p95
+IND121102AAA,Palwal (Haryana),Palwal,Haryana,ambiguous_city_state,,,,,False,Haryana,,,1.0,1,Palwal,,,,14,10,outgoing_legs_per_day,ceil_training_daily_outgoing_p95
+IND462011AAA,Bhopal MP Nagar (Madhya Pradesh),Bhopal,Madhya Pradesh,ambiguous_city_state,,,,,False,Madhya Pradesh,,,1.3499999999999996,2,Bhopal MP Nagar,,,,14,9,outgoing_legs_per_day,ceil_training_daily_outgoing_p95
