@@ -1,0 +1,4 @@
+capacity_scale,busy_hub,small_hub,small_hub_degree,no_failure_drained,busy_failure_extra_cost,small_failure_extra_cost,busy_cost_greater_than_small
+1.0,IND000000ACB,IND110095AAB,1,True,22462.28571428574,257.1428571428478,True
+1.2,IND000000ACB,IND110095AAB,1,True,21017.48571428565,257.1428571428514,True
+1.5,IND000000ACB,IND110095AAB,1,True,18020.571428571457,257.1428571428569,True
