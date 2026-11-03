@@ -1,0 +1,50 @@
+{
+    "experiment": "Day 1 Baseline Evaluation",
+    "target": "delay_ratio",
+    "global_training_median": 2.0,
+    "prediction_strategy": {
+        "known_lane": "Use training lane median",
+        "unseen_lane": "Use training global median"
+    },
+    "dataset_sizes": {
+        "training_legs": 15621,
+        "calibration_legs": 5441,
+        "test_legs": 5307
+    },
+    "unseen_lanes": {
+        "calibration": {
+            "legs": 238,
+            "percentage": 4.37
+        },
+        "test": {
+            "legs": 434,
+            "percentage": 8.18
+        }
+    },
+    "metrics": {
+        "calibration": {
+            "global_median": {
+                "MAE_ratio": 0.9648286272516242,
+                "MedAE_ratio": 0.43601895734597207,
+                "MAE_excess_min": 47.36941738650983
+            },
+            "lane_median": {
+                "MAE_ratio": 0.6394917170967531,
+                "MedAE_ratio": 0.24761904761904763,
+                "MAE_excess_min": 29.318281768965207
+            }
+        },
+        "test": {
+            "global_median": {
+                "MAE_ratio": 1.0150349033666075,
+                "MedAE_ratio": 0.4482758620689655,
+                "MAE_excess_min": 49.30619935933672
+            },
+            "lane_median": {
+                "MAE_ratio": 0.7405827565331723,
+                "MedAE_ratio": 0.28506493506493547,
+                "MAE_excess_min": 34.26765506705706
+            }
+        }
+    }
+}

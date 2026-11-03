@@ -1,0 +1,10 @@
+method,level,target,coverage,mean_width,median_width,mean_width_min,interval_score,lo_offset,hi_offset
+A symmetric,50%,0.5,0.442,0.47,0.47,40.84,2.632,,
+A symmetric,80%,0.8,0.772,1.345,1.345,116.764,5.192,,
+A symmetric,90%,0.9,0.884,2.374,2.378,206.187,8.414,,
+B asymmetric,50%,0.5,0.445,0.501,0.501,43.478,2.631,-0.214,0.287
+B asymmetric,80%,0.8,0.747,1.464,1.464,127.044,5.094,-0.462,1.002
+B asymmetric,90%,0.9,0.873,2.582,2.582,224.105,7.914,-0.703,1.879
+C grouped (route x distance),50%,0.5,0.457,0.581,0.519,35.44,2.601,,
+C grouped (route x distance),80%,0.8,0.761,1.569,1.393,94.84,4.926,,
+C grouped (route x distance),90%,0.9,0.872,2.712,2.221,159.709,7.592,,
