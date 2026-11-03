@@ -50,3 +50,84 @@ Below are the evaluated daily operational costs across 1,000 sampled scenarios (
 * **Lane Cost Definition:** Assign baseline edge costs using the **median travel time** derived from historical leg/lane data.
 * **Demand Definition:** Define origin-destination demand requirements using the **top 10–20 busiest Origin-Destination (OD) pairs** in the core graph.
 * **Hub Capacity Definition:** Estimate baseline node capacities using historical peak-day throughput estimates generated from processed core files.
+
+
+# C Optimization Notes & Sensitivity Analysis
+
+## 1. Assumptions & Setup
+* **Cost Unit:** Travel time in **hours**.
+* **Penalty:** Default penalty for undelivered (unmet) legs is set to **48 hours** (`PENALTY_HOURS = 48`).
+* **Daily Demand:** Demand per lane is calculated as $\text{trips} / 14$ legs per day, based on the 14-day training period.
+* **Hub Capacities:** `capacity_est` is derived from the 95th percentile of normal daily outgoing legs (`ceil(p95 outgoing legs)`).
+* **Isolation Test:** Each lane closure is evaluated individually (in isolation).
+
+---
+
+## 2. Limitations
+* **Optimistic Mode:** Hubs are assumed to be empty apart from the rerouted flow, giving the rerouted legs full access to `capacity_est`.
+* **Pessimistic Mode (`--spare`):** Hub capacities are reduced by normal daily background traffic, evaluating only available spare room.
+* **Isolated Closure Limitation:** Background network traffic does not dynamically re-route during single-lane closures; multi-flow interactions are handled separately in `c_multiflow.py`.
+
+---
+
+## 3. Key Observations & Findings
+* **No-Impact Lane Closures:** Certain lane closures (e.g., `IND560300AAA -> IND562132AAA`) result in the exact same cost (6.5) across all three plans (Do Nothing, Greedy, Optimizer). This occurs because the original shortest-path route did not utilize the closed lane in the first place, meaning the closure had zero impact on traffic flow. Additionally, direct lane median times can occasionally exceed a two-hop path due to using medians.
+* **Plan Performance Ranking:** Across all modes and penalty tests, the strict performance ranking is maintained:
+  $$\text{Optimizer} \le \text{Greedy} < \text{Do Nothing}$$
+* **Penalty Sensitivity:**
+  * **Optimistic Run:** Neither Greedy nor Optimizer lose any legs (0.0 unmet), so varying `PENALTY_HOURS` (24, 48, 96) has **zero impact** on their total cost (18.7 and 10.8 respectively). Only the "Do Nothing" cost scales linearly with penalty.
+  * **Pessimistic Run:** Because spare capacity is limited, Greedy drops 1.7 legs, leading to cost increases as penalty scales ($28.6 \rightarrow 32.7 \rightarrow 40.9$). The LP Optimizer minimizes unmet legs down to 0.5, resulting in significantly lower cost growth ($16.5 \rightarrow 17.7 \rightarrow 20.1$).
+
+---
+
+## 4. Single Lane Closure Experiment Results
+
+### Mode 1: Optimistic (Hubs Empty)
+
+| Penalty Hours | Plan | Average Total Cost (leg-hours) | Unmet Legs (Sum over 10 closures) |
+| :--- | :--- | :--- | :--- |
+| **24** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 123.0 <br> 18.7 <br> 10.8 | 51.0 <br> 0.0 <br> 0.0 |
+| **48** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 245.4 <br> 18.7 <br> 10.8 | 51.0 <br> 0.0 <br> 0.0 |
+| **96** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 490.2 <br> 18.7 <br> 10.8 | 51.0 <br> 0.0 <br> 0.0 |
+
+---
+
+### Mode 2: Pessimistic (`--spare` Capacity)
+
+| Penalty Hours | Plan | Average Total Cost (leg-hours) | Unmet Legs (Sum over 10 closures) |
+| :--- | :--- | :--- | :--- |
+| **24** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 129.4 <br> 28.6 <br> 16.5 | 53.8 <br> 1.7 <br> 0.5 |
+| **48** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 258.5 <br> 32.7 <br> 17.7 | 53.8 <br> 1.7 <br> 0.5 |
+| **96** | **Do Nothing** <br> **Greedy** <br> **Optimizer** | 516.6 <br> 40.9 <br> 20.1 | 53.8 <br> 1.7 <br> 0.5 |
+
+---
+
+## 5. Share of Legs Lost (Pessimistic Mode)
+Total daily legs: 56
+Fraction unmet by plan:
+ plan
+do nothing    0.960714
+greedy        0.030357
+optimizer     0.008929
+Name: unmet, dtype: float64
+
+## 6. Multi-Flow Optimization (`c_multiflow.py`)
+
+### Baseline (No Closure)
+* **LP Optimum:** 2041.6 leg-hours
+* **Unmet Legs:** 0.00 (Network capacities successfully support baseline traffic demand)
+* **Solve Time:** 0.5 seconds
+
+### Multi-Flow Single-Lane Closure Results
+
+| Plan | Average Extra Cost (leg-hours) | Total Unmet Legs (Sum over 10 closures) |
+| :--- | :--- | :--- |
+| **LP (All Flows)** | **25.2** | **1.65** |
+| **Greedy** | **28.4** | **1.65** |
+| **Do Nothing** | **515.9** | **55.00** |
+
+*Max LP solve time:* 0.85s
+
+### Key Findings & Methodology Notes
+* **Network-Wide Re-optimization:** Allowing background traffic to adjust routes (LP) reduces closure-induced extra costs from 28.4 to 25.2 leg-hours (~11% savings over Greedy).
+* **Comparison Caveat:** In `c_multiflow.py`, extra cost is calculated by comparing each plan against its own no-closure baseline. Because the global LP can re-optimize background routes simultaneously, this baseline comparison is not strictly 1-to-1 with greedy baseline behavior.

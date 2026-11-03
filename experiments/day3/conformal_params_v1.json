@@ -1,0 +1,23 @@
+{
+  "model": "residual_xgb_plain_v1",
+  "calibration_pile": "data/datasplit/calibration_legs_v1.csv",
+  "calibration_legs": 5441,
+  "method": "split conformal on signed residuals (asymmetric, finite-sample corrected)",
+  "levels": {
+    "50%": {
+      "alpha": 0.5,
+      "lo_offset": -0.21359076179983338,
+      "hi_offset": 0.28725522880752985
+    },
+    "80%": {
+      "alpha": 0.2,
+      "lo_offset": -0.4619266024807045,
+      "hi_offset": 1.0015782676989446
+    },
+    "90%": {
+      "alpha": 0.1,
+      "lo_offset": -0.7025126471663963,
+      "hi_offset": 1.87909734521816
+    }
+  }
+}
