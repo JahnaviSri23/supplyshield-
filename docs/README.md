@@ -122,3 +122,16 @@ It is an observed-throughput proxy for the selected core, not a
 verified warehouse maximum. Approximate coordinates are not
 warehouse navigation locations. Numeric coordinate validity does
 not establish that a city or state assignment is correct.
+
+## Map exports
+
+Run: python -m src.export_map
+
+- map_hubs.csv: 95 approximate hub markers with location-quality labels.
+- map_lanes.csv: 264 lanes with coordinates for both endpoints.
+- map_unresolved_hubs.csv: 5 hubs excluded from map markers.
+
+These exports do not modify research coordinates or weather data.
+Markers are not verified warehouse addresses.
+Lane lines represent network connections, not road routes.
+The research core retains all 100 hubs and 292 lanes.
