@@ -180,3 +180,30 @@ Recovery_days measures backlog-drain time after demand stops and
 the failure ends, not additional delay attributable to the failure.
 The core tests use plan=None; multi-commodity optimizer-plan
 integration remains pending.
+## Core exports: columns and training rules
+
+Run `python -m src.estimate_capacities` after core selection.
+Core selection can recreate the minimal edge file; this export
+step restores the optimizer columns.
+
+### core_edges.csv
+
+| Column | Meaning |
+|---|---|
+| source, destination | Directed lane's hub identifiers |
+| trips | Distinct training-trip count used for frozen lane membership; includes subsequent legs belonging to those trips |
+| median_actual_time | Median actual travel time, in minutes, from eligible completed training legs |
+| median_ratio | Median actual_time_min / osrm_time_min |
+| p90_ratio | 90th percentile of that ratio, using linear interpolation |
+| distance_km | Median OSRM route distance in kilometres; not straight-line distance |
+| stats_legs | Number of valid completed training legs supporting these statistics |
+| stats_cutoff_exclusive | Outcomes on or after this date are excluded |
+| source_center, destination_center | Compatibility aliases for source and destination |
+| leg_count, trip_count | Original frozen-core membership counts |
+
+Travel statistics use trips created within 12–25 September 2018,
+with departure and completion also within that window. Completion
+must not precede departure. Actual time must be finite and nonnegative,
+OSRM time finite and positive, and distance finite and nonnegative.
+A lane without eligible observations retains missing statistics;
+later-period outcomes are never substituted.
