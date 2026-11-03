@@ -109,3 +109,74 @@ rainfall, but do not establish causation or statistical significance.
 The lane sample changes with the rainfall threshold. Weather-based
 capacity reductions or delay penalties have not been calibrated from
 these results.
+
+### Baseline-relative disruption and rain analysis
+
+Shared target definitions are implemented in src/targets.py.
+Baselines are fitted on valid journeys created, departed and completed
+within 12–25 September 2018. Each route-type × distance-bucket group
+requires at least 30 training observations.
+
+Excess is the travel-time ratio minus its training-group median.
+A journey is disrupted when its ratio strictly exceeds the group's
+training p90. Unsupported targets remain missing.
+
+Among 5,005 eligible training core journeys with source weather,
+the disrupted share was 6.59% for dry days, 7.84% for light-rain days
+and 9.80% for days with at least 10 mm of rain. This descriptive
+association does not establish causation or statistical significance.
+
+The frozen core contains 100 hubs and 292 directed lanes. It covers
+5,395 of 17,674 training legs (30.53%) and 2,422 of 8,695 later-period
+legs (27.86%). These coverage counts differ from the rain-analysis
+sample, which additionally requires completed training outcomes
+and available source weather.
+
+### Planned cascade simulation rule
+
+The simulator advances one day at a time. New demand enters an
+origin backlog, and traffic moves through hub queues along its
+assigned route. Each hub dispatches at most its available daily
+capacity, shared across all outgoing traffic; edge limits also
+apply. A failed hub has reduced dispatch capacity for a specified
+duration, after which its original capacity returns. Traffic that
+cannot move stays queued rather than disappearing. Intermediate
+hubs have finite storage buffers: when downstream storage is full
+or the next hub is fully closed, traffic waits upstream, creating
+back-pressure. Transit arrivals reserve downstream storage, and
+traffic cannot traverse multiple edges within one daily step.
+Destination arrivals complete delivery without consuming dispatch
+capacity. Storage limits, failure durations, waiting costs and
+unmet-demand penalties are explicit simulation assumptions, not
+measured warehouse properties. Demand is measured in parcels for
+C's toy graph and truck-leg units for the core graph.
+
+### Initial core simulator validation
+
+The simulator was tested on the frozen 100-hub, 292-lane core.
+Daily demand is 5,357 training-window departures divided by
+14 days, giving 382.6429 fractional truck-leg units per day.
+Seven demand days generate 2,678.5 units.
+
+Scenarios include no failure, a three-day full closure of
+Gurgaon_Bilaspur_HB, and an equivalent closure of the degree-one
+Delhi_Jhilmil_L hub. Failures begin on simulation day 2.
+Dispatch capacity multipliers are 1.0, 1.2 and 1.5.
+Storage buffers remain fixed across these tests.
+
+Flow conservation and no-failure drainage passed at all multipliers.
+All scenarios delivered their generated demand within the 60-day
+horizon. Busy-hub failure added 22,462.29, 21,017.49 and 18,020.57
+hour-equivalent cost units respectively; leaf-hub failure added
+257.14 at each multiplier. Runtime was approximately 0.031–0.038
+seconds per scenario on the tested laptop.
+
+These are initial implementation checks, not empirical validation
+of real disruption behaviour. Each edge currently takes one day.
+Shortest-cost simulated routes can differ from observed routes,
+while capacities are estimated from observed outgoing core legs.
+Buffers, failure duration and cost penalties are assumed.
+Recovery_days measures backlog-drain time after demand stops and
+the failure ends, not additional delay attributable to the failure.
+The core tests use plan=None; multi-commodity optimizer-plan
+integration remains pending.
