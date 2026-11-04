@@ -6,3 +6,5 @@ __pycache__/
 data/processed/weather_cache_era5/
 data/processed/core_nodes_before_location_review.csv
 data/processed/core_location_candidates.csv
+
+data/processed/core_edges_before_export_fix.csv

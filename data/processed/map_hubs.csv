@@ -1,0 +1,96 @@
+hub,name,state,lat,lon,location_quality,capacity_est,map_notice
+IND000000ACB,Gurgaon_Bilaspur_HB (Haryana),Haryana,28.4601,77.02635,approximate_location_not_independently_validated,53,Approximate location; not a verified warehouse address
+IND562132AAA,Bangalore_Nelmngla_H (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,39,Approximate location; not a verified warehouse address
+IND501359AAE,Hyderabad_Shamshbd_H (Telangana),Telangana,17.38405,78.45636,approximate_location_not_independently_validated,13,Approximate location; not a verified warehouse address
+IND712311AAA,Kolkata_Dankuni_HB (West Bengal),West Bengal,22.56263,88.36304,approximate_location_not_independently_validated,14,Approximate location; not a verified warehouse address
+IND421302AAG,Bhiwandi_Mankoli_HB (Maharashtra),Maharashtra,19.30023,73.05881,approximate_location_not_independently_validated,39,Approximate location; not a verified warehouse address
+IND131028AAB,Sonipat_Kundli_H (Haryana),Haryana,28.99478,77.01937,approximate_location_not_independently_validated,9,Approximate location; not a verified warehouse address
+IND411033AAA,Pune_Tathawde_H (Maharashtra),Maharashtra,18.51957,73.85535,approximate_location_not_independently_validated,24,Approximate location; not a verified warehouse address
+IND600056AAB,MAA_Poonamallee_HB (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,16,Approximate location; not a verified warehouse address
+IND302014AAA,Jaipur_Hub (Rajasthan),Rajasthan,26.91962,75.78781,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND382430AAB,Ahmedabad_East_H_1 (Gujarat),Gujarat,23.02579,72.58727,approximate_location_not_independently_validated,7,Approximate location; not a verified warehouse address
+IND209304AAA,Kanpur_Central_H_6 (Uttar Pradesh),Uttar Pradesh,26.46523,80.34975,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND462022AAA,Bhopal_Trnsport_H (Madhya Pradesh),Madhya Pradesh,23.25469,77.40289,approximate_location_not_independently_validated,5,Approximate location; not a verified warehouse address
+IND751002AAB,Bhubaneshwar_Hub (Orissa),Orissa,20.27241,85.83385,approximate_location_not_independently_validated,5,Approximate location; not a verified warehouse address
+IND530012AAA,Visakhapatnam_Gajuwaka_IP (Andhra Pradesh),Andhra Pradesh,17.68009,83.20161,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND110037AAM,Delhi_Airport_H (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,10,Approximate location; not a verified warehouse address
+IND313001AAB,Udaipur_Mangri_I (Rajasthan),Rajasthan,24.58584,73.71346,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND416012AAA,Kolhapur_Shivaji_I (Maharashtra),Maharashtra,16.69563,74.23167,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND515004AAA,Anantapur_KamaStrt_I (Andhra Pradesh),Andhra Pradesh,14.67784,77.60813,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND395023AAA,Surat_HUB (Gujarat),Gujarat,21.19594,72.83023,approximate_location_not_independently_validated,6,Approximate location; not a verified warehouse address
+IND518002AAA,Kurnool_AbbasNgr_I (Andhra Pradesh),Andhra Pradesh,15.82887,78.03602,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND560099AAB,Bengaluru_Bomsndra_HB (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,28,Approximate location; not a verified warehouse address
+IND821115AAB,Sasaram_Central_I_2 (Bihar),Bihar,24.94942,84.01645,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND000000ACA,Ludhiana_MilrGanj_HB (Punjab),Punjab,30.91204,75.85379,approximate_location_not_independently_validated,6,Approximate location; not a verified warehouse address
+IND532001AAB,Srikakulam_Kuslpram_I (Andhra Pradesh),Andhra Pradesh,18.2989,83.89751,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND431136AAC,Aurangabad_Central_H_1 (Maharashtra),Maharashtra,19.87757,75.34226,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND560300AAA,Bengaluru_KGAirprt_HB (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,18,Approximate location; not a verified warehouse address
+IND834002AAB,Ranchi_Hub (Jharkhand),Jharkhand,23.34316,85.3094,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND422011AAD,Nashik_TgrniaRD_I (Maharashtra),Maharashtra,19.99727,73.79096,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND413002AAA,Solapur_Central_I_2 (Maharashtra),Maharashtra,17.67152,75.91044,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND121004AAB,FBD_Balabhgarh_DPC (Haryana),Haryana,28.41124,77.31316,approximate_location_not_independently_validated,9,Approximate location; not a verified warehouse address
+IND151001AAA,Bhatinda_DPC (Punjab),Punjab,30.20747,74.93893,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND400072AAB,Mumbai Hub (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,17,Approximate location; not a verified warehouse address
+IND390022AAA,Vadodara_Karelibaug_DPC (Gujarat),Gujarat,22.29941,73.20812,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND632006AAA,Vellore_GndhiNgr_IP (Tamil Nadu),Tamil Nadu,12.9184,79.13255,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND388320AAA,Anand_Vaghasi_IP (Gujarat),Gujarat,22.55251,72.9552,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND144001AAB,Jalandhar_DPC (Punjab),Punjab,31.32556,75.57917,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND600044AAD,Chennai_Chrompet_DPC (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND000000AFT,Mumbai_Sanpada_I (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND201007AAA,GZB_Mohan_Nagar_DPC (Uttar Pradesh),Uttar Pradesh,28.66535,77.43915,approximate_location_not_independently_validated,0,Approximate location; not a verified warehouse address
+IND110085AAB,Delhi_Rohini_DPC (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND411014AAA,PNQ Vadgaon Sheri DPC (Maharashtra),Maharashtra,18.51957,73.85535,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND401104AAA,Mumbai_MiraRd_IP (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,5,Approximate location; not a verified warehouse address
+IND444005AAB,Akola_Gaurkshn_I (Maharashtra),Maharashtra,20.70957,76.9981,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND400072AAD,Mumbai_Chndivli_PC (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,7,Approximate location; not a verified warehouse address
+IND122001AAA,GGN_DPC (Haryana),Haryana,28.4601,77.02635,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND140301AAA,Chandigarh_Kharar_DC (Chandigarh),Chandigarh,30.73629,76.7884,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND560043AAC,HBR Layout PC (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,6,Approximate location; not a verified warehouse address
+IND560048AAB,Bengaluru_Hoodi_IP (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND110044AAB,Del_Okhla_PC (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,11,Approximate location; not a verified warehouse address
+IND400102AAC,Mumbai_Jogshwri_I (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND500050AAA,Patancheru_Ameenpur_I (Telangana),Telangana,17.53334,78.2645,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND400011AAA,LowerParel_CP (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,5,Approximate location; not a verified warehouse address
+IND600032AAB,Chennai_Hub (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,9,Approximate location; not a verified warehouse address
+IND811399AAA,Noida_Sector02_C (Uttar Pradesh),Uttar Pradesh,28.58,77.33,approximate_location_not_independently_validated,5,Approximate location; not a verified warehouse address
+IND500080AAB,Hyderabad_Chikdply_I (Telangana),Telangana,17.38405,78.45636,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND600008AAC,Chennai_Egmore_DPC (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND140901AAA,Chandigarh_Mullanpr_DC (Chandigarh),Chandigarh,30.73629,76.7884,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND560058AAB,Bengaluru_Peenya_IP (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,6,Approximate location; not a verified warehouse address
+IND000000AAL,Pune_PC (Maharashtra),Maharashtra,18.51957,73.85535,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND000000ACT,Delhi_Gateway_HB (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,15,Approximate location; not a verified warehouse address
+IND000000AEL,Delhi_PunjabiB_L (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND110030AAD,Delhi_Kishangarh_DPC (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND110037AAK,Delhi_Kapshera_L (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND110064AAA,Delhi_Mayapuri_PC (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND110095AAB,Delhi_Jhilmil_L (Delhi),Delhi,28.65195,77.23149,approximate_location_not_independently_validated,0,Approximate location; not a verified warehouse address
+IND121001AAA,Faridabad (Haryana),Haryana,28.41124,77.31316,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND121002AAB,Faridabad_Mthurard_L (Haryana),Haryana,28.41124,77.31316,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND143001AAA,Amritsar_DPC (Punjab),Punjab,31.62234,74.87534,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND160055AAA,Chandigarh_Mohali (Chandigarh),Chandigarh,30.73629,76.7884,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND160102AAC,Chandigarh_Raiprvlg_L (Chandigarh),Chandigarh,30.73629,76.7884,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND201301AAM,Noida_Sector63_L (Uttar Pradesh),Uttar Pradesh,28.58,77.33,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND380054AAA,AMD_Memnagar (Gujarat),Gujarat,23.02579,72.58727,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND400015AAA,Mumbai_CottonGreen_DPC (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND400015AAB,Mumbai_CotnGren_M (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND400102AAB,Mumbai_Jogeshwri_L (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND400701AAB,Mumbai_Pawane_L (Maharashtra),Maharashtra,19.07283,72.88261,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND411021AAA,PNQ Pashan DPC (Maharashtra),Maharashtra,18.51957,73.85535,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND411036AAA,Pune_Mundhawa_L (Maharashtra),Maharashtra,18.51957,73.85535,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND500010AAB,Hyderabad_Alwal_L (Telangana),Telangana,17.38405,78.45636,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND524003AAA,Nellore_DC (Andhra Pradesh),Andhra Pradesh,14.44992,79.98697,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND560002AAA,Bengaluru_KHRoad_I (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND560058AAD,Bengaluru_Peenya_L (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND560060AAB,Bengaluru_Kengeri_IP (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND560064AAA,Bengaluru_NwYlhnka_DC (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,0,Approximate location; not a verified warehouse address
+IND560064AAD,Bengaluru_Bagaluru_D (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND560078AAC,BLR_JPNagar_Pc (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND560083AAB,Bengaluru_Bnnrghta_L (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND560085AAA,Bengaluru_Banshkri_DC (Karnataka),Karnataka,12.97194,77.59369,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND600044AAE,Chennai_Chrompet_L (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,4,Approximate location; not a verified warehouse address
+IND600076AAB,Chennai_Madhavaram_DPC (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND600110AAA,Chennai_Madhavaram_L (Tamil Nadu),Tamil Nadu,13.08784,80.27847,approximate_location_not_independently_validated,2,Approximate location; not a verified warehouse address
+IND700026AAC,CCU_Lake Avenue_DPC (West Bengal),West Bengal,22.56263,88.36304,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND700028AAB,CCU_DumDum_DPC (West Bengal),West Bengal,22.56263,88.36304,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
+IND700065AAA,CCU_Beliaghata_DPC (West Bengal),West Bengal,22.56263,88.36304,approximate_location_not_independently_validated,3,Approximate location; not a verified warehouse address
+IND700088AAA,Kolkata_TrtllaRD_L (West Bengal),West Bengal,22.56263,88.36304,approximate_location_not_independently_validated,1,Approximate location; not a verified warehouse address
