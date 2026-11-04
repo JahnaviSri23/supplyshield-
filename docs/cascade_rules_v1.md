@@ -41,3 +41,23 @@
 
 ## 5. Modeling & Validation Summary
 > Capacities and baseline loads are derived from daily core network traffic (`train_legs_v1.csv`). Unit-consistent validation (`single_failure_real_loads_v3.csv`) confirms that under real daily load profiles, the network is robust, resulting in **0 multi-hub cascades** once capacity-load boundary artifacts are reconciled.
+
+## Two simulation modes
+- `simulate_cascade` (structural stress test): hub graph with base loads; a failed hub's load is passed to
+  alive neighbours in proportion to spare room; a hub fails when load > tolerance x capacity.
+- `simulate_scenario` (plan evaluator, for the optimizer): evaluates a flow plan under a scenario
+  (failed hubs with remaining capacity fraction, closed lanes). Excess at a hub is dropped; stranded parcels
+  count as unmet; shipping is charged only for lanes actually travelled; optional `overload_factor` makes
+  overloaded hubs fail in later rounds. Passes C's toy acceptance table (optimizer and do-nothing columns).
+
+## Data alignment
+- Load and capacity both use outgoing journey legs per hub per day on frozen-core lanes, 12-25 Sep 2018.
+- Destination-only hubs (IND201007AAA, IND110095AAB, IND560064AAA) have zero dispatch capacity and zero load;
+  they are treated as sinks that cannot absorb redistributed dispatch load.
+- Superseded: single_failure_real_loads_v1/v2 and cascade_vs_centrality_v1 (inconsistent load definition,
+  and a capacity-0 hub starting above capacity). v3 used a capacity workaround; v4 uses Person A's series.
+
+## Split compatibility
+- Person A's training window: trips created before 2018-09-26. Person B: train until 2018-09-24 13:19,
+  calibration until 2018-09-28 22:36, test afterwards. B's test pile lies inside A's "later" period, so test
+  results are compatible; B's calibration pile partly overlaps A's training period.
