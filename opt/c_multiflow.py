@@ -13,7 +13,8 @@ OUTGOING legs per day, so the rule is: all flows leaving a hub together <= capac
 
 Run from the project root:  python opt/c_multiflow.py        (needs opt/c_real_graph.py, c_toy_recovery.py)
 Output: experiments/c_multiflow_closures.csv
-(extra_cost = how much worse the whole network gets because of the closure, under that plan)
+(extra_cost = how much worse the network gets under that plan, against THAT plan's own no-closure cost;
+ extra_vs_best_normal = against the best possible no-closure cost, the same for every plan -> use this one to compare plans)
 
 ASSUMPTIONS (write them in docs/c_notes.md):
   - demand of a flow = trips / 14 legs per day (training days)
@@ -137,12 +138,19 @@ if __name__ == "__main__":
             ref = base_lp if name.startswith("LP") else normal_cost      # each plan is compared with ITS OWN no-closure cost
             rows.append({"lane": f"{lane[0]}->{lane[1]}", "closed_lane_legs_per_day": round(G.edges[lane]["trips"] / rg.TRAIN_DAYS, 2),
                          "plan": name, "total_cost": round(total, 1), "extra_cost": round(total - ref, 1),
+                         "extra_vs_best_normal": round(total - base_lp, 1),
                          "unmet": round(unmet, 2), "lp_seconds": round(secs, 2)})
     table = pd.DataFrame(rows)
     pd.set_option("display.width", 220)
     print("\nEXTRA COST caused by the closure (leg-hours), each plan vs its own no-closure cost:")
     print(table.pivot(index="lane", columns="plan", values="extra_cost").to_string())
     print("\nAverage EXTRA cost per plan:\n", table.groupby("plan")["extra_cost"].mean().round(1).to_string())
+    print("\nFAIR COMPARISON (all plans against the same reference = the no-closure LP optimum):")
+    print(table.pivot(index="lane", columns="plan", values="extra_vs_best_normal").to_string())
+    print("\nAverage extra vs best normal:\n", table.groupby("plan")["extra_vs_best_normal"].mean().round(1).to_string())
+    tot = table.pivot(index="lane", columns="plan", values="total_cost")
+    print("\nCHECK: LP total <= greedy total in every closure (must be True):",
+          bool((tot["LP (all flows)"] <= tot["greedy"] + 1e-6).all()))
     print("\nLegs never delivered, summed over the 10 closures:\n", table.groupby("plan")["unmet"].sum().round(2).to_string())
     print("\nSlowest LP solve (seconds):", table["lp_seconds"].max())
     Path("experiments").mkdir(exist_ok=True)
