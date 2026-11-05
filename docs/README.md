@@ -71,3 +71,67 @@ After rebuilding the core, run:
 - data/processed/rain_threshold_sensitivity.csv: results at 1, 5 and 10 mm thresholds.
 - data/processed/rain_lane_sensitivity.csv: individual lane comparisons and observation-day counts.
 - docs/rain_analysis.md: rain-comparison methods, results and limitations.
+
+## Core exports: columns and training rules
+
+Run `python -m src.estimate_capacities` after core selection.
+Core selection can recreate the minimal edge file; this export
+step restores the optimizer columns.
+
+### core_edges.csv
+
+| Column | Meaning |
+|---|---|
+| source, destination | Directed lane's hub identifiers |
+| trips | Distinct training-trip count used for frozen lane membership; includes subsequent legs belonging to those trips |
+| median_actual_time | Median actual travel time, in minutes, from eligible completed training legs |
+| median_ratio | Median actual_time_min / osrm_time_min |
+| p90_ratio | 90th percentile of that ratio, using linear interpolation |
+| distance_km | Median OSRM route distance in kilometres; not straight-line distance |
+| stats_legs | Number of valid completed training legs supporting these statistics |
+| stats_cutoff_exclusive | Outcomes on or after this date are excluded |
+| source_center, destination_center | Compatibility aliases for source and destination |
+| leg_count, trip_count | Original frozen-core membership counts |
+
+Travel statistics use trips created within 12–25 September 2018,
+with departure and completion also within that window. Completion
+must not precede departure. Actual time must be finite and nonnegative,
+OSRM time finite and positive, and distance finite and nonnegative.
+A lane without eligible observations retains missing statistics;
+later-period outcomes are never substituted.
+
+### core_nodes.csv
+
+| Column | Meaning |
+|---|---|
+| hub, name, state | Hub identifier and supplied descriptive location |
+| lat, lon | Approximate latitude and longitude in decimal degrees |
+| location_quality | approximate_location_not_independently_validated, or unresolved |
+| warehouse_location_verified | False: exact warehouse coordinates have not been verified |
+| coordinate_method | Preserved provenance of the coordinate assignment |
+| review_evidence | Existing review notes; not automatically proof of independent validation |
+| located | Whether a finite, globally valid coordinate pair is available |
+| legs_per_day_p95 | Linear p95 of daily outgoing core-leg counts across all 14 training dates, including zero days |
+| capacity_est | Ceiling of legs_per_day_p95, in outgoing truck legs/day |
+| observed_days | Number of calendar dates used: 14 |
+| active_days | Dates with at least one observed departure |
+| capacity_unit, capacity_method | Units and estimation rule |
+
+Dispatch capacity uses departures on 12–25 September 2018.
+It is an observed-throughput proxy for the selected core, not a
+verified warehouse maximum. Approximate coordinates are not
+warehouse navigation locations. Numeric coordinate validity does
+not establish that a city or state assignment is correct.
+
+## Map exports
+
+Run: python -m src.export_map
+
+- map_hubs.csv: 95 approximate hub markers with location-quality labels.
+- map_lanes.csv: 264 lanes with coordinates for both endpoints.
+- map_unresolved_hubs.csv: 5 hubs excluded from map markers.
+
+These exports do not modify research coordinates or weather data.
+Markers are not verified warehouse addresses.
+Lane lines represent network connections, not road routes.
+The research core retains all 100 hubs and 292 lanes.

@@ -1,0 +1,6 @@
+hub,name,state,lat,lon,pincode_candidate,Pincode,OfficeName,District,StateName,Latitude,Longitude,coordinate_plausible,review_status,warehouse_verified
+IND160002AAC,Chandigarh_Mehmdpur_H (Punjab),Punjab,,,160002,160002,Ind Area Chandigarh SO,CHANDIGARH,CHANDIGARH,30.6903611,76.7942222,True,needs_independent_location_check,False
+IND533106AAA,Rajamundry_AtoNgrRd_I (Andhra Pradesh),Andhra Pradesh,,,533106,533106,Spinning Mills Centre S.O,EAST GODAVARI,ANDHRA PRADESH,17.0291111,81.8098056,True,needs_independent_location_check,False
+IND403726AAA,Goa_Hub (Goa),Goa,,,403726,403726,Zuarinagar S.O,SOUTH GOA,GOA,15.3753889,73.8800556,True,needs_independent_location_check,False
+IND121102AAA,Palwal (Haryana),Haryana,,,121102,121102,Palwal SO,PALWAL,HARYANA,28.1416667,77.3276667,True,needs_independent_location_check,False
+IND462011AAA,Bhopal MP Nagar (Madhya Pradesh),Madhya Pradesh,,,462011,462011,Shiksha Mandal S.O,BHOPAL,MADHYA PRADESH,23.23225,77.4288889,True,needs_independent_location_check,False
