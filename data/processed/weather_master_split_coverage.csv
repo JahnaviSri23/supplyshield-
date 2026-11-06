@@ -1,0 +1,4 @@
+split,trips,total_legs,matched_to_weather_file,source_rain_available,destination_rain_available,both_endpoints_available,both_endpoints_pct
+train,9969,17674,5395,5156,5125,4886,27.65
+calibration,2424,4301,1237,1206,1186,1155,26.85
+test,2424,4394,1185,1162,1133,1110,25.26

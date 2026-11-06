@@ -1,0 +1,4 @@
+split,legs,rain_available,rain_missing,coverage_pct
+train,17674,6193,11481,35.04
+calibration,4301,1607,2694,37.36
+test,4394,1571,2823,35.75
