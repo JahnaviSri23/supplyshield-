@@ -48,7 +48,7 @@ def build_model(G):
     return nodes, nidx, edges, eidx, N, E, src, dst, cost, flows
 
 
-def solve_multiflow(G, closed=None):
+def solve_multiflow(G, closed=None, return_plan=False):
     """Minimum total cost over all flows sharing hub capacity. `closed` = one lane (u, v) that is shut."""
     nodes, nidx, edges, eidx, N, E, src, dst, cost, flows = build_model(G)
     K = len(flows)
@@ -88,7 +88,11 @@ def solve_multiflow(G, closed=None):
         raise RuntimeError(res.message)
     unmet = float(res.x[K * E:].sum())
     travel = float(np.dot(np.tile(cost, K), res.x[:K * E]))
-    return travel + rg.PENALTY_HOURS * unmet, unmet
+    if not return_plan:
+        return travel + rg.PENALTY_HOURS * unmet, unmet
+    plan = [{"od": [flows[k][0], flows[k][1]], "edge": [edges[e][0], edges[e][1]], "flow": round(float(res.x[k * E + e]), 4)}
+            for k in range(K) for e in range(E) if res.x[k * E + e] > 1e-6]
+    return travel + rg.PENALTY_HOURS * unmet, unmet, plan
 
 
 def baseline_plans(G, lane):
@@ -116,8 +120,13 @@ def baseline_plans(G, lane):
     flows, delivered = c.greedy(H)
     detour = sum(H.edges[e]["cost"] * f for e, f in flows.items())
     unmet = q - delivered
-    return {"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
-            "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost
+    background = [{"od": [a, b], "edge": [a, b], "flow": round(G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS, 4)}
+                  for (a, b) in G.edges if (a, b) != lane]          # every other flow stays on its direct lane
+    plan_flows = {"do nothing": background,
+                  "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": round(f, 4)}
+                                          for (a, b), f in flows.items() if f > 1e-9]}
+    return ({"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
+             "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost, plan_flows)
 
 
 if __name__ == "__main__":
@@ -127,13 +136,18 @@ if __name__ == "__main__":
     print(f"\nno closure: LP optimum {base_lp:.1f} leg-hours, unmet {base_unmet:.2f} "
           f"({time.perf_counter() - t0:.1f} s for one solve)")
     top = sorted(G.edges, key=lambda e: -G.edges[e]["trips"])[:10]
-    rows = []
-    for lane in top:
-        plans, normal_cost = baseline_plans(G, lane)
+    rows, tests = [], []
+    for i, lane in enumerate(top, 1):
+        plans, normal_cost, plan_flows = baseline_plans(G, lane)
         t0 = time.perf_counter()
-        lp_cost, lp_unmet = solve_multiflow(G, closed=lane)
+        lp_cost, lp_unmet, lp_plan = solve_multiflow(G, closed=lane, return_plan=True)
         secs = time.perf_counter() - t0
         plans["LP (all flows)"] = (lp_cost, lp_unmet)
+        plan_flows["LP (all flows)"] = lp_plan
+        tests.append({"id": f"L{i:02d}", "closed_lanes": [[lane[0], lane[1]]], "penalty": rg.PENALTY_HOURS,
+                      "plans": plan_flows,
+                      "expected": {k: {"shipping": round(t - rg.PENALTY_HOURS * u, 2), "unmet": round(u, 3),
+                                       "total_cost": round(t, 2)} for k, (t, u) in plans.items()}})
         for name, (total, unmet) in plans.items():
             ref = base_lp if name.startswith("LP") else normal_cost      # each plan is compared with ITS OWN no-closure cost
             rows.append({"lane": f"{lane[0]}->{lane[1]}", "closed_lane_legs_per_day": round(G.edges[lane]["trips"] / rg.TRAIN_DAYS, 2),
@@ -156,3 +170,6 @@ if __name__ == "__main__":
     Path("experiments").mkdir(exist_ok=True)
     table.to_csv("experiments/c_multiflow_closures.csv", index=False)
     print("Saved experiments/c_multiflow_closures.csv")
+    import json
+    json.dump(tests, open("experiments/c_multiflow_plans.json", "w"))
+    print("Saved experiments/c_multiflow_plans.json  (multi-OD plans + expected costs, for testing simulate())")
