@@ -1,0 +1,20 @@
+{
+  "MAE_ratio":{
+    "calibration - lane baseline":0.6862,
+    "calibration - residual XGBoost":0.6697,
+    "test - lane baseline":0.6686,
+    "test - residual XGBoost":0.654
+  },
+  "MedAE_ratio":{
+    "calibration - lane baseline":0.25,
+    "calibration - residual XGBoost":0.2426,
+    "test - lane baseline":0.2615,
+    "test - residual XGBoost":0.2611
+  },
+  "MAE_excess_min":{
+    "calibration - lane baseline":30.03,
+    "calibration - residual XGBoost":30.01,
+    "test - lane baseline":30.42,
+    "test - residual XGBoost":30.04
+  }
+}

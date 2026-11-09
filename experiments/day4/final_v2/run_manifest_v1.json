@@ -1,0 +1,73 @@
+{
+  "status": "complete",
+  "notebook": {
+    "path": "notebooks/B04_cascade_day4_final_v3.ipynb",
+    "version": "final_v3"
+  },
+  "execution_utc": "2026-11-08T10:18:41.068171+00:00",
+  "environment": {
+    "python": "3.14.2",
+    "pandas": "2.3.3",
+    "numpy": "2.4.3",
+    "matplotlib": "3.10.8",
+    "networkx": "3.6.1"
+  },
+  "inputs": {
+    "data/processed/core_nodes.csv": "ea4be35afba80fada79c8c94e56d1603afb8623e12a5faf2a656d0cf7c8696c3",
+    "data/processed/core_edges.csv": "f96fccc71e532fb327ebd41d119ac1c804ee2b4333fb3a58a8a8699fc5579ec8",
+    "data/processed/core_train_legs.csv": "838eddf86b9e708af3cb430f02c48f20a753d944bfc0a20a9f1aff1b89cd6a12",
+    "data/processed/hub_daily_departures.csv": "4b60ffa4cd3dc466b7f77bc71b4d4e50b50560359b96264407d9f532302052e4",
+    "data/processed/split_trip_ids.csv": "46ab3d898a41548e9da9b56fb910e57efdc139f1a044076b615b421024d47a28",
+    "sim/simulate.py": "872b532817fc26d7f342d7b8d59ec734d98e16579ba77a9abb02387c3ce38717",
+    "docs/assumptions.md": "9a6a65aeaba6af46918c5cfd7b0809a998ac3ee2b367263929cc2e6bdad0001d",
+    "docs/cascade_rules_v1.md": "a03216d53559bd625f169eb0a8e7aff50da1565daf3640ce89f960e4af4da0fa"
+  },
+  "outputs": {
+    "experiments/day4/final_v2/real_data_cascade_results_v1.csv": "6b0ccb1ece81187af1b03ab149632c29e194d356320389a32e0f5f3d6b8bc749",
+    "experiments/day4/final_v2/critical_hub_results_v1.csv": "bf8f08fea4151dbb8d89298aeb4678a5b2360b7136de7cf8ca3135eeaf19d429",
+    "experiments/day4/final_v2/synthetic_stress_results_v1.csv": "d830167e08fb5cb147162b296873ea157754f912bea511bd2170a11aa519e025"
+  },
+  "figure": {
+    "path": "experiments/day4/final_v2/cascade_stress_curve_v1.png",
+    "sha256": "4c2d17b80543d8452b453339dbc21e71e883b8b1eaa42e5cb44d419f77b7166c"
+  },
+  "execution_log": {
+    "path": "experiments/day4/final_v2/execution_log_v1.txt",
+    "sha256": "bc1477bd3c3e1da12cbdf09d64c7db929a54527774e55a2ad0f18761494329ba"
+  },
+  "analysis": {
+    "hubs": 100,
+    "directed_lanes": 292,
+    "baseline_period": [
+      "2018-09-12",
+      "2018-09-25"
+    ],
+    "baseline_days": 14,
+    "baseline_definition": "mean daily outgoing departures per hub, including zero-departure days",
+    "departures_in_window": 5357,
+    "zero_departure_hub_days": 267,
+    "capacity_definition": "ceil of per-hub linear 95th percentile of 14 daily outgoing counts",
+    "initial_hub_failures_tested": 100,
+    "secondary_cascade_scenarios": 1,
+    "largest_cascade_including_initial": 4
+  },
+  "validation_checks": {
+    "split_unique": true,
+    "core_rows_master_train": true,
+    "lane_keys_valid_and_unique": true,
+    "in_window_lanes_frozen_core": true,
+    "daily_grid_complete_and_finite": true,
+    "zero_days_retained": true,
+    "independent_daily_aggregate_matches": true,
+    "capacity_recipe_reproduced": true,
+    "all_real_cascades_converged_and_conserved": true,
+    "saved_outputs_read_back_and_validated": true
+  },
+  "limitations": [
+    "undirected graph derived from directed lanes",
+    "scalar load; no OD preservation",
+    "whole accumulated load is redistributed, not only excess",
+    "dispatch proxy is not measured receiving capacity",
+    "not operational rerouting, warehouse capacity, or queue validation"
+  ]
+}

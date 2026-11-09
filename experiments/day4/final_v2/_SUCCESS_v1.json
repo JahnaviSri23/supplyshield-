@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "manifest": "experiments/day4/final_v2/run_manifest_v1.json",
+  "manifest_sha256": "0d280c98e5cd9d18b0c84ff9fa80659df32d0bcd735ac911b7ed007dfa06f266",
+  "real_results_rows": 100,
+  "critical_hub_rows": 1,
+  "synthetic_stress_rows": 44
+}

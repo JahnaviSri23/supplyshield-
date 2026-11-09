@@ -1,6 +1,6 @@
 {
-    "experiment": "V0",
-    "description": "Initial XGBoost with 8 engineered features",
+    "experiment": "V1",
+    "description": "XGBoost with 8 engineered features and 2 hub categorical features",
     "features": [
         "osrm_time_min",
         "osrm_distance_km",
@@ -9,21 +9,28 @@
         "start_hour",
         "start_dow",
         "is_weekend",
-        "is_ftl"
+        "is_ftl",
+        "source_center",
+        "destination_center"
     ],
-    "fit_legs": 12514,
-    "validation_legs": 3107,
-    "best_iteration": 1438,
-    "best_validation_mae": 0.8981125828994981,
+    "fit_legs": 14073,
+    "validation_legs": 3601,
+    "best_iteration": 1998,
+    "best_validation_mae": 0.7263825584686123,
     "xgboost_validation_metrics": {
-        "MAE_ratio": 0.8981,
-        "MedAE_ratio": 0.361,
-        "MAE_excess_min": 45.29
+        "MAE_ratio": 0.9548,
+        "MedAE_ratio": 0.2587,
+        "MAE_excess_min": 49.25
+    },
+    "v0_validation_metrics": {
+        "MAE_ratio": 0.8535,
+        "MedAE_ratio": 0.347,
+        "MAE_excess_min": 42.87
     },
     "lane_median_validation_metrics": {
-        "MAE_ratio": 0.5662,
-        "MedAE_ratio": 0.1667,
-        "MAE_excess_min": 27.56
+        "MAE_ratio": 0.5275,
+        "MedAE_ratio": 0.1731,
+        "MAE_excess_min": 25.87
     },
     "model_parameters": {
         "objective": "reg:absoluteerror",
@@ -35,7 +42,7 @@
         "colsample_bytree": 0.8,
         "device": null,
         "early_stopping_rounds": 50,
-        "enable_categorical": false,
+        "enable_categorical": true,
         "eval_metric": "mae",
         "feature_types": null,
         "feature_weights": null,
@@ -66,6 +73,5 @@
         "tree_method": "hist",
         "validate_parameters": null,
         "verbosity": null
-    },
-    "created_at_utc": "2026-11-01T17:55:47.608279+00:00"
+    }
 }

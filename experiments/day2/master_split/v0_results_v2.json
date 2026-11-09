@@ -11,19 +11,19 @@
         "is_weekend",
         "is_ftl"
     ],
-    "fit_legs": 12514,
-    "validation_legs": 3107,
-    "best_iteration": 1438,
-    "best_validation_mae": 0.8981125828994981,
+    "fit_legs": 14073,
+    "validation_legs": 3601,
+    "best_iteration": 1312,
+    "best_validation_mae": 0.8535363502434247,
     "xgboost_validation_metrics": {
-        "MAE_ratio": 0.8981,
-        "MedAE_ratio": 0.361,
-        "MAE_excess_min": 45.29
+        "MAE_ratio": 0.8535,
+        "MedAE_ratio": 0.347,
+        "MAE_excess_min": 42.87
     },
     "lane_median_validation_metrics": {
-        "MAE_ratio": 0.5662,
-        "MedAE_ratio": 0.1667,
-        "MAE_excess_min": 27.56
+        "MAE_ratio": 0.5275,
+        "MedAE_ratio": 0.1731,
+        "MAE_excess_min": 25.87
     },
     "model_parameters": {
         "objective": "reg:absoluteerror",
@@ -67,5 +67,5 @@
         "validate_parameters": null,
         "verbosity": null
     },
-    "created_at_utc": "2026-10-31T18:14:46.031977+00:00"
+    "created_at_utc": "2026-11-05T16:31:31.624504+00:00"
 }
