@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "manifest": "experiments/day5/risk_table_master_split_v1_manifest.json",
+  "artifact": "experiments/day5/risk_table_master_split_v1.csv",
+  "artifact_sha256": "9d0d697addfe53ad6b1d3267161c0a6ba9728bcfa1ccb7cee8449e01f098a498",
+  "validated_rows": 296
+}

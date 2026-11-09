@@ -1,0 +1,193 @@
+{
+  "manifest_version": "1.0",
+  "experiment": "SupplyShield Day 6 optimizer-queue interface audit and toy validation",
+  "status": "PARTIALLY_COMPLETE",
+  "created_at_local": "2026-11-09T11:59:21.991731+05:30",
+  "repository": {
+    "root": "C:\\Local\\Documents-Local\\ML Project\\supplyshield--1",
+    "branch": "person-b-prediction-cascade",
+    "head": "0b4e435b462ed67ca683077b9f64e5835817f91f",
+    "live_remote_verified": false
+  },
+  "environment": {
+    "python": "3.10.8",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "networkx": "3.4.2",
+    "pandas": "2.3.3",
+    "ipykernel": "7.3.0",
+    "nbformat_available": false,
+    "package_installation": false
+  },
+  "execution": {
+    "b06_v1_cells": 9,
+    "b06_v1_errors": 0,
+    "b06_v2_cells": 9,
+    "b06_v2_errors": 0,
+    "b06_v2_toy_checks_passed": 26,
+    "b06_v2_toy_checks_failed": 0,
+    "sim_test_toy_scenario_rows": 21,
+    "sim_test_toy_comparison_rows": 3,
+    "sim_test_toy_assertions": "completed without exception",
+    "real_network_optimizer_run": false,
+    "core_simulator_test_run": false,
+    "pytest_run": false
+  },
+  "inputs": [
+    {
+      "path": "notebooks/B06_day6_optimizer_simulator_interface_v2.ipynb",
+      "sha256": "1bd12e6c5042132d43f357d8ee156b3dfcab68abc98639da1c8466d173542228"
+    },
+    {
+      "path": "sim/simulator.py",
+      "sha256": "df982ae4f3e1e80decaf9736d9bfcd7886a00949c391131e32f50a201e4a6b44"
+    },
+    {
+      "path": "sim/simulate.py",
+      "sha256": "872b532817fc26d7f342d7b8d59ec734d98e16579ba77a9abb02387c3ce38717"
+    },
+    {
+      "path": "sim/test_toy.py",
+      "sha256": "47cb8d56f03cb3411b6268712f2bffe54c4906f7dae118a657c323e1188f614e"
+    },
+    {
+      "path": "sim/test_core.py",
+      "sha256": "8b18b3fff535e26cea25f59d414e785fdc7adc7cce9d8734e9fa40b3aae82dca"
+    },
+    {
+      "path": "opt/c_multiflow.py",
+      "sha256": "8652cc177cac029f348ca2d47b485e213e6bbd1e06af8c863fd2f4ce111520bc"
+    },
+    {
+      "path": "opt/c_real_graph.py",
+      "sha256": "a36cce5fa65711b64805cf191b2449e8bfc8bda01b75aa761dd279989d551d25"
+    },
+    {
+      "path": "opt/c_toy_recovery.py",
+      "sha256": "0a07956766671cf3a57d552a85b4253519deee3a75a6faec1fd778bf089cdd68"
+    },
+    {
+      "path": "docs/c_notes.md",
+      "sha256": "0c2ecef6145f706c00039ca849b9cc2e2f01e37373bcd3489c3cce2850b5f4d0"
+    },
+    {
+      "path": "docs/assumptions.md",
+      "sha256": "9a6a65aeaba6af46918c5cfd7b0809a998ac3ee2b367263929cc2e6bdad0001d"
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "578a8b86156a7f13f52ffeeb2456e1c9b47f2fa0e8b96c4eb3915f903d612530"
+    },
+    {
+      "path": "data/processed/core_nodes.csv",
+      "sha256": "ea4be35afba80fada79c8c94e56d1603afb8623e12a5faf2a656d0cf7c8696c3"
+    },
+    {
+      "path": "data/processed/core_edges.csv",
+      "sha256": "f96fccc71e532fb327ebd41d119ac1c804ee2b4333fb3a58a8a8699fc5579ec8"
+    },
+    {
+      "path": "data/processed/core_train_legs.csv",
+      "sha256": "838eddf86b9e708af3cb430f02c48f20a753d944bfc0a20a9f1aff1b89cd6a12"
+    },
+    {
+      "path": "data/processed/hub_daily_departures.csv",
+      "sha256": "4b60ffa4cd3dc466b7f77bc71b4d4e50b50560359b96264407d9f532302052e4"
+    },
+    {
+      "path": "experiments/day4/final_v2/run_manifest_v1.json",
+      "sha256": "0d280c98e5cd9d18b0c84ff9fa80659df32d0bcd735ac911b7ed007dfa06f266"
+    },
+    {
+      "path": "experiments/day4/final_v2/_SUCCESS_v1.json",
+      "sha256": "483985e78e8f8c38d6aad7a62841c52457d84b0d17f5f2901149be43a9a7dac7"
+    },
+    {
+      "path": "experiments/day5/risk_table_master_split_v1.csv",
+      "sha256": "9d0d697addfe53ad6b1d3267161c0a6ba9728bcfa1ccb7cee8449e01f098a498"
+    },
+    {
+      "path": "experiments/day5/risk_table_master_split_v1_manifest.json",
+      "sha256": "33b1f9e4421eb851197d49d49be166d94f8ffee884ba2880c33d0dfb0810761b"
+    },
+    {
+      "path": "experiments/day5/risk_table_master_split_v1_SUCCESS.json",
+      "sha256": "28d9fdf514de6f750c662aae0720541f7c95a4aec40947b4eff208b0304b2150"
+    },
+    {
+      "path": "experiments/day3/master_split_v2/final/conformal_params_method_c_master_split_v2.json",
+      "sha256": "0193234cd301c0a4948b64b7348f6107d5b76a890d2c5822a108e6dba515218e"
+    },
+    {
+      "path": "experiments/day3/master_split_v2/final/test_intervals_method_c_master_split_v2.csv",
+      "sha256": "81bff805197cfa9b4d30a82f9a1dc797a8c2acad39a7848e534c53b1f2ea0e32"
+    },
+    {
+      "path": "experiments/toy_simulator_checks.csv",
+      "sha256": "dc52f3d9ebc70ebbf7323aeed17caebda7dc20faa547399f185ec7618198c33c"
+    },
+    {
+      "path": "experiments/toy_simulator_comparisons.csv",
+      "sha256": "a751c1c3b2df86e9c6eb54228090a76f6f0f9b515f3418a2b644b617a614bbcf"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "notebooks/B06_day6_optimizer_simulator_interface_v2.ipynb",
+      "sha256": "1bd12e6c5042132d43f357d8ee156b3dfcab68abc98639da1c8466d173542228"
+    },
+    {
+      "path": "experiments/day6/v1/toy_network/toy_simulator_checks.csv",
+      "sha256": "32b05e3a57361cd8848f014ac9b1c0b0938730dce5669934e14112a684cd92ae"
+    },
+    {
+      "path": "experiments/day6/v1/toy_network/toy_simulator_comparisons.csv",
+      "sha256": "a751c1c3b2df86e9c6eb54228090a76f6f0f9b515f3418a2b644b617a614bbcf"
+    },
+    {
+      "path": "experiments/day6/v1/logs/toy_test_run.txt",
+      "sha256": "3813be2ea33adf5f673616c144928fdbedf3ab9db4427af358681e4e571690a8"
+    },
+    {
+      "path": "experiments/day6/v1/reports/day6_report.md",
+      "sha256": "5099ef107b03e7d25d9ec59bb9e696fe7c55c9eb4081b5c907b8653201a2c5dd"
+    }
+  ],
+  "preservation": {
+    "b01_b05_artifacts_modified": false,
+    "teammate_owned_source_modified": false,
+    "existing_toy_csv_outputs_overwritten": false,
+    "git_state_changed": false,
+    "duplicate_notebooks_removed_after_verification": 2
+  },
+  "unresolved": [
+    "optimizer plan export requires Person C review",
+    "multi-OD queue route support requires Person A/Jahnavi review",
+    "real demand source 5395/14 vs 5357/14",
+    "penalty 96 vs 48 vs simulator default 20",
+    "closure timing and hub-failure optimizer semantics",
+    "static evaluator vs queue zero-capacity destination semantics"
+  ],
+  "report": "experiments/day6/v1/reports/day6_report.md",
+  "consolidation": {
+    "authoritative_notebook": "notebooks/B06_day6_optimizer_simulator_interface_v2.ipynb",
+    "authoritative_notebook_sha256": "1bd12e6c5042132d43f357d8ee156b3dfcab68abc98639da1c8466d173542228",
+    "execution_outputs_saved_in_same_notebook": true,
+    "removed_notebooks": [
+      {
+        "path": "notebooks/B06_day6_optimizer_simulator_interface_v1.ipynb",
+        "sha256_before_removal": "93c8fcb12301afb40e0d425a24b29bc1768a4f1d4c4f8dd48a869eb5eb7c4639",
+        "status": "removed_after_content_review_and_consolidation"
+      },
+      {
+        "path": "experiments/day6/v1/notebook_runs/B06_day6_optimizer_simulator_interface_v2_executed.ipynb",
+        "sha256_before_removal": "79f481c509a6ee76109282931c5b56f3274d6e497aa2a8e80898df6f1a6e8c2f",
+        "status": "removed_after_execution_outputs_were_saved_in_authoritative_notebook"
+      }
+    ],
+    "other_day6_notebook_duplicates_found": false,
+    "experiment_notebook_copies_remaining": 0,
+    "project_wide_rule": "One authoritative notebook per task; update it in place; create another only for a genuinely distinct task or explicit request; keep experiment outputs separate and never overwrite existing experiment results."
+  },
+  "updated_at_local": "2026-11-09T12:11:38.697231+05:30"
+}

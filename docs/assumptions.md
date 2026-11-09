@@ -58,13 +58,33 @@ training       5395               4886                  90.57
   has not yet been tested.
 - Weather documentation: https://open-meteo.com/en/docs/historical-weather-api
 
-## Capacity status
+## Capacity and B04 structural-baseline status
 
-Capacity estimation has not been run.
-Any future estimate based on observed throughput is a simulator proxy,
-not a measured physical warehouse capacity.
-Its units, observation window, zero-day handling and excluded traffic
-must be documented when implemented.
+`data/processed/hub_daily_departures.csv` contains the agreed 14-day
+outgoing-departure series for 100 core hubs, 12–25 September 2018
+inclusive. It has 14 rows per hub, including zero-departure hub-days,
+and totals 5,357 departures. The series is reproduced by aggregating
+`core_train_legs.csv` on source hub and `od_start_time` date, after
+restricting traffic to the frozen 292 directed pairs in
+`core_edges.csv`. All trip IDs represented in `core_train_legs.csv`
+map to the `train` partition in `data/processed/split_trip_ids.csv`.
+Thus it is training-only traffic and contains no master calibration or
+test trips. This B04 structural observation window is distinct from,
+and does not replace, the B02/B03 master trip-level split.
+
+`core_nodes.csv` records `legs_per_day_p95` as the linearly interpolated
+95th percentile of the same daily outgoing counts and `capacity_est` as
+its ceiling. These are dispatch-throughput proxies, not physical
+warehouse capacities. Dispatch capacity is not receiving capacity.
+
+B04's `simulate_cascade` uses an undirected scalar-load abstraction: it
+symmetrizes the frozen directed lane list and redistributes an entire
+failed hub's accumulated load to alive neighbors. It does not preserve
+OD flows, model destination-only final deliveries, or reroute only excess
+traffic. Its results are structural stress sensitivities, not operational
+rerouting or receiving-capacity estimates. The separate daily queue
+simulator is the operational modeling path; its storage buffers remain
+assumptions, not measured receiving throughput.
 
 ## Dispatch-capacity estimate
 

@@ -1,0 +1,88 @@
+{
+  "status": "complete",
+  "created_at_utc": "2026-11-08T06:58:35.013048+00:00",
+  "artifact": "experiments/day5/risk_table_master_split_v1.csv",
+  "artifact_sha256": "9d0d697addfe53ad6b1d3267161c0a6ba9728bcfa1ccb7cee8449e01f098a498",
+  "lineage": {
+    "split": "data/processed/split_trip_ids.csv",
+    "training_legs": "data/processed/core_train_legs.csv",
+    "all_legs_crosscheck": "data/processed/legs.csv",
+    "frozen_directed_lanes": "data/processed/core_edges.csv",
+    "prediction_cutoff": "2018-09-29 00:00:00",
+    "history_eligibility": "od_end_time <= prediction_timestamp",
+    "history_partition": "master train only"
+  },
+  "model": {
+    "file": "models/residual_xgb_plain_master_split_v1.json",
+    "card": "experiments/day2/master_split/final_model_card_master_split_v1.json",
+    "xgboost_version": "3.2.0",
+    "best_iteration": 134,
+    "prediction_api": "XGBRegressor.predict default (best iteration)",
+    "features": [
+      "osrm_time_min",
+      "osrm_distance_km",
+      "osrm_speed_kmh",
+      "log_osrm_time",
+      "start_hour",
+      "start_dow",
+      "is_weekend",
+      "is_ftl",
+      "lane_base",
+      "lane_history_count"
+    ],
+    "prediction_parity_rows": 8695,
+    "base_pred_max_abs_diff": 3.552713678800501e-15,
+    "residual_max_abs_diff": 3.552713678800501e-15,
+    "pred_ratio_max_abs_diff": 3.552713678800501e-15,
+    "heldout_metrics": {
+      "cal": {
+        "rows": 4301,
+        "mae_ratio": 0.669686197949588,
+        "saved_mae_ratio": 0.669686197949588,
+        "card_mae_ratio": 0.6697
+      },
+      "test": {
+        "rows": 4394,
+        "mae_ratio": 0.653957215972931,
+        "saved_mae_ratio": 0.653957215972931,
+        "card_mae_ratio": 0.654
+      }
+    }
+  },
+  "conformal": {
+    "parameters": "experiments/day3/master_split_v2/final/conformal_params_method_c_master_split_v2.json",
+    "method": "C: grouped (route_type x calibration-distance-tercile) split conformal on signed residuals",
+    "distance_field": "osrm_distance_km",
+    "distance_edges_km": [
+      31.21256666666666,
+      60.86566666666664
+    ],
+    "test_interval_artifact": "experiments/day3/master_split_v2/final/test_intervals_method_c_master_split_v2.csv",
+    "test_interval_parity_rows": 4394,
+    "heldout_test_coverage": {
+      "50%": {
+        "test_rows": 4394,
+        "test_trips": 2424,
+        "coverage": 0.46153846153846156,
+        "target": 0.5
+      },
+      "80%": {
+        "test_rows": 4394,
+        "test_trips": 2424,
+        "coverage": 0.7762858443331816,
+        "target": 0.8
+      },
+      "90%": {
+        "test_rows": 4394,
+        "test_trips": 2424,
+        "coverage": 0.8884842967683204,
+        "target": 0.9
+      }
+    }
+  },
+  "representative_rows": 296,
+  "directed_lanes": 292,
+  "lane_route_rows": 296,
+  "weather_included": false,
+  "interpretation": "Representative-leg point scores and Method C intervals; no lane-aggregate coverage claim."
+}
