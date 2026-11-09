@@ -1,0 +1,850 @@
+[
+ {
+  "id": "L01",
+  "closed_lanes": [
+   [
+    "IND562132AAA",
+    "IND560300AAA"
+   ]
+  ],
+  "od": [
+   "IND562132AAA",
+   "IND560300AAA"
+  ],
+  "legs_per_day": 7,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560099AAB"
+     ],
+     "flow": 7.0
+    },
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560300AAA"
+     ],
+     "flow": 7.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560058AAB"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560058AAD"
+     ],
+     "flow": 1.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND560058AAD",
+      "IND562132AAA"
+     ],
+     "flow": 1.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 7.0,
+    "total_cost": 336.0
+   },
+   "greedy": {
+    "shipping": 23.45,
+    "unmet": 0.0,
+    "total_cost": 23.45
+   },
+   "optimizer": {
+    "shipping": 7.391666666666667,
+    "unmet": 0.0,
+    "total_cost": 7.391666666666667
+   }
+  }
+ },
+ {
+  "id": "L02",
+  "closed_lanes": [
+   [
+    "IND562132AAA",
+    "IND560099AAB"
+   ]
+  ],
+  "od": [
+   "IND562132AAA",
+   "IND560099AAB"
+  ],
+  "legs_per_day": 7,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560060AAB"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND560060AAB",
+      "IND560099AAB"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560058AAB"
+     ],
+     "flow": 4.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND560099AAB"
+     ],
+     "flow": 4.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560058AAB"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560058AAD"
+     ],
+     "flow": 1.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND560058AAD",
+      "IND562132AAA"
+     ],
+     "flow": 1.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 7.0,
+    "total_cost": 336.0
+   },
+   "greedy": {
+    "shipping": 10.524999999999999,
+    "unmet": 0.0,
+    "total_cost": 10.524999999999999
+   },
+   "optimizer": {
+    "shipping": 7.391666666666667,
+    "unmet": 0.0,
+    "total_cost": 7.391666666666667
+   }
+  }
+ },
+ {
+  "id": "L03",
+  "closed_lanes": [
+   [
+    "IND411033AAA",
+    "IND421302AAG"
+   ]
+  ],
+  "od": [
+   "IND411033AAA",
+   "IND421302AAG"
+  ],
+  "legs_per_day": 6,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND411033AAA",
+      "IND400072AAB"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND400072AAB",
+      "IND421302AAG"
+     ],
+     "flow": 6.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND411033AAA",
+      "IND411021AAA"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND411033AAA",
+      "IND411036AAA"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND411021AAA",
+      "IND411033AAA"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND411036AAA",
+      "IND411033AAA"
+     ],
+     "flow": 3.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 6.0,
+    "total_cost": 288.0
+   },
+   "greedy": {
+    "shipping": 26.050000000000004,
+    "unmet": 0.0,
+    "total_cost": 26.050000000000004
+   },
+   "optimizer": {
+    "shipping": 8.275,
+    "unmet": 0.0,
+    "total_cost": 8.275
+   }
+  }
+ },
+ {
+  "id": "L04",
+  "closed_lanes": [
+   [
+    "IND560099AAB",
+    "IND562132AAA"
+   ]
+  ],
+  "od": [
+   "IND560099AAB",
+   "IND562132AAA"
+  ],
+  "legs_per_day": 6,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560058AAB"
+     ],
+     "flow": 6.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 6.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560058AAB"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560060AAB"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND560060AAB",
+      "IND560099AAB"
+     ],
+     "flow": 3.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 6.0,
+    "total_cost": 288.0
+   },
+   "greedy": {
+    "shipping": 9.5,
+    "unmet": 0.0,
+    "total_cost": 9.5
+   },
+   "optimizer": {
+    "shipping": 9.2,
+    "unmet": 0.0,
+    "total_cost": 9.2
+   }
+  }
+ },
+ {
+  "id": "L05",
+  "closed_lanes": [
+   [
+    "IND560099AAB",
+    "IND560300AAA"
+   ]
+  ],
+  "od": [
+   "IND560099AAB",
+   "IND560300AAA"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND562132AAA"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND562132AAA",
+      "IND560300AAA"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560048AAB"
+     ],
+     "flow": 2.0
+    },
+    {
+     "edge": [
+      "IND560099AAB",
+      "IND560060AAB"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND560048AAB",
+      "IND560099AAB"
+     ],
+     "flow": 2.0
+    },
+    {
+     "edge": [
+      "IND560060AAB",
+      "IND560099AAB"
+     ],
+     "flow": 3.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 5.0,
+    "total_cost": 240.0
+   },
+   "greedy": {
+    "shipping": 14.75,
+    "unmet": 0.0,
+    "total_cost": 14.75
+   },
+   "optimizer": {
+    "shipping": 7.833333333333334,
+    "unmet": 0.0,
+    "total_cost": 7.833333333333334
+   }
+  }
+ },
+ {
+  "id": "L06",
+  "closed_lanes": [
+   [
+    "IND000000ACB",
+    "IND131028AAB"
+   ]
+  ],
+  "od": [
+   "IND000000ACB",
+   "IND131028AAB"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND000000ACB",
+      "IND121004AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND121004AAB",
+      "IND110037AAM"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND110037AAM",
+      "IND811399AAA"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND811399AAA",
+      "IND110044AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND110044AAB",
+      "IND131028AAB"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND000000ACB",
+      "IND110037AAK"
+     ],
+     "flow": 4.0
+    },
+    {
+     "edge": [
+      "IND000000ACB",
+      "IND122001AAA"
+     ],
+     "flow": 1.0
+    },
+    {
+     "edge": [
+      "IND122001AAA",
+      "IND000000ACB"
+     ],
+     "flow": 1.0
+    },
+    {
+     "edge": [
+      "IND110037AAK",
+      "IND000000ACB"
+     ],
+     "flow": 4.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 5.0,
+    "total_cost": 240.0
+   },
+   "greedy": {
+    "shipping": 34.5,
+    "unmet": 0.0,
+    "total_cost": 34.5
+   },
+   "optimizer": {
+    "shipping": 11.808333333333334,
+    "unmet": 0.0,
+    "total_cost": 11.808333333333334
+   }
+  }
+ },
+ {
+  "id": "L07",
+  "closed_lanes": [
+   [
+    "IND131028AAB",
+    "IND000000ACB"
+   ]
+  ],
+  "od": [
+   "IND131028AAB",
+   "IND000000ACB"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND131028AAB",
+      "IND110037AAM"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND110037AAM",
+      "IND000000ACB"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND131028AAB",
+      "IND110037AAM"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND110037AAM",
+      "IND000000ACB"
+     ],
+     "flow": 5.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 5.0,
+    "total_cost": 240.0
+   },
+   "greedy": {
+    "shipping": 16.583333333333336,
+    "unmet": 0.0,
+    "total_cost": 16.583333333333336
+   },
+   "optimizer": {
+    "shipping": 16.583333333333336,
+    "unmet": 0.0,
+    "total_cost": 16.583333333333336
+   }
+  }
+ },
+ {
+  "id": "L08",
+  "closed_lanes": [
+   [
+    "IND560300AAA",
+    "IND562132AAA"
+   ]
+  ],
+  "od": [
+   "IND560300AAA",
+   "IND562132AAA"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [
+    {
+     "edge": [
+      "IND560300AAA",
+      "IND560058AAB"
+     ],
+     "flow": 5
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 5
+    }
+   ],
+   "greedy": [
+    {
+     "edge": [
+      "IND560300AAA",
+      "IND560058AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND560300AAA",
+      "IND560058AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND560058AAB",
+      "IND562132AAA"
+     ],
+     "flow": 5.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 6.5,
+    "unmet": 0,
+    "total_cost": 6.5
+   },
+   "greedy": {
+    "shipping": 6.5,
+    "unmet": 0.0,
+    "total_cost": 6.5
+   },
+   "optimizer": {
+    "shipping": 6.5,
+    "unmet": 0.0,
+    "total_cost": 6.5
+   }
+  }
+ },
+ {
+  "id": "L09",
+  "closed_lanes": [
+   [
+    "IND421302AAG",
+    "IND411033AAA"
+   ]
+  ],
+  "od": [
+   "IND421302AAG",
+   "IND411033AAA"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND421302AAG",
+      "IND400072AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND400072AAB",
+      "IND411033AAA"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND421302AAG",
+      "IND000000AFT"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND421302AAG",
+      "IND400701AAB"
+     ],
+     "flow": 2.0
+    },
+    {
+     "edge": [
+      "IND000000AFT",
+      "IND421302AAG"
+     ],
+     "flow": 3.0
+    },
+    {
+     "edge": [
+      "IND400701AAB",
+      "IND421302AAG"
+     ],
+     "flow": 2.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 5.0,
+    "total_cost": 240.0
+   },
+   "greedy": {
+    "shipping": 20.833333333333336,
+    "unmet": 0.0,
+    "total_cost": 20.833333333333336
+   },
+   "optimizer": {
+    "shipping": 8.616666666666667,
+    "unmet": 0.0,
+    "total_cost": 8.616666666666667
+   }
+  }
+ },
+ {
+  "id": "L10",
+  "closed_lanes": [
+   [
+    "IND000000ACT",
+    "IND000000ACB"
+   ]
+  ],
+  "od": [
+   "IND000000ACT",
+   "IND000000ACB"
+  ],
+  "legs_per_day": 5,
+  "penalty": 48.0,
+  "flow_unit": "legs per day",
+  "cost_unit": "leg-hours",
+  "horizon": "one steady-state day",
+  "plans": {
+   "do nothing": [],
+   "greedy": [
+    {
+     "edge": [
+      "IND000000ACT",
+      "IND131028AAB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND131028AAB",
+      "IND000000ACB"
+     ],
+     "flow": 5.0
+    }
+   ],
+   "optimizer": [
+    {
+     "edge": [
+      "IND131028AAB",
+      "IND000000ACB"
+     ],
+     "flow": 5.0
+    },
+    {
+     "edge": [
+      "IND000000ACT",
+      "IND131028AAB"
+     ],
+     "flow": 5.0
+    }
+   ]
+  },
+  "expected": {
+   "do nothing": {
+    "shipping": 0,
+    "unmet": 5.0,
+    "total_cost": 240.0
+   },
+   "greedy": {
+    "shipping": 24.25,
+    "unmet": 0.0,
+    "total_cost": 24.25
+   },
+   "optimizer": {
+    "shipping": 24.25,
+    "unmet": 0.0,
+    "total_cost": 24.25
+   }
+  }
+ }
+]

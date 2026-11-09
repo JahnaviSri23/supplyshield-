@@ -33,6 +33,7 @@ import c_real_graph as rg
 import c_toy_recovery as c
 
 BIG = 10 ** 9
+PLAN_MIN_FLOW = 1e-9   # flows below this are solver noise and are not written to the plan files
 
 
 def build_model(G):
@@ -90,8 +91,8 @@ def solve_multiflow(G, closed=None, return_plan=False):
     travel = float(np.dot(np.tile(cost, K), res.x[:K * E]))
     if not return_plan:
         return travel + rg.PENALTY_HOURS * unmet, unmet
-    plan = [{"od": [flows[k][0], flows[k][1]], "edge": [edges[e][0], edges[e][1]], "flow": round(float(res.x[k * E + e]), 4)}
-            for k in range(K) for e in range(E) if res.x[k * E + e] > 1e-6]
+    plan = [{"od": [flows[k][0], flows[k][1]], "edge": [edges[e][0], edges[e][1]], "flow": float(res.x[k * E + e])}
+            for k in range(K) for e in range(E) if res.x[k * E + e] > PLAN_MIN_FLOW]
     return travel + rg.PENALTY_HOURS * unmet, unmet, plan
 
 
@@ -120,11 +121,11 @@ def baseline_plans(G, lane):
     flows, delivered = c.greedy(H)
     detour = sum(H.edges[e]["cost"] * f for e, f in flows.items())
     unmet = q - delivered
-    background = [{"od": [a, b], "edge": [a, b], "flow": round(G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS, 4)}
+    background = [{"od": [a, b], "edge": [a, b], "flow": G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS}
                   for (a, b) in G.edges if (a, b) != lane]          # every other flow stays on its direct lane
     plan_flows = {"do nothing": background,
-                  "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": round(f, 4)}
-                                          for (a, b), f in flows.items() if f > 1e-9]}
+                  "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": f}
+                                          for (a, b), f in flows.items() if f > PLAN_MIN_FLOW]}
     return ({"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
              "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost, plan_flows)
 
@@ -136,6 +137,7 @@ if __name__ == "__main__":
     print(f"\nno closure: LP optimum {base_lp:.1f} leg-hours, unmet {base_unmet:.2f} "
           f"({time.perf_counter() - t0:.1f} s for one solve)")
     top = sorted(G.edges, key=lambda e: -G.edges[e]["trips"])[:10]
+    demand_records = [{"od": [a, b], "legs_per_day": G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS} for (a, b) in G.edges]
     rows, tests = [], []
     for i, lane in enumerate(top, 1):
         plans, normal_cost, plan_flows = baseline_plans(G, lane)
@@ -144,10 +146,15 @@ if __name__ == "__main__":
         secs = time.perf_counter() - t0
         plans["LP (all flows)"] = (lp_cost, lp_unmet)
         plan_flows["LP (all flows)"] = lp_plan
+        expected = {}
+        for name, (t_cost, unmet_legs) in plans.items():     # full precision, computed FROM the exported plan
+            ship = sum(G.edges[tuple(r["edge"])]["cost"] * r["flow"] for r in plan_flows[name])
+            expected[name] = {"shipping": ship, "unmet": unmet_legs,
+                              "total_cost": ship + rg.PENALTY_HOURS * unmet_legs}
         tests.append({"id": f"L{i:02d}", "closed_lanes": [[lane[0], lane[1]]], "penalty": rg.PENALTY_HOURS,
-                      "plans": plan_flows,
-                      "expected": {k: {"shipping": round(t - rg.PENALTY_HOURS * u, 2), "unmet": round(u, 3),
-                                       "total_cost": round(t, 2)} for k, (t, u) in plans.items()}})
+                      "flow_unit": "legs per day", "cost_unit": "leg-hours", "horizon": "one steady-state day",
+                      "min_flow_written": PLAN_MIN_FLOW, "demand": demand_records,
+                      "plans": plan_flows, "expected": expected})
         for name, (total, unmet) in plans.items():
             ref = base_lp if name.startswith("LP") else normal_cost      # each plan is compared with ITS OWN no-closure cost
             rows.append({"lane": f"{lane[0]}->{lane[1]}", "closed_lane_legs_per_day": round(G.edges[lane]["trips"] / rg.TRAIN_DAYS, 2),
