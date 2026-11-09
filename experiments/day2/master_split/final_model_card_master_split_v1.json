@@ -1,0 +1,49 @@
+{
+  "final_model": "Plain residual XGBoost",
+  "description": "Lane median baseline + learned XGBoost correction",
+  "model_file": "models/residual_xgb_plain_master_split_v1.json",
+  "features": [
+    "osrm_time_min",
+    "osrm_distance_km",
+    "osrm_speed_kmh",
+    "log_osrm_time",
+    "start_hour",
+    "start_dow",
+    "is_weekend",
+    "is_ftl",
+    "lane_base",
+    "lane_history_count"
+  ],
+  "best_iteration": 134,
+  "split_source": "data/processed/split_trip_ids.csv",
+  "training": "Master training partition, internally divided chronologically into fit and validation",
+  "calibration": "Master calibration partition",
+  "test": "Master test partition",
+  "results": {
+    "calibration - lane baseline": {
+      "MAE_ratio": 0.6862,
+      "MedAE_ratio": 0.25,
+      "MAE_excess_min": 30.03
+    },
+    "calibration - residual XGBoost": {
+      "MAE_ratio": 0.6697,
+      "MedAE_ratio": 0.2426,
+      "MAE_excess_min": 30.01
+    },
+    "test - lane baseline": {
+      "MAE_ratio": 0.6686,
+      "MedAE_ratio": 0.2615,
+      "MAE_excess_min": 30.42
+    },
+    "test - residual XGBoost": {
+      "MAE_ratio": 0.654,
+      "MedAE_ratio": 0.2611,
+      "MAE_excess_min": 30.04
+    }
+  },
+  "notes": [
+    "Recent-hub and previous-leg features are not included in the final model.",
+    "Hub-ID categorical models are discarded.",
+    "All learned model features and parameters are fitted using training data only."
+  ]
+}

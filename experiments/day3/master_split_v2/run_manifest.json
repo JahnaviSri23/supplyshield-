@@ -1,0 +1,24 @@
+{
+  "status": "complete",
+  "completed_at_utc": "2026-11-05T21:06:46.121711+00:00",
+  "input": "data\\processed\\preds_cal_test_master_split_v1.csv",
+  "experiment_dir": "experiments\\day3\\master_split_v2",
+  "outputs": [
+    "experiments\\day3\\master_split_v2\\calibration\\chronological_calibration_check.csv",
+    "experiments\\day3\\master_split_v2\\evaluation\\interval_comparison_all_methods.csv",
+    "experiments\\day3\\master_split_v2\\evaluation\\method_b_trip_bootstrap_coverage_ci.csv",
+    "experiments\\day3\\master_split_v2\\evaluation\\method_c_90pct_slice_diagnostics.csv",
+    "experiments\\day3\\master_split_v2\\evaluation\\method_c_trip_bootstrap_coverage_ci.csv",
+    "experiments\\day3\\master_split_v2\\evaluation\\method_e_rolling_status.json",
+    "experiments\\day3\\master_split_v2\\figures\\calibration_residuals.png",
+    "experiments\\day3\\master_split_v2\\figures\\conformal_reliability_method_b.png",
+    "experiments\\day3\\master_split_v2\\figures\\conformal_reliability_method_c.png",
+    "experiments\\day3\\master_split_v2\\final\\conformal_params_method_c_master_split_v2.json",
+    "experiments\\day3\\master_split_v2\\final\\interval_comparison_master_split_v2.csv",
+    "experiments\\day3\\master_split_v2\\final\\test_intervals_method_c_master_split_v2.csv"
+  ],
+  "test_rows": 4394,
+  "test_trips": 2424,
+  "rerun_policy": "At notebook start, clear only experiments/day3/master_split_v2; older Day 3 folders are untouched.",
+  "team_consumption_rule": "Use these outputs only when _SUCCESS.json exists and status is complete."
+}

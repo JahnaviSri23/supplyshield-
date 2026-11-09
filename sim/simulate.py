@@ -1,19 +1,126 @@
 """
-sim/simulate.py - Cascade simulator v1 (Person B)
+sim/simulate.py - Combined Cascade Simulator & Plan Evaluator (SupplyShield, Person B)
 
-Load-redistribution cascade (Motter-Lai style):
-- every hub has a capacity and a current load
-- a failed hub's load goes to its alive neighbours, in proportion to their spare room
-  (if nobody has spare room: in proportion to capacity)
-- a hub fails when load > tolerance * capacity
-- rounds repeat until no new hub fails
-- load with nowhere to go is "unserved"
+Features:
+1. Plan Evaluator (`simulate_scenario`, `_normalize_plan`, `_propagate`):
+   - Evaluates disruption recovery plans against scenarios (failed hubs, closed lanes).
+   - Computes shipping costs, unmet demand penalties, round-by-round failure propagation, and node utilization.
+2. Load-Redistribution Cascade (`simulate_cascade`, `single_hub_failures`, `build_neighbors`):
+   - Motter-Lai style cascade simulation modeling spare-room/capacity-proportional load sharing.
+   - Guard checks for initial state overloads and robust single-hub failure sweeps.
 """
 
 from collections import defaultdict
 import pandas as pd
+import math
 
+INF = math.inf
 EPS = 1e-9
+
+
+def _normalize_plan(plan, demand):
+    """Accept {(u,v): flow}, {(o,d): {(u,v): flow}} or a list of {"od","edge","flow"} records."""
+    if not plan:
+        return {}
+    if isinstance(plan, list):
+        out = {}
+        for r in plan:
+            out.setdefault(tuple(r["od"]), {})[tuple(r["edge"])] = float(r["flow"])
+        return out
+    first = next(iter(plan.values()))
+    if isinstance(first, dict):
+        return {tuple(od): {tuple(e): float(f) for e, f in fl.items()} for od, fl in plan.items()}
+    if len(demand) != 1:
+        raise ValueError("a single-flow plan needs exactly one demand pair")
+    return {next(iter(demand)): {tuple(e): float(f) for e, f in plan.items()}}
+
+
+def _propagate(planned, demand, node_cap, cap_eff, lane_cap, closed, passes=200):
+    actual = {k: {e: (0.0 if e in closed else min(f, lane_cap.get(e, INF))) for e, f in fl.items()}
+              for k, fl in planned.items()}
+    nodes = set(node_cap) | {n for fl in planned.values() for e in fl for n in e}
+    offered = {n: 0.0 for n in nodes}
+    delivered = {k: 0.0 for k in planned}
+    for _ in range(passes):
+        change = 0.0
+        for n in nodes:
+            cap = cap_eff.get(n, INF)
+            want, p_out = {}, {}
+            for k, fl in planned.items():
+                o, d = k
+                inflow = demand.get(k, 0.0) if n == o else sum(
+                    f for (u, v), f in actual[k].items() if v == n)
+                if n == d:
+                    want[k] = inflow
+                else:
+                    p_out[k] = sum(f for (u, v), f in fl.items() if u == n)
+                    want[k] = min(inflow, p_out[k]) if p_out[k] > 0 else 0.0
+            total = sum(want.values())
+            offered[n] = total
+            scale = min(1.0, cap / total) if total > 1e-12 else 1.0
+            for k, fl in planned.items():
+                t = want[k] * scale
+                if n == k[1]:
+                    change = max(change, abs(t - delivered[k]))
+                    delivered[k] = t
+                elif p_out[k] > 0:
+                    for (u, v), f in fl.items():
+                        if u == n:
+                            new = 0.0 if (u, v) in closed else min(f * t / p_out[k],
+                                                                  lane_cap.get((u, v), INF))
+                            change = max(change, abs(new - actual[k][(u, v)]))
+                            actual[k][(u, v)] = new
+        if change < 1e-9:
+            break
+    return actual, offered, delivered
+
+
+def simulate_scenario(graph, scenario, plan, overload_factor=None, max_rounds=20):
+    node_cap, lane_cost = graph["node_cap"], graph["lane_cost"]
+    lane_cap, demand = graph.get("lane_cap", {}), graph["demand"]
+    penalty = float(scenario.get("penalty", 20.0))
+
+    frac = {h: float(x) for h, x in scenario.get("failed_hubs", {}).items()}
+    unknown = [h for h in frac if h not in node_cap]
+    if unknown:
+        raise ValueError(f"unknown hubs in scenario: {unknown}")
+    closed = {tuple(l) for l in scenario.get("closed_lanes", [])}
+    planned = _normalize_plan(plan, demand)
+
+    down = {h for h, x in frac.items() if x <= 0}
+    by_round = [sorted(down)]
+    for _ in range(max_rounds + 1):
+        cap_eff = {h: node_cap[h] * (0.0 if h in down else frac.get(h, 1.0)) for h in node_cap}
+        actual, offered, delivered = _propagate(planned, demand, node_cap, cap_eff, lane_cap, closed)
+        if overload_factor is None:
+            break
+        newly = sorted(h for h in node_cap if h not in down and cap_eff[h] < INF
+                       and offered[h] > overload_factor * cap_eff[h] + 1e-9)
+        if not newly:
+            break
+        down |= set(newly)
+        by_round.append(newly)
+
+    shipping = sum(lane_cost.get(e, 0.0) * f for fl in actual.values() for e, f in fl.items())
+    unmet = max(sum(demand.values()) - sum(delivered.values()), 0.0)
+    through = {h: 0.0 for h in node_cap}
+    for k, fl in actual.items():
+        for (u, v), f in fl.items():
+            if u in through:
+                through[u] += f
+        if k[1] in through:
+            through[k[1]] += delivered[k]
+    return {
+        "scenario_id": scenario.get("id"),
+        "shipping": round(shipping, 6),
+        "unmet": round(unmet, 6),
+        "total_cost": round(shipping + penalty * unmet, 6),
+        "failed_hubs_by_round": by_round,
+        "utilization_final": {h: (round(through[h] / node_cap[h], 4) if node_cap[h] > 0 else 0.0)
+                              for h in node_cap},
+        "rounds": len(by_round),
+        "recovery_days": scenario.get("days", 1),
+    }
 
 
 def build_neighbors(edges):
@@ -30,7 +137,6 @@ def simulate_cascade(capacity, load, neighbors, initial_failed, tolerance=1.0, m
     cap = dict(capacity)
     cur = {n: float(load.get(n, 0.0)) for n in cap}
     bad = [h for h in initial_failed if h not in cap]
-    # Guard against starting in an already-broken state
     if check_initial:
         over = [n for n in cap if cur[n] > tolerance * cap[n] + EPS]
         if over:
@@ -41,7 +147,7 @@ def simulate_cascade(capacity, load, neighbors, initial_failed, tolerance=1.0, m
     
     total = sum(cur.values())
     failed_set, rounds, unserved = set(), [], 0.0
-    newly = list(dict.fromkeys(initial_failed))  # drop duplicates, keep order
+    newly = list(dict.fromkeys(initial_failed))
     
     for r in range(max_rounds + 1):
         if not newly:
