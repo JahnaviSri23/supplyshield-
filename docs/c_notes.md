@@ -216,3 +216,16 @@ hub  share_ends_here  share_passes_through
    - Single-lane closures evaluated in isolation.
    - Optimistic capacity estimates based on observed historical max flow.
    - Heuristic unmet demand penalty ($48$ leg-hours).
+
+   ### 7. Hub Failure vs. Lane Closure Justification
+     hub  %_ends_here  %_passes_through
+0  IND000000ACB         23.6               1.6
+1  IND562132AAA         18.3               0.6
+2  IND421302AAG         15.0               0.1
+3  IND560099AAB         11.0               0.5
+4  IND411033AAA          9.5               0.6
+5  IND560300AAA          8.4               0.0
+6  IND400072AAB          6.6               0.0
+7  IND160002AAC          5.5               0.0
+8  IND600056AAB          5.8               0.0
+9  IND000000ACT          2.5               0.0
