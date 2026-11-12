@@ -1,0 +1,145 @@
+{
+  "experiment": "day3_master_split_v2",
+  "input_prediction_file": "data\\processed\\preds_cal_test_master_split_v1.csv",
+  "frozen_model": "B02 residual XGBoost predictions; no model retraining in B03",
+  "method": "C: grouped (route_type x calibration-distance-tercile) split conformal on signed residuals",
+  "min_group_size": 200,
+  "distance_edges_km": [
+    31.21256666666666,
+    60.86566666666664
+  ],
+  "calibration_legs": 4301,
+  "calibration_trips": 2424,
+  "test_legs": 4394,
+  "test_trips": 2424,
+  "levels": {
+    "50%": {
+      "alpha": 0.5,
+      "global_offsets": [
+        -0.20425410538671462,
+        0.2976691630801982
+      ],
+      "group_offsets": {
+        "Carting|long": [
+          -0.2432518036547382,
+          0.2331079874439863
+        ],
+        "Carting|medium": [
+          -0.23503606946303912,
+          0.4007563115832282
+        ],
+        "Carting|short": [
+          -0.28189459555979957,
+          0.6237891828020419
+        ],
+        "FTL|long": [
+          -0.13614115469406252,
+          0.17842313424935408
+        ],
+        "FTL|medium": [
+          -0.20103527360593798,
+          0.2043988836499364
+        ],
+        "FTL|short": [
+          -0.2714938102733522,
+          0.21227093084134951
+        ]
+      },
+      "group_counts": {
+        "Carting|long": 279,
+        "Carting|medium": 780,
+        "Carting|short": 1136,
+        "FTL|long": 1155,
+        "FTL|medium": 653,
+        "FTL|short": 298
+      }
+    },
+    "80%": {
+      "alpha": 0.2,
+      "global_offsets": [
+        -0.463655106700384,
+        1.0412596031350558
+      ],
+      "group_offsets": {
+        "Carting|long": [
+          -0.5765879622146268,
+          0.6299770011971093
+        ],
+        "Carting|medium": [
+          -0.4882059576255935,
+          1.1855325736238962
+        ],
+        "Carting|short": [
+          -0.6184223263691635,
+          1.9535618918755695
+        ],
+        "FTL|long": [
+          -0.3034747443113335,
+          0.6660319870733802
+        ],
+        "FTL|medium": [
+          -0.40737396586048735,
+          0.6269800955565965
+        ],
+        "FTL|short": [
+          -0.5140561984369052,
+          1.0079340947362092
+        ]
+      },
+      "group_counts": {
+        "Carting|long": 279,
+        "Carting|medium": 780,
+        "Carting|short": 1136,
+        "FTL|long": 1155,
+        "FTL|medium": 653,
+        "FTL|short": 298
+      }
+    },
+    "90%": {
+      "alpha": 0.1,
+      "global_offsets": [
+        -0.6827687896989483,
+        1.9038159386345006
+      ],
+      "group_offsets": {
+        "Carting|long": [
+          -0.695602530656859,
+          1.1783762744774942
+        ],
+        "Carting|medium": [
+          -0.7152080297470094,
+          2.0437475221772345
+        ],
+        "Carting|short": [
+          -1.0211791502577923,
+          4.089221019668755
+        ],
+        "FTL|long": [
+          -0.4487720334590075,
+          1.1199103353547464
+        ],
+        "FTL|medium": [
+          -0.6069138884544372,
+          1.1567876140276585
+        ],
+        "FTL|short": [
+          -0.7217004678242807,
+          1.6311574795896684
+        ]
+      },
+      "group_counts": {
+        "Carting|long": 279,
+        "Carting|medium": 780,
+        "Carting|short": 1136,
+        "FTL|long": 1155,
+        "FTL|medium": 653,
+        "FTL|short": 298
+      }
+    }
+  },
+  "method_e": {
+    "method": "E rolling recalibration",
+    "status": "not_run",
+    "reason": "The B02 master-split prediction file has no od_end_time. Old split files are not joined because their trip/leg membership may not match this master split."
+  }
+}

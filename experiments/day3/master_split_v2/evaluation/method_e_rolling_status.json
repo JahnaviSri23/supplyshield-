@@ -1,0 +1,5 @@
+{
+  "method": "E rolling recalibration",
+  "status": "not_run",
+  "reason": "The B02 master-split prediction file has no od_end_time. Old split files are not joined because their trip/leg membership may not match this master split."
+}

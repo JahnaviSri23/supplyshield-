@@ -45,10 +45,10 @@ Running the geocoder again is not required to reproduce the frozen core.
 ## Evaluation split
 
 Split whole trips by trip_creation_time:
-
+Frozen trip-level split assignments: data/processed/split_trip_ids.csv
 - Training: 12–25 September 2018.
 - Calibration: 26–29 September 2018.
-- Testing: 30 September onward.
+- Testing: 29 September 2018, from 20:41 onward.
 
 The later file combines calibration and testing.
 Person B must separate these periods before model evaluation.
@@ -56,8 +56,9 @@ Journey activity and weather can extend beyond trip creation dates.
 
 ## Current status
 
-The frozen core and weather join are complete.
-Capacity estimation and the rain-delay association test remain pending.
+The frozen core and weather join are complete. A training-only dispatch-capacity
+proxy and descriptive rain-delay comparisons are available; neither represents
+measured physical capacity or establishes a causal weather effect.
 See assumptions.md for selection rules and limitations.
 
 - src/estimate_capacities.py: estimates training-only dispatch capacities and exports optimizer edge statistics.

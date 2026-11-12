@@ -1,0 +1,46 @@
+Python 3.10.8
+Test: sim/test_toy.py::main, output redirected to temporary directory
+No repository experiment files were used as output targets.
+
+Original route: S -> A -> C -> T
+On-route failure hub: A
+Normal plan daily delivery: 100.0
+Recovery plan daily delivery with D failed: 100.0
+
+DAILY SIMULATOR RESULTS
+                    case  capacity_scale  shipping_cost  waiting_cost  delivered  unmet  recovery_days  recovery_censored  total_cost  runtime_seconds
+              no_failure             1.0         3500.0        2450.0      700.0    0.0             10              False      5950.0           0.0016
+        on_route_failure             1.0         3500.0        4550.0      700.0    0.0             13              False      8050.0           0.0013
+     D_fails_keep_routes             1.0         3500.0        2450.0      700.0    0.0             10              False      5950.0           0.0011
+  normal_plan_no_failure             1.0         3500.0           0.0      700.0    0.0              3              False      3500.0           0.0016
+     normal_plan_D_fails             1.0         3500.0         840.0      700.0    0.0              5              False      4340.0           0.0009
+recovery_plan_no_failure             1.0         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0009
+  D_fails_optimizer_plan             1.0         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0011
+              no_failure             1.2         3500.0        2380.0      700.0    0.0             10              False      5880.0           0.0007
+        on_route_failure             1.2         3500.0        4480.0      700.0    0.0             13              False      7980.0           0.0006
+     D_fails_keep_routes             1.2         3500.0        2380.0      700.0    0.0             10              False      5880.0           0.0009
+  normal_plan_no_failure             1.2         3500.0           0.0      700.0    0.0              3              False      3500.0           0.0009
+     normal_plan_D_fails             1.2         3500.0         804.0      700.0    0.0              5              False      4304.0           0.0007
+recovery_plan_no_failure             1.2         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0008
+  D_fails_optimizer_plan             1.2         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0010
+              no_failure             1.5         3500.0        2275.0      700.0    0.0             10              False      5775.0           0.0011
+        on_route_failure             1.5         3500.0        4375.0      700.0    0.0             13              False      7875.0           0.0014
+     D_fails_keep_routes             1.5         3500.0        2275.0      700.0    0.0             10              False      5775.0           0.0011
+  normal_plan_no_failure             1.5         3500.0           0.0      700.0    0.0              3              False      3500.0           0.0009
+     normal_plan_D_fails             1.5         3500.0         750.0      700.0    0.0              5              False      4250.0           0.0011
+recovery_plan_no_failure             1.5         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0009
+  D_fails_optimizer_plan             1.5         4270.0           0.0      700.0    0.0              4              False      4270.0           0.0008
+
+MATCHED COMPARISONS
+ capacity_scale  on_route_failure_extra_cost  D_failure_original_route_extra_cost  D_failure_normal_plan_extra_cost  D_failure_recovery_plan_extra_cost  recovery_saving_during_D_failure
+            1.0                       2100.0                                  0.0                             840.0                                 0.0                              70.0
+            1.2                       2100.0                                  0.0                             804.0                                 0.0                              34.0
+            1.5                       2100.0                                  0.0                             750.0                                 0.0                             -20.0
+
+Flow-conservation and no-failure drain checks: PASS
+Recovery days measure backlog-drain time after demand stops and the specified failure ends.
+Negative recovery savings mean the recovery plan was more expensive in that scenario; results are not forced.
+
+Saved:
+experiments/toy_simulator_checks.csv
+experiments/toy_simulator_comparisons.csv

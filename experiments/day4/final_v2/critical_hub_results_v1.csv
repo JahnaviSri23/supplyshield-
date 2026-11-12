@@ -1,0 +1,2 @@
+initial_failed_hub,initial_failures,total_hubs_failed,secondary_hubs_failed,secondary_cascade,rounds,unserved_load_legs_per_day,unserved_share,max_alive_utilization,converged,conserved,failed_hubs
+IND000000ACA,1,4,3,True,3,4.34,0.011342169124509987,1.0,True,True,IND000000ACA;IND143001AAA;IND144001AAB;IND160002AAC

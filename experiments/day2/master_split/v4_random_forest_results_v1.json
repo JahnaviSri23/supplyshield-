@@ -22,8 +22,8 @@
         "warm_start": false
     },
     "validation_metrics": {
-        "MAE_ratio": 0.8106,
-        "MedAE_ratio": 0.3387,
-        "MAE_excess_min": 38.65
+        "MAE_ratio": 0.7553,
+        "MedAE_ratio": 0.3342,
+        "MAE_excess_min": 37.72
     }
 }
