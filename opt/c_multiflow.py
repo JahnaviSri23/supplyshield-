@@ -3,24 +3,20 @@ SupplyShield - Person C, Day 8-9: ALL traffic shares the hubs.
 
 c_real_graph.py rerouted ONE lane's traffic through empty hubs (optimistic). Here every lane of the
 core graph is a flow of its own ('commodity': origin, destination, legs per day). In normal times each
-flow uses its own direct lane. Then ONE lane closes and we ask three plans to cope:
+flow uses its own direct lane. Then ONE lane closes and we ask four plans to cope:
    1. do nothing   : the closed lane's legs are lost, every other flow keeps its direct lane
    2. greedy       : the closed lane's flow takes the cheapest detours, using only the room the
                      other (unchanged) flows leave free at each hub
-   3. LP           : every flow may change route; minimises total travel hours + penalty for lost legs
+   3. preserve (affected flows only) : keeps every unaffected flow on its direct lane and solves
+                     an LP to optimally reroute the affected flow within residual hub capacities
+   4. LP (all flows): every flow may change route; minimises total travel hours + penalty for lost legs
 All flows share the hub capacity. Capacity of a hub = A's capacity_est, which is defined on its
 OUTGOING legs per day, so the rule is: all flows leaving a hub together <= capacity_est.
 
 Run from the project root:  python opt/c_multiflow.py        (needs opt/c_real_graph.py, c_toy_recovery.py)
-Output: experiments/c_multiflow_closures.csv
-(extra_cost = how much worse the network gets under that plan, against THAT plan's own no-closure cost;
- extra_vs_best_normal = against the best possible no-closure cost, the same for every plan -> use this one to compare plans)
-
-ASSUMPTIONS (write them in docs/c_notes.md):
-  - demand of a flow = trips / 14 legs per day (training days)
-  - traffic that leaves the core is ignored, but capacity_est counts it, so capacities are still a bit optimistic
-  - cost = travel hours; a lost leg costs PENALTY_HOURS; each closure is tested alone
+Output: experiments/c_multiflow_closures.csv and experiments/c_multiflow_plans.json
 """
+import json
 import time
 from pathlib import Path
 
@@ -96,8 +92,47 @@ def solve_multiflow(G, closed=None, return_plan=False):
     return travel + rg.PENALTY_HOURS * unmet, unmet, plan
 
 
+def solve_preserve_single(G, lane, residual):
+    """LP rerouting ONLY the affected OD pair (u, v) using residual hub outgoing capacities."""
+    nodes, nidx, edges, eidx, N, E, src, dst, cost, _ = build_model(G)
+    u, v = lane
+    q = G.edges[lane]["trips"] / rg.TRAIN_DAYS
+    nvar = E + 1  # x[e] for affected OD + unmet
+
+    # Flow balance for single affected OD (u -> v)
+    rows = np.concatenate([src, dst, [nidx[u], nidx[v]]])
+    cols = np.concatenate([np.arange(E), np.arange(E), [E, E]])
+    vals = np.concatenate([np.ones(E), -np.ones(E), [1.0, -1.0]])
+    A_eq = coo_matrix((vals, (rows, cols)), shape=(N, nvar)).tocsr()
+    b_eq = np.zeros(N)
+    b_eq[nidx[u]] = q
+    b_eq[nidx[v]] = -q
+
+    # Outgoing hub capacity <= residual[n]
+    A_ub = coo_matrix((np.ones(E), (src, np.arange(E))), shape=(N, nvar)).tocsr()
+    b_ub = np.array([residual[n] for n in nodes])
+
+    bounds_hi = np.full(nvar, np.inf)
+    bounds_hi[eidx[lane]] = 0.0
+    bounds_hi[E] = q
+
+    objective = np.concatenate([cost, [rg.PENALTY_HOURS]])
+    res = linprog(objective, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=b_eq,
+                  bounds=np.column_stack([np.zeros(nvar), bounds_hi]), method="highs")
+    if not res.success:
+        raise RuntimeError(f"preserve LP failed on {lane}: {res.message}")
+
+    unmet = float(res.x[E])
+    detour_cost = float(np.dot(cost, res.x[:E]))
+    detour_records = [
+        {"od": [u, v], "edge": [edges[e][0], edges[e][1]], "flow": float(res.x[e])}
+        for e in range(E) if res.x[e] > PLAN_MIN_FLOW
+    ]
+    return detour_cost, unmet, detour_records
+
+
 def baseline_plans(G, lane):
-    """do nothing and greedy for the closure of `lane`; every other flow stays on its direct lane."""
+    """do nothing, greedy, and preserve (affected flows only) for the closure of `lane`."""
     u, v = lane
     q = G.edges[lane]["trips"] / rg.TRAIN_DAYS
     normal_cost = sum(G.edges[e]["cost"] * G.edges[e]["trips"] / rg.TRAIN_DAYS for e in G.edges)
@@ -121,13 +156,23 @@ def baseline_plans(G, lane):
     flows, delivered = c.greedy(H)
     detour = sum(H.edges[e]["cost"] * f for e, f in flows.items())
     unmet = q - delivered
+
+    pres_detour, pres_unmet, pres_records = solve_preserve_single(G, lane, residual)
+
     background = [{"od": [a, b], "edge": [a, b], "flow": G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS}
-                  for (a, b) in G.edges if (a, b) != lane]          # every other flow stays on its direct lane
-    plan_flows = {"do nothing": background,
-                  "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": f}
-                                          for (a, b), f in flows.items() if f > PLAN_MIN_FLOW]}
-    return ({"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
-             "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost, plan_flows)
+                  for (a, b) in G.edges if (a, b) != lane]  # every other flow stays on its direct lane
+    plan_flows = {
+        "do nothing": background,
+        "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": f}
+                                for (a, b), f in flows.items() if f > PLAN_MIN_FLOW],
+        "preserve (affected flows only)": background + pres_records,
+    }
+    plan_costs = {
+        "do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
+        "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet),
+        "preserve (affected flows only)": (other_cost + pres_detour + rg.PENALTY_HOURS * pres_unmet, pres_unmet),
+    }
+    return plan_costs, normal_cost, plan_flows
 
 
 if __name__ == "__main__":
@@ -170,13 +215,14 @@ if __name__ == "__main__":
     print(table.pivot(index="lane", columns="plan", values="extra_vs_best_normal").to_string())
     print("\nAverage extra vs best normal:\n", table.groupby("plan")["extra_vs_best_normal"].mean().round(1).to_string())
     tot = table.pivot(index="lane", columns="plan", values="total_cost")
-    print("\nCHECK: LP total <= greedy total in every closure (must be True):",
-          bool((tot["LP (all flows)"] <= tot["greedy"] + 1e-6).all()))
+    print("\nCHECK 1: LP total <= preserve total in every closure (must be True):",
+          bool((tot["LP (all flows)"] <= tot["preserve (affected flows only)"] + 1e-6).all()))
+    print("CHECK 2: preserve total <= greedy total in every closure (must be True):",
+          bool((tot["preserve (affected flows only)"] <= tot["greedy"] + 1e-6).all()))
     print("\nLegs never delivered, summed over the 10 closures:\n", table.groupby("plan")["unmet"].sum().round(2).to_string())
     print("\nSlowest LP solve (seconds):", table["lp_seconds"].max())
     Path("experiments").mkdir(exist_ok=True)
     table.to_csv("experiments/c_multiflow_closures.csv", index=False)
     print("Saved experiments/c_multiflow_closures.csv")
-    import json
     json.dump(tests, open("experiments/c_multiflow_plans.json", "w"))
-    print("Saved experiments/c_multiflow_plans.json  (multi-OD plans + expected costs, for testing simulate())")
+    print("Saved experiments/c_multiflow_plans.json  (40 plans across 10 closures, multi-OD + expected costs)")
