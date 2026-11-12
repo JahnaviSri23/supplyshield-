@@ -151,3 +151,81 @@ When measuring average total extra cost across closures:
 1. **Starting Baseline Advantage (~22.6 leg-hours):** Out of the 25.7 leg-hour total difference between the LP and greedy, **22.6 leg-hours** stem from global routing efficiency during normal operations (i.e., replacing sub-optimal direct lanes with multi-hop paths even when no closure occurs).
 2. **Closure Response Advantage (~3.1 leg-hours):** Only **3.1 leg-hours** of the average gap represent the LP's dynamic response specifically to the closures themselves.
 3. **High-Impact Exceptions:** On major bottleneck lanes (e.g., `IND560099AAB -> IND560300AAA`), re-optimizing background flows provides major savings, outperforming greedy by 66.5 leg-hours during a disruption.
+
+## Optimization & Demand Summary (Day 8 Update)
+
+### 1. Demand & Trip Insights
+- **Coverage:** Core OD demand derived from `split_trip_ids.csv` covers 4,436 training trips (44.5% of total training trips) across 297 OD pairs inside the core network.
+- **Trip Characteristics:** Trips are predominantly single-leg, with a mean of 1.13 legs per trip. 
+- **Leg Breakdown:** 237 out of 297 OD pairs (80%) are 1-leg usual routes (2-leg: 43, 3-leg: 14, 4-leg: 3).
+
+### 2. Model Choice & Rationale
+- **Primary Model:** Retaining the **lane-flow model** (converting trip demand to daily legs per lane).
+- **Rationale:** Because ~80% of trips are single-leg, full hub failures result in mostly unavoidable end-point traffic loss with minimal recoverable rerouting potential. In contrast, single-lane closures allow single-leg flows to detour through intermediate hubs, making lane-closure evaluation much more meaningful and aligned with lane-level risk modeling.
+
+### 3. Plan Definitions & Parameters
+- **Evaluated Plans:** 
+  1. *Do Nothing:* Baseline unmitigated operational plan.
+  2. *Greedy:* Local rerouting/drop heuristic.
+  3. *Preserve:* Reroutes affected flows while freezing unaffected baseline flows from the no-closure LP.
+  4. *LP:* Global joint LP re-optimization.
+- **Units & Constants:**
+  - Flow: Daily truck-legs per day.
+  - Cost Metric: Leg-hours (median travel time).
+  - Unmet Demand Penalty: **48 leg-hours**.
+
+### 4. Validation & Acceptance Checks
+- `CHECK: LP <= greedy` → **True**
+- `CHECK: LP <= preserve` → **True**
+- **Decomposition:** The LP's cost advantage over greedy is primarily driven by the starting-point baseline gap rather than the closure response alone.
+
+### 5. Hub Traffic Analysis (Unavoidable Loss vs. Recoverable)
+hub  share_ends_here  share_passes_through
+0  IND000000ACB         0.235798              0.015780
+1  IND562132AAA         0.183499              0.005861
+2  IND421302AAG         0.150135              0.001353
+3  IND560099AAB         0.110234              0.005410
+4  IND411033AAA         0.095131              0.006312
+5  IND560300AAA         0.084085              0.000000
+6  IND400072AAB         0.066276              0.000000
+7  IND160002AAC         0.055455              0.000000
+8  IND600056AAB         0.058161              0.000000
+9  IND000000ACT         0.025023              0.000000
+
+"Traffic with share_ends_here represents unavoidable loss during a hub failure because the hub is the trip's origin or destination. Because share_passes_through is very low across top hubs, hub failure scenarios offer minimal recoverable rerouting potential, justifying our focus on lane-closure optimization."
+
+### 6. Viva Prep & Conceptual Q&A
+
+1. **What is a flow, a capacity, and a penalty in your real-graph LP?**
+   - **Flow:** Daily truck-legs allocated along a directed lane $(u, v)$ for a specific demand pair.
+   - **Capacity:** Maximum estimated leg capacity per day for lane $(u, v)$, derived from historical baseline volume.
+   - **Penalty:** Cost incurred per unit of unmet demand (set to **48 leg-hours**), ensuring the LP prefers rerouting over dropping traffic unless rerouting cost exceeds 48 hours.
+
+2. **What does `preserve` (affected flows only) do, and why can the LP never be worse than it?**
+   - **Preserve Plan:** Freezes all unaffected baseline flows from the no-closure LP state and only reroutes the flows directly impacted by a lane closure.
+   - **LP Dominance:** The LP performs a global joint re-optimization over all flows simultaneously. Because `preserve` is a restricted subset of the LP's feasible decision space, the LP cost is guaranteed to be $\le$ the `preserve` plan cost ($\text{LP} \le \text{preserve}$).
+
+3. **Why was the LP’s advantage over greedy mostly a starting-point gap?**
+   - About 22.6 leg-hours of the 25.7 leg-hour advantage came from optimizing the baseline steady-state routing before any closure even occurred, rather than superior real-time detour routing.
+
+4. **Why do hub failures need trip-based demand?**
+   - Hub failures require knowing complete multi-leg trip paths because a hub failure drops all originating/terminating trips while allowing intermediate passing-through trips to detour. Without trip-level origin-destination mapping, passing traffic cannot be separated from endpoint traffic.
+
+5. **What are the key simplifying assumptions / limitations of this model?**
+   - Independent lane delays (ignores spatial delay correlation).
+   - Single-lane closures evaluated in isolation.
+   - Optimistic capacity estimates based on observed historical max flow.
+   - Heuristic unmet demand penalty ($48$ leg-hours).
+
+   ### 7. Hub Failure vs. Lane Closure Justification
+     hub  %_ends_here  %_passes_through
+0  IND000000ACB         23.6               1.6
+1  IND562132AAA         18.3               0.6
+2  IND421302AAG         15.0               0.1
+3  IND560099AAB         11.0               0.5
+4  IND411033AAA          9.5               0.6
+5  IND560300AAA          8.4               0.0
+6  IND400072AAB          6.6               0.0
+7  IND160002AAC          5.5               0.0
+8  IND600056AAB          5.8               0.0
+9  IND000000ACT          2.5               0.0
