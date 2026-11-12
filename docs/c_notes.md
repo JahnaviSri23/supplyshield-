@@ -229,3 +229,71 @@ hub  share_ends_here  share_passes_through
 7  IND160002AAC          5.5               0.0
 8  IND600056AAB          5.8               0.0
 9  IND000000ACT          2.5               0.0
+
+# Person C — Recovery Optimization & Uncertainty Evaluation Notes
+
+## 1. Model Assumptions & Units
+- **Core Network:** 100 logistics hubs and 292 directed lanes extracted from the Delhivery India dataset (3 weeks of 2018 operations; 14 training days used for baseline estimation).
+- **Flow & Demand Units:** Steady-state **legs per day** (`trips / 14` from `core_edges.csv`).
+- **Time & Cost Units:** Transit times are in **hours**; objective and routing costs are in **leg-hours per day** ($\sum_{e} \text{base\_hours}_e \cdot \text{mult}_e \cdot f_e$).
+- **Horizon:** One steady-state day (static single-period network flow).
+- **Node Capacity:** Outgoing capacity per hub set to the **95th percentile of historical outgoing legs per day** (`capacity_est` in `core_nodes.csv`).
+- **Undelivered-Leg Penalty:** **96 leg-hours per undelivered leg** (`PENALTY_HOURS = 96.0`). *(Note: an earlier sensitivity run at penalty 48 and 24 produced the exact same plan ranking.)*
+- **Disruption Scope:** Single-lane closures evaluated one lane at a time (`L01`–`L10`).
+- **Lane Risk Independence:** In stochastic evaluation, lane travel-time multipliers are sampled independently per lane (noted as a structural limitation below).
+
+---
+
+## 2. The Four Recovery Plans
+1. **`do nothing`:** Keeps all normal-day baseline flows fixed; any flow previously routed over the closed lane $(u^*, v^*)$ becomes unmet demand and incurs the 96 leg-hours/leg penalty.
+2. **`greedy`:** Reroutes only the affected flows from the closed lane sequentially onto shortest available residual-capacity detour paths without re-optimizing unaffected flows.
+3. **`preserve (affected flows only)`:** Keeps all unaffected OD flows locked at their normal-day baseline routing and solves an LP to optimally reroute only the OD pairs affected by the closed lane within remaining hub capacities.
+4. **`LP (all flows)`:** Solves a global multi-OD linear program across all 292 directed lanes simultaneously to minimize total shipping leg-hours plus unmet-demand penalties.
+
+---
+
+## 3. Multi-Flow Results & Starting-Point Decomposition (Penalty = 96)
+Across the 10 tested single-lane closures (`experiments/c_multiflow_closures.csv`):
+- **Normal-day baseline cost:** `2045.3` leg-hours/day (minimum-cost LP baseline).
+- **Mean extra cost over own baseline (`extra_cost`):**
+  - `LP (all flows)`: **25.2** leg-hours/day
+  - `greedy`: **28.3** leg-hours/day
+  - `do nothing`: **515.9** leg-hours/day
+- **Fair comparison against best normal baseline (`extra_vs_best_normal`):**
+  - `LP (all flows)`: **25.2** leg-hours/day
+  - `greedy`: **51.6** leg-hours/day
+
+### Starting-Point Decomposition
+Comparing `greedy` against `LP (all flows)` (`26.4` leg-hours/day total difference):
+$$\text{Total Gap } (26.4) = \underbrace{\text{Starting-Point Gap } (23.3)}_{\text{baseline routing inefficiency unrelated to closures}} + \underbrace{\text{Closure Response } (3.1)}_{\text{true rerouting advantage under closure}}$$
+- **23.3 leg-hours/day** comes from the historical baseline flow assignment already being slightly suboptimal relative to a global LP before any lane closes.
+- **3.1 leg-hours/day** is the genuine incremental rerouting benefit of global LP optimization over greedy detouring during a single-lane closure.
+
+---
+
+## 4. Why Full Hub Failures Are Out of Scope
+- Out of **9,969** total training trips in the dataset, **4,436** have both origin and destination inside the 100-hub core.
+- Within the core, **237 of 297 OD pairs** are served by a direct single-leg route.
+- Because the optimizer models demand as aggregated steady-state lane flows (`legs/day`) rather than end-to-end multi-leg itineraries, shutting down an entire intermediate hub cannot accurately propagate multi-leg trip cancellations upstream or downstream without switching to a full trip-based formulation. Single-lane closures isolate capacity and detour trade-offs cleanly within the lane-flow model.
+
+---
+
+## 5. Limitations
+1. **Static Steady-State Horizon:** Models a single representative day without multi-day queue spillover or backlog accumulation across consecutive days.
+2. **Independent Lane Multipliers:** Stochastic scenarios sample lane travel-time multipliers independently per lane, ignoring spatial weather or regional corridor correlation.
+3. **Deterministic Outgoing Hub Capacities:** Uses a fixed 95th-percentile outgoing leg cap per hub and does not model receiving-dock bottlenecks or dynamic shift staffing.
+4. **Core Subgraph Boundary:** Results apply strictly to the 100-hub, 292-lane core network; external feeder legs outside the core are excluded.
+
+---
+
+## 6. Viva Q&A Summary
+1. **What are the units of flow, capacity, and penalty?**
+   - Flow and demand are in **legs per day** (`trips / 14`). Hub capacity is the **95th percentile of outgoing legs per day**. The unmet-demand penalty is **96 leg-hours per undelivered leg**, matching the objective unit of **leg-hours per day**.
+2. **What does `preserve` do, and why can't `LP (all flows)` ever be worse than `preserve`?**
+   - `preserve` freezes all unaffected OD flows at their normal-day values and re-optimizes only the OD pairs that used the closed lane. `LP (all flows)` optimizes over all OD pairs simultaneously—since `preserve`'s flow assignment is always a valid feasible solution inside `LP (all flows)`'s feasible region, the global LP objective is mathematically guaranteed to be $\le$ `preserve`.
+3. **Why is the LP's advantage over `greedy` mostly a starting-point gap?**
+   - When measured against a common optimal baseline (`extra_vs_best_normal`), `greedy` averages `51.6` vs `25.2` for the LP (`26.4` gap), but `23.3` of those `26.4` leg-hours already exist on a normal day because historical flows aren't globally LP-optimal; only `3.1` leg-hours/day come from better closure rerouting.
+4. **Why do full hub failures require trip-based demand instead of lane-flow demand?**
+   - Aggregated lane flows treat each leg independently. When an intermediate hub fails, multi-leg trips passing through that hub are cancelled as a whole; lane-flow conservation cannot link upstream and downstream legs belonging to the same shipment.
+5. **What is unrealistic about the optimization model?**
+   - It assumes a single steady-state day with no multi-day queue carryover, treats lane congestion multipliers as statistically independent rather than spatially correlated, and uses a deterministic 95th-percentile hub capacity cap.
