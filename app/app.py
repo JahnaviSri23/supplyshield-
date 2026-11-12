@@ -771,9 +771,9 @@ def page_uncertainty() -> None:
     st.title("Uncertainty & Robust Optimization 🎲")
     st.markdown(
         """
-        Transit times in real logistics operations are stochastic due to road congestion, vehicle maintenance, 
-        and weather delays. This page presents empirical results from evaluating recovery policies under 
-        **conformal prediction intervals** and **Conditional Value-at-Risk (CVaR)** optimization.
+        Empirical evaluation of recovery policies under **transit time uncertainty**, comparing 
+        deterministic planning against distribution-aware point estimates, expected-cost optimization, 
+        and risk-averse CVaR (Conditional Value-at-Risk) optimization.
         """
     )
 
@@ -782,119 +782,189 @@ def page_uncertainty() -> None:
     results_df = data.load_uncertainty_results()
 
     st.markdown("---")
-    st.subheader("Policy Comparison Under Transit Time Uncertainty")
+    st.subheader("Uncertainty Recovery Plans Comparison")
     st.markdown(
         """
-        Performance of 4 optimization policies across stochastic transit time realizations 
-        (`experiments/c_uncertainty_summary.csv`):
-        - **deterministic**: Solves assuming nominal expected transit times.
-        - **point**: Optimization using point estimates from the machine-learned transit time model.
-        - **expected**: Risk-neutral stochastic optimization minimizing expected total cost across scenarios.
-        - **CVaR**: Risk-averse optimization penalizing the worst 10% tail outcomes (Conditional Value-at-Risk).
+        Comparison of the four uncertainty recovery plans (**`deterministic`**, **`point`**, **`expected`**, **`CVaR`**) 
+        across simulated evaluation costs and out-of-sample realized scores (`experiments/c_uncertainty_summary.csv`):
         """
     )
 
-    disp_sum = summary_df.copy()
-    disp_sum = disp_sum.rename(
+    # 1. Comparison Table
+    plan_comp_table = summary_df[
+        [
+            "plan",
+            "eval_mean",
+            "eval_cvar",
+            "eval_worst",
+            "realized_primary",
+            "realized_sens_pred",
+            "realized_sens_5legs",
+        ]
+    ].copy()
+
+    plan_comp_table = plan_comp_table.rename(
         columns={
-            "plan": "Policy",
-            "eval_mean": "Eval Mean Cost (leg-hrs)",
-            "eval_cvar": "Eval CVaR Worst 10% (leg-hrs)",
-            "eval_worst": "Eval Worst-Case Cost (leg-hrs)",
-            "unmet": "Unmet Flow (legs/day)",
-            "plan_change_vs_det": "Plan Shift vs Det (L1)",
-            "realized_primary": "Realized Cost (Primary)",
-            "realized_sens_pred": "Realized Cost (Sens Pred)",
-            "realized_sens_5legs": "Realized Cost (Sens 5-legs)",
+            "plan": "Plan",
+            "eval_mean": "Avg Simulated Cost (eval_mean) [leg-hrs]",
+            "eval_cvar": "CVaR 80% (eval_cvar) [leg-hrs]",
+            "eval_worst": "Worst Scenario Cost (eval_worst) [leg-hrs]",
+            "realized_primary": "Realized Primary [leg-hrs]",
+            "realized_sens_pred": "Realized Sens Pred [leg-hrs]",
+            "realized_sens_5legs": "Realized Sens 5-legs [leg-hrs]",
         }
     )
 
-    # Formatted display
-    fmt_sum = disp_sum.copy()
+    fmt_comp_table = plan_comp_table.copy()
     for col in [
-        "Eval Mean Cost (leg-hrs)",
-        "Eval CVaR Worst 10% (leg-hrs)",
-        "Eval Worst-Case Cost (leg-hrs)",
-        "Realized Cost (Primary)",
-        "Realized Cost (Sens Pred)",
-        "Realized Cost (Sens 5-legs)",
+        "Avg Simulated Cost (eval_mean) [leg-hrs]",
+        "CVaR 80% (eval_cvar) [leg-hrs]",
+        "Worst Scenario Cost (eval_worst) [leg-hrs]",
+        "Realized Primary [leg-hrs]",
+        "Realized Sens Pred [leg-hrs]",
+        "Realized Sens 5-legs [leg-hrs]",
     ]:
-        fmt_sum[col] = fmt_sum[col].map(lambda x: f"{x:,.2f}")
-    fmt_sum["Unmet Flow (legs/day)"] = fmt_sum["Unmet Flow (legs/day)"].map(lambda x: f"{x:,.4f}")
-    fmt_sum["Plan Shift vs Det (L1)"] = fmt_sum["Plan Shift vs Det (L1)"].map(lambda x: f"{x:,.4f}")
+        fmt_comp_table[col] = fmt_comp_table[col].map(lambda x: f"{x:,.2f}")
 
-    render_table(fmt_sum)
+    render_table(fmt_comp_table)
 
-    # Chart comparing Mean vs Tail Risk
-    fig_unc = go.Figure()
-    fig_unc.add_trace(
-        go.Bar(
-            x=summary_df["plan"],
-            y=summary_df["eval_mean"],
-            name="Mean Cost",
-            marker_color="#3b82f6",
-            text=summary_df["eval_mean"].map(lambda x: f"{x:,.1f}"),
-            textposition="auto",
-        )
-    )
-    fig_unc.add_trace(
-        go.Bar(
-            x=summary_df["plan"],
-            y=summary_df["eval_cvar"],
-            name="CVaR (Worst 10%)",
-            marker_color="#f59e0b",
-            text=summary_df["eval_cvar"].map(lambda x: f"{x:,.1f}"),
-            textposition="auto",
-        )
-    )
-    fig_unc.add_trace(
-        go.Bar(
-            x=summary_df["plan"],
-            y=summary_df["eval_worst"],
-            name="Worst-Case Cost",
-            marker_color="#ef4444",
-            text=summary_df["eval_worst"].map(lambda x: f"{x:,.1f}"),
-            textposition="auto",
-        )
-    )
-    fig_unc.update_layout(
-        title="Cost Profiles Under Uncertainty (Mean vs Tail Risk)",
-        yaxis_title="Leg-Hours",
-        barmode="group",
-        height=380,
-        margin=dict(l=40, r=20, t=50, b=40),
-        legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
-    )
-    st.plotly_chart(fig_unc, use_container_width=True)
+    # 2. Plotly Bar Charts
+    st.markdown("### Cost Metrics Comparison Across Uncertainty Plans")
+    col_c1, col_c2 = st.columns(2)
 
+    with col_c1:
+        fig_sim = go.Figure()
+        fig_sim.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["eval_mean"],
+                name="Avg Simulated (eval_mean)",
+                marker_color="#3b82f6",
+                text=summary_df["eval_mean"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_sim.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["eval_cvar"],
+                name="CVaR 80% (eval_cvar)",
+                marker_color="#f59e0b",
+                text=summary_df["eval_cvar"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_sim.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["eval_worst"],
+                name="Worst Scenario (eval_worst)",
+                marker_color="#ef4444",
+                text=summary_df["eval_worst"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_sim.update_layout(
+            title="Simulated Cost & Tail Risk Profiles (leg-hours)",
+            yaxis_title="Cost (leg-hours)",
+            barmode="group",
+            height=390,
+            margin=dict(l=40, r=20, t=50, b=40),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        )
+        st.plotly_chart(fig_sim, use_container_width=True)
+
+    with col_c2:
+        fig_real = go.Figure()
+        fig_real.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["realized_primary"],
+                name="Realized Primary",
+                marker_color="#10b981",
+                text=summary_df["realized_primary"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_real.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["realized_sens_pred"],
+                name="Realized Sens Pred",
+                marker_color="#6366f1",
+                text=summary_df["realized_sens_pred"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_real.add_trace(
+            go.Bar(
+                x=summary_df["plan"],
+                y=summary_df["realized_sens_5legs"],
+                name="Realized Sens 5-legs",
+                marker_color="#8b5cf6",
+                text=summary_df["realized_sens_5legs"].map(lambda x: f"{x:,.1f}"),
+                textposition="auto",
+            )
+        )
+        fig_real.update_layout(
+            title="Out-of-Sample Realized Scores (leg-hours)",
+            yaxis_title="Cost (leg-hours)",
+            barmode="group",
+            height=390,
+            margin=dict(l=40, r=20, t=50, b=40),
+            legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
+        )
+        st.plotly_chart(fig_real, use_container_width=True)
+
+    # 3. Interval Diagnostics Table
     st.markdown("---")
-    st.subheader("Conformal Prediction Interval Calibration")
+    st.subheader("Conformal Prediction Interval Diagnostics")
     st.markdown(
         """
-        To guarantee reliable uncertainty envelopes without unrealistic distributional assumptions, 
-        SupplyShield constructs **conformal prediction intervals** (`experiments/c_uncertainty_intervals.csv`).
+        Interval diagnostic validation metrics from `experiments/c_uncertainty_intervals.csv`:
         """
     )
 
-    disp_int = intervals_df.rename(
+    disp_int = intervals_df[
+        [
+            "population",
+            "interval",
+            "lanes",
+            "test_legs",
+            "coverage_of_realized",
+            "mean_width",
+            "share_of_samples_inside",
+        ]
+    ].copy()
+
+    disp_int = disp_int.rename(
         columns={
             "population": "Population",
-            "interval": "Nominal Interval",
-            "lanes": "Lanes Evaluated",
-            "test_legs": "Test Legs Evaluated",
-            "coverage_of_realized": "Empirical Coverage",
-            "mean_width": "Mean Interval Width",
-            "share_of_samples_inside": "Share Samples Inside",
+            "interval": "Interval",
+            "lanes": "Lanes",
+            "test_legs": "Test Legs",
+            "coverage_of_realized": "Coverage of Realized",
+            "mean_width": "Mean Width",
+            "share_of_samples_inside": "Share of Samples Inside",
         }
     )
+
     fmt_int = disp_int.copy()
-    fmt_int["Empirical Coverage"] = fmt_int["Empirical Coverage"].map(lambda x: f"{x * 100:.2f}%")
-    fmt_int["Share Samples Inside"] = fmt_int["Share Samples Inside"].map(lambda x: f"{x * 100:.2f}%")
-    fmt_int["Mean Interval Width"] = fmt_int["Mean Interval Width"].map(lambda x: f"{x:.4f}")
+    fmt_int["Coverage of Realized"] = fmt_int["Coverage of Realized"].map(lambda x: f"{x * 100:.2f}%")
+    fmt_int["Share of Samples Inside"] = fmt_int["Share of Samples Inside"].map(lambda x: f"{x * 100:.2f}%")
+    fmt_int["Mean Width"] = fmt_int["Mean Width"].map(lambda x: f"{x:.4f}")
 
     render_table(fmt_int)
 
-    # Detailed Per-Seed Realization Explorer
+    # 4. Explicit Methodological Note
+    st.info(
+        "ℹ️ **Note on Interval Calibration & Sampling Spread**: "
+        "Lane intervals are weighted averages of representative-route conformal intervals "
+        "(not formally calibrated at the lane level) and sampling spread is derived from the "
+        "90% interval with the 50% interval used as a diagnostic consistency check."
+    )
+
+    # 5. Detailed Per-Seed Realization Explorer
     st.markdown("---")
     st.subheader("Scenario-Level Stochastic Simulation Results")
     st.markdown(
