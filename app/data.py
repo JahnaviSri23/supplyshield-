@@ -7,6 +7,8 @@ All numbers come strictly from precomputed experiment and processed data files.
 from pathlib import Path
 from typing import Dict, List, Tuple, Any
 import json
+import numpy as np
+import networkx as nx
 import pandas as pd
 import streamlit as st
 
@@ -274,3 +276,67 @@ def get_overview_summary_table() -> pd.DataFrame:
     agg = agg.sort_values("order").drop(columns=["order"]).reset_index(drop=True)
     return agg
 
+
+@st.cache_data
+def get_hub_coordinates() -> Tuple[Dict[str, Tuple[float, float]], Dict[str, bool]]:
+    """
+    Computes coordinates (lon, lat) for all 100 core hubs:
+    - Uses real lat/lon where present (95 hubs).
+    - For hubs without coordinates (5 hubs), uses a networkx spring layout with fixed seed (seed=42)
+      anchored to the connected core network.
+    Returns:
+    - coords: Dict[hub, (lon, lat)]
+    - is_approx: Dict[hub, bool] True if position was approximated via spring layout
+    """
+    nodes_df = load_core_nodes()
+    edges_df = load_core_edges()
+
+    G = nx.Graph()
+    for _, r in nodes_df.iterrows():
+        G.add_node(r["hub"])
+
+    for _, r in edges_df.iterrows():
+        u = r["source_center"] if "source_center" in r and pd.notna(r["source_center"]) else r["source"]
+        v = r["destination_center"] if "destination_center" in r and pd.notna(r["destination_center"]) else r["destination"]
+        G.add_edge(u, v)
+
+    known_nodes = [r["hub"] for _, r in nodes_df.iterrows() if pd.notna(r["lat"]) and pd.notna(r["lon"])]
+    lons = np.array([float(r["lon"]) for _, r in nodes_df.iterrows() if pd.notna(r["lat"]) and pd.notna(r["lon"])])
+    lats = np.array([float(r["lat"]) for _, r in nodes_df.iterrows() if pd.notna(r["lat"]) and pd.notna(r["lon"])])
+
+    min_lon, max_lon = float(lons.min()), float(lons.max())
+    min_lat, max_lat = float(lats.min()), float(lats.max())
+
+    # Normalize known coordinates to [-1, 1]
+    norm_pos = {}
+    for _, r in nodes_df.iterrows():
+        if pd.notna(r["lat"]) and pd.notna(r["lon"]):
+            x = 2 * (float(r["lon"]) - min_lon) / (max_lon - min_lon) - 1
+            y = 2 * (float(r["lat"]) - min_lat) / (max_lat - min_lat) - 1
+            norm_pos[r["hub"]] = np.array([x, y])
+
+    # Initialize missing nodes near their network neighbors
+    for m in G.nodes():
+        if m not in norm_pos:
+            nbrs = [norm_pos[nbr] for nbr in G.neighbors(m) if nbr in norm_pos]
+            norm_pos[m] = np.mean(nbrs, axis=0) if nbrs else np.array([0.0, 0.0])
+
+    # Run spring layout keeping known hubs fixed
+    spring_norm = nx.spring_layout(G, pos=norm_pos, fixed=known_nodes, seed=42)
+
+    coords: Dict[str, Tuple[float, float]] = {}
+    is_approx: Dict[str, bool] = {}
+
+    for _, r in nodes_df.iterrows():
+        h = r["hub"]
+        if pd.notna(r["lat"]) and pd.notna(r["lon"]):
+            coords[h] = (float(r["lon"]), float(r["lat"]))
+            is_approx[h] = False
+        else:
+            x, y = spring_norm[h]
+            lon = min_lon + (x + 1) / 2 * (max_lon - min_lon)
+            lat = min_lat + (y + 1) / 2 * (max_lat - min_lat)
+            coords[h] = (float(lon), float(lat))
+            is_approx[h] = True
+
+    return coords, is_approx

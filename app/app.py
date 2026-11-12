@@ -19,15 +19,15 @@ import plotly.graph_objects as go
 import streamlit as st
 
 # Ensure app directory and repo root are in sys.path to prevent import issues
-_app_dir = Path(__file__).resolve().parent
-if str(_app_dir) not in sys.path:
-    sys.path.insert(0, str(_app_dir))
-if str(_app_dir.parent) not in sys.path:
-    sys.path.insert(0, str(_app_dir.parent))
+_app_dir = str(Path(__file__).resolve().parent)
+if sys.path[0] != _app_dir:
+    sys.path.insert(0, _app_dir)
 
 try:
     import data
-except ImportError:
+    if not hasattr(data, "get_hub_coordinates"):
+        from app import data
+except Exception:
     from app import data
 
 st.set_page_config(
@@ -454,96 +454,186 @@ def page_network_view() -> None:
     st.markdown(
         """
         Geographic and topological view of the **100-hub core logistics network** and **292 directed lanes**.
-        Markers are sized by estimated hub capacity (95th percentile outgoing legs/day).
+        Node sizes reflect estimated hub capacity (95th percentile outgoing legs/day).
         """
     )
 
     nodes_df = data.load_core_nodes()
     edges_df = data.load_core_edges()
-    closures_df = data.load_multiflow_closures()
+    plans_data = data.load_multiflow_plans()
     hub_map = get_hub_name_map(nodes_df)
 
-    # Coordinates lookup
-    coords = {}
-    for _, row in nodes_df.iterrows():
-        if pd.notna(row["lat"]) and pd.notna(row["lon"]):
-            coords[row["hub"]] = (float(row["lat"]), float(row["lon"]))
+    # Hub coordinates (lat/lon with NetworkX spring layout fallback for unlocated hubs)
+    coords, is_approx = data.get_hub_coordinates()
 
-    closed_lanes_set = set(closures_df["lane"].unique())
+    # Controls: Select Closure Scenario and Recovery Plan
+    st.markdown("---")
+    st.subheader("Interactive Scenario & Plan Inspection")
 
-    # Map with Plotly Scattergeo
+    col_ctrl1, col_ctrl2 = st.columns([3, 2])
+
+    closure_options = []
+    for p in plans_data:
+        cid = p["id"]
+        u, v = p["closed_lanes"][0]
+        u_name = hub_map.get(u, u)
+        v_name = hub_map.get(v, v)
+        closure_options.append(f"{cid}: {u_name} → {v_name} ({u} → {v})")
+
+    with col_ctrl1:
+        selected_closure_idx = st.selectbox(
+            "Select Simulated Lane Closure:",
+            range(len(closure_options)),
+            format_func=lambda idx: closure_options[idx],
+        )
+
+    selected_test = plans_data[selected_closure_idx]
+    closed_u, closed_v = selected_test["closed_lanes"][0]
+    closed_u_name = hub_map.get(closed_u, closed_u)
+    closed_v_name = hub_map.get(closed_v, closed_v)
+
+    available_plans = list(selected_test.get("plans", {}).keys())
+
+    with col_ctrl2:
+        selected_plan = st.selectbox(
+            "Select Recovery Plan:",
+            available_plans,
+            index=available_plans.index("LP (all flows)") if "LP (all flows)" in available_plans else 0,
+        )
+
+    # Filter detour edges carrying flow for the closed OD pair (od == closed lane)
+    raw_flows = selected_test.get("plans", {}).get(selected_plan, [])
+    detour_items = [
+        item for item in raw_flows
+        if item.get("od") == [closed_u, closed_v] and item.get("flow", 0) > 0
+    ]
+
+    # Plotly Figure
     fig_map = go.Figure()
 
-    # Add network lanes (edges)
-    edge_lat = []
-    edge_lon = []
-    closed_lat = []
-    closed_lon = []
-
+    # 1. Base Core Network Edges (light grey)
+    edge_lons: List[Any] = []
+    edge_lats: List[Any] = []
     for _, row in edges_df.iterrows():
         u = row["source_center"] if "source_center" in row and pd.notna(row["source_center"]) else row["source"]
         v = row["destination_center"] if "destination_center" in row and pd.notna(row["destination_center"]) else row["destination"]
-        lane_key = f"{u}->{v}"
-
         if u in coords and v in coords:
-            lat1, lon1 = coords[u]
-            lat2, lon2 = coords[v]
-            if lane_key in closed_lanes_set:
-                closed_lat.extend([lat1, lat2, None])
-                closed_lon.extend([lon1, lon2, None])
-            else:
-                edge_lat.extend([lat1, lat2, None])
-                edge_lon.extend([lon1, lon2, None])
+            edge_lons.extend([coords[u][0], coords[v][0], None])
+            edge_lats.extend([coords[u][1], coords[v][1], None])
 
-    # Regular lanes trace
     fig_map.add_trace(
         go.Scattergeo(
             locationmode="country names",
-            lon=edge_lon,
-            lat=edge_lat,
+            lon=edge_lons,
+            lat=edge_lats,
             mode="lines",
-            line=dict(width=1, color="rgba(75, 85, 99, 0.3)"),
-            name="Network Lanes (292)",
+            line=dict(width=1.0, color="rgba(203, 213, 225, 0.45)"),
+            name="Core Network Edges (292)",
             hoverinfo="none",
         )
     )
 
-    # Disrupted lanes trace
-    fig_map.add_trace(
-        go.Scattergeo(
-            locationmode="country names",
-            lon=closed_lon,
-            lat=closed_lat,
-            mode="lines",
-            line=dict(width=3, color="#ef4444"),
-            name="Tested Closure Lanes (10)",
-            hoverinfo="none",
+    # 2. Closed Lane (Red)
+    if closed_u in coords and closed_v in coords:
+        fig_map.add_trace(
+            go.Scattergeo(
+                locationmode="country names",
+                lon=[coords[closed_u][0], coords[closed_v][0]],
+                lat=[coords[closed_u][1], coords[closed_v][1]],
+                mode="lines+markers",
+                line=dict(width=4.5, color="#ef4444"),
+                marker=dict(size=8, color="#ef4444", symbol="x"),
+                name=f"Closed Lane ({closed_u} → {closed_v})",
+                hoverinfo="text",
+                text=(
+                    f"<b>CLOSED LANE</b><br>{closed_u} ({closed_u_name}) → {closed_v} ({closed_v_name})<br>"
+                    f"Status: Blocked corridor"
+                ),
+            )
         )
-    )
 
-    # Nodes trace
-    located_nodes = nodes_df[nodes_df["lat"].notna() & nodes_df["lon"].notna()].copy()
-    node_hover = [
+    # 3. Detour Edges carrying flow for closed OD pair (Blue with width proportional to flow)
+    max_detour_flow = max([item["flow"] for item in detour_items], default=1.0)
+    for idx, item in enumerate(detour_items):
+        u, v = item["edge"]
+        flow_val = item["flow"]
+        if u in coords and v in coords:
+            # Width proportional to flow: scale between 2.5 and 9.0 px
+            line_w = max(2.5, min(9.0, 2.5 + 6.0 * (flow_val / max_detour_flow)))
+            u_name = hub_map.get(u, u)
+            v_name = hub_map.get(v, v)
+            fig_map.add_trace(
+                go.Scattergeo(
+                    locationmode="country names",
+                    lon=[coords[u][0], coords[v][0]],
+                    lat=[coords[u][1], coords[v][1]],
+                    mode="lines",
+                    line=dict(width=line_w, color="#2563eb"),
+                    name="Detour Edges (Closed OD flow)" if idx == 0 else "",
+                    showlegend=(idx == 0),
+                    hoverinfo="text",
+                    text=(
+                        f"<b>DETOUR CORRIDOR</b><br>{u} ({u_name}) → {v} ({v_name})<br>"
+                        f"Detour Flow: {flow_val:.4f} legs/day"
+                    ),
+                )
+            )
+
+    # 4. Hub Nodes (Node size = capacity_est)
+    known_nodes = nodes_df[~nodes_df["hub"].map(is_approx)].copy()
+    approx_nodes = nodes_df[nodes_df["hub"].map(is_approx)].copy()
+
+    # Known coordinates hubs trace
+    known_lons = [coords[h][0] for h in known_nodes["hub"]]
+    known_lats = [coords[h][1] for h in known_nodes["hub"]]
+    known_sizes = [float(cap) * 0.35 + 5 for cap in known_nodes["capacity_est"]]
+    known_hover = [
         f"<b>{row['hub']}</b><br>{row['name']}<br>State: {row['state']}<br>Capacity: {row['capacity_est']} legs/day"
-        for _, row in located_nodes.iterrows()
+        for _, row in known_nodes.iterrows()
     ]
 
     fig_map.add_trace(
         go.Scattergeo(
             locationmode="country names",
-            lon=located_nodes["lon"],
-            lat=located_nodes["lat"],
-            text=node_hover,
+            lon=known_lons,
+            lat=known_lats,
+            text=known_hover,
             hoverinfo="text",
             mode="markers",
-            name="Core Hubs",
+            name="Hubs (Known Coordinates)",
             marker=dict(
-                size=located_nodes["capacity_est"] / 2.5 + 4,
-                color=located_nodes["capacity_est"],
-                colorscale="Blues",
-                showscale=True,
-                colorbar=dict(title="Capacity (legs/day)", x=1.02),
-                line=dict(width=1, color="#1e293b"),
+                size=known_sizes,
+                color="#1e3a8a",
+                line=dict(width=1, color="#0f172a"),
+                symbol="circle",
+            ),
+        )
+    )
+
+    # Approximate position hubs trace (NetworkX spring layout, seed=42)
+    approx_lons = [coords[h][0] for h in approx_nodes["hub"]]
+    approx_lats = [coords[h][1] for h in approx_nodes["hub"]]
+    approx_sizes = [float(cap) * 0.4 + 7 for cap in approx_nodes["capacity_est"]]
+    approx_hover = [
+        f"<b>{row['hub']} (approximate position)</b><br>{row['name']}<br>State: {row['state']}<br>"
+        f"Capacity: {row['capacity_est']} legs/day<br><i>Position estimated via NetworkX spring layout (seed=42)</i>"
+        for _, row in approx_nodes.iterrows()
+    ]
+
+    fig_map.add_trace(
+        go.Scattergeo(
+            locationmode="country names",
+            lon=approx_lons,
+            lat=approx_lats,
+            text=approx_hover,
+            hoverinfo="text",
+            mode="markers",
+            name="Hubs (approximate position, seed=42)",
+            marker=dict(
+                size=approx_sizes,
+                color="#f59e0b",
+                line=dict(width=1.5, color="#b45309"),
+                symbol="diamond",
             ),
         )
     )
@@ -552,7 +642,7 @@ def page_network_view() -> None:
         geo=dict(
             scope="asia",
             center=dict(lat=22.5, lon=80.0),
-            projection_scale=3.8,
+            projection_scale=3.85,
             showland=True,
             landcolor="#f8fafc",
             showcountries=True,
@@ -560,18 +650,66 @@ def page_network_view() -> None:
             showsubunits=True,
             subunitcolor="#e2e8f0",
         ),
-        title="Delhivery Core Freight Network Topology (100 Hubs & Tested Closures)",
-        height=600,
+        title=(
+            f"Core Logistics Network: {closed_u_name} → {closed_v_name} Disruption "
+            f"under '{selected_plan}'"
+        ),
+        height=620,
         margin=dict(l=10, r=10, t=50, b=10),
-        legend=dict(orientation="h", yanchor="bottom", y=1.01, xanchor="left", x=0),
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.01,
+            xanchor="left",
+            x=0,
+            font=dict(size=11),
+        ),
     )
 
     st.plotly_chart(fig_map, use_container_width=True)
 
-    # Top Hubs and Lanes
+    # Detour Edges Clean Table
+    st.markdown("### Detour Edges Carrying Disrupted OD Flow")
+    st.markdown(
+        f"Edges carrying redirected traffic for closed OD pair **{closed_u} → {closed_v}** "
+        f"under policy **`{selected_plan}`**:"
+    )
+
+    if detour_items:
+        detour_table_data = []
+        for item in detour_items:
+            u, v = item["edge"]
+            detour_table_data.append(
+                {
+                    "Edge Source": u,
+                    "Origin Facility": hub_map.get(u, u),
+                    "Edge Destination": v,
+                    "Destination Facility": hub_map.get(v, v),
+                    "Detour Corridor": f"{u} → {v}",
+                    "Flow (legs/day)": round(item["flow"], 4),
+                }
+            )
+        detour_df = pd.DataFrame(detour_table_data)
+        fmt_detour_df = detour_df.copy()
+        fmt_detour_df["Flow (legs/day)"] = fmt_detour_df["Flow (legs/day)"].map(lambda x: f"{x:,.4f}")
+        render_table(fmt_detour_df)
+
+        total_detour_flow = sum(item["flow"] for item in detour_items)
+        st.caption(
+            f"Total active detour flow: **{total_detour_flow:,.4f} legs/day** "
+            f"allocated across **{len(detour_items)}** network edges."
+        )
+    else:
+        st.info(
+            f"ℹ️ Under the **'{selected_plan}'** recovery policy, no alternative edges carry flow "
+            f"for closed OD pair **{closed_u} → {closed_v}**; all disrupted shipments are stranded as unmet demand."
+        )
+
+    # Network Directory & Hub Capacity Summary
+    st.markdown("---")
+    st.subheader("Core Network Topology & Capacity Distribution")
     col_t1, col_t2 = st.columns(2)
     with col_t1:
-        st.subheader("Top Hubs by Capacity")
         top_hubs = nodes_df.sort_values("capacity_est", ascending=False).head(10)
         fig_th = px.bar(
             top_hubs,
@@ -582,12 +720,12 @@ def page_network_view() -> None:
             text="name",
             color="capacity_est",
             color_continuous_scale="Blues",
+            title="Top 10 Hubs by Capacity (95th Percentile Outgoing Legs)",
         )
-        fig_th.update_layout(yaxis=dict(autorange="reversed"), height=360, showlegend=False)
+        fig_th.update_layout(yaxis=dict(autorange="reversed"), height=350, showlegend=False)
         st.plotly_chart(fig_th, use_container_width=True)
 
     with col_t2:
-        st.subheader("Top Lanes by Traffic Volume")
         top_edges = edges_df.sort_values("leg_count", ascending=False).head(10).copy()
         top_edges["lane"] = top_edges["source_center"] + " → " + top_edges["destination_center"]
         fig_te = px.bar(
@@ -598,31 +736,34 @@ def page_network_view() -> None:
             labels={"leg_count": "Leg Count (3 weeks)", "lane": "Corridor"},
             color="leg_count",
             color_continuous_scale="Purples",
+            title="Top 10 Lanes by Baseline Traffic Volume",
         )
-        fig_te.update_layout(yaxis=dict(autorange="reversed"), height=360, showlegend=False)
+        fig_te.update_layout(yaxis=dict(autorange="reversed"), height=350, showlegend=False)
         st.plotly_chart(fig_te, use_container_width=True)
 
-    # Hubs Directory
-    st.markdown("---")
-    st.subheader("Hubs Directory & Metadata")
-    search_query = st.text_input("Filter Hubs by Name, Code, or State:", "")
-    filtered_nodes = nodes_df[
-        nodes_df["hub"].str.contains(search_query, case=False, na=False)
-        | nodes_df["name"].str.contains(search_query, case=False, na=False)
-        | nodes_df["state"].str.contains(search_query, case=False, na=False)
-    ]
-    render_table(
-        filtered_nodes[["hub", "name", "state", "capacity_est", "lat", "lon"]].rename(
-            columns={
-                "hub": "Hub Code",
-                "name": "Facility Name",
-                "state": "State",
-                "capacity_est": "Est. Capacity (legs/day)",
-                "lat": "Latitude",
-                "lon": "Longitude",
-            }
+    # Searchable Hubs Directory
+    with st.expander("📋 Searchable 100-Hub Facility Directory"):
+        search_query = st.text_input("Filter Hubs by Name, Code, or State:", "")
+        filtered_nodes = nodes_df[
+            nodes_df["hub"].str.contains(search_query, case=False, na=False)
+            | nodes_df["name"].str.contains(search_query, case=False, na=False)
+            | nodes_df["state"].str.contains(search_query, case=False, na=False)
+        ].copy()
+        filtered_nodes["Coordinate Status"] = filtered_nodes["hub"].map(
+            lambda h: "Approximate (Spring Layout seed=42)" if is_approx.get(h, False) else "Verified Lat/Lon"
         )
-    )
+        render_table(
+            filtered_nodes[["hub", "name", "state", "capacity_est", "lat", "lon", "Coordinate Status"]].rename(
+                columns={
+                    "hub": "Hub Code",
+                    "name": "Facility Name",
+                    "state": "State",
+                    "capacity_est": "Est. Capacity (legs/day)",
+                    "lat": "Latitude",
+                    "lon": "Longitude",
+                }
+            )
+        )
 
 
 def page_uncertainty() -> None:
