@@ -45,10 +45,10 @@ Running the geocoder again is not required to reproduce the frozen core.
 ## Evaluation split
 
 Split whole trips by trip_creation_time:
-
+Frozen trip-level split assignments: data/processed/split_trip_ids.csv
 - Training: 12–25 September 2018.
 - Calibration: 26–29 September 2018.
-- Testing: 30 September onward.
+- Testing: 29 September 2018, from 20:41 onward.
 
 The later file combines calibration and testing.
 Person B must separate these periods before model evaluation.
