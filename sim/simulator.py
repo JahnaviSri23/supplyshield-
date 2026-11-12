@@ -311,7 +311,7 @@ def simulate(graph, scenario, plan=None):
 
                 sent = 0.0
 
-                if multipliers[node] > 0 and multipliers[destination] > 0:
+                if multipliers[node] > 0:
                     sent = min(
                         amount,
                         capacity_left[node],
