@@ -157,6 +157,20 @@ def simulate(graph, scenario, plan=None):
     failure_days = int(scenario.get("failure_days", 3))
     scale = float(scenario.get("capacity_scale", 1.0))
     failed = dict(scenario.get("failed", {}))
+    travel_time_multipliers = scenario.get("travel_time_multipliers", None)
+    if travel_time_multipliers is not None:
+        if not isinstance(travel_time_multipliers, dict):
+            raise ValueError("travel_time_multipliers must be a dictionary.")
+
+        for edge, multiplier in travel_time_multipliers.items():
+            if edge not in graph.edges:
+                raise ValueError(f"Unknown edge in travel_time_multipliers: {edge}")
+
+            if not isinstance(multiplier, (int, float)):
+                raise ValueError("Travel-time multipliers must be numeric.")
+
+            if not math.isfinite(multiplier) or multiplier <= 0:
+                raise ValueError("Travel-time multipliers must be positive and finite.")
     # Directed lanes closed during the same failure window as failed hubs.
     raw_closed_lanes = scenario.get("closed_lanes", [])
     if not isinstance(raw_closed_lanes, (list, tuple, set)):
@@ -219,12 +233,26 @@ def simulate(graph, scenario, plan=None):
     ):
         raise ValueError("Cost rates must be finite and nonnegative.")
 
+    def travel_days(edge):
+        # Preserve existing one-day behavior when risk mode is disabled.
+        if travel_time_multipliers is None:
+            return 1
+
+        base_hours = float(graph.edges[edge]["cost"])
+        multiplier = float(travel_time_multipliers.get(edge, 1.0))
+        adjusted_hours = base_hours * multiplier
+
+        if not math.isfinite(adjusted_hours):
+            raise ValueError("Adjusted travel time must be finite.")
+
+        return max(1, math.ceil(adjusted_hours / 24.0 - 1e-12))
+
     routes = _routes(graph, demands, plan)
 
     # Jobs are [path, current_path_position, amount].
     queues = {node: [] for node in graph}
     pending = []       # Outside-origin backlog: no warehouse space yet.
-    transit = []       # Arrives at the beginning of the following day.
+    transit = []       # In-flight shipments with scheduled arrival days.
 
     generated = delivered = shipping = waiting = 0.0
     unassigned = 0.0
@@ -250,14 +278,21 @@ def simulate(graph, scenario, plan=None):
             for u, v, attributes in graph.edges(data=True)
         }
 
-        # Previously dispatched traffic already reserved its storage.
-        for path, position, amount in transit:
-            if position == len(path) - 1:
-                delivered += amount
-            else:
-                queues[path[position]].append([path, position, amount])
-        transit = []
+        # Process only shipments scheduled to arrive today.
+        remaining_transit = []
 
+        for arrival_day, path, position, amount in transit:
+            if arrival_day <= day:
+                if position == len(path) - 1:
+                    delivered += amount
+                else:
+                    queues[path[position]].append([path, position, amount])
+            else:
+                remaining_transit.append(
+                    [arrival_day, path, position, amount]
+                )
+
+        transit = remaining_transit
         if day < demand_days:
             for path, amount in routes:
                 generated += amount
@@ -265,7 +300,12 @@ def simulate(graph, scenario, plan=None):
                     unassigned += amount
                 elif amount > EPS:
                     pending.append([path, 0, amount])
+                        # Count space reserved by shipments already in transit.
+        incoming_reserved = defaultdict(float)
 
+        for arrival_day, path, position, amount in transit:
+            if position < len(path) - 1:
+                incoming_reserved[path[position]] += amount
         occupancy = {
             node: sum(job[2] for job in queues[node])
             for node in graph
@@ -276,7 +316,10 @@ def simulate(graph, scenario, plan=None):
 
         for path, position, amount in pending:
             origin = path[0]
-            room = max(0.0, buffers[origin] - occupancy[origin])
+            room = max(
+                0.0,
+                buffers[origin] - occupancy[origin] - incoming_reserved[origin]
+            )
             admitted = min(amount, room) if multipliers[origin] > 0 else 0.0
 
             if admitted > EPS:
@@ -290,8 +333,18 @@ def simulate(graph, scenario, plan=None):
 
         # Freeze receiving space for this step. This prevents node-order
         # effects and reserves space for next-day transit arrivals.
+        # Reserve warehouse space for shipments still in transit.
+        in_flight_reserved = defaultdict(float)
+
+        for arrival_day, path, position, amount in transit:
+            if position < len(path) - 1:
+                in_flight_reserved[path[position]] += amount
+
         receiving_room = {
-            node: max(0.0, buffers[node] - occupancy[node])
+            node: max(
+                0.0,
+                buffers[node] - occupancy[node] - in_flight_reserved[node]
+            )
             for node in graph
         }
 
@@ -323,7 +376,8 @@ def simulate(graph, scenario, plan=None):
                     capacity_left[node] -= sent
                     edge_left[edge] -= sent
                     shipping += sent * graph.edges[edge]["cost"]
-                    transit.append([path, position + 1, sent])
+                    arrival_day = day + travel_days(edge)
+                    transit.append([arrival_day, path, position + 1, sent])
 
                     if not final_destination:
                         receiving_room[destination] -= sent
@@ -339,7 +393,7 @@ def simulate(graph, scenario, plan=None):
             job[2] for jobs in queues.values() for job in jobs
         )
         outside = sum(job[2] for job in pending) + unassigned
-        moving = sum(job[2] for job in transit)
+        moving = sum(job[3] for job in transit)
 
         waiting += waiting_rate * (queued + outside)
 
@@ -350,9 +404,9 @@ def simulate(graph, scenario, plan=None):
         if balance_error > 1e-6 * max(1.0, generated):
             raise AssertionError("Flow conservation failed.")
 
-        # Check warehouse occupancy including reserved incoming traffic.
         reserved = defaultdict(float)
-        for path, position, amount in transit:
+
+        for arrival_day, path, position, amount in transit:
             if position < len(path) - 1:
                 reserved[path[position]] += amount
 
@@ -373,7 +427,6 @@ def simulate(graph, scenario, plan=None):
         if day >= demand_days - 1 and generated - delivered <= EPS:
             drain_day = day
             break
-
     unmet = max(0.0, generated - delivered)
 
     # Drain time after demand stops and the specified failure has ended.
