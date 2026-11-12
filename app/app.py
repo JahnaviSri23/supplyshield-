@@ -10,13 +10,25 @@ Pages:
 5. Method and limitations
 """
 
+import sys
+from pathlib import Path
 from typing import Dict, Any, List
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-import data
+# Ensure app directory and repo root are in sys.path to prevent import issues
+_app_dir = Path(__file__).resolve().parent
+if str(_app_dir) not in sys.path:
+    sys.path.insert(0, str(_app_dir))
+if str(_app_dir.parent) not in sys.path:
+    sys.path.insert(0, str(_app_dir.parent))
+
+try:
+    import data
+except ImportError:
+    from app import data
 
 st.set_page_config(
     page_title="SupplyShield — Disruption Recovery",
@@ -282,137 +294,158 @@ def page_closure_explorer() -> None:
     )
 
     closures_df = data.load_multiflow_closures()
-    plans_data = data.load_multiflow_plans()
     nodes_df = data.load_core_nodes()
+    plans_data = data.load_multiflow_plans()
     hub_map = get_hub_name_map(nodes_df)
 
-    # Map scenario ID to lane string and vice versa
-    id_to_lane = {p["id"]: f"{p['closed_lanes'][0][0]}->{p['closed_lanes'][0][1]}" for p in plans_data}
-    lane_to_id = {v: k for k, v in id_to_lane.items()}
-
+    # A selectbox lists the closed lanes from experiments/c_multiflow_closures.csv,
+    # labelled with hub names from data/processed/core_nodes.csv where available.
     unique_lanes = closures_df["lane"].unique().tolist()
-
-    # Formatted options for selector
-    closure_options = []
+    closure_labels = []
     for lane in unique_lanes:
-        cid = lane_to_id.get(lane, "Unknown")
         src, dst = lane.split("->")
         src_name = hub_map.get(src, src)
         dst_name = hub_map.get(dst, dst)
-        legs = closures_df[closures_df["lane"] == lane]["closed_lane_legs_per_day"].iloc[0]
-        closure_options.append(f"{cid}: {src} → {dst} | {src_name} → {dst_name} ({legs:.2f} legs/day)")
+        closure_labels.append(f"{src_name} → {dst_name} ({src} → {dst})")
 
-    selected_option = st.selectbox("Select Disrupted Lane Scenario:", closure_options)
-    selected_idx = closure_options.index(selected_option)
+    selected_idx = st.selectbox(
+        "Select Closed Lane from Benchmark Scenarios:",
+        range(len(unique_lanes)),
+        format_func=lambda idx: closure_labels[idx],
+    )
     selected_lane = unique_lanes[selected_idx]
-    selected_cid = lane_to_id[selected_lane]
-    scenario_plan_obj = next((p for p in plans_data if p["id"] == selected_cid), None)
-
-    # Lane Details
     src_hub, dst_hub = selected_lane.split("->")
+    src_name = hub_map.get(src_hub, src_hub)
+    dst_name = hub_map.get(dst_hub, dst_hub)
+
     lane_rows = closures_df[closures_df["lane"] == selected_lane].copy()
+
+    # Enforce standard plan order
+    plan_order = ["do nothing", "greedy", "preserve (affected flows only)", "LP (all flows)"]
+    lane_rows["order"] = lane_rows["plan"].apply(lambda p: plan_order.index(p) if p in plan_order else 99)
+    lane_rows = lane_rows.sort_values("order").drop(columns=["order"])
+
     closed_legs = lane_rows["closed_lane_legs_per_day"].iloc[0]
 
     st.markdown("---")
-    st.subheader(f"Scenario {selected_cid}: {src_hub} → {dst_hub}")
+    st.subheader(f"Closed Lane: {src_name} → {dst_name}")
+    st.caption(f"Corridor Hubs: `{src_hub}` → `{dst_hub}`")
 
-    col_meta1, col_meta2, col_meta3, col_meta4 = st.columns(4)
+    # Compute Badge from Data: "LP total <= greedy total: PASS/FAIL"
+    lp_row = lane_rows[lane_rows["plan"] == "LP (all flows)"]
+    greedy_row = lane_rows[lane_rows["plan"] == "greedy"]
+    lp_total = lp_row["total_cost"].iloc[0] if not lp_row.empty else float("inf")
+    greedy_total = greedy_row["total_cost"].iloc[0] if not greedy_row.empty else float("-inf")
+    is_pass = lp_total <= greedy_total
+    status_text = "PASS" if is_pass else "FAIL"
+
+    badge_bg = "#dcfce7" if is_pass else "#fee2e2"
+    badge_color = "#15803d" if is_pass else "#b91c1c"
+    badge_border = "#86efac" if is_pass else "#fca5a5"
+
+    col_meta1, col_meta2 = st.columns([1, 2])
     with col_meta1:
-        st.metric("Origin Hub", src_hub, hub_map.get(src_hub, "Unknown"))
+        st.metric(
+            label="Closed Lane Legs per Day",
+            value=f"{closed_legs:.2f} legs/day",
+        )
     with col_meta2:
-        st.metric("Destination Hub", dst_hub, hub_map.get(dst_hub, "Unknown"))
-    with col_meta3:
-        st.metric("Baseline Daily Traffic", f"{closed_legs:.2f} legs/day")
-    with col_meta4:
-        st.metric("Penalty Rate", "96.0 leg-hours / leg")
+        st.markdown(
+            f"""
+            <div style="margin-top: 10px;">
+                <span style="display: inline-block; padding: 8px 18px; border-radius: 24px; font-weight: 700; font-size: 1.05rem; background-color: {badge_bg}; color: {badge_color}; border: 1px solid {badge_border};">
+                    LP total &le; greedy total: {status_text}
+                </span>
+                <span style="margin-left: 14px; color: #64748b; font-size: 0.95rem;">
+                    (LP: {lp_total:,.1f} leg-hrs &le; Greedy: {greedy_total:,.1f} leg-hrs)
+                </span>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
-    st.markdown("### Plan Comparison for this Disruption")
-    display_lane_df = lane_rows[
-        ["plan", "total_cost", "extra_cost", "extra_vs_best_normal", "unmet", "lp_seconds"]
-    ].copy()
-    display_lane_df = display_lane_df.rename(
+    # Table with one row per plan (total_cost, extra_vs_best_normal, unmet legs)
+    st.markdown("### Plan Comparison Table")
+    plan_table = lane_rows[["plan", "total_cost", "extra_vs_best_normal", "unmet"]].copy()
+    plan_table = plan_table.rename(
         columns={
             "plan": "Plan",
             "total_cost": "Total Cost (leg-hrs)",
-            "extra_cost": "Extra Cost (leg-hrs)",
             "extra_vs_best_normal": "Extra vs Best Normal (leg-hrs)",
-            "unmet": "Unmet Demand (legs/day)",
-            "lp_seconds": "Solver Time (s)",
+            "unmet": "Unmet Legs (legs/day)",
         }
     )
-    render_table(display_lane_df)
 
-    # Comparison Charts
-    col_c1, col_c2 = st.columns(2)
-    with col_c1:
-        fig_c_cost = px.bar(
-            lane_rows,
-            x="plan",
-            y="total_cost",
-            color="plan",
-            title=f"Total Cost by Plan ({selected_cid})",
-            labels={"plan": "Recovery Plan", "total_cost": "Total Cost (leg-hrs)"},
-            text=lane_rows["total_cost"].map(lambda x: f"{x:,.1f}"),
-        )
-        fig_c_cost.update_traces(textposition="auto")
-        fig_c_cost.update_layout(height=340, showlegend=False)
-        st.plotly_chart(fig_c_cost, use_container_width=True)
+    fmt_plan_table = plan_table.copy()
+    fmt_plan_table["Total Cost (leg-hrs)"] = fmt_plan_table["Total Cost (leg-hrs)"].map(lambda x: f"{x:,.2f}")
+    fmt_plan_table["Extra vs Best Normal (leg-hrs)"] = fmt_plan_table["Extra vs Best Normal (leg-hrs)"].map(
+        lambda x: f"{x:,.2f}"
+    )
+    fmt_plan_table["Unmet Legs (legs/day)"] = fmt_plan_table["Unmet Legs (legs/day)"].map(lambda x: f"{x:,.3f}")
 
-    with col_c2:
-        fig_c_unmet = px.bar(
-            lane_rows,
-            x="plan",
-            y="unmet",
-            color="plan",
-            title=f"Unmet Demand by Plan ({selected_cid})",
-            labels={"plan": "Recovery Plan", "unmet": "Unmet Demand (legs/day)"},
-            text=lane_rows["unmet"].map(lambda x: f"{x:,.2f}"),
-        )
-        fig_c_unmet.update_traces(textposition="auto")
-        fig_c_unmet.update_layout(height=340, showlegend=False)
-        st.plotly_chart(fig_c_unmet, use_container_width=True)
+    render_table(fmt_plan_table)
 
-    # Detailed Flow Rerouting
+    # Plotly bar chart of extra_vs_best_normal per plan
+    st.markdown("### Extra Cost vs Best Normal per Plan")
+    fig_bar = px.bar(
+        lane_rows,
+        x="plan",
+        y="extra_vs_best_normal",
+        color="plan",
+        color_discrete_sequence=["#ef4444", "#3b82f6", "#10b981", "#6366f1"],
+        title=f"Extra Cost vs Best Normal by Plan — {src_name} → {dst_name}",
+        labels={"plan": "Recovery Plan", "extra_vs_best_normal": "Extra Cost vs Best Normal (leg-hours)"},
+        text=lane_rows["extra_vs_best_normal"].map(lambda x: f"{x:,.1f}"),
+    )
+    fig_bar.update_traces(textposition="auto")
+    fig_bar.update_layout(
+        height=380,
+        showlegend=False,
+        margin=dict(l=40, r=20, t=50, b=40),
+        yaxis_title="Extra Cost (leg-hours)",
+    )
+    st.plotly_chart(fig_bar, use_container_width=True)
+
+    # One-line definition of each plan
+    st.markdown("### Recovery Plan Definitions")
+    st.markdown(
+        """
+        - **`do nothing`**: Disrupted flow cannot traverse the closed lane and is stranded as unmet demand, incurring a 96 leg-hour penalty per undelivered leg.
+        - **`greedy`**: Reroutes disrupted shipments locally along alternative shortest paths with available capacity, without adjusting any unaffected flows.
+        - **`preserve (affected flows only)`**: Locks all unaffected shipments into their baseline routes and re-optimizes paths strictly for the displaced shipments.
+        - **`LP (all flows)`**: Global multi-commodity flow linear program that re-optimizes all network flows jointly to unlock capacity and minimize total system cost.
+        """
+    )
+
+    # Flow routing inspector (optional deep-dive)
+    scenario_plan_obj = next(
+        (p for p in plans_data if p["closed_lanes"][0][0] == src_hub and p["closed_lanes"][0][1] == dst_hub),
+        None,
+    )
     if scenario_plan_obj:
-        st.markdown("---")
-        st.subheader("Flow Allocation & Route Shift Details")
-        st.markdown(
-            f"Precomputed routing plan details from `experiments/c_multiflow_plans.json` for **{selected_cid}**."
-        )
-
-        plans_dict = scenario_plan_obj.get("plans", {})
-        plan_names = list(plans_dict.keys())
-        chosen_plan = st.radio(
-            "Select Recovery Plan to Inspect Flow Allocations:",
-            plan_names,
-            horizontal=True,
-        )
-
-        flow_records = plans_dict.get(chosen_plan, [])
-        flow_df = pd.DataFrame(
-            [
-                {
-                    "Origin Hub": item["od"][0],
-                    "Origin Name": hub_map.get(item["od"][0], item["od"][0]),
-                    "Destination Hub": item["od"][1],
-                    "Destination Name": hub_map.get(item["od"][1], item["od"][1]),
-                    "Traversed Edge": f"{item['edge'][0]} → {item['edge'][1]}",
-                    "Edge Source": item["edge"][0],
-                    "Edge Dest": item["edge"][1],
-                    "Flow (legs/day)": round(item["flow"], 4),
-                }
-                for item in flow_records
-            ]
-        )
-
-        st.markdown(
-            f"**{chosen_plan}** utilizes **{len(flow_df)}** edge flow allocations "
-            f"across **{flow_df[['Edge Source', 'Edge Dest']].drop_duplicates().shape[0]}** distinct network links."
-        )
-
-        render_table(
-            flow_df[["Origin Hub", "Origin Name", "Destination Hub", "Destination Name", "Traversed Edge", "Flow (legs/day)"]]
-        )
+        with st.expander("🔍 Inspect Underlying Commodity Flow Allocations"):
+            plans_dict = scenario_plan_obj.get("plans", {})
+            chosen_plan = st.radio(
+                "Select Plan to Inspect Routed Edge Flows:",
+                list(plans_dict.keys()),
+                horizontal=True,
+            )
+            flow_records = plans_dict.get(chosen_plan, [])
+            flow_df = pd.DataFrame(
+                [
+                    {
+                        "Origin Hub": item["od"][0],
+                        "Origin Facility": hub_map.get(item["od"][0], item["od"][0]),
+                        "Destination Hub": item["od"][1],
+                        "Destination Facility": hub_map.get(item["od"][1], item["od"][1]),
+                        "Traversed Edge": f"{item['edge'][0]} → {item['edge'][1]}",
+                        "Allocated Flow (legs/day)": round(item["flow"], 4),
+                    }
+                    for item in flow_records
+                ]
+            )
+            st.caption(f"Showing **{len(flow_df)}** active edge allocations for plan `{chosen_plan}`.")
+            render_table(flow_df)
 
 
 def page_network_view() -> None:
