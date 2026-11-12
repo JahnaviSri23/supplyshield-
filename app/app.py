@@ -994,90 +994,167 @@ def page_method_and_limitations() -> None:
     st.title("Methodology & Limitations 📖")
     st.markdown(
         """
-        This page details the mathematical formulation, experimental design, operational assumptions, 
-        and research boundaries of the SupplyShield project.
+        Comprehensive documentation of the mathematical modeling, experimental parameters, cost decomposition, 
+        hub failure scope justification, and structural limitations of the SupplyShield research project, 
+        drawn directly from `docs/c_notes.md`.
         """
     )
 
     st.markdown("---")
 
-    col_m1, col_m2 = st.columns(2)
-    with col_m1:
-        st.subheader("1. Core Network Formulation")
-        st.markdown(
-            """
-            - **Network Core Extraction**: Extracted from 3 weeks of continuous telemetry from Delhivery (2018). 
-              The core consists of **100 high-volume consolidation hubs** and **292 directed freight lanes**.
-            - **Node Capacity Constraint**: Estimated as the **95th percentile of daily outgoing legs** observed 
-              during baseline operation. Hubs cannot dispatch more flow than their demonstrated sorting capacity.
-            - **Directed Corridors**: Each lane is characterized by median travel transit time and distance.
-            """
-        )
-
-        st.subheader("2. Multi-Commodity Flow Optimization")
-        st.markdown(
-            """
-            - **Objective Function**:
-              $$\\min \\sum_{(u,v) \\in E} c_{uv} \\cdot f_{uv} + p \\sum_{(s,t) \\in OD} u_{st}$$
-              Where $c_{uv}$ is transit time (hours), $f_{uv}$ is aggregated flow (legs/day), $u_{st}$ is undelivered flow, 
-              and $p = 96\\text{ leg-hours}$ is the unmet delivery penalty.
-            - **Conservation Constraints**: Enforces flow balance at every node for each origin-destination pair.
-            - **Capacity Constraints**: Outgoing leg constraints per hub $v$: $\\sum_{w} f_{vw} \\le C_v$.
-            """
-        )
-
-    with col_m2:
-        st.subheader("3. Recovery Policies Benchmark")
-        st.markdown(
-            """
-            1. **`do nothing`**: Disrupted flow on the severed link cannot proceed and is marked as unmet demand. 
-               All unaffected flows continue on their baseline routes.
-            2. **`greedy`**: Displaced shipments are greedily routed along the shortest available paths with remaining capacity, 
-               without re-evaluating unaffected traffic.
-            3. **`preserve (affected flows only)`**: Enforces strict operational continuity by freezing unaffected shipments, 
-               solving an LP re-optimization strictly for the displaced commodity flows.
-            4. **`LP (all flows)`**: Complete joint re-optimization. Enables unaffected flows to shift to alternate routes, 
-               freeing critical capacity for the disrupted flows.
-            """
-        )
-
-        st.subheader("4. Transit Time Uncertainty Framework")
-        st.markdown(
-            """
-            - **Conformal Prediction**: Produces distribution-free, finite-sample prediction intervals for lane transit times.
-            - **CVaR Optimization**: Minimizes Conditional Value-at-Risk at $\\alpha = 0.10$ to hedge against catastrophic tail delays.
-            """
-        )
-
-    st.markdown("---")
-    st.subheader("Modeling Units & Global Parameters")
-    param_data = [
-        {"Parameter": "Network Scope", "Value": "100 hubs, 292 directed lanes", "Source": "core_nodes.csv & core_edges.csv"},
-        {"Parameter": "Flow Unit", "Value": "legs per day", "Source": "Steady-state daily volume"},
-        {"Parameter": "Cost Unit", "Value": "leg-hours", "Source": "Transit time × flow"},
-        {"Parameter": "Time Horizon", "Value": "One steady-state day", "Source": "Static 24-hour dispatch"},
-        {"Parameter": "Penalty for Unmet Demand", "Value": "96 leg-hours / undelivered leg", "Source": "4 days equivalent shipping penalty"},
-        {"Parameter": "Hub Capacity Threshold", "Value": "95th percentile outgoing legs", "Source": "Baseline empirical traffic"},
-        {"Parameter": "Number of Closures Evaluated", "Value": "10 high-impact lanes", "Source": "c_multiflow_closures.csv"},
-    ]
-    render_table(pd.DataFrame(param_data))
-
-    st.markdown("---")
-    st.subheader("Assumptions & Research Limitations")
+    # 1. Model Assumptions & Units
+    st.subheader("1. Core Network Assumptions & Units")
     st.markdown(
         """
-        > [!IMPORTANT]
-        > **Scope of Applicability**:
-        > 1. **Core Network Only**: Results reflect the 100-hub inter-facility backbone. Regional feeder branches, 
-        >    local delivery centers, and last-mile legs are excluded from this core model.
-        > 2. **Steady-State Approximation**: Optimization assumes daily aggregated flows in steady-state equilibrium. 
-        >    Dynamic intra-day dispatch schedules, driver shift limits, and multi-day compounding backlogs are omitted.
-        > 3. **Single Complete Corridor Failures**: Tested disruptions model total lane cutoffs. Partial capacity degradation 
-        >    and correlated multi-corridor weather catastrophes are subjects for future modeling.
-        > 4. **Read-Only Architecture**: All recovery plans and optimization matrices were computed offline to ensure 
-        >    instantaneous interactive demonstration without dynamic solver dependencies.
+        - **Core Network**: 100 logistics hubs and 292 directed lanes extracted from the Delhivery India dataset 
+          (3 weeks of 2018 operations; 14 training days used for baseline estimation).
+        - **Flow & Demand Units**: Steady-state **legs per day** (`trips / 14` from `data/processed/core_edges.csv`).
+        - **Time & Cost Units**: Transit times are measured in **hours**; objective and routing costs are measured in 
+          **leg-hours per day** ($\\sum_{e} \\text{base\\_hours}_e \\cdot \\text{mult}_e \\cdot f_e$).
+        - **Time Horizon**: One steady-state day (static single-period network flow).
+        - **Node Capacity Constraint**: Outgoing capacity per hub is set to the **95th percentile of historical outgoing legs per day** 
+          (`capacity_est` in `data/processed/core_nodes.csv`).
+        - **Undelivered-Leg Penalty**: **96 leg-hours per undelivered leg** (`PENALTY_HOURS = 96.0`). 
+          *(Note: an earlier sensitivity run at penalty 48 and 24 produced the exact same plan ranking).*
+        - **Disruption Scope**: Single-lane closures evaluated one lane at a time (`L01`–`L10`).
+        - **Lane Risk Independence**: In stochastic evaluation, lane travel-time multipliers are sampled independently per lane.
         """
     )
+
+    # 2. The Four Recovery Plans
+    st.markdown("---")
+    st.subheader("2. Formal Recovery Plan Definitions")
+    st.markdown(
+        """
+        1. **`do nothing`**: Keeps all normal-day baseline flows fixed; any flow previously routed over the closed lane $(u^*, v^*)$ 
+           becomes unmet demand and incurs the **96 leg-hours/leg** penalty.
+        2. **`greedy`**: Reroutes only the affected flows from the closed lane sequentially onto shortest available residual-capacity 
+           detour paths without re-optimizing unaffected flows.
+        3. **`preserve (affected flows only)`**: Keeps all unaffected OD flows locked at their normal-day baseline routing and solves an LP 
+           to optimally reroute only the OD pairs affected by the closed lane within remaining hub capacities.
+        4. **`LP (all flows)`**: Solves a global multi-OD linear program across all 292 directed lanes simultaneously to minimize 
+           total shipping leg-hours plus unmet-demand penalties.
+        """
+    )
+
+    # 3. Starting-Point Decomposition
+    st.markdown("---")
+    st.subheader("3. Cost Decomposition: Global Optimization vs. Closure Response")
+    st.markdown(
+        """
+        Across the 10 tested single-lane closures (`experiments/c_multiflow_closures.csv`):
+        - **Normal-Day Baseline Cost**: **2,045.3 leg-hours/day** (minimum-cost LP baseline).
+        - **Mean Extra Cost over Own Baseline (`extra_cost`)**:
+          - `LP (all flows)`: **25.2 leg-hours/day**
+          - `greedy`: **28.3 leg-hours/day**
+          - `do nothing`: **515.9 leg-hours/day**
+        - **Fair Comparison Against Best Normal Baseline (`extra_vs_best_normal`)**:
+          - `LP (all flows)`: **25.2 leg-hours/day**
+          - `greedy`: **51.6 leg-hours/day**
+        """
+    )
+
+    st.markdown(
+        """
+        $$\\text{Total Gap } (26.4) = \\underbrace{\\text{Starting-Point Gap } (23.3)}_{\\text{baseline routing inefficiency unrelated to closures}} + \\underbrace{\\text{Closure Response } (3.1)}_{\\text{true rerouting advantage under closure}}$$
+        
+        - **Starting-Point Gap (23.3 leg-hours/day)**: Out of the 26.4 leg-hour difference between greedy and global LP, 
+          **23.3 leg-hours/day** stem from historical baseline flow assignments already being slightly suboptimal relative to 
+          a global LP before any lane closes.
+        - **Closure Response (3.1 leg-hours/day)**: Only **3.1 leg-hours/day** represent the genuine incremental benefit of 
+          global LP optimization over greedy detouring during a single-lane closure.
+        - **High-Impact Bottleneck Exceptions**: On major bottleneck corridors (such as `IND560099AAB -> IND560300AAA`), 
+          re-optimizing background flows provides major savings, outperforming greedy by **66.5 leg-hours** during disruption.
+        """
+    )
+
+    # 4. Hub Failure vs. Lane Closure Justification
+    st.markdown("---")
+    st.subheader("4. Why Full Hub Failures Are Out of Scope")
+    st.markdown(
+        """
+        - Out of **9,969** total training trips in the dataset, **4,436** have both origin and destination inside the 100-hub core.
+        - Within the core, **237 of 297 OD pairs (80%)** are served by a direct single-leg route (mean of 1.13 legs per trip).
+        - Because the optimizer models demand as aggregated steady-state lane flows (`legs/day`) rather than end-to-end multi-leg itineraries, 
+          shutting down an entire intermediate hub cannot accurately propagate multi-leg trip cancellations upstream or downstream 
+          without switching to a full trip-based formulation. Single-lane closures isolate capacity and detour trade-offs cleanly within the lane-flow model.
+        """
+    )
+
+    hub_traffic_table = pd.DataFrame(
+        [
+            {"Hub Code": "IND000000ACB", "Facility Name": "Gurgaon Bilaspur HB", "% Ends Here (Unavoidable Loss)": "23.6%", "% Passes Through (Reroutable)": "1.6%"},
+            {"Hub Code": "IND562132AAA", "Facility Name": "Bangalore Nelamangala H", "% Ends Here (Unavoidable Loss)": "18.3%", "% Passes Through (Reroutable)": "0.6%"},
+            {"Hub Code": "IND421302AAG", "Facility Name": "Bhiwandi Mankoli HB", "% Ends Here (Unavoidable Loss)": "15.0%", "% Passes Through (Reroutable)": "0.1%"},
+            {"Hub Code": "IND560099AAB", "Facility Name": "Bangalore Bommasandra", "% Ends Here (Unavoidable Loss)": "11.0%", "% Passes Through (Reroutable)": "0.5%"},
+            {"Hub Code": "IND411033AAA", "Facility Name": "Pune Dighi", "% Ends Here (Unavoidable Loss)": "9.5%", "% Passes Through (Reroutable)": "0.6%"},
+            {"Hub Code": "IND560300AAA", "Facility Name": "Bangalore Attibele H", "% Ends Here (Unavoidable Loss)": "8.4%", "% Passes Through (Reroutable)": "0.0%"},
+            {"Hub Code": "IND400072AAB", "Facility Name": "Mumbai Sakinaka", "% Ends Here (Unavoidable Loss)": "6.6%", "% Passes Through (Reroutable)": "0.0%"},
+            {"Hub Code": "IND160002AAC", "Facility Name": "Chandigarh Mehmudpur", "% Ends Here (Unavoidable Loss)": "5.5%", "% Passes Through (Reroutable)": "0.0%"},
+            {"Hub Code": "IND600056AAB", "Facility Name": "Chennai Poonamallee", "% Ends Here (Unavoidable Loss)": "5.8%", "% Passes Through (Reroutable)": "0.0%"},
+            {"Hub Code": "IND000000ACT", "Facility Name": "Delhi Okhla", "% Ends Here (Unavoidable Loss)": "2.5%", "% Passes Through (Reroutable)": "0.0%"},
+        ]
+    )
+    render_table(hub_traffic_table)
+    st.caption(
+        "Traffic with `% Ends Here` represents unavoidable volume loss during hub failure because the facility is the shipment's origin or destination. "
+        "Because `% Passes Through` is near zero across top hubs, hub failure offers minimal recoverable rerouting potential."
+    )
+
+    # 5. Structural Limitations
+    st.markdown("---")
+    st.subheader("5. Model Limitations & Assumptions")
+    st.markdown(
+        """
+        1. **Static Steady-State Horizon**: Models a single representative 24-hour day without multi-day queue spillover, rollover freight, or compounding backlog across consecutive days.
+        2. **Independent Lane Multipliers**: Stochastic scenarios sample lane travel-time multipliers independently per lane, ignoring spatial weather or regional corridor correlation.
+        3. **Deterministic Outgoing Hub Capacities**: Uses a fixed 95th-percentile outgoing leg cap per hub and does not model receiving-dock bottlenecks, sorting equipment breakdowns, or dynamic shift staffing.
+        4. **Core Subgraph Boundary**: Results apply strictly to the 100-hub, 292-lane core network; external regional feeder branches and last-mile delivery legs outside the core are excluded.
+        5. **Read-Only Architecture**: All recovery plans and optimization matrices were precomputed offline; the dashboard operates exclusively in read-only mode without executing solvers in real time.
+        """
+    )
+
+    # 6. Viva / Defense Q&A
+    st.markdown("---")
+    st.subheader("6. Defense & Viva Conceptual Q&A")
+
+    with st.expander("Q1: What is a flow, a capacity, and a penalty in your real-graph LP?"):
+        st.markdown(
+            """
+            - **Flow**: Daily truck-legs allocated along a directed lane $(u, v)$ for a specific demand pair.
+            - **Capacity**: Maximum estimated leg capacity per day for lane $(u, v)$ / outgoing hub, derived from historical baseline volume (`capacity_est`).
+            - **Penalty**: Cost incurred per unit of unmet demand (**96 leg-hours per undelivered leg**), ensuring the LP prefers rerouting over dropping traffic unless rerouting cost exceeds 96 hours.
+            """
+        )
+
+    with st.expander("Q2: What does `preserve` (affected flows only) do, and why can the LP never be worse than it?"):
+        st.markdown(
+            """
+            - **Preserve Plan**: Freezes all unaffected baseline flows from the no-closure LP state and only reroutes the flows directly impacted by a lane closure within remaining capacity.
+            - **LP Dominance**: The LP performs a global joint re-optimization over all flows simultaneously. Because `preserve` is a restricted subset of the LP's feasible decision space, the LP cost is guaranteed to be $\\le$ the `preserve` plan cost ($\\text{LP} \\le \\text{preserve}$).
+            """
+        )
+
+    with st.expander("Q3: Why was the LP's advantage over `greedy` mostly a starting-point gap?"):
+        st.markdown(
+            """
+            - Out of the 26.4 leg-hours/day total advantage (`51.6` vs `25.2`), **23.3 leg-hours** already exist on a normal day because historical baseline flows aren't globally LP-optimal; only **3.1 leg-hours/day** represent the genuine incremental benefit of global LP optimization over greedy detouring during a single-lane closure.
+            """
+        )
+
+    with st.expander("Q4: Why do hub failures need trip-based demand instead of lane-flow demand?"):
+        st.markdown(
+            """
+            - Hub failures require complete multi-leg trip itineraries because a hub failure cancels all originating and terminating shipments while allowing intermediate passing-through trips to detour. Without trip-level origin-destination mapping, passing traffic cannot be separated from endpoint traffic.
+            """
+        )
+
+    with st.expander("Q5: What is unrealistic about the optimization model?"):
+        st.markdown(
+            """
+            - It assumes a single steady-state day with no multi-day queue carryover, treats lane congestion multipliers as statistically independent rather than spatially correlated, and uses a deterministic 95th-percentile hub capacity cap.
+            """
+        )
 
 
 def main() -> None:
