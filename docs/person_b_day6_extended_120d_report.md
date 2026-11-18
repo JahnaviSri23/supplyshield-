@@ -2,7 +2,7 @@
 
 ## Simulator provenance and configuration
 
-The verified run imported simulator commit `893a82a7fa731b95d97de8486cfa8ad59a848f38`, with the byte hash recorded in the v2 and h120 manifests as `3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204`. The wrapper evidence asserts that the import path is inside the isolated root and hashes the imported bytes before running. The 40-day reproduction was byte-identical to the v2 summary; the h120 manifest records 40 calls at horizon 120. The current helper `models/day6_extended_runner.py` has raw SHA-256 `70782429bc288c758fbb4fc28abd76ec08c8d66de6b8bb2a924653d90d8c4153` and LF-normalized SHA-256 `541fe0b62eded21876cb637009e1fbc8fea0ecd9935bb90c8429f30578a858f3`; neither matches the historical wrapper SHA-256 `50495f1d9ca4bed104718f64a044d5f056cdde50304b6d24ccfa94f8920641e8`, so the current helper is not proven to be the exact historical run wrapper.
+The verified run imported simulator commit `893a82a7fa731b95d97de8486cfa8ad59a848f38`, with CRLF-copy byte hash `3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204`; the committed LF blob has SHA-256 `bd8065b993475d280ae3f55ea3a11df7fbe2b5dfa5b99688fe613f9fcd953320`. The wrapper evidence asserts that the import path is inside the isolated root and hashes the imported bytes before running. The 40-day reproduction was byte-identical to the v2 summary; the h120 manifest records 40 calls at horizon 120. The original recorded CRLF simulator bytes are reproducible from the named git commit, so the simulator bytes and commit provenance are verified. Separately, the four copied `h*.json` reproduction manifests record a historical wrapper SHA, not the packaged `run_extended.py` SHA; those manifests are historical and must not be attributed to the exact packaged script. The README documents that SHA discrepancy. A fresh checkout also lacks the exact-hash `models/outputs/risk_table.csv` required by `prepare_isolated.py`; it is present only as local untracked input here, so reproduction is not self-contained from a clean checkout. The current helper `models/day6_extended_runner.py` has raw SHA-256 `70782429bc288c758fbb4fc28abd76ec08c8d66de6b8bb2a924653d90d8c4153` and LF-normalized SHA-256 `541fe0b62eded21876cb637009e1fbc8fea0ecd9935bb90c8429f30578a858f3`; neither matches the historical wrapper SHA-256 `50495f1d9ca4bed104718f64a044d5f056cdde50304b6d24ccfa94f8920641e8`, so the current helper is not proven to be the exact historical run wrapper.
 
 Frozen plan SHA-256: `f588d41116e69cf00e71f8602ee6f98919140143fa10ec50a63c15a5a99c435a`. Configuration: **14 demand days / 14-day closure / 120-day horizon = a simulator-side assumption owned by A and B, approved provisionally by A and C.** Penalty 96.0. Both waiting rates are reported with equal prominence: **1.0, as executed**; **24.0, unit-consistent rerun with the same simulator, not the costs of the original execution**. The waiting-rate decision belongs to A and B; C approved reporting both rates. Instructor approval remains pending.
 
@@ -115,7 +115,7 @@ B independently reproduced 15 hubs at or above 99.9% utilization for the L10 LP 
 
 C's project cost unit is leg-hours: one leg waiting one day is 24 leg-hours. The terminal unmet penalty 96 equals four days at that rate. Thus 24.0 is unit-consistent; 1.0 prices waiting at 1/24 of the unit-consistent rate. Waiting rate is a simulator parameter decided by A and B; C approved equal reporting prominence for both variants. The 24.0 results are reruns with the same simulator and are not the costs of the original execution.
 
-Waiting cost accrues daily on queued and outside backlog; unassigned demand remains in outside backlog and accrues daily. The terminal unmet penalty is applied once per undelivered leg at the horizon. Consequently, total cost for censored runs grows with horizon. In cost tables, shipping cost, waiting cost, and terminal unmet penalty are separate.
+Waiting cost accrues daily on queued demand and the simulator's outside-backlog accounting bucket. `unassigned` demand is not queued or retried, but this simulator counts it in that outside bucket for waiting-cost accounting. The terminal unmet penalty is applied once per undelivered leg at the horizon. Consequently, total cost for censored runs grows with horizon. In cost tables, shipping cost, waiting cost, and terminal unmet penalty are separate.
 
 Simulator total-cost values must not be compared with C's `c_expected_*` per-day optimizer values. These quantities have different time bases.
 
@@ -124,7 +124,7 @@ Simulator total-cost values must not be compared with C's `c_expected_*` per-day
 | 1.0 | as_executed | 657884.383333 | 34625.493860 | 725004.383333 | 38158.125439 |
 | 24.0 | unit_consistent_rerun | 1304333.883333 | 68649.151754 | 2915213.883333 | 153432.309649 |
 
-For every one of the 160 run rows (40 runs × two horizons × two rates), the identity `total_cost = shipping_cost + waiting_cost + terminal_unmet_penalty` holds; the maximum absolute residual is computed from those rows and their measured run manifests (see the attached staging report).
+For every one of the 160 run rows (40 runs × two horizons × two rates), the identity `total_cost = shipping_cost + waiting_cost + terminal_unmet_penalty` holds. Recomputing the identity in decimal arithmetic from the CSV's 160 stored rows gives a maximum absolute residual of `2.2e-11`, below the `1e-9` comparison tolerance.
 
 ## Day-1 optimizer versus simulator
 
@@ -147,7 +147,7 @@ A review remains pending, so this report and its related outputs remain provisio
 
 ## Reproduction
 
-Reproduction uses only `experiments/day6/extended_120d/repro/prepare_isolated.py` and `run_extended.py`. The helper verifies the pinned simulator, frozen plan, adapter, test and inputs; the runner calls the unmodified adapter and records each call's horizon, waiting rate, reported days, timestamps and runtime. The legacy `models/day6_extended_runner.py` was not used. Both 1.0 as-executed and 24.0 unit-consistent reruns use the same simulator implementation.
+Reproduction uses `experiments/day6/extended_120d/repro/prepare_isolated.py` and `run_extended.py`, invoked from the repository root as shown in the README. The helper verifies the pinned simulator, frozen plan, adapter, test and inputs; the runner calls the unmodified adapter and records each call's horizon, waiting rate, reported days, timestamps and runtime. The required `models/outputs/risk_table.csv` is not tracked in this checkout; the exact hash-verified copy is a local untracked input. A clean clone therefore needs that approved input supplied before these commands can run. The legacy `models/day6_extended_runner.py` was not used. Both 1.0 as-executed and 24.0 unit-consistent reruns use the same simulator implementation.
 
 ## Hash conventions
 
