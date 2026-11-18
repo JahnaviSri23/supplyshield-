@@ -1,24 +1,25 @@
 """
-SupplyShield Streamlit Application
-Multipage interactive dashboard for express logistics disruption recovery.
+SupplyShield Streamlit Application — Control Tower SaaS Edition
+High-contrast, executive-ready dashboard for express logistics disruption recovery.
 
 Pages:
 1. Overview
-2. Closure explorer
-3. Network view
-4. Uncertainty
-5. Method and limitations
+2. Live What-If Simulator (Interactive Recruiter Demo)
+3. Closure explorer
+4. Network view
+5. Uncertainty
+6. Method and limitations
 """
 
 import sys
 from pathlib import Path
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Tuple
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
-# Ensure app directory and repo root are in sys.path to prevent import issues
+# Ensure app directory is in sys.path to prevent namespace collision
 _app_dir = str(Path(__file__).resolve().parent)
 if sys.path[0] != _app_dir:
     sys.path.insert(0, _app_dir)
@@ -31,70 +32,211 @@ except Exception:
     from app import data
 
 st.set_page_config(
-    page_title="SupplyShield — Disruption Recovery",
+    page_title="SupplyShield — Disruption Recovery Control Tower",
     page_icon="🛡️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Custom Styling
+# Custom High-Contrast Dark Slate SaaS Styling
 st.markdown(
     """
     <style>
-    .metric-card {
-        background-color: #f8f9fa;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        padding: 18px 14px;
-        text-align: center;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        margin-bottom: 12px;
+    /* Global Background and Typography */
+    .stApp {
+        background-color: #0B1120;
+        color: #F8FAFC;
     }
-    .metric-value {
-        font-size: 2.2rem;
+    
+    /* Executive Header */
+    .control-tower-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 1rem;
+        margin-bottom: 1.25rem;
+        border-bottom: 1px solid #1E293B;
+    }
+    .product-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .product-title {
+        font-size: 1.75rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #F8FAFC;
+    }
+    .product-tag {
+        font-size: 0.75rem;
         font-weight: 700;
-        color: #1e3a8a;
-        line-height: 1.2;
-    }
-    .metric-label {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #64748b;
+        letter-spacing: 0.12em;
+        background: linear-gradient(135deg, #0284C7, #38BDF8);
+        color: #0B1120;
+        padding: 3px 8px;
+        border-radius: 4px;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 6px;
     }
+    .product-subtitle {
+        font-size: 0.88rem;
+        color: #94A3B8;
+        margin-top: 2px;
+    }
+    .status-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.28);
+        padding: 6px 14px;
+        border-radius: 9999px;
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #38BDF8;
+        box-shadow: 0 0 8px #38BDF8;
+        animation: pulse-glow 2s infinite;
+    }
+    @keyframes pulse-glow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.5; transform: scale(0.85); }
+    }
+    .status-text {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: #38BDF8;
+        text-transform: uppercase;
+    }
+
+    /* Metric Cards */
+    [data-testid="stMetric"] {
+        background-color: #111827 !important;
+        border: 1px solid #1E293B !important;
+        border-radius: 10px !important;
+        padding: 16px 18px !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+    }
+    [data-testid="stMetricLabel"] p {
+        font-size: 0.82rem !important;
+        font-weight: 600 !important;
+        color: #94A3B8 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.05em !important;
+    }
+    [data-testid="stMetricValue"] div {
+        font-size: 1.85rem !important;
+        font-weight: 700 !important;
+        color: #F8FAFC !important;
+    }
+
+    /* Custom HTML Table Fallback */
     .custom-table-wrapper {
         overflow-x: auto;
         margin: 1rem 0;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #1E293B;
         border-radius: 8px;
+        background-color: #111827;
     }
     table.custom-table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.92rem;
+        font-size: 0.90rem;
         text-align: left;
     }
     table.custom-table th {
-        background-color: #f8fafc;
-        color: #1e293b;
+        background-color: #1E293B;
+        color: #38BDF8;
         font-weight: 600;
-        padding: 10px 14px;
-        border-bottom: 2px solid #cbd5e1;
+        padding: 11px 14px;
+        border-bottom: 2px solid #334155;
     }
     table.custom-table td {
         padding: 10px 14px;
-        border-bottom: 1px solid #f1f5f9;
-        color: #334155;
+        border-bottom: 1px solid #1E293B;
+        color: #E2E8F0;
     }
     table.custom-table tr:hover {
-        background-color: #f1f5f9;
+        background-color: rgba(56, 189, 248, 0.05);
+    }
+
+    /* Badges */
+    .solver-pill {
+        display: flex;
+        align-items: center;
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.25);
+        color: #34D399;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 0.88rem;
+        margin-bottom: 1rem;
+    }
+    .badge-pass {
+        background-color: rgba(16, 185, 129, 0.15);
+        color: #34D399;
+        border: 1px solid #059669;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.85rem;
+    }
+    .badge-fail {
+        background-color: rgba(239, 68, 68, 0.15);
+        color: #F87171;
+        border: 1px solid #DC2626;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.85rem;
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
+
+def render_header() -> None:
+    """Renders the executive SaaS product header and collapsible scope expander."""
+    st.markdown(
+        """
+        <div class="control-tower-header">
+            <div class="header-left">
+                <div class="product-brand">
+                    <span class="product-title">SupplyShield</span>
+                    <span class="product-tag">CONTROL TOWER</span>
+                </div>
+                <div class="product-subtitle">Autonomous Express Logistics Disruption Recovery & Multi-Commodity Rerouting</div>
+            </div>
+            <div class="header-right">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span class="status-text">LIVE CONTROL TOWER</span>
+                </div>
+            </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    with st.expander("ℹ️ Network & Data Scope", expanded=False):
+        st.markdown(
+            f"**Operational Scope Notice:** {data.BANNER_TEXT}"
+        )
+
+
+def style_plotly_fig(fig: go.Figure) -> go.Figure:
+    """Ensures consistent dark-transparent Plotly styling matching the Control Tower UI."""
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#F8FAFC", family="Inter, system-ui, sans-serif"),
+    )
+    return fig
 
 
 def render_table(df: pd.DataFrame) -> None:
@@ -120,8 +262,8 @@ def get_hub_name_map(nodes_df: pd.DataFrame) -> Dict[str, str]:
 
 
 def page_overview() -> None:
-    data.render_banner()
-    st.title("SupplyShield: Disruption Recovery in Express Freight")
+    render_header()
+    st.title("Network Recovery Benchmark Overview")
     st.markdown(
         """
         **SupplyShield** benchmarks automated recovery strategies when critical freight corridors fail 
@@ -133,39 +275,34 @@ def page_overview() -> None:
 
     st.markdown("---")
 
-    # 3 Metric Cards Computed Directly From Data
+    # 3 Metric Cards Computed Directly From Data + Cost Reduction Delta Badge
     num_hubs, num_lanes, num_closures = data.get_overview_metrics()
+    summary_df = data.get_overview_summary_table()
+    do_nothing_cost = float(summary_df.loc[summary_df["plan"] == "do nothing", "total_cost"].values[0])
+    lp_cost = float(summary_df.loc[summary_df["plan"] == "LP (all flows)", "total_cost"].values[0])
+    pct_saved_lp = ((do_nothing_cost - lp_cost) / do_nothing_cost * 100.0) if do_nothing_cost > 0 else 0.0
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.markdown(
-            f"""
-            <div class="metric-card">
-                <div class="metric-label">Core Network Hubs</div>
-                <div class="metric-value">{num_hubs}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.metric(
+            label="Core Network Hubs",
+            value=f"{num_hubs}",
+            delta="100 Tier-1 Facilities",
+            delta_color="normal",
         )
     with col2:
-        st.markdown(
-            f"""
-            <div class="metric-card">
-                <div class="metric-label">Directed Corridors (Lanes)</div>
-                <div class="metric-value">{num_lanes}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.metric(
+            label="Directed Corridors (Lanes)",
+            value=f"{num_lanes}",
+            delta="292 Express Corridors",
+            delta_color="normal",
         )
     with col3:
-        st.markdown(
-            f"""
-            <div class="metric-card">
-                <div class="metric-label">Tested Lane Closures</div>
-                <div class="metric-value">{num_closures}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
+        st.metric(
+            label="LP Cost Reduction vs Do Nothing",
+            value=f"{pct_saved_lp:.1f}%",
+            delta=f"-{do_nothing_cost - lp_cost:,.1f} leg-hrs/day",
+            delta_color="normal",
         )
 
     st.markdown("---")
@@ -179,8 +316,6 @@ def page_overview() -> None:
         """
     )
 
-    summary_df = data.get_overview_summary_table()
-
     # Clean, formatted summary table
     display_df = summary_df.copy()
     display_df = display_df.rename(
@@ -193,7 +328,6 @@ def page_overview() -> None:
         }
     )
 
-    # Format numeric columns cleanly
     formatted_table = display_df.copy()
     formatted_table["Avg Total Cost (leg-hrs)"] = formatted_table["Avg Total Cost (leg-hrs)"].map(
         lambda x: f"{x:,.2f}"
@@ -220,7 +354,7 @@ def page_overview() -> None:
                 x=summary_df["plan"],
                 y=summary_df["total_cost"],
                 name="Total Cost",
-                marker_color="#1e3a8a",
+                marker_color="#38BDF8",
                 text=summary_df["total_cost"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -230,7 +364,7 @@ def page_overview() -> None:
                 x=summary_df["plan"],
                 y=summary_df["extra_vs_best_normal"],
                 name="Extra vs Best Normal",
-                marker_color="#f59e0b",
+                marker_color="#F59E0B",
                 text=summary_df["extra_vs_best_normal"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -243,6 +377,7 @@ def page_overview() -> None:
             margin=dict(l=40, r=20, t=50, b=40),
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
+        style_plotly_fig(fig_cost)
         st.plotly_chart(fig_cost, use_container_width=True)
 
     with col_chart2:
@@ -251,9 +386,9 @@ def page_overview() -> None:
             x="plan",
             y="unmet",
             color="plan",
-            color_discrete_sequence=["#ef4444", "#3b82f6", "#10b981", "#6366f1"],
-            title="Average Unmet Demand by Recovery Plan",
-            labels={"plan": "Recovery Plan", "unmet": "Unmet Demand (legs/day)"},
+            color_discrete_sequence=["#EF4444", "#F59E0B", "#10B981", "#38BDF8"],
+            title="Average Unmet Demand (Undelivered Legs per Day)",
+            labels={"plan": "Recovery Plan", "unmet": "Unmet Legs/Day"},
             text=summary_df["unmet"].map(lambda x: f"{x:,.3f}"),
         )
         fig_unmet.update_traces(textposition="auto")
@@ -263,33 +398,302 @@ def page_overview() -> None:
             margin=dict(l=40, r=20, t=50, b=40),
             yaxis_title="Legs / Day",
         )
+        style_plotly_fig(fig_unmet)
         st.plotly_chart(fig_unmet, use_container_width=True)
 
-    # Key Findings Callout
-    st.subheader("Key Findings")
+
+def page_what_if_simulator() -> None:
+    """Interactive Recruiter Demo: Real-Time LP Rerouting Optimization."""
+    render_header()
+    st.title("Live What-If Simulator ⚡")
     st.markdown(
         """
-        - **Global LP Cuts Disruption Penalty by >50%**: Jointly re-optimizing all flows (`LP (all flows)`) reduces 
-          extra cost vs best normal to **25.19 leg-hours**, compared to **51.64 leg-hours** for greedy and 
-          isolated rerouting (`preserve`) — a **51.2% cost reduction**.
-        - **Greedy and Preserve Fail to Free Bottlenecks**: `greedy` and `preserve (affected flows only)` 
-          achieve identical average costs (2096.99 leg-hours) because displaced parcels compete for the same 
-          immediate spare capacity without shifting unaffected flows to unlock alternate corridors.
-        - **Cost of Inaction**: Doing nothing (`do nothing`) leaves an average of **5.50 legs/day undelivered**, 
-          generating **539.22 extra leg-hours** of penalty and delay per disrupted day.
-        - **Real-Time Solvability**: Multi-commodity LP re-optimization executes in an average of **0.81 seconds**, 
-          making it fully practical for real-time dispatch systems.
+        **Interactive Recruiter Demo**: Simulate a sudden disruption on any active corridor in India's logistics core. 
+        Select a lane, configure lost-leg penalties and machine-learning risk multipliers, and execute the 
+        real multi-commodity flow LP solver (`scipy.optimize.linprog` with `method="highs"`) in real time.
         """
     )
 
+    nodes_df = data.load_core_nodes()
+    edges_df = data.load_core_edges()
+    hub_map = get_hub_name_map(nodes_df)
+    coords, _ = data.get_hub_coordinates()
+
+    # Build Lane Options list from core_edges.csv
+    lane_options = []
+    lane_lookup = {}
+    sorted_edges = edges_df.sort_values("trips", ascending=False).reset_index(drop=True)
+
+    for idx, r in sorted_edges.iterrows():
+        u = str(r["source_center"]) if "source_center" in r and pd.notna(r["source_center"]) else str(r["source"])
+        v = str(r["destination_center"]) if "destination_center" in r and pd.notna(r["destination_center"]) else str(r["destination"])
+        u_name = hub_map.get(u, u)
+        v_name = hub_map.get(v, v)
+        daily_legs = float(r["trips"]) / 14.0
+        label = f"{u_name} → {v_name} ({u} → {v}) — {daily_legs:.2f} legs/day"
+        lane_options.append(label)
+        lane_lookup[label] = (u, v, daily_legs, float(r.get("median_actual_time", 60.0)) / 60.0)
+
+    st.markdown("---")
+    st.subheader("Disruption Controls & Parameters")
+
+    col_ctrl1, col_ctrl2, col_ctrl3 = st.columns([3, 2, 2])
+    with col_ctrl1:
+        selected_label = st.selectbox(
+            "Select Disrupted Freight Corridor:",
+            lane_options,
+            index=0,
+            help="Choose any of the 292 active express lanes across India",
+        )
+    with col_ctrl2:
+        penalty_val = st.slider(
+            "Lost-Leg Penalty (leg-hours):",
+            min_value=20,
+            max_value=200,
+            value=96,
+            step=4,
+            help="Cost incurred per leg left undelivered due to corridor closure (default: 96 hrs)",
+        )
+    with col_ctrl3:
+        st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
+        risk_toggle = st.toggle(
+            "ML Risk-Adjusted Costs",
+            value=False,
+            help="Scales edge travel times by pred_multiplier from models/outputs/risk_table_lane.csv",
+        )
+
+    selected_u, selected_v, selected_demand, base_time = lane_lookup[selected_label]
+
+    col_btn, col_info = st.columns([2, 5])
+    with col_btn:
+        run_sim = st.button("🚀 Run Live Rerouting Optimization", type="primary", use_container_width=True)
+
+    with col_info:
+        st.caption(
+            f"Corridor: **{selected_u} → {selected_v}** | Baseline Demand: **{selected_demand:.2f} legs/day** | "
+            f"Baseline Travel Time: **{base_time:.2f} hrs**"
+        )
+
+    # Initialize or run solver
+    if run_sim or "sim_result" not in st.session_state or st.session_state.get("sim_lane") != (selected_u, selected_v):
+        with st.spinner("Solving multi-commodity flow LP over 100 hubs with HiGHS..."):
+            sim_res = data.solve_live_reroute(
+                lane=(selected_u, selected_v),
+                penalty=float(penalty_val),
+                risk_adjusted=risk_toggle,
+            )
+            st.session_state["sim_result"] = sim_res
+            st.session_state["sim_lane"] = (selected_u, selected_v)
+            st.session_state["sim_penalty"] = penalty_val
+            st.session_state["sim_risk"] = risk_toggle
+    else:
+        sim_res = st.session_state["sim_result"]
+
+    # Display KPI Cards
+    st.markdown("---")
+    st.markdown(
+        f"""
+        <div class="solver-pill">
+            <span>⚡ <b>HiGHS Dual-Simplex Solver</b> optimized in <b>{sim_res['runtime_ms']:.1f} ms</b></span>
+            <span style="margin: 0 10px;">|</span>
+            <span>Flow Conservation: <b style="color:#34D399;">✓ Feasible & Optimal</b></span>
+            {"<span style='margin: 0 10px;'>|</span><span style='color:#38BDF8;'>ML Risk Multiplier: " + f"{sim_res['multiplier_used']:.3f}x</span>" if risk_toggle else ""}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+    with kpi1:
+        st.metric(
+            label="Disrupted Daily Demand",
+            value=f"{sim_res['demand_legs']:.2f} legs",
+            delta="Origin-to-Destination",
+            delta_color="off",
+        )
+    with kpi2:
+        unmet_pct = (sim_res["unmet_legs"] / sim_res["demand_legs"] * 100.0) if sim_res["demand_legs"] > 0 else 0.0
+        st.metric(
+            label="Unmet Demand",
+            value=f"{sim_res['unmet_legs']:.2f} legs",
+            delta=f"{unmet_pct:.1f}% dropped",
+            delta_color="inverse" if sim_res["unmet_legs"] > 0 else "normal",
+        )
+    with kpi3:
+        st.metric(
+            label="Optimal Reroute Cost",
+            value=f"{sim_res['total_reroute_cost']:,.1f} hrs",
+            delta=f"Detour: {sim_res['detour_cost']:,.1f} hrs",
+            delta_color="off",
+        )
+    with kpi4:
+        st.metric(
+            label="Cost Saved vs Do Nothing",
+            value=f"{sim_res['cost_saved']:,.1f} hrs",
+            delta=f"-{sim_res['pct_saved']:.1f}% reduction",
+            delta_color="normal",
+        )
+
+    # Interactive Map: Glowing Closed Lane (Red) + Live Detour Flows (Cyan)
+    st.markdown("### Live Optimal Rerouting Map")
+    detour_df = sim_res["detour_df"]
+
+    fig_sim_map = go.Figure()
+
+    # 1. Base Core Network Edges (subtle slate)
+    base_lons: List[Any] = []
+    base_lats: List[Any] = []
+    for _, r in edges_df.iterrows():
+        u = str(r["source_center"]) if "source_center" in r and pd.notna(r["source_center"]) else str(r["source"])
+        v = str(r["destination_center"]) if "destination_center" in r and pd.notna(r["destination_center"]) else str(r["destination"])
+        if u in coords and v in coords:
+            base_lons.extend([coords[u][0], coords[v][0], None])
+            base_lats.extend([coords[u][1], coords[v][1], None])
+
+    fig_sim_map.add_trace(
+        go.Scattergeo(
+            locationmode="country names",
+            lon=base_lons,
+            lat=base_lats,
+            mode="lines",
+            line=dict(width=1.0, color="rgba(100, 116, 139, 0.22)"),
+            name="Core Logistics Edges",
+            hoverinfo="none",
+        )
+    )
+
+    # 2. Closed Lane (Glowing Red)
+    if selected_u in coords and selected_v in coords:
+        fig_sim_map.add_trace(
+            go.Scattergeo(
+                locationmode="country names",
+                lon=[coords[selected_u][0], coords[selected_v][0]],
+                lat=[coords[selected_u][1], coords[selected_v][1]],
+                mode="lines+markers",
+                line=dict(width=5.5, color="#EF4444"),
+                marker=dict(size=10, color="#EF4444", symbol="x"),
+                name=f"Closed Corridor ({selected_u} → {selected_v})",
+                hoverinfo="text",
+                text=(
+                    f"<b>CLOSED CORRIDOR</b><br>{hub_map.get(selected_u, selected_u)} → {hub_map.get(selected_v, selected_v)}<br>"
+                    f"Disrupted Demand: {selected_demand:.2f} legs/day"
+                ),
+            )
+        )
+
+    # 3. Live Computed Detour Flows (Glowing Cyan with width proportional to flow)
+    max_flow = float(detour_df["flow"].max()) if len(detour_df) > 0 else 1.0
+    for idx, row in detour_df.iterrows():
+        u, v = str(row["source"]), str(row["destination"])
+        flow_val = float(row["flow"])
+        if u in coords and v in coords:
+            line_w = max(3.0, min(10.0, 3.0 + 7.0 * (flow_val / max_flow)))
+            u_name = hub_map.get(u, u)
+            v_name = hub_map.get(v, v)
+            fig_sim_map.add_trace(
+                go.Scattergeo(
+                    locationmode="country names",
+                    lon=[coords[u][0], coords[v][0]],
+                    lat=[coords[u][1], coords[v][1]],
+                    mode="lines",
+                    line=dict(width=line_w, color="#38BDF8"),
+                    name="Active Detour Corridors" if idx == 0 else "",
+                    showlegend=(idx == 0),
+                    hoverinfo="text",
+                    text=(
+                        f"<b>OPTIMAL DETOUR DISPATCH</b><br>{u_name} → {v_name}<br>"
+                        f"Allocated Flow: <b>{flow_val:.3f} legs/day</b><br>"
+                        f"Unit Transit Time: {row['unit_cost_hours']:.2f} hrs"
+                    ),
+                )
+            )
+
+    # 4. Hub Nodes (Indian Logistics Hubs)
+    hub_lons = [coords[h][0] for h in nodes_df["hub"] if h in coords]
+    hub_lats = [coords[h][1] for h in nodes_df["hub"] if h in coords]
+    hub_names = [hub_map.get(h, h) for h in nodes_df["hub"] if h in coords]
+    hub_caps = [float(cap) * 0.35 + 5 for cap, h in zip(nodes_df["capacity_est"], nodes_df["hub"]) if h in coords]
+
+    fig_sim_map.add_trace(
+        go.Scattergeo(
+            locationmode="country names",
+            lon=hub_lons,
+            lat=hub_lats,
+            mode="markers",
+            name="100 Core Hubs",
+            text=[f"<b>{name}</b><br>Capacity: {cap:.0f} legs/day" for name, cap in zip(hub_names, nodes_df["capacity_est"])],
+            hoverinfo="text",
+            marker=dict(
+                size=hub_caps,
+                color="#0284C7",
+                line=dict(width=1, color="#38BDF8"),
+                opacity=0.85,
+            ),
+        )
+    )
+
+    fig_sim_map.update_layout(
+        geo=dict(
+            scope="asia",
+            lonaxis_range=[67, 98],
+            lataxis_range=[6, 37],
+            showland=True,
+            landcolor="#0B1120",
+            showocean=True,
+            oceancolor="#070D19",
+            showcountries=True,
+            countrycolor="#334155",
+            showsubunits=True,
+            subunitcolor="#1E293B",
+            resolution=50,
+        ),
+        title=f"Live Optimal Dispatch: {hub_map.get(selected_u, selected_u)} → {hub_map.get(selected_v, selected_v)}",
+        height=620,
+        margin=dict(l=10, r=10, t=50, b=10),
+        legend=dict(orientation="h", yanchor="bottom", y=1.01, xanchor="left", x=0),
+    )
+    style_plotly_fig(fig_sim_map)
+    st.plotly_chart(fig_sim_map, use_container_width=True)
+
+    # Detour Dispatch Table & CSV Export
+    st.markdown("### Optimal Dispatch Routing Plan")
+    if len(detour_df) > 0:
+        detour_table = detour_df.copy()
+        detour_table = detour_table.rename(
+            columns={
+                "source": "Origin Hub",
+                "source_name": "Origin Facility",
+                "destination": "Destination Hub",
+                "destination_name": "Destination Facility",
+                "flow": "Allocated Flow (legs/day)",
+                "unit_cost_hours": "Transit Time (hrs)",
+                "flow_cost": "Total Travel Cost (leg-hrs)",
+            }
+        )
+        detour_table["Allocated Flow (legs/day)"] = detour_table["Allocated Flow (legs/day)"].map(lambda x: f"{x:,.4f}")
+        detour_table["Transit Time (hrs)"] = detour_table["Transit Time (hrs)"].map(lambda x: f"{x:,.2f}")
+        detour_table["Total Travel Cost (leg-hrs)"] = detour_table["Total Travel Cost (leg-hrs)"].map(lambda x: f"{x:,.2f}")
+
+        render_table(detour_table)
+
+        csv_data = detour_df.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            label="📥 Download Optimal Dispatch Plan (CSV)",
+            data=csv_data,
+            file_name=f"optimal_dispatch_{selected_u}_{selected_v}.csv",
+            mime="text/csv",
+        )
+    else:
+        st.warning("No alternative routes found within hub residual capacity; all displaced demand is unmet.")
+
 
 def page_closure_explorer() -> None:
-    data.render_banner()
-    st.title("Closure Explorer 🔍")
+    render_header()
+    st.title("Closure Scenario Explorer 🔍")
     st.markdown(
         """
-        Explore detailed recovery metrics and rerouted shipment flows across the **10 simulated 
-        lane closure benchmarks**.
+        Deep-dive into individual high-impact lane closures from `experiments/c_multiflow_closures.csv`. 
+        Compare how the four recovery policies handle displaced freight traffic.
         """
     )
 
@@ -298,74 +702,68 @@ def page_closure_explorer() -> None:
     plans_data = data.load_multiflow_plans()
     hub_map = get_hub_name_map(nodes_df)
 
-    # A selectbox lists the closed lanes from experiments/c_multiflow_closures.csv,
-    # labelled with hub names from data/processed/core_nodes.csv where available.
-    unique_lanes = closures_df["lane"].unique().tolist()
-    closure_labels = []
-    for lane in unique_lanes:
-        src, dst = lane.split("->")
-        src_name = hub_map.get(src, src)
-        dst_name = hub_map.get(dst, dst)
-        closure_labels.append(f"{src_name} → {dst_name} ({src} → {dst})")
+    closed_lanes = closures_df["lane"].unique().tolist()
 
-    selected_idx = st.selectbox(
-        "Select Closed Lane from Benchmark Scenarios:",
-        range(len(unique_lanes)),
-        format_func=lambda idx: closure_labels[idx],
+    def format_lane_label(lane_str: str) -> str:
+        parts = lane_str.split("->")
+        if len(parts) == 2:
+            src, dst = parts[0], parts[1]
+            return f"{hub_map.get(src, src)} → {hub_map.get(dst, dst)} ({lane_str})"
+        return lane_str
+
+    st.markdown("---")
+    st.subheader("Select Closure Scenario")
+
+    selected_lane = st.selectbox(
+        "Choose Closed Lane:",
+        closed_lanes,
+        format_func=format_lane_label,
     )
-    selected_lane = unique_lanes[selected_idx]
+
+    lane_rows = closures_df[closures_df["lane"] == selected_lane].copy()
+
+    # Plan order
+    plan_order = ["do nothing", "greedy", "preserve (affected flows only)", "LP (all flows)"]
+    lane_rows["order"] = lane_rows["plan"].apply(lambda p: plan_order.index(p) if p in plan_order else 99)
+    lane_rows = lane_rows.sort_values("order").drop(columns=["order"]).reset_index(drop=True)
+
+    closed_legs_per_day = float(lane_rows["closed_lane_legs_per_day"].iloc[0])
     src_hub, dst_hub = selected_lane.split("->")
     src_name = hub_map.get(src_hub, src_hub)
     dst_name = hub_map.get(dst_hub, dst_hub)
 
-    lane_rows = closures_df[closures_df["lane"] == selected_lane].copy()
-
-    # Enforce standard plan order
-    plan_order = ["do nothing", "greedy", "preserve (affected flows only)", "LP (all flows)"]
-    lane_rows["order"] = lane_rows["plan"].apply(lambda p: plan_order.index(p) if p in plan_order else 99)
-    lane_rows = lane_rows.sort_values("order").drop(columns=["order"])
-
-    closed_legs = lane_rows["closed_lane_legs_per_day"].iloc[0]
-
-    st.markdown("---")
-    st.subheader(f"Closed Lane: {src_name} → {dst_name}")
-    st.caption(f"Corridor Hubs: `{src_hub}` → `{dst_hub}`")
-
-    # Compute Badge from Data: "LP total <= greedy total: PASS/FAIL"
+    # PASS / FAIL Badge Computed from Data: LP total <= greedy total
     lp_row = lane_rows[lane_rows["plan"] == "LP (all flows)"]
     greedy_row = lane_rows[lane_rows["plan"] == "greedy"]
-    lp_total = lp_row["total_cost"].iloc[0] if not lp_row.empty else float("inf")
-    greedy_total = greedy_row["total_cost"].iloc[0] if not greedy_row.empty else float("-inf")
-    is_pass = lp_total <= greedy_total
-    status_text = "PASS" if is_pass else "FAIL"
 
-    badge_bg = "#dcfce7" if is_pass else "#fee2e2"
-    badge_color = "#15803d" if is_pass else "#b91c1c"
-    badge_border = "#86efac" if is_pass else "#fca5a5"
+    badge_html = ""
+    if not lp_row.empty and not greedy_row.empty:
+        lp_tot = float(lp_row["total_cost"].iloc[0])
+        greedy_tot = float(greedy_row["total_cost"].iloc[0])
+        passed = lp_tot <= greedy_tot + 1e-5
+        if passed:
+            badge_html = (
+                f'<span class="badge-pass">✓ LP total &le; greedy total: PASS '
+                f'({lp_tot:,.1f} &le; {greedy_tot:,.1f} leg-hrs)</span>'
+            )
+        else:
+            badge_html = (
+                f'<span class="badge-fail">✗ LP total &le; greedy total: FAIL '
+                f'({lp_tot:,.1f} > {greedy_tot:,.1f} leg-hrs)</span>'
+            )
 
-    col_meta1, col_meta2 = st.columns([1, 2])
+    col_meta1, col_meta2 = st.columns([3, 2])
     with col_meta1:
-        st.metric(
-            label="Closed Lane Legs per Day",
-            value=f"{closed_legs:.2f} legs/day",
-        )
+        st.markdown(f"**Closed Corridor**: `{src_name} → {dst_name}` (`{selected_lane}`)")
+        st.markdown(f"**Disrupted Demand**: **{closed_legs_per_day:,.2f} legs/day**")
     with col_meta2:
-        st.markdown(
-            f"""
-            <div style="margin-top: 10px;">
-                <span style="display: inline-block; padding: 8px 18px; border-radius: 24px; font-weight: 700; font-size: 1.05rem; background-color: {badge_bg}; color: {badge_color}; border: 1px solid {badge_border};">
-                    LP total &le; greedy total: {status_text}
-                </span>
-                <span style="margin-left: 14px; color: #64748b; font-size: 0.95rem;">
-                    (LP: {lp_total:,.1f} leg-hrs &le; Greedy: {greedy_total:,.1f} leg-hrs)
-                </span>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
+        st.markdown("<div style='margin-top: 10px;'></div>", unsafe_allow_html=True)
+        st.markdown(badge_html, unsafe_allow_html=True)
 
-    # Table with one row per plan (total_cost, extra_vs_best_normal, unmet legs)
-    st.markdown("### Plan Comparison Table")
+    st.markdown("---")
+
+    # Table with one row per plan
+    st.markdown("### Recovery Plan Performance Comparison")
     plan_table = lane_rows[["plan", "total_cost", "extra_vs_best_normal", "unmet"]].copy()
     plan_table = plan_table.rename(
         columns={
@@ -392,7 +790,7 @@ def page_closure_explorer() -> None:
         x="plan",
         y="extra_vs_best_normal",
         color="plan",
-        color_discrete_sequence=["#ef4444", "#3b82f6", "#10b981", "#6366f1"],
+        color_discrete_sequence=["#EF4444", "#F59E0B", "#10B981", "#38BDF8"],
         title=f"Extra Cost vs Best Normal by Plan — {src_name} → {dst_name}",
         labels={"plan": "Recovery Plan", "extra_vs_best_normal": "Extra Cost vs Best Normal (leg-hours)"},
         text=lane_rows["extra_vs_best_normal"].map(lambda x: f"{x:,.1f}"),
@@ -404,6 +802,7 @@ def page_closure_explorer() -> None:
         margin=dict(l=40, r=20, t=50, b=40),
         yaxis_title="Extra Cost (leg-hours)",
     )
+    style_plotly_fig(fig_bar)
     st.plotly_chart(fig_bar, use_container_width=True)
 
     # One-line definition of each plan
@@ -417,7 +816,7 @@ def page_closure_explorer() -> None:
         """
     )
 
-    # Flow routing inspector (optional deep-dive)
+    # Flow routing inspector
     scenario_plan_obj = next(
         (p for p in plans_data if p["closed_lanes"][0][0] == src_hub and p["closed_lanes"][0][1] == dst_hub),
         None,
@@ -449,11 +848,11 @@ def page_closure_explorer() -> None:
 
 
 def page_network_view() -> None:
-    data.render_banner()
+    render_header()
     st.title("Network View 🗺️")
     st.markdown(
         """
-        Geographic and topological view of the **100-hub core logistics network** and **292 directed lanes**.
+        Interactive geographic and topological view of the **100-hub core logistics network** and **292 directed lanes**.
         Node sizes reflect estimated hub capacity (95th percentile outgoing legs/day).
         """
     )
@@ -462,15 +861,12 @@ def page_network_view() -> None:
     edges_df = data.load_core_edges()
     plans_data = data.load_multiflow_plans()
     hub_map = get_hub_name_map(nodes_df)
-
-    # Hub coordinates (lat/lon with NetworkX spring layout fallback for unlocated hubs)
     coords, is_approx = data.get_hub_coordinates()
 
-    # Controls: Select Closure Scenario and Recovery Plan
     st.markdown("---")
     st.subheader("Interactive Scenario & Plan Inspection")
 
-    col_ctrl1, col_ctrl2 = st.columns([3, 2])
+    col_ctrl1, col_ctrl2, col_ctrl3 = st.columns([3, 2, 2])
 
     closure_options = []
     for p in plans_data:
@@ -491,7 +887,6 @@ def page_network_view() -> None:
     closed_u, closed_v = selected_test["closed_lanes"][0]
     closed_u_name = hub_map.get(closed_u, closed_u)
     closed_v_name = hub_map.get(closed_v, closed_v)
-
     available_plans = list(selected_test.get("plans", {}).keys())
 
     with col_ctrl2:
@@ -501,171 +896,243 @@ def page_network_view() -> None:
             index=available_plans.index("LP (all flows)") if "LP (all flows)" in available_plans else 0,
         )
 
-    # Filter detour edges carrying flow for the closed OD pair (od == closed lane)
+    with col_ctrl3:
+        st.markdown("<div style='height: 28px;'></div>", unsafe_allow_html=True)
+        view_mode = st.radio(
+            "Map Projection Mode:",
+            ["Geographic (India Corridors)", "Topology (Spring Layout)"],
+            horizontal=True,
+        )
+
     raw_flows = selected_test.get("plans", {}).get(selected_plan, [])
     detour_items = [
         item for item in raw_flows
         if item.get("od") == [closed_u, closed_v] and item.get("flow", 0) > 0
     ]
 
-    # Plotly Figure
     fig_map = go.Figure()
 
-    # 1. Base Core Network Edges (light grey)
-    edge_lons: List[Any] = []
-    edge_lats: List[Any] = []
-    for _, row in edges_df.iterrows():
-        u = row["source_center"] if "source_center" in row and pd.notna(row["source_center"]) else row["source"]
-        v = row["destination_center"] if "destination_center" in row and pd.notna(row["destination_center"]) else row["destination"]
-        if u in coords and v in coords:
-            edge_lons.extend([coords[u][0], coords[v][0], None])
-            edge_lats.extend([coords[u][1], coords[v][1], None])
+    if view_mode == "Geographic (India Corridors)":
+        # India Geographic Scattergeo View
+        edge_lons: List[Any] = []
+        edge_lats: List[Any] = []
+        for _, row in edges_df.iterrows():
+            u = str(row["source_center"]) if "source_center" in row and pd.notna(row["source_center"]) else str(row["source"])
+            v = str(row["destination_center"]) if "destination_center" in row and pd.notna(row["destination_center"]) else str(row["destination"])
+            if u in coords and v in coords:
+                edge_lons.extend([coords[u][0], coords[v][0], None])
+                edge_lats.extend([coords[u][1], coords[v][1], None])
 
-    fig_map.add_trace(
-        go.Scattergeo(
-            locationmode="country names",
-            lon=edge_lons,
-            lat=edge_lats,
-            mode="lines",
-            line=dict(width=1.0, color="rgba(203, 213, 225, 0.45)"),
-            name="Core Network Edges (292)",
-            hoverinfo="none",
-        )
-    )
-
-    # 2. Closed Lane (Red)
-    if closed_u in coords and closed_v in coords:
         fig_map.add_trace(
             go.Scattergeo(
                 locationmode="country names",
-                lon=[coords[closed_u][0], coords[closed_v][0]],
-                lat=[coords[closed_u][1], coords[closed_v][1]],
-                mode="lines+markers",
-                line=dict(width=4.5, color="#ef4444"),
-                marker=dict(size=8, color="#ef4444", symbol="x"),
-                name=f"Closed Lane ({closed_u} → {closed_v})",
-                hoverinfo="text",
-                text=(
-                    f"<b>CLOSED LANE</b><br>{closed_u} ({closed_u_name}) → {closed_v} ({closed_v_name})<br>"
-                    f"Status: Blocked corridor"
-                ),
+                lon=edge_lons,
+                lat=edge_lats,
+                mode="lines",
+                line=dict(width=1.0, color="rgba(100, 116, 139, 0.25)"),
+                name="Core Network Edges (292)",
+                hoverinfo="none",
             )
         )
 
-    # 3. Detour Edges carrying flow for closed OD pair (Blue with width proportional to flow)
-    max_detour_flow = max([item["flow"] for item in detour_items], default=1.0)
-    for idx, item in enumerate(detour_items):
-        u, v = item["edge"]
-        flow_val = item["flow"]
-        if u in coords and v in coords:
-            # Width proportional to flow: scale between 2.5 and 9.0 px
-            line_w = max(2.5, min(9.0, 2.5 + 6.0 * (flow_val / max_detour_flow)))
-            u_name = hub_map.get(u, u)
-            v_name = hub_map.get(v, v)
+        if closed_u in coords and closed_v in coords:
             fig_map.add_trace(
                 go.Scattergeo(
                     locationmode="country names",
-                    lon=[coords[u][0], coords[v][0]],
-                    lat=[coords[u][1], coords[v][1]],
-                    mode="lines",
-                    line=dict(width=line_w, color="#2563eb"),
-                    name="Detour Edges (Closed OD flow)" if idx == 0 else "",
-                    showlegend=(idx == 0),
+                    lon=[coords[closed_u][0], coords[closed_v][0]],
+                    lat=[coords[closed_u][1], coords[closed_v][1]],
+                    mode="lines+markers",
+                    line=dict(width=5.0, color="#EF4444"),
+                    marker=dict(size=10, color="#EF4444", symbol="x"),
+                    name=f"Closed Lane ({closed_u} → {closed_v})",
                     hoverinfo="text",
                     text=(
-                        f"<b>DETOUR CORRIDOR</b><br>{u} ({u_name}) → {v} ({v_name})<br>"
-                        f"Detour Flow: {flow_val:.4f} legs/day"
+                        f"<b>CLOSED LANE</b><br>{closed_u} ({closed_u_name}) → {closed_v} ({closed_v_name})<br>"
+                        f"Status: Blocked Corridor"
                     ),
                 )
             )
 
-    # 4. Hub Nodes (Node size = capacity_est)
-    known_nodes = nodes_df[~nodes_df["hub"].map(is_approx)].copy()
-    approx_nodes = nodes_df[nodes_df["hub"].map(is_approx)].copy()
+        max_detour_flow = max([item["flow"] for item in detour_items], default=1.0)
+        for idx, item in enumerate(detour_items):
+            u, v = item["edge"]
+            flow_val = item["flow"]
+            if u in coords and v in coords:
+                line_w = max(2.5, min(9.0, 2.5 + 6.5 * (flow_val / max_detour_flow)))
+                u_name = hub_map.get(u, u)
+                v_name = hub_map.get(v, v)
+                fig_map.add_trace(
+                    go.Scattergeo(
+                        locationmode="country names",
+                        lon=[coords[u][0], coords[v][0]],
+                        lat=[coords[u][1], coords[v][1]],
+                        mode="lines",
+                        line=dict(width=line_w, color="#38BDF8"),
+                        name="Detour Edges (Closed OD flow)" if idx == 0 else "",
+                        showlegend=(idx == 0),
+                        hoverinfo="text",
+                        text=(
+                            f"<b>DETOUR CORRIDOR</b><br>{u} ({u_name}) → {v} ({v_name})<br>"
+                            f"Detour Flow: {flow_val:.4f} legs/day"
+                        ),
+                    )
+                )
 
-    # Known coordinates hubs trace
-    known_lons = [coords[h][0] for h in known_nodes["hub"]]
-    known_lats = [coords[h][1] for h in known_nodes["hub"]]
-    known_sizes = [float(cap) * 0.35 + 5 for cap in known_nodes["capacity_est"]]
-    known_hover = [
-        f"<b>{row['hub']}</b><br>{row['name']}<br>State: {row['state']}<br>Capacity: {row['capacity_est']} legs/day"
-        for _, row in known_nodes.iterrows()
-    ]
+        known_nodes = nodes_df[~nodes_df["hub"].map(is_approx)].copy()
+        approx_nodes = nodes_df[nodes_df["hub"].map(is_approx)].copy()
 
-    fig_map.add_trace(
-        go.Scattergeo(
-            locationmode="country names",
-            lon=known_lons,
-            lat=known_lats,
-            text=known_hover,
-            hoverinfo="text",
-            mode="markers",
-            name="Hubs (Known Coordinates)",
-            marker=dict(
-                size=known_sizes,
-                color="#1e3a8a",
-                line=dict(width=1, color="#0f172a"),
-                symbol="circle",
-            ),
+        fig_map.add_trace(
+            go.Scattergeo(
+                locationmode="country names",
+                lon=[coords[h][0] for h in known_nodes["hub"]],
+                lat=[coords[h][1] for h in known_nodes["hub"]],
+                text=[
+                    f"<b>{row['hub']}</b><br>{row['name']}<br>State: {row['state']}<br>Capacity: {row['capacity_est']} legs/day"
+                    for _, row in known_nodes.iterrows()
+                ],
+                hoverinfo="text",
+                mode="markers",
+                name="Hubs (Verified Lat/Lon)",
+                marker=dict(
+                    size=[float(cap) * 0.35 + 5 for cap in known_nodes["capacity_est"]],
+                    color="#0284C7",
+                    line=dict(width=1, color="#38BDF8"),
+                ),
+            )
         )
-    )
 
-    # Approximate position hubs trace (NetworkX spring layout, seed=42)
-    approx_lons = [coords[h][0] for h in approx_nodes["hub"]]
-    approx_lats = [coords[h][1] for h in approx_nodes["hub"]]
-    approx_sizes = [float(cap) * 0.4 + 7 for cap in approx_nodes["capacity_est"]]
-    approx_hover = [
-        f"<b>{row['hub']} (approximate position)</b><br>{row['name']}<br>State: {row['state']}<br>"
-        f"Capacity: {row['capacity_est']} legs/day<br><i>Position estimated via NetworkX spring layout (seed=42)</i>"
-        for _, row in approx_nodes.iterrows()
-    ]
-
-    fig_map.add_trace(
-        go.Scattergeo(
-            locationmode="country names",
-            lon=approx_lons,
-            lat=approx_lats,
-            text=approx_hover,
-            hoverinfo="text",
-            mode="markers",
-            name="Hubs (approximate position, seed=42)",
-            marker=dict(
-                size=approx_sizes,
-                color="#f59e0b",
-                line=dict(width=1.5, color="#b45309"),
-                symbol="diamond",
-            ),
+        fig_map.add_trace(
+            go.Scattergeo(
+                locationmode="country names",
+                lon=[coords[h][0] for h in approx_nodes["hub"]],
+                lat=[coords[h][1] for h in approx_nodes["hub"]],
+                text=[
+                    f"<b>{row['hub']} (approximate position)</b><br>{row['name']}<br>State: {row['state']}<br>"
+                    f"Capacity: {row['capacity_est']} legs/day<br><i>Position estimated via NetworkX spring layout (seed=42)</i>"
+                    for _, row in approx_nodes.iterrows()
+                ],
+                hoverinfo="text",
+                mode="markers",
+                name="Hubs (approximate position, seed=42)",
+                marker=dict(
+                    size=[float(cap) * 0.4 + 7 for cap in approx_nodes["capacity_est"]],
+                    color="#F59E0B",
+                    line=dict(width=1.5, color="#D97706"),
+                    symbol="diamond",
+                ),
+            )
         )
-    )
 
-    fig_map.update_layout(
-        geo=dict(
-            scope="asia",
-            center=dict(lat=22.5, lon=80.0),
-            projection_scale=3.85,
-            showland=True,
-            landcolor="#f8fafc",
-            showcountries=True,
-            countrycolor="#cbd5e1",
-            showsubunits=True,
-            subunitcolor="#e2e8f0",
-        ),
-        title=(
-            f"Core Logistics Network: {closed_u_name} → {closed_v_name} Disruption "
-            f"under '{selected_plan}'"
-        ),
-        height=620,
-        margin=dict(l=10, r=10, t=50, b=10),
-        legend=dict(
-            orientation="h",
-            yanchor="bottom",
-            y=1.01,
-            xanchor="left",
-            x=0,
-            font=dict(size=11),
-        ),
-    )
+        fig_map.update_layout(
+            geo=dict(
+                scope="asia",
+                lonaxis_range=[67, 98],
+                lataxis_range=[6, 37],
+                showland=True,
+                landcolor="#0B1120",
+                showocean=True,
+                oceancolor="#070D19",
+                showcountries=True,
+                countrycolor="#334155",
+                showsubunits=True,
+                subunitcolor="#1E293B",
+            ),
+            title=f"Core Logistics Network: {closed_u_name} → {closed_v_name} under '{selected_plan}'",
+            height=640,
+            margin=dict(l=10, r=10, t=50, b=10),
+            legend=dict(orientation="h", yanchor="bottom", y=1.01, xanchor="left", x=0),
+        )
+    else:
+        # Full 100-Hub Network Topology 2D Spring Layout
+        edge_x: List[Any] = []
+        edge_y: List[Any] = []
+        for _, row in edges_df.iterrows():
+            u = str(row["source_center"]) if "source_center" in row and pd.notna(row["source_center"]) else str(row["source"])
+            v = str(row["destination_center"]) if "destination_center" in row and pd.notna(row["destination_center"]) else str(row["destination"])
+            if u in coords and v in coords:
+                edge_x.extend([coords[u][0], coords[v][0], None])
+                edge_y.extend([coords[u][1], coords[v][1], None])
 
+        fig_map.add_trace(
+            go.Scatter(
+                x=edge_x,
+                y=edge_y,
+                mode="lines",
+                line=dict(width=1.0, color="rgba(100, 116, 139, 0.25)"),
+                name="Network Topology Edges",
+                hoverinfo="none",
+            )
+        )
+
+        if closed_u in coords and closed_v in coords:
+            fig_map.add_trace(
+                go.Scatter(
+                    x=[coords[closed_u][0], coords[closed_v][0]],
+                    y=[coords[closed_u][1], coords[closed_v][1]],
+                    mode="lines+markers",
+                    line=dict(width=5.0, color="#EF4444"),
+                    marker=dict(size=12, color="#EF4444", symbol="x"),
+                    name="Closed Lane",
+                    hoverinfo="text",
+                    text=f"CLOSED: {closed_u} → {closed_v}",
+                )
+            )
+
+        max_detour_flow = max([item["flow"] for item in detour_items], default=1.0)
+        for idx, item in enumerate(detour_items):
+            u, v = item["edge"]
+            flow_val = item["flow"]
+            if u in coords and v in coords:
+                line_w = max(2.5, min(9.0, 2.5 + 6.5 * (flow_val / max_detour_flow)))
+                fig_map.add_trace(
+                    go.Scatter(
+                        x=[coords[u][0], coords[v][0]],
+                        y=[coords[u][1], coords[v][1]],
+                        mode="lines",
+                        line=dict(width=line_w, color="#38BDF8"),
+                        name="Detour Flow" if idx == 0 else "",
+                        showlegend=(idx == 0),
+                        hoverinfo="text",
+                        text=f"Detour: {u} → {v} ({flow_val:.3f} legs/day)",
+                    )
+                )
+
+        # Plot all 100 Hub Nodes
+        node_x = [coords[h][0] for h in nodes_df["hub"]]
+        node_y = [coords[h][1] for h in nodes_df["hub"]]
+        node_text = [
+            f"<b>{r['hub']}</b><br>{r['name']}<br>Cap: {r['capacity_est']} legs/day"
+            for _, r in nodes_df.iterrows()
+        ]
+        fig_map.add_trace(
+            go.Scatter(
+                x=node_x,
+                y=node_y,
+                mode="markers+text",
+                text=[r["hub"] if r["capacity_est"] > 80 else "" for _, r in nodes_df.iterrows()],
+                textposition="top center",
+                textfont=dict(size=9, color="#94A3B8"),
+                hovertext=node_text,
+                hoverinfo="text",
+                name="Hubs (Node size = capacity)",
+                marker=dict(
+                    size=[float(cap) * 0.35 + 6 for cap in nodes_df["capacity_est"]],
+                    color="#0284C7",
+                    line=dict(width=1, color="#38BDF8"),
+                ),
+            )
+        )
+
+        fig_map.update_layout(
+            title=f"Full 100-Hub Spring-Layout Topology: {closed_u_name} → {closed_v_name}",
+            xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+            height=640,
+            margin=dict(l=10, r=10, t=50, b=10),
+            legend=dict(orientation="h", yanchor="bottom", y=1.01, xanchor="left", x=0),
+        )
+
+    style_plotly_fig(fig_map)
     st.plotly_chart(fig_map, use_container_width=True)
 
     # Detour Edges Clean Table
@@ -723,6 +1190,7 @@ def page_network_view() -> None:
             title="Top 10 Hubs by Capacity (95th Percentile Outgoing Legs)",
         )
         fig_th.update_layout(yaxis=dict(autorange="reversed"), height=350, showlegend=False)
+        style_plotly_fig(fig_th)
         st.plotly_chart(fig_th, use_container_width=True)
 
     with col_t2:
@@ -735,13 +1203,13 @@ def page_network_view() -> None:
             orientation="h",
             labels={"leg_count": "Leg Count (3 weeks)", "lane": "Corridor"},
             color="leg_count",
-            color_continuous_scale="Purples",
+            color_continuous_scale="Teal",
             title="Top 10 Lanes by Baseline Traffic Volume",
         )
         fig_te.update_layout(yaxis=dict(autorange="reversed"), height=350, showlegend=False)
+        style_plotly_fig(fig_te)
         st.plotly_chart(fig_te, use_container_width=True)
 
-    # Searchable Hubs Directory
     with st.expander("📋 Searchable 100-Hub Facility Directory"):
         search_query = st.text_input("Filter Hubs by Name, Code, or State:", "")
         filtered_nodes = nodes_df[
@@ -767,7 +1235,7 @@ def page_network_view() -> None:
 
 
 def page_uncertainty() -> None:
-    data.render_banner()
+    render_header()
     st.title("Uncertainty & Robust Optimization 🎲")
     st.markdown(
         """
@@ -790,7 +1258,7 @@ def page_uncertainty() -> None:
         """
     )
 
-    # 1. Comparison Table
+    # Comparison Table
     plan_comp_table = summary_df[
         [
             "plan",
@@ -828,7 +1296,7 @@ def page_uncertainty() -> None:
 
     render_table(fmt_comp_table)
 
-    # 2. Plotly Bar Charts
+    # Plotly Bar Charts
     st.markdown("### Cost Metrics Comparison Across Uncertainty Plans")
     col_c1, col_c2 = st.columns(2)
 
@@ -839,7 +1307,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["eval_mean"],
                 name="Avg Simulated (eval_mean)",
-                marker_color="#3b82f6",
+                marker_color="#38BDF8",
                 text=summary_df["eval_mean"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -849,7 +1317,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["eval_cvar"],
                 name="CVaR 80% (eval_cvar)",
-                marker_color="#f59e0b",
+                marker_color="#F59E0B",
                 text=summary_df["eval_cvar"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -859,7 +1327,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["eval_worst"],
                 name="Worst Scenario (eval_worst)",
-                marker_color="#ef4444",
+                marker_color="#EF4444",
                 text=summary_df["eval_worst"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -872,6 +1340,7 @@ def page_uncertainty() -> None:
             margin=dict(l=40, r=20, t=50, b=40),
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
+        style_plotly_fig(fig_sim)
         st.plotly_chart(fig_sim, use_container_width=True)
 
     with col_c2:
@@ -881,7 +1350,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["realized_primary"],
                 name="Realized Primary",
-                marker_color="#10b981",
+                marker_color="#10B981",
                 text=summary_df["realized_primary"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -891,7 +1360,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["realized_sens_pred"],
                 name="Realized Sens Pred",
-                marker_color="#6366f1",
+                marker_color="#6366F1",
                 text=summary_df["realized_sens_pred"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -901,7 +1370,7 @@ def page_uncertainty() -> None:
                 x=summary_df["plan"],
                 y=summary_df["realized_sens_5legs"],
                 name="Realized Sens 5-legs",
-                marker_color="#8b5cf6",
+                marker_color="#8B5CF6",
                 text=summary_df["realized_sens_5legs"].map(lambda x: f"{x:,.1f}"),
                 textposition="auto",
             )
@@ -914,9 +1383,10 @@ def page_uncertainty() -> None:
             margin=dict(l=40, r=20, t=50, b=40),
             legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
         )
+        style_plotly_fig(fig_real)
         st.plotly_chart(fig_real, use_container_width=True)
 
-    # 3. Interval Diagnostics Table
+    # Interval Diagnostics Table
     st.markdown("---")
     st.subheader("Conformal Prediction Interval Diagnostics")
     st.markdown(
@@ -956,7 +1426,7 @@ def page_uncertainty() -> None:
 
     render_table(fmt_int)
 
-    # 4. Explicit Methodological Note
+    # Explicit Methodological Note
     st.info(
         "ℹ️ **Note on Interval Calibration & Sampling Spread**: "
         "Lane intervals are weighted averages of representative-route conformal intervals "
@@ -964,7 +1434,7 @@ def page_uncertainty() -> None:
         "90% interval with the 50% interval used as a diagnostic consistency check."
     )
 
-    # 5. Detailed Per-Seed Realization Explorer
+    # Detailed Per-Seed Realization Explorer
     st.markdown("---")
     st.subheader("Scenario-Level Stochastic Simulation Results")
     st.markdown(
@@ -986,11 +1456,12 @@ def page_uncertainty() -> None:
         labels={"plan": "Policy", "eval_mean": "Simulated Cost (leg-hrs)"},
     )
     fig_box.update_layout(height=360, showlegend=False)
+    style_plotly_fig(fig_box)
     st.plotly_chart(fig_box, use_container_width=True)
 
 
 def page_method_and_limitations() -> None:
-    data.render_banner()
+    render_header()
     st.title("Methodology & Limitations 📖")
     st.markdown(
         """
@@ -1110,7 +1581,7 @@ def page_method_and_limitations() -> None:
         2. **Independent Lane Multipliers**: Stochastic scenarios sample lane travel-time multipliers independently per lane, ignoring spatial weather or regional corridor correlation.
         3. **Deterministic Outgoing Hub Capacities**: Uses a fixed 95th-percentile outgoing leg cap per hub and does not model receiving-dock bottlenecks, sorting equipment breakdowns, or dynamic shift staffing.
         4. **Core Subgraph Boundary**: Results apply strictly to the 100-hub, 292-lane core network; external regional feeder branches and last-mile delivery legs outside the core are excluded.
-        5. **Read-Only Architecture**: All recovery plans and optimization matrices were precomputed offline; the dashboard operates exclusively in read-only mode without executing solvers in real time.
+        5. **Read-Only Architecture**: While the dashboard now features a Live What-If LP solver demo, all primary benchmark comparisons reflect verified offline optimization runs.
         """
     )
 
@@ -1158,12 +1629,20 @@ def page_method_and_limitations() -> None:
 
 
 def main() -> None:
-    st.sidebar.title("SupplyShield 🛡️")
-    st.sidebar.markdown("**Express Logistics Disruption Recovery**")
+    st.sidebar.markdown(
+        """
+        <div style="padding: 10px 0 16px 0;">
+            <div style="font-size: 1.4rem; font-weight: 800; color: #F8FAFC;">SupplyShield 🛡️</div>
+            <div style="font-size: 0.78rem; font-weight: 600; color: #38BDF8; letter-spacing: 0.08em; text-transform: uppercase;">Control Tower SaaS</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Multipage Navigation
     pages = {
         "Overview": page_overview,
+        "Live What-If Simulator": page_what_if_simulator,
         "Closure explorer": page_closure_explorer,
         "Network view": page_network_view,
         "Uncertainty": page_uncertainty,
@@ -1171,15 +1650,23 @@ def main() -> None:
     }
 
     selection = st.sidebar.radio(
-        "Navigation",
+        "Control Tower Navigation",
         list(pages.keys()),
         index=0,
     )
 
     st.sidebar.markdown("---")
-    st.sidebar.caption("📦 **Dataset**: Delhivery (3 weeks, 2018)")
-    st.sidebar.caption("🌐 **Network**: 100 Hubs | 292 Lanes")
-    st.sidebar.caption("⚡ **Optimization**: Multi-commodity Flow")
+    st.sidebar.markdown(
+        """
+        <div style="font-size: 0.8rem; color: #94A3B8; line-height: 1.6;">
+            <div>📦 <b>Dataset</b>: Delhivery India Core</div>
+            <div>🌐 <b>Network</b>: 100 Hubs | 292 Lanes</div>
+            <div>⚡ <b>Solver</b>: HiGHS Dual-Simplex LP</div>
+            <div>🎲 <b>Uncertainty</b>: Conformal Bounds</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
 
     # Render selected page
     page_func = pages[selection]

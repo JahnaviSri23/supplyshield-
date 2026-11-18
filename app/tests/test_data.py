@@ -174,6 +174,28 @@ class TestSupplyShieldData(unittest.TestCase):
         self.assertEqual(sum(not v for v in is_approx.values()), 95, "Expected 95 known hubs")
         self.assertEqual(sum(is_approx.values()), 5, "Expected 5 approximate hubs")
 
+    def test_load_risk_table_lane(self):
+        risk_df = data.load_risk_table_lane()
+        self.assertIsInstance(risk_df, pd.DataFrame)
+        self.assertIn("source_center", risk_df.columns)
+        self.assertIn("destination_center", risk_df.columns)
+        self.assertIn("pred_multiplier", risk_df.columns)
+        self.assertGreater(len(risk_df), 0)
+
+    def test_solve_live_reroute(self):
+        # Pick the first lane from core_edges
+        edges_df = data.load_core_edges()
+        first_row = edges_df.iloc[0]
+        u = first_row.get("source_center", first_row.get("source"))
+        v = first_row.get("destination_center", first_row.get("destination"))
+        res = data.solve_live_reroute((u, v), penalty=96.0, risk_adjusted=True)
+        self.assertIn("runtime_ms", res)
+        self.assertIn("total_reroute_cost", res)
+        self.assertIn("cost_saved", res)
+        self.assertIn("detour_df", res)
+        self.assertGreaterEqual(res["runtime_ms"], 0.0)
+        self.assertGreaterEqual(res["total_reroute_cost"], 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()
