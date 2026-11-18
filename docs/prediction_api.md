@@ -1,4 +1,4 @@
-﻿# Person B Prediction API
+# Person B Prediction API
 
 ## Purpose and architecture
 
@@ -10,6 +10,12 @@ The module has four layers:
 2. `build_feature_matrix` maps those fields to B02's exact ten-feature order.
 3. `predict_residuals` accepts only that validated, ordered feature matrix and a loaded Booster. `predict_batch` adds the residual to `lane_base`; `predict_single` is a one-row convenience wrapper.
 4. `apply_conformal_intervals` optionally applies saved Method C offsets and remains separate from point scoring.
+
+## Verification checkpoint
+
+The Prediction API suite was rerun from the isolated cleanup worktree on 2026-11-12: **8 passed, 0 failed**. The exact executable used was 'C:\Local\Documents-Local\ML Project\supplyshield--1\.venv\Scripts\python.exe' with -m unittest models.test_prediction_api -v; its working directory was the isolated worktree because .venv is in the original checkout. This test result does not verify Day 6 integration.
+
+The Prediction API suite was also run in the repository virtual environment with `\.venv\Scripts\python.exe -m unittest models.test_prediction_api -v`: **8 passed, 0 failed**. This records a separate run and does not verify Day 6 integration.
 
 ## Approved lane-history contract
 
@@ -46,10 +52,10 @@ B02 calls `pandas.to_datetime` without UTC conversion. This API likewise does no
 from models.prediction_api import predict_batch, predict_single
 
 row = {
-    "source_center": "IND500008AAF",
-    "destination_center": "IND500039AAC",
+    "source_center": "SYNTH_ORIGIN_01",
+    "destination_center": "SYNTH_DESTINATION_02",
     "route_type": "FTL",
-    "od_start_time": "2018-09-29 20:41:18.098697",
+    "od_start_time": "2030-01-15 10:30:00",
     "osrm_time_min": 120.0,
     "osrm_distance_km": 80.0,
     "lane_base": 2.0,
@@ -79,3 +85,13 @@ The prediction export includes a target column for historical evaluation, but th
 ## Future adaptability
 
 The current API accepts precomputed as-of lane history. The core prediction engine is independent of the history source. Any future change to the upstream history integration should be handled through the input adapter and reviewed against the model's existing feature contract.
+
+## Synthetic prediction and explanation demo
+
+Run the source-only smoke demonstration with:
+
+```powershell
+.\.venv\Scripts\python.exe models/person_b_prediction_demo.py
+```
+
+It passes a hypothetical request with synthetic endpoint labels through the saved model and Method C intervals, then calculates native XGBoost contributions for the same synthetic feature row. The example uses the documented fit-only `lane_base = 2.0` fallback for zero history; the remaining request features and endpoint labels are illustrative. The result demonstrates software flow only; it is not a real shipment prediction, a model-quality result, a risk category, or a causal explanation. It writes no files. The demo loads the saved model and conformal parameters, so those restricted artifacts must remain local unless separately approved.
