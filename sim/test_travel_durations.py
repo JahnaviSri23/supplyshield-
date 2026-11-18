@@ -1,7 +1,22 @@
+
 import networkx as nx
+import pytest
 from sim.simulator import simulate
 
 
+@pytest.mark.parametrize(
+    "base_hours, multiplier, expected_days",
+    [
+        (6, 1.0, 1),
+        (24, 1.0, 1),
+        (25, 1.0, 2),
+        (30, 1.0, 2),
+        (48, 1.0, 2),
+        (72, 1.0, 3),
+        (30, 2.0, 3),
+        (48, 1.5, 3),
+    ],
+)
 def test_travel_duration(base_hours, multiplier, expected_days):
     graph = nx.DiGraph()
 
@@ -42,25 +57,6 @@ def test_travel_duration(base_hours, multiplier, expected_days):
     )
 
     print(
-        f"PASS: {base_hours}h × {multiplier} "
-        f"→ arrival day {expected_days}"
+        f"PASS: {base_hours}h x {multiplier} "
+        f"-> arrival day {expected_days}"
     )
-
-
-test_cases = [
-    (6, 1.0, 1),
-    (24, 1.0, 1),
-    (25, 1.0, 2),
-    (30, 1.0, 2),
-    (48, 1.0, 2),
-    (72, 1.0, 3),
-    (30, 2.0, 3),
-    (48, 1.5, 3),
-]
-
-print("\nRISK-ADJUSTED TRAVEL DURATION TESTS")
-
-for base_hours, multiplier, expected_days in test_cases:
-    test_travel_duration(base_hours, multiplier, expected_days)
-
-print("\nALL TRAVEL DURATION TESTS: PASS")
