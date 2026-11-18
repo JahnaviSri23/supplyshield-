@@ -1,0 +1,11 @@
+horizon,group,n_runs,recovered_n,min,median,mean,max,censored_n,censored_pct,waiting_rate,run_status
+40,overall,40,21,3.0,3.0,3.5714285714285716,5.0,19,47.5,1.0,as_executed
+40,LP (all flows),10,7,4.0,4.0,4.142857142857143,5.0,3,30.0,1.0,as_executed
+40,do nothing,10,0,,,,,10,100.0,1.0,as_executed
+40,greedy,10,7,3.0,3.0,3.2857142857142856,5.0,3,30.0,1.0,as_executed
+40,preserve (affected flows only),10,7,3.0,3.0,3.2857142857142856,5.0,3,30.0,1.0,as_executed
+120,overall,40,21,3.0,3.0,3.5714285714285716,5.0,19,47.5,1.0,as_executed
+120,LP (all flows),10,7,4.0,4.0,4.142857142857143,5.0,3,30.0,1.0,as_executed
+120,do nothing,10,0,,,,,10,100.0,1.0,as_executed
+120,greedy,10,7,3.0,3.0,3.2857142857142856,5.0,3,30.0,1.0,as_executed
+120,preserve (affected flows only),10,7,3.0,3.0,3.2857142857142856,5.0,3,30.0,1.0,as_executed
