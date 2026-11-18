@@ -4,6 +4,7 @@ import pandas as pd
 
 
 DATA = Path(__file__).resolve().parents[1] / "data"
+
 KEYS = [
     "trip_uuid",
     "source_center",
@@ -12,56 +13,116 @@ KEYS = [
     "od_end_time",
 ]
 RAIN = ["source_rain_mm", "destination_rain_mm"]
-CUTOFF = pd.Timestamp("2018-09-26")
 
 
 def read_legs(path, columns):
-    legs = pd.read_csv(path, usecols=columns)
-    for col in ("od_start_time", "od_end_time"):
-        legs[col] = pd.to_datetime(legs[col], format="mixed", errors="raise")
+    data = pd.read_csv(path, usecols=columns)
 
-    if legs[KEYS].isna().any().any():
-        raise ValueError(f"Missing leg identifiers in {path.name}")
-    if legs.duplicated(KEYS).any():
-        raise ValueError(f"Duplicate leg identifiers in {path.name}")
+    for column in ["od_start_time", "od_end_time"]:
+        data[column] = pd.to_datetime(
+            data[column], format="mixed", errors="raise"
+        )
 
-    return legs
+    if data[KEYS].isna().any().any():
+        raise ValueError(f"Missing leg identifiers: {path.name}")
+
+    if data.duplicated(KEYS).any():
+        raise ValueError(f"Duplicate leg identifiers: {path.name}")
+
+    return data
 
 
 def main():
-    weather = read_legs(DATA / "processed" / "legs_enriched.csv", KEYS + RAIN)
+    legs = read_legs(
+        DATA / "processed/legs.csv",
+        KEYS,
+    )
+    weather = read_legs(
+        DATA / "processed/legs_enriched.csv",
+        KEYS + RAIN,
+    )
+    splits = pd.read_csv(
+        DATA / "processed/split_trip_ids.csv",
+        usecols=["trip_uuid", "split"],
+    )
+
+    if splits["trip_uuid"].isna().any():
+        raise ValueError("Missing trip IDs in master split.")
+
+    if not splits["trip_uuid"].is_unique:
+        raise ValueError("Duplicate trip IDs in master split.")
+
+    if not splits["split"].isin(
+        ["train", "calibration", "test"]
+    ).all():
+        raise ValueError("Invalid or missing master split labels.")
+
+    if set(legs["trip_uuid"]) != set(splits["trip_uuid"]):
+        raise ValueError("Legs and master split contain different trips.")
+
+    assigned = legs.merge(
+        splits,
+        on="trip_uuid",
+        how="left",
+        validate="many_to_one",
+    )
+
+    # Verify every weather-export leg belongs to the original dataset.
+    weather_check = weather[KEYS].merge(
+        legs[KEYS],
+        on=KEYS,
+        how="left",
+        validate="one_to_one",
+        indicator=True,
+    )
+    if not weather_check["_merge"].eq("both").all():
+        raise ValueError("Some weather-export legs do not match legs.csv.")
+
+    joined = assigned.merge(
+        weather,
+        on=KEYS,
+        how="left",
+        validate="one_to_one",
+        indicator=True,
+    )
+
+    assert len(joined) == len(legs)
+
     rows = []
 
-    for split in ("train", "calibration", "test"):
-        legs = read_legs(
-            DATA / "datasplit" / f"{split}_legs_v1.csv",
-            KEYS + ["trip_creation_time"],
-        )
-        created = pd.to_datetime(
-            legs["trip_creation_time"], format="mixed", errors="raise"
-        )
+    for split in ["train", "calibration", "test"]:
+        subset = joined.loc[joined["split"].eq(split)]
 
-        joined = legs.merge(
-            weather, on=KEYS, how="left", validate="one_to_one", indicator=True
-        )
-        matched = joined["_merge"].eq("both")
-        source = joined["source_rain_mm"].notna()
-        destination = joined["destination_rain_mm"].notna()
+        source = subset["source_rain_mm"].notna()
+        destination = subset["destination_rain_mm"].notna()
         both = source & destination
 
         rows.append({
-            "B_split": split,
-            "total_legs": len(legs),
-            "matched_to_weather_file": int(matched.sum()),
-            "matched_but_no_rain": int((matched & ~source & ~destination).sum()),
-            "source_rain": int(source.sum()),
-            "destination_rain": int(destination.sum()),
-            "both_endpoints_rain": int(both.sum()),
-            "both_endpoints_pct": round(100 * both.mean(), 2),
-            "trip_created_before_A_cutoff": int(created.lt(CUTOFF).sum()),
+            "split": split,
+            "trips": subset["trip_uuid"].nunique(),
+            "total_legs": len(subset),
+            "matched_to_weather_file": int(
+                subset["_merge"].eq("both").sum()
+            ),
+            "source_rain_available": int(source.sum()),
+            "destination_rain_available": int(destination.sum()),
+            "both_endpoints_available": int(both.sum()),
+            "both_endpoints_pct": (
+                round(100 * both.mean(), 2)
+                if len(subset) else float("nan")
+            ),
         })
 
-    print(pd.DataFrame(rows).to_string(index=False))
+    summary = pd.DataFrame(rows)
+
+    output = DATA / "processed/weather_master_split_coverage.csv"
+    summary.to_csv(output, index=False)
+
+    print(summary.to_string(index=False))
+    print("\nPASS: Master split used; all original legs retained.")
+    print("Saved:", output)
+    print("Missing weather was not replaced with zero.")
+    print("This is a coverage audit, not a prediction-feature export.")
 
 
 if __name__ == "__main__":

@@ -13,7 +13,8 @@ OUTGOING legs per day, so the rule is: all flows leaving a hub together <= capac
 
 Run from the project root:  python opt/c_multiflow.py        (needs opt/c_real_graph.py, c_toy_recovery.py)
 Output: experiments/c_multiflow_closures.csv
-(extra_cost = how much worse the whole network gets because of the closure, under that plan)
+(extra_cost = how much worse the network gets under that plan, against THAT plan's own no-closure cost;
+ extra_vs_best_normal = against the best possible no-closure cost, the same for every plan -> use this one to compare plans)
 
 ASSUMPTIONS (write them in docs/c_notes.md):
   - demand of a flow = trips / 14 legs per day (training days)
@@ -32,6 +33,7 @@ import c_real_graph as rg
 import c_toy_recovery as c
 
 BIG = 10 ** 9
+PLAN_MIN_FLOW = 1e-9   # flows below this are solver noise and are not written to the plan files
 
 
 def build_model(G):
@@ -47,7 +49,7 @@ def build_model(G):
     return nodes, nidx, edges, eidx, N, E, src, dst, cost, flows
 
 
-def solve_multiflow(G, closed=None):
+def solve_multiflow(G, closed=None, return_plan=False):
     """Minimum total cost over all flows sharing hub capacity. `closed` = one lane (u, v) that is shut."""
     nodes, nidx, edges, eidx, N, E, src, dst, cost, flows = build_model(G)
     K = len(flows)
@@ -87,7 +89,11 @@ def solve_multiflow(G, closed=None):
         raise RuntimeError(res.message)
     unmet = float(res.x[K * E:].sum())
     travel = float(np.dot(np.tile(cost, K), res.x[:K * E]))
-    return travel + rg.PENALTY_HOURS * unmet, unmet
+    if not return_plan:
+        return travel + rg.PENALTY_HOURS * unmet, unmet
+    plan = [{"od": [flows[k][0], flows[k][1]], "edge": [edges[e][0], edges[e][1]], "flow": float(res.x[k * E + e])}
+            for k in range(K) for e in range(E) if res.x[k * E + e] > PLAN_MIN_FLOW]
+    return travel + rg.PENALTY_HOURS * unmet, unmet, plan
 
 
 def baseline_plans(G, lane):
@@ -115,8 +121,13 @@ def baseline_plans(G, lane):
     flows, delivered = c.greedy(H)
     detour = sum(H.edges[e]["cost"] * f for e, f in flows.items())
     unmet = q - delivered
-    return {"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
-            "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost
+    background = [{"od": [a, b], "edge": [a, b], "flow": G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS}
+                  for (a, b) in G.edges if (a, b) != lane]          # every other flow stays on its direct lane
+    plan_flows = {"do nothing": background,
+                  "greedy": background + [{"od": [u, v], "edge": [a, b], "flow": f}
+                                          for (a, b), f in flows.items() if f > PLAN_MIN_FLOW]}
+    return ({"do nothing": (other_cost + rg.PENALTY_HOURS * q, q),
+             "greedy": (other_cost + detour + rg.PENALTY_HOURS * unmet, unmet)}, normal_cost, plan_flows)
 
 
 if __name__ == "__main__":
@@ -126,25 +137,46 @@ if __name__ == "__main__":
     print(f"\nno closure: LP optimum {base_lp:.1f} leg-hours, unmet {base_unmet:.2f} "
           f"({time.perf_counter() - t0:.1f} s for one solve)")
     top = sorted(G.edges, key=lambda e: -G.edges[e]["trips"])[:10]
-    rows = []
-    for lane in top:
-        plans, normal_cost = baseline_plans(G, lane)
+    demand_records = [{"od": [a, b], "legs_per_day": G.edges[(a, b)]["trips"] / rg.TRAIN_DAYS} for (a, b) in G.edges]
+    rows, tests = [], []
+    for i, lane in enumerate(top, 1):
+        plans, normal_cost, plan_flows = baseline_plans(G, lane)
         t0 = time.perf_counter()
-        lp_cost, lp_unmet = solve_multiflow(G, closed=lane)
+        lp_cost, lp_unmet, lp_plan = solve_multiflow(G, closed=lane, return_plan=True)
         secs = time.perf_counter() - t0
         plans["LP (all flows)"] = (lp_cost, lp_unmet)
+        plan_flows["LP (all flows)"] = lp_plan
+        expected = {}
+        for name, (t_cost, unmet_legs) in plans.items():     # full precision, computed FROM the exported plan
+            ship = sum(G.edges[tuple(r["edge"])]["cost"] * r["flow"] for r in plan_flows[name])
+            expected[name] = {"shipping": ship, "unmet": unmet_legs,
+                              "total_cost": ship + rg.PENALTY_HOURS * unmet_legs}
+        tests.append({"id": f"L{i:02d}", "closed_lanes": [[lane[0], lane[1]]], "penalty": rg.PENALTY_HOURS,
+                      "flow_unit": "legs per day", "cost_unit": "leg-hours", "horizon": "one steady-state day",
+                      "min_flow_written": PLAN_MIN_FLOW, "demand": demand_records,
+                      "plans": plan_flows, "expected": expected})
         for name, (total, unmet) in plans.items():
             ref = base_lp if name.startswith("LP") else normal_cost      # each plan is compared with ITS OWN no-closure cost
             rows.append({"lane": f"{lane[0]}->{lane[1]}", "closed_lane_legs_per_day": round(G.edges[lane]["trips"] / rg.TRAIN_DAYS, 2),
                          "plan": name, "total_cost": round(total, 1), "extra_cost": round(total - ref, 1),
+                         "extra_vs_best_normal": round(total - base_lp, 1),
                          "unmet": round(unmet, 2), "lp_seconds": round(secs, 2)})
     table = pd.DataFrame(rows)
     pd.set_option("display.width", 220)
     print("\nEXTRA COST caused by the closure (leg-hours), each plan vs its own no-closure cost:")
     print(table.pivot(index="lane", columns="plan", values="extra_cost").to_string())
     print("\nAverage EXTRA cost per plan:\n", table.groupby("plan")["extra_cost"].mean().round(1).to_string())
+    print("\nFAIR COMPARISON (all plans against the same reference = the no-closure LP optimum):")
+    print(table.pivot(index="lane", columns="plan", values="extra_vs_best_normal").to_string())
+    print("\nAverage extra vs best normal:\n", table.groupby("plan")["extra_vs_best_normal"].mean().round(1).to_string())
+    tot = table.pivot(index="lane", columns="plan", values="total_cost")
+    print("\nCHECK: LP total <= greedy total in every closure (must be True):",
+          bool((tot["LP (all flows)"] <= tot["greedy"] + 1e-6).all()))
     print("\nLegs never delivered, summed over the 10 closures:\n", table.groupby("plan")["unmet"].sum().round(2).to_string())
     print("\nSlowest LP solve (seconds):", table["lp_seconds"].max())
     Path("experiments").mkdir(exist_ok=True)
     table.to_csv("experiments/c_multiflow_closures.csv", index=False)
     print("Saved experiments/c_multiflow_closures.csv")
+    import json
+    json.dump(tests, open("experiments/c_multiflow_plans.json", "w"))
+    print("Saved experiments/c_multiflow_plans.json  (multi-OD plans + expected costs, for testing simulate())")

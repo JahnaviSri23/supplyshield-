@@ -45,10 +45,10 @@ Running the geocoder again is not required to reproduce the frozen core.
 ## Evaluation split
 
 Split whole trips by trip_creation_time:
-
+Frozen trip-level split assignments: data/processed/split_trip_ids.csv
 - Training: 12–25 September 2018.
 - Calibration: 26–29 September 2018.
-- Testing: 30 September onward.
+- Testing: 29 September 2018, from 20:41 onward.
 
 The later file combines calibration and testing.
 Person B must separate these periods before model evaluation.
@@ -136,3 +136,23 @@ These exports do not modify research coordinates or weather data.
 Markers are not verified warehouse addresses.
 Lane lines represent network connections, not road routes.
 The research core retains all 100 hubs and 292 lanes.
+
+## Historical lagged-weather handoff
+
+Run: python -m src.make_lagged_weather
+
+- leg_weather_lag1.csv: all 26,369 legs with master split assignments,
+  previous-calendar-day source rainfall and missingness indicators.
+- weather_lag1_coverage.csv: coverage by train/calibration/test split.
+
+Proposed prediction timestamp: individual-leg od_start_time.
+Naive journey timestamps are assumed to use Asia/Kolkata local time.
+Model inputs: source_rain_prev_day_mm and source_rain_prev_day_missing.
+Other exported columns support joining/auditing, not automatic model input.
+
+Missing rainfall remains missing. Any imputation must be fitted on
+training data only. Baseline and weather models must be compared on
+identical evaluation journeys.
+
+ERA5 publication timestamps are unavailable. This is a historical
+lagged-weather experiment, not verified real-time prediction.

@@ -8,10 +8,14 @@ EPS = 1e-9
 
 
 def _routes(graph, demands, plan):
-    """Return fixed routes and the daily demand assigned to each route."""
-    routes = []
+    """Convert default routes or OD-specific edge flows into daily routes.
 
+    plan=None uses shortest paths. A dict preserves the legacy single-OD
+    interface. A list contains {"od": [u,v], "edge": [a,b], "flow": number}.
+    Unassigned demand is explicitly retained as an unmet route.
+    """
     if plan is None:
+        routes = []
         for (source, destination), amount in demands.items():
             try:
                 path = nx.shortest_path(
@@ -19,86 +23,96 @@ def _routes(graph, demands, plan):
                 )
             except nx.NetworkXNoPath:
                 path = None
-
             routes.append((path, amount))
-
         return routes
 
-    # Aggregate edge flows cannot identify multiple OD commodities.
-    if len(demands) != 1:
-        raise ValueError(
-            "An edge-flow plan currently supports one origin/destination. "
-            "Multiple commodities require a commodity-specific plan."
-        )
+    if isinstance(plan, dict):
+        if len(demands) != 1:
+            raise ValueError(
+                "Dictionary plans support one OD only; use OD-specific records."
+            )
+        od = next(iter(demands))
+        records = [
+            {"od": list(od), "edge": list(edge), "flow": flow}
+            for edge, flow in plan.items()
+        ]
+    elif isinstance(plan, list):
+        records = plan
+    else:
+        raise ValueError("Plan must be None, an edge-flow dict, or an OD record list.")
 
-    (source, destination), demand = next(iter(demands.items()))
-    residual = nx.DiGraph()
-    residual.add_nodes_from(graph.nodes)
-
-    for edge, amount in plan.items():
-        amount = float(amount)
-
+    flows_by_od = defaultdict(lambda: defaultdict(float))
+    for record in records:
+        if not isinstance(record, dict):
+            raise ValueError("Each flow record must be a dictionary.")
+        try:
+            od = tuple(record["od"])
+            edge = tuple(record["edge"])
+            amount = float(record["flow"])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError("Invalid OD flow record.") from exc
+        if len(od) != 2 or len(edge) != 2:
+            raise ValueError("OD and edge must each have exactly two nodes.")
+        if od not in demands:
+            raise ValueError(f"Unknown OD pair in plan: {od}")
+        if edge not in graph.edges:
+            raise ValueError(f"Unknown edge in plan: {edge}")
         if not math.isfinite(amount) or amount < -EPS:
             raise ValueError("Plan flows must be finite and nonnegative.")
-
-        if edge not in graph.edges:
-            raise ValueError(f"Plan contains an unknown edge: {edge}")
-
         if amount > EPS:
-            u, v = edge
-            residual.add_edge(
-                u, v, flow=amount, cost=graph.edges[edge]["cost"]
+            flows_by_od[od][edge] += amount
+
+    routes = []
+    for (source, destination), demand in demands.items():
+        residual = nx.DiGraph()
+        residual.add_nodes_from(graph.nodes)
+        for (u, v), amount in flows_by_od[(source, destination)].items():
+            if amount > EPS:
+                residual.add_edge(
+                    u, v, flow=amount, cost=graph.edges[u, v]["cost"]
+                )
+
+        balance = {node: 0.0 for node in graph}
+        for u, v, attributes in residual.edges(data=True):
+            amount = attributes["flow"]
+            balance[u] += amount
+            balance[v] -= amount
+        for node in graph:
+            if node not in (source, destination) and abs(balance[node]) > 1e-6:
+                raise ValueError(
+                    f"Plan does not conserve {source}->{destination} flow at {node}."
+                )
+
+        planned = balance[source]
+        if (
+            planned < -EPS
+            or planned > demand + 1e-6
+            or abs(balance[destination] + planned) > 1e-6
+        ):
+            raise ValueError(f"Invalid planned demand for {source}->{destination}.")
+
+        assigned = 0.0
+        while nx.has_path(residual, source, destination):
+            path = nx.shortest_path(
+                residual, source, destination, weight="cost"
             )
+            edges = list(zip(path, path[1:]))
+            amount = min(residual.edges[edge]["flow"] for edge in edges)
+            routes.append((path, amount))
+            assigned += amount
+            for edge in edges:
+                residual.edges[edge]["flow"] -= amount
+                if residual.edges[edge]["flow"] <= EPS:
+                    residual.remove_edge(*edge)
 
-    # Check that the supplied static plan conserves flow.
-    balance = {node: 0.0 for node in graph}
-
-    for u, v, attributes in residual.edges(data=True):
-        balance[u] += attributes["flow"]
-        balance[v] -= attributes["flow"]
-
-    for node in graph:
-        if node not in (source, destination):
-            if abs(balance[node]) > 1e-6:
-                raise ValueError(f"Plan does not conserve flow at {node}.")
-
-    planned = balance[source]
-
-    if (
-        planned < -EPS
-        or planned > demand + 1e-6
-        or abs(balance[destination] + planned) > 1e-6
-    ):
-        raise ValueError("Plan source/destination totals are invalid.")
-
-    # Decompose the edge-flow plan into complete routes.
-    assigned = 0.0
-
-    while nx.has_path(residual, source, destination):
-        path = nx.shortest_path(
-            residual, source, destination, weight="cost"
-        )
-        edges = list(zip(path, path[1:]))
-        amount = min(residual.edges[e]["flow"] for e in edges)
-
-        routes.append((path, amount))
-        assigned += amount
-
-        for edge in edges:
-            residual.edges[edge]["flow"] -= amount
-            if residual.edges[edge]["flow"] <= EPS:
-                residual.remove_edge(*edge)
-
-    if residual.number_of_edges():
-        raise ValueError("Plan contains cycles or disconnected flow.")
-
-    if abs(assigned - planned) > 1e-6:
-        raise ValueError("Unable to decompose the supplied plan.")
-
-    # Unassigned demand remains unmet; it must not disappear.
-    if demand - assigned > EPS:
-        routes.append((None, demand - assigned))
-
+        if residual.number_of_edges():
+            raise ValueError(
+                f"Plan contains cycles or disconnected {source}->{destination} flow."
+            )
+        if abs(assigned - planned) > 1e-6:
+            raise ValueError(f"Cannot decompose {source}->{destination} plan.")
+        if demand - assigned > EPS:
+            routes.append((None, demand - assigned))
     return routes
 
 
@@ -117,6 +131,9 @@ def simulate(graph, scenario, plan=None):
         edges: cap
 
     One edge takes one day in this first implementation.
+    scenario["closed_lanes"] optionally specifies directed [u, v] pairs
+    unavailable during [failure_start, failure_start + failure_days).
+    Assigned traffic waits for reopening; routing is fixed per run.
     """
     if not graph.is_directed() or graph.is_multigraph():
         raise ValueError("Use a networkx DiGraph.")
@@ -140,6 +157,18 @@ def simulate(graph, scenario, plan=None):
     failure_days = int(scenario.get("failure_days", 3))
     scale = float(scenario.get("capacity_scale", 1.0))
     failed = dict(scenario.get("failed", {}))
+    # Directed lanes closed during the same failure window as failed hubs.
+    raw_closed_lanes = scenario.get("closed_lanes", [])
+    if not isinstance(raw_closed_lanes, (list, tuple, set)):
+        raise ValueError("closed_lanes must be a collection of directed edge pairs.")
+    closed_lanes = set()
+    for lane in raw_closed_lanes:
+        if not isinstance(lane, (list, tuple)) or len(lane) != 2:
+            raise ValueError("Each closed lane must be a [source, destination] pair.")
+        edge = tuple(lane)
+        if edge not in graph.edges:
+            raise ValueError(f"Unknown closed lane: {edge}")
+        closed_lanes.add(edge)
 
     if demand_days < 1 or horizon <= demand_days:
         raise ValueError("Horizon must exceed the positive demand period.")
@@ -214,7 +243,10 @@ def simulate(graph, scenario, plan=None):
             for node in graph
         }
         edge_left = {
-            (u, v): float(attributes.get("cap", math.inf))
+            (u, v): (
+                0.0 if active and (u, v) in closed_lanes
+                else float(attributes.get("cap", math.inf))
+            )
             for u, v, attributes in graph.edges(data=True)
         }
 
@@ -346,7 +378,7 @@ def simulate(graph, scenario, plan=None):
 
     # Drain time after demand stops and the specified failure has ended.
     anchor = demand_days - 1
-    if failed and failure_days:
+    if (failed or closed_lanes) and failure_days:
         anchor = max(anchor, failure_start + failure_days - 1)
 
     recovery_days = (

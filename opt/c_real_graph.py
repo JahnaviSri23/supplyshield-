@@ -38,7 +38,7 @@ LEGS_CANDIDATES = ["data/processed/core_train_legs.csv", "data/processed/legs.cs
 TRAIN_CUTOFF = "2018-09-26"   # same training cut as Person A's core and Person B's split
 TIME_DIVISOR = 60.0        # Delhivery times are in minutes -> hours
 TRAIN_DAYS = 14            # days the 'trips' column was counted over
-PENALTY_HOURS = 96.0       # cost of one undelivered leg, in hours of travel
+PENALTY_HOURS = 48.0       # cost of one undelivered leg, in hours of travel
 BIG = 10 ** 9
 
 
@@ -141,7 +141,7 @@ def run_closure(G, lane, demand):
     before.nodes[u]["cap"] = before.nodes[v]["cap"] = BIG       # the two ends are not capacity-limited
     after = before.copy()
     after.edges[lane]["cap"] = 0.0                               # the lane is closed
-    out = {}
+    out, plans, exact = {}, {}, {}
     for name, fn in [("do nothing", lambda: do_nothing_od(before, after)),
                      ("greedy", lambda: c.greedy(after)),
                      ("optimizer", lambda: c.solve_lp(after))]:
@@ -150,8 +150,12 @@ def run_closure(G, lane, demand):
         secs = time.perf_counter() - t0
         res = c.evaluate(after, flows, delivered)
         out[name] = {**res, "seconds": round(secs, 3)}
+        plans[name] = [{"edge": [a, b], "flow": f} for (a, b), f in flows.items() if f > 1e-9]
+        ship = sum(after.edges[(a, b)]["cost"] * f for (a, b), f in flows.items() if f > 1e-9)   # from the exported plan
+        unmet = demand - delivered
+        exact[name] = {"shipping": ship, "unmet": unmet, "total_cost": ship + PENALTY_HOURS * unmet}
     base = demand * G.edges[lane]["cost"]
-    return base, out
+    return base, out, plans, exact
 
 
 if __name__ == "__main__":
@@ -167,10 +171,13 @@ if __name__ == "__main__":
           "| strongly connected parts:", nx.number_strongly_connected_components(G))
 
     lanes = sorted(G.edges(data=True), key=lambda e: -e[2]["trips"])[:10]
-    rows = []
-    for u, v, d in lanes:
+    rows, tests = [], []
+    for i, (u, v, d) in enumerate(lanes, 1):
         demand = max(1, round(d["trips"] / TRAIN_DAYS))
-        base, res = run_closure(G, (u, v), demand)
+        base, res, plans, exact = run_closure(G, (u, v), demand)
+        tests.append({"id": f"L{i:02d}", "closed_lanes": [[u, v]], "od": [u, v], "legs_per_day": demand,
+                      "penalty": PENALTY_HOURS, "flow_unit": "legs per day", "cost_unit": "leg-hours",
+                      "horizon": "one steady-state day", "plans": plans, "expected": exact})
         for plan, r in res.items():
             rows.append({"lane": f"{u}->{v}", "daily_legs": demand, "normal_cost": round(base, 1),
                          "plan": plan, **r})
@@ -186,3 +193,7 @@ if __name__ == "__main__":
     Path("experiments").mkdir(exist_ok=True)
     table.to_csv(out, index=False)
     print("Saved", out)
+    import json
+    if not SPARE:                       # acceptance tests for the simulator (same format as the toy plans)
+        json.dump(tests, open("experiments/c_real_plans.json", "w"), indent=1)
+        print("Saved experiments/c_real_plans.json  (plans + expected costs, for testing simulate() on the core)")
