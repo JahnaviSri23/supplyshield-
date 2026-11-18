@@ -6,7 +6,11 @@ from pathlib import Path
 from sim.test_core import build_core_graph
 
 PLAN_FILE = Path("experiments/c_multiflow_plans.json")
+
+# These three strategies must always exist.
+# Preserve will also be validated automatically when available.
 STRATEGIES = ("do nothing", "greedy", "LP (all flows)")
+
 TOL = 1e-6
 
 
@@ -18,6 +22,7 @@ def validate():
 
     errors = []
     warnings = []
+    plans_checked = 0
 
     if not isinstance(scenarios, list):
         raise ValueError("Expected a list of scenarios")
@@ -26,6 +31,7 @@ def validate():
         errors.append(f"Expected 10 scenarios, found {len(scenarios)}")
 
     ids = [s.get("id") for s in scenarios]
+
     if len(ids) != len(set(ids)):
         errors.append("Duplicate scenario IDs")
 
@@ -36,6 +42,7 @@ def validate():
         if scenario.get("penalty") != 96.0:
             errors.append(f"{sid}: unexpected penalty")
 
+        # Validate demand
         for item in scenario["demand"]:
             od = tuple(item["od"])
             quantity = float(item["legs_per_day"])
@@ -53,6 +60,7 @@ def validate():
 
             demand[od] = quantity
 
+        # Validate closed lanes
         closed = set()
 
         for lane in scenario["closed_lanes"]:
@@ -66,12 +74,17 @@ def validate():
         if len(closed) != len(scenario["closed_lanes"]):
             errors.append(f"{sid}: duplicate closed lanes")
 
-        for strategy in STRATEGIES:
-            if strategy not in scenario["plans"]:
-                errors.append(f"{sid}: missing strategy {strategy}")
-                continue
+        # Ensure the original three strategies are present
+        for required_strategy in STRATEGIES:
+            if required_strategy not in scenario["plans"]:
+                errors.append(
+                    f"{sid}: missing strategy {required_strategy}"
+                )
 
-            plan = scenario["plans"][strategy]
+        # Validate ALL available strategies, including Preserve
+        for strategy, plan in scenario["plans"].items():
+            plans_checked += 1
+
             balances = defaultdict(lambda: defaultdict(float))
 
             for record in plan:
@@ -100,6 +113,7 @@ def validate():
                 balances[od][u] -= flow
                 balances[od][v] += flow
 
+            # Validate flow conservation
             for od, quantity in demand.items():
                 source, destination = od
                 balance = balances[od]
@@ -133,6 +147,7 @@ def validate():
 
     print("\n=== Validation summary ===")
     print("Scenarios:", len(scenarios))
+    print("Plans checked:", plans_checked)
     print("Errors:", len(errors))
     print("Warnings:", len(warnings))
 
