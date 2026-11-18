@@ -1,0 +1,30 @@
+{
+  "simulator_provenance": {
+    "candidate_commit": "893a82a7fa731b95d97de8486cfa8ad59a848f38",
+    "candidate_byte_sha256": "3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204",
+    "v2_recorded_sha256": "3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204",
+    "hash_match": true,
+    "behavioral_match_40d": "CSV byte-identical to v2 summary",
+    "working_tree_simulator_used": false,
+    "working_tree_opt_c_multiflow_used": false
+  },
+  "isolated_root_file_sha256": {
+    "experiments/c_multiflow_plans.json": "f588d41116e69cf00e71f8602ee6f98919140143fa10ec50a63c15a5a99c435a",
+    "models/day6_integration.py": "74aa58245e485d318dffcd7ae686352134ead21639f61a5b0f0e6eb6968f233b",
+    "models/test_day6_integration.py": "6dd5a675035d746230dffba791ccbabb85ddb15f973bef19742d5272b51c7462",
+    "opt/c_real_graph.py": "a36cce5fa65711b64805cf191b2449e8bfc8bda01b75aa761dd279989d551d25",
+    "opt/c_toy_recovery.py": "0a07956766671cf3a57d552a85b4253519deee3a75a6faec1fd778bf089cdd68",
+    "sim/simulator.py": "3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204",
+    "sim/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sim/__pycache__/simulator.cpython-314.pyc": "efff7fe41cb4bdb4538e97e50cdf94178624c305ea6667ca12f5187f102935ba",
+    "sim/__pycache__/__init__.cpython-314.pyc": "8e99be96ae1aa089e30f83803c1eb3095c5b0d9b837852c875b2abda5ce2d187",
+    "opt/__pycache__/c_real_graph.cpython-314.pyc": "c8e25929347d6f7e92e50be44956e486c3a8878dd93314177feaaea8729e86f5",
+    "opt/__pycache__/c_toy_recovery.cpython-314.pyc": "74adab7473869c9f558c9b5fa2dac21e806fd81ab4b8d40710974ddc66f21bac",
+    "models/outputs/risk_table.csv": "051d71563f540df4869d4a2bd59dea38c5c2f173c47974f47629674ceffb53d7",
+    "models/__pycache__/day6_integration.cpython-314.pyc": "d32d67f5665cf002d2902316bd831e2bc5b99a11668c46afb271e85a7440649e",
+    "data/processed/core_edges.csv": "f96fccc71e532fb327ebd41d119ac1c804ee2b4333fb3a58a8a8699fc5579ec8",
+    "data/processed/core_nodes.csv": "ea4be35afba80fada79c8c94e56d1603afb8623e12a5faf2a656d0cf7c8696c3",
+    "data/processed/core_train_legs.csv": "838eddf86b9e708af3cb430f02c48f20a753d944bfc0a20a9f1aff1b89cd6a12",
+    "data/processed/split_trip_ids.csv": "46ab3d898a41548e9da9b56fb910e57efdc139f1a044076b615b421024d47a28"
+  }
+}

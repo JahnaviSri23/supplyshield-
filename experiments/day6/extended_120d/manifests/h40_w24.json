@@ -1,0 +1,387 @@
+{
+  "status": "MEASURED_PROVISIONAL",
+  "started_utc": "2026-11-18T08:28:03.527271+00:00",
+  "ended_utc": "2026-11-18T08:28:10.364883+00:00",
+  "runtime_seconds": 6.837591399991652,
+  "configuration": {
+    "horizon": 40,
+    "waiting_rate": 24.0,
+    "demand_days": 14,
+    "closure_days": 14,
+    "unmet_penalty": 96.0
+  },
+  "simulator": {
+    "path_within_isolated_root": "sim/simulator.py",
+    "sha256_crlf": "3c8a9f82347594638301c18c45506186e56c903dc088070c3093d2d59b767204",
+    "calls": 40
+  },
+  "adapter": {
+    "path_within_isolated_root": "models/day6_integration.py",
+    "sha256": "168878e2c6efc1f2b65f8058efb8ceecf5eb4ca20e92223b34a79ea35ba0d0f5"
+  },
+  "per_call": [
+    {
+      "scenario_id": "L01",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L01",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L01",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L01",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L02",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L02",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L02",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L02",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L03",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L03",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L03",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L03",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L04",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L04",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L04",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L04",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L05",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L05",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L05",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L05",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L06",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L06",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 19,
+      "last_history_day": 18,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L06",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 19,
+      "last_history_day": 18,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L06",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 19,
+      "last_history_day": 18,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L07",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L07",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L07",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L07",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L08",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L08",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L08",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L08",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L09",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L09",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L09",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 17,
+      "last_history_day": 16,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L09",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 18,
+      "last_history_day": 17,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L10",
+      "strategy": "do nothing",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L10",
+      "strategy": "greedy",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L10",
+      "strategy": "preserve (affected flows only)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    },
+    {
+      "scenario_id": "L10",
+      "strategy": "LP (all flows)",
+      "horizon_passed": 40,
+      "waiting_rate": 24.0,
+      "simulator_reported_days_run": 40,
+      "last_history_day": 39,
+      "other_scenario_keys_unchanged": true
+    }
+  ],
+  "adapter_summary_sha256": "cd2cc81bcae4cbe62f2fd02b9d7641bb16dc9c2fc3a94e1908bc6836666790ab",
+  "corrected_summary_sha256": "cd2cc81bcae4cbe62f2fd02b9d7641bb16dc9c2fc3a94e1908bc6836666790ab",
+  "wrapper_sha256_crlf": "8c8a71b21e7fd3c33d919cbc8c985185eae3565f8e7532beee4d992e117d2d6f"
+}
