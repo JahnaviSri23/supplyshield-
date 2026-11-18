@@ -12,7 +12,7 @@
    "IND560300AAA"
   ],
   "legs_per_day": 7,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -69,7 +69,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 7.0,
-    "total_cost": 336.0
+    "total_cost": 672.0
    },
    "greedy": {
     "shipping": 23.45,
@@ -96,7 +96,7 @@
    "IND560099AAB"
   ],
   "legs_per_day": 7,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -167,7 +167,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 7.0,
-    "total_cost": 336.0
+    "total_cost": 672.0
    },
    "greedy": {
     "shipping": 10.524999999999999,
@@ -194,7 +194,7 @@
    "IND421302AAG"
   ],
   "legs_per_day": 6,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -251,7 +251,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 6.0,
-    "total_cost": 288.0
+    "total_cost": 576.0
    },
    "greedy": {
     "shipping": 26.050000000000004,
@@ -278,7 +278,7 @@
    "IND562132AAA"
   ],
   "legs_per_day": 6,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -335,7 +335,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 6.0,
-    "total_cost": 288.0
+    "total_cost": 576.0
    },
    "greedy": {
     "shipping": 9.5,
@@ -362,7 +362,7 @@
    "IND560300AAA"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -419,7 +419,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 5.0,
-    "total_cost": 240.0
+    "total_cost": 480.0
    },
    "greedy": {
     "shipping": 14.75,
@@ -446,7 +446,7 @@
    "IND131028AAB"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -524,7 +524,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 5.0,
-    "total_cost": 240.0
+    "total_cost": 480.0
    },
    "greedy": {
     "shipping": 34.5,
@@ -551,7 +551,7 @@
    "IND000000ACB"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -594,7 +594,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 5.0,
-    "total_cost": 240.0
+    "total_cost": 480.0
    },
    "greedy": {
     "shipping": 16.583333333333336,
@@ -621,7 +621,7 @@
    "IND562132AAA"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -706,7 +706,7 @@
    "IND411033AAA"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -763,7 +763,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 5.0,
-    "total_cost": 240.0
+    "total_cost": 480.0
    },
    "greedy": {
     "shipping": 20.833333333333336,
@@ -790,7 +790,7 @@
    "IND000000ACB"
   ],
   "legs_per_day": 5,
-  "penalty": 48.0,
+  "penalty": 96.0,
   "flow_unit": "legs per day",
   "cost_unit": "leg-hours",
   "horizon": "one steady-state day",
@@ -833,7 +833,7 @@
    "do nothing": {
     "shipping": 0,
     "unmet": 5.0,
-    "total_cost": 240.0
+    "total_cost": 480.0
    },
    "greedy": {
     "shipping": 24.25,

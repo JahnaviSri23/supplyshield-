@@ -38,7 +38,7 @@ LEGS_CANDIDATES = ["data/processed/core_train_legs.csv", "data/processed/legs.cs
 TRAIN_CUTOFF = "2018-09-26"   # same training cut as Person A's core and Person B's split
 TIME_DIVISOR = 60.0        # Delhivery times are in minutes -> hours
 TRAIN_DAYS = 14            # days the 'trips' column was counted over
-PENALTY_HOURS = 48.0       # cost of one undelivered leg, in hours of travel
+PENALTY_HOURS = 96.0       # cost of one undelivered leg, in hours of travel
 BIG = 10 ** 9
 
 
